@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* ------------- N O R M A L I Z E ------------*/
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {display: block;}
+audio, canvas, video {display: inline-block;}
+textarea {overflow: auto; vertical-align: top;}
+html {
+	overflow: scroll;
+    font-family: Verdana, Arial, sans-serif; 
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 1.6;
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+}
+
+body {background-color: #fff; color: #333; overflow:hidden;}
+
+/*--------------- D I V E R S E S -----------------*/
+/* Sports Village Blau #009ee3 */
+
+h1,h2,h3 
+	{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #444;
+	}
+h1
+	{
+	margin-bottom: 15px;
+	font-size: 24px;
+	font-size: 1.5rem;
+	text-shadow: 2px 2px 2px rgba(192, 192, 192, 1);
+	}
+h2
+	{
+	margin-bottom: 10px;
+	font-size: 22px;
+	font-size: 1.375rem;
+	text-shadow: 2px 2px 2px rgba(192, 192, 192, 1);
+	}
+h3
+	{
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-size: 1.125rem;
+	}
+p
+	{
+	margin: 0 0 10px 0;
+	}
+		
+a	{color: #009ee3; text-decoration: none;}
+a:visited {color: #009ee3;}
+a:hover {color: #009ee3; text-decoration: none; text-decoration: underline;}
+a:active {color: #009ee3; text-decoration: underline;}
+	
+li	{
+	margin-left: 15px;
+    margin-bottom: 3px;
+	}
+	
+	
+
+
+/* --------------- D E S I G N  -- D E S K T O P -- M I N 760 ---------------*/
+
+/*@media screen and (min-width: 760px) { */
+#wrapper {width: 980px; min-width: 980px; margin: auto; margin-top: 10px; padding: 0 20px 0 20px;}
+
+
+#headwrapper {width: 100%; background: url(../img/design/head_bg.png); border-bottom: 2px solid #fff;}
+#header {width: 980px; height: 125px; margin: auto; padding-top: 10px;}
+
+#indexmain {width: 560px; min-height: 800px; padding: 0 40px 20px 0; float: left;}
+#mainall {width: 980px; min-height: 800px;}
+#sidebar {width: 380px; min-height: 800px; float: right;}
+#brands {width: 380px;}
+#brands img {margin-right: 10px;}
+#brands li {list-style-type:none; margin: 0 0 10px 0;}
+#brands li img:nth-child(3n) {margin-right: 0; }
+
+article {margin-bottom: 20px; padding-top: 20px;}
+aside {margin-bottom: 0px; padding-top: 20px;}
+
+#opentimeleft {float: left; width: 150px; color: #444;}
+#opentimeright {float: right; width: 130px; color: #444;}
+
+
+
+
+/* ---------------- N A V I G A T I O N --------------------*/
+ 
+
+
+
+
+/*}*//*  Ende @media 1025px */ 
+
+
+
+/* --------------- D E S I G N  -- P H O N E --  M A X 759 ---------------*/
+/*
+@media screen and (max-width: 759px) { 
+#wrapper {max-width: 759px; min-width: 500px; margin: auto; margin-top: 10px;}
+*/
+
+
+/* Responsive Navi Phone */
+
+
+
+
+
+} /* Ende @media max 759px */ 
+
+
+
+
+/*---------- S P E C I A L S / C L A S S E S ---------------*/
+
+.logo {margin-top: 10px;}
+.txtcenter {text-align: center;}
+#overlay {position: absolute; width: 100%; height: 100%; background-image:url(../img/design/cross.png); background-repeat:repeat; z-index:5; opacity: 0.1;}
+.blacktxtbrand {color: #222; font-size: 22px; font-size: 1.375rem; font-family: Arial, Helvetica, sans-serif; margin-bottom: 10px;}
+/*--------------- F O O T E R  ------------------*/
+#footergrey
+	{
+	width: 100%;
+	height: 600px;
+	font-size: 13px;
+	background: url(../img/design/footer_bg.png);
+	}	
+#footergrey a { color: #009ee3; text-decoration: none;}
+#footergrey a:hover {text-decoration:underline; color: #009ee3;}
+#footerleft {padding: 5px 20px 0 0; float: left; width: 260px;}
+#footermiddle {padding: 5px 20px 0 0; float: left; width: 300px;}
+#footerright {padding: 5px 25px 0 0;  float: right;  width: 380px;}
+#footerblack
+	{
+	width: 100%;
+	height: 65px;
+	font-weight: 600;
+	font-size: 13px;
+	background: url(../img/design/head_bg.png); 
+	border-top: 2px solid #fff;	
+	color: #C0C0C0;
+	}
+#footerblack a { color: #C0C0C0; text-decoration: none;}
+#footerblack a:hover {text-decoration: underline; color: #fff;}
+#footercontent {width: 980px; min-width: 980px; margin: auto; padding: 0 20px 0 20px;}
+.sik {float: right; margin-top:20px;}
+.sv {float: left; margin-top:20px;}
+
+
+.fblogo{
+	width: 80px; 
+	height: 80px; 
+	background: url(../img/design/fb_black.png); 
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+	margin: auto;
+	margin-top: 15px;
+	}
+.fblogo .fblogoover{
+	 position:relative;
+	 width: 80px; 
+	 height: 80px; 
+	 background: url(../img/design/fb_blue.png); 
+	 opacity:0;
+	 -webkit-transition: opacity 0.7s ease-in-out;
+	 -moz-transition: opacity 0.7s ease-in-out;
+	 -o-transition: opacity 0.7s ease-in-out;
+	 transition: opacity 0.7s ease-in-out;
+	 -webkit-border-radius: 10px;
+	 -moz-border-radius: 10px;
+	 border-radius: 10px;
+	 -webkit-box-shadow: 0px 0px 10px 3px rgba(255,255,255,0.75);
+	 -moz-box-shadow: 0px 0px 10px 3px rgba(255,255,255,0.75);
+     box-shadow: 0px 0px 10px 3px rgba(255,255,255,0.75);
+
+}
+.fblogo:hover .fblogoover { 
+opacity:1;
+	-webkit-border-radius: 10px;	
+	-moz-border-radius: 10px; 
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 10px 3px rgba(255,255,255,0.75);
+	-moz-box-shadow: 0px 0px 10px 3px rgba(255,255,255,0.75);
+	box-shadow: 0px 0px 10px 3px rgba(255,255,255,0.75);
+	 }
+
+
+
+
+
+
+
+
+
+
+
+

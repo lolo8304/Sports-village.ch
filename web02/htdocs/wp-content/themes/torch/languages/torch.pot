@@ -1,0 +1,729 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: torch 1.0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-26 10:26+0800\n"
+"PO-Revision-Date: 2014-09-26 10:27+0800\n"
+"Last-Translator: shijun quan <support@mageewp.com>\n"
+"Language-Team: Magee <support@mageewp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: \\torch\\\n"
+
+#: torch\/admin/includes/class-options-framework-admin.php:64
+#, php-format
+msgid ""
+"Your current theme does not have support for the Options Framework plugin.  "
+"<a href=\"%1$s\" target=\"_blank\">Learn More</a> | <a href=\"%2$s\">Hide "
+"Notice</a>"
+msgstr ""
+
+#: torch\/admin/includes/class-options-framework-admin.php:121
+#: torch\/admin/includes/class-options-framework-admin.php:122
+msgid "Theme Options"
+msgstr ""
+
+#: torch\/admin/includes/class-options-framework-admin.php:246
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: torch\/admin/includes/class-options-framework-admin.php:279
+msgid "Default options restored."
+msgstr ""
+
+#: torch\/admin/includes/class-options-framework-admin.php:333
+msgid "Options saved."
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:474
+msgid "choose column"
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:475
+msgid "1 column"
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:476
+msgid "2 columns"
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:477
+msgid "3 columns"
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:478
+msgid "4 columns"
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:480
+msgid "Widget Area Name"
+msgstr ""
+
+#: torch\/admin/includes/class-options-interface.php:485
+msgid "Add Item"
+msgstr ""
+
+#: torch\/admin/includes/class-options-media-uploader.php:63
+msgid "No file chosen"
+msgstr ""
+
+#: torch\/admin/includes/class-options-media-uploader.php:66
+#: torch\/admin/includes/class-options-media-uploader.php:119
+msgid "Upload"
+msgstr ""
+
+#: torch\/admin/includes/class-options-media-uploader.php:68
+#: torch\/admin/includes/class-options-media-uploader.php:120
+msgid "Remove"
+msgstr ""
+
+#: torch\/admin/includes/class-options-media-uploader.php:71
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: torch\/admin/includes/class-options-media-uploader.php:95
+msgid "View File"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:241
+msgid "No Repeat"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:242
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:243
+msgid "Repeat Vertically"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:244
+msgid "Repeat All"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:257
+msgid "Top Left"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:258
+msgid "Top Center"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:259
+msgid "Top Right"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:260
+msgid "Middle Left"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:261
+msgid "Middle Center"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:262
+msgid "Middle Right"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:263
+msgid "Bottom Left"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:264
+msgid "Bottom Center"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:265
+msgid "Bottom Right"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:278
+msgid "Scroll Normally"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:279
+msgid "Fixed in Place"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:353
+msgid "Normal"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:354
+msgid "Italic"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:355
+msgid "Bold"
+msgstr ""
+
+#: torch\/admin/includes/class-options-sanitization.php:356
+msgid "Bold Italic"
+msgstr ""
+
+#: torch\/comments.php:12
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: torch\/comments.php:21
+msgid "No comment"
+msgstr ""
+
+#: torch\/comments.php:21
+msgid "Has one comment"
+msgstr ""
+
+#: torch\/comments.php:21
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: torch\/comments.php:21
+#, php-format
+msgid "to &#8220;%s&#8221;"
+msgstr ""
+
+#: torch\/comments.php:22
+msgid "You can "
+msgstr ""
+
+#: torch\/comments.php:22
+msgid "leave a reply"
+msgstr ""
+
+#: torch\/comments.php:22
+msgid " or "
+msgstr ""
+
+#: torch\/comments.php:22
+msgid "Trackback"
+msgstr ""
+
+#: torch\/comments.php:22
+msgid "this post."
+msgstr ""
+
+#: torch\/comments.php:34
+msgid "Comment pages"
+msgstr ""
+
+#: torch\/comments.php:64
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: torch\/comments.php:77
+msgid "Your email address will not be published."
+msgstr ""
+
+#: torch\/comments.php:80
+msgid "Write a Reply or Comment"
+msgstr ""
+
+#: torch\/content-article.php:23
+#: torch\/single.php:66
+msgid "Edit"
+msgstr ""
+
+#: torch\/content-article.php:30
+#: torch\/includes/theme-widget.php:246
+#: torch\/includes/theme-widget.php:317
+#: torch\/includes/theme-widget.php:955
+msgid "Read More"
+msgstr ""
+
+#: torch\/footer.php:16
+#, php-format
+msgid ""
+"Powered by <a href=\"%s\">WordPress</a>. Designed by <a href=\"%s\">MageeWP "
+"Themes</a>."
+msgstr ""
+
+#: torch\/header.php:35
+msgid "Search for"
+msgstr ""
+
+#: torch\/header.php:36
+#: torch\/includes/class-breadcrumb.php:149
+msgid "Search"
+msgstr ""
+
+#: torch\/header.php:41
+msgid "Toggle navigation"
+msgstr ""
+
+#: torch\/includes/admin-options.php:50
+msgid "General Options"
+msgstr ""
+
+#: torch\/includes/admin-options.php:54
+msgid "Upload Logo"
+msgstr ""
+
+#: torch\/includes/admin-options.php:60
+msgid "Favicon"
+msgstr ""
+
+#: torch\/includes/admin-options.php:61
+msgid ""
+"An icon associated with a URL that is variously displayed, as in a browser's "
+"address bar or next to the site name in a bookmark list. Learn more about <a "
+"href=\""
+msgstr ""
+
+#: torch\/includes/admin-options.php:66
+msgid "Global Color"
+msgstr ""
+
+#: torch\/includes/admin-options.php:72
+msgid "404 Page Content"
+msgstr ""
+
+#: torch\/includes/admin-options.php:79
+msgid "Custom CSS"
+msgstr ""
+
+#: torch\/includes/admin-options.php:80
+msgid ""
+"The following css code will add to the header before the closing &lt;/"
+"head&gt; tag."
+msgstr ""
+
+#: torch\/includes/admin-options.php:89
+msgid "Footer"
+msgstr ""
+
+#: torch\/includes/admin-options.php:95
+#, php-format
+msgid "Social Icon #%s"
+msgstr ""
+
+#: torch\/includes/admin-options.php:101
+#, php-format
+msgid "Social Link #%s"
+msgstr ""
+
+#: torch\/includes/admin-options.php:108
+msgid "Slider"
+msgstr ""
+
+#: torch\/includes/admin-options.php:112
+msgid "Slideshow"
+msgstr ""
+
+#: torch\/includes/admin-options.php:114
+msgid "Slide 1"
+msgstr ""
+
+#: torch\/includes/admin-options.php:115
+#: torch\/includes/admin-options.php:122
+#: torch\/includes/admin-options.php:129
+#: torch\/includes/admin-options.php:136
+#: torch\/includes/admin-options.php:143
+msgid "Image"
+msgstr ""
+
+#: torch\/includes/admin-options.php:116
+#: torch\/includes/admin-options.php:123
+#: torch\/includes/admin-options.php:130
+#: torch\/includes/admin-options.php:137
+#: torch\/includes/admin-options.php:144
+msgid "Text"
+msgstr ""
+
+#: torch\/includes/admin-options.php:117
+#: torch\/includes/admin-options.php:124
+#: torch\/includes/admin-options.php:131
+#: torch\/includes/admin-options.php:138
+#: torch\/includes/admin-options.php:145
+#: torch\/includes/theme-widget.php:334
+msgid "Button Link"
+msgstr ""
+
+#: torch\/includes/admin-options.php:118
+#: torch\/includes/admin-options.php:125
+#: torch\/includes/admin-options.php:132
+#: torch\/includes/admin-options.php:139
+#: torch\/includes/admin-options.php:146
+#: torch\/includes/theme-widget.php:331
+msgid "Button Text"
+msgstr ""
+
+#: torch\/includes/admin-options.php:121
+msgid "Slide 2"
+msgstr ""
+
+#: torch\/includes/admin-options.php:128
+msgid "Slide 3"
+msgstr ""
+
+#: torch\/includes/admin-options.php:135
+msgid "Slide 4"
+msgstr ""
+
+#: torch\/includes/admin-options.php:142
+msgid "Slide 5"
+msgstr ""
+
+#: torch\/includes/admin-options.php:152
+msgid "Slide Time"
+msgstr ""
+
+#: torch\/includes/admin-options.php:155
+msgid ""
+"Milliseconds between the end of the sliding effect and the start of the nex "
+"one."
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:38
+#: torch\/includes/class-breadcrumb.php:213
+msgid "Home"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:147
+msgid "404 - Page not Found"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:210
+msgid "You are here:"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:415
+msgid "g:i a"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:418
+#, php-format
+msgid "Minute %1$s"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:418
+msgid "i"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:421
+msgid "g a"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:432
+#: torch\/includes/class-breadcrumb.php:438
+#: torch\/includes/class-breadcrumb.php:443
+#: torch\/includes/class-breadcrumb.php:448
+msgid "Y"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:433
+#: torch\/includes/class-breadcrumb.php:444
+msgid "F"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:434
+msgid "j"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:439
+#, php-format
+msgid "Week %1$s"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:455
+#, php-format
+msgid "Search results for &quot;%1$s&quot;"
+msgstr ""
+
+#: torch\/includes/class-breadcrumb.php:459
+msgid "404 Not Found"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:36
+msgid "Torch Metabox Options"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:118
+msgid "Show Breadcrumb :"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:120
+msgid "Yes"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:120
+msgid "No"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:131
+msgid "Choose Sidebar Layout :"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:134
+msgid "right"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:135
+msgid "left"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:136
+msgid "both"
+msgstr ""
+
+#: torch\/includes/metabox-options.php:137
+msgid "none"
+msgstr ""
+
+#: torch\/includes/theme-functions.php:96
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: torch\/includes/theme-functions.php:97
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: torch\/includes/theme-functions.php:97
+msgid "(Edit)"
+msgstr ""
+
+#: torch\/includes/theme-functions.php:100
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: torch\/includes/theme-functions.php:269
+#, php-format
+msgid " Page %s "
+msgstr ""
+
+#: torch\/includes/theme-setup.php:44
+msgid "Primary Menu"
+msgstr ""
+
+#: torch\/includes/theme-setup.php:232
+#: torch\/includes/theme-setup.php:233
+msgid "Torch Options"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:6
+msgid "Default Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:14
+msgid "Post Left Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:22
+msgid "Post Right Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:30
+msgid "Page Left Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:38
+msgid "Page Right Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:46
+msgid "Category Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:54
+msgid "Tag Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:62
+msgid "Archive Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:70
+msgid "Search Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:79
+msgid "Page 404 Right Sidebar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:160
+msgid "Display pages as service. Best for homepage section one "
+msgstr ""
+
+#: torch\/includes/theme-widget.php:162
+msgid "Torch: Service"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:175
+#: torch\/includes/theme-widget.php:404
+#, php-format
+msgid "Page  %s"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:266
+msgid "Divider for each row."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:268
+msgid "Torch: Divider"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:278
+msgid "Height"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:312
+msgid "Torch: Slogan"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:323
+#: torch\/includes/theme-widget.php:524
+#: torch\/includes/theme-widget.php:1128
+msgid "Title"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:327
+#: torch\/includes/theme-widget.php:1022
+msgid "Content"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:388
+msgid "Display pages as portfolio."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:390
+msgid "Torch: Portfolio"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:512
+msgid "Display section title."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:514
+msgid "Torch: Section Title"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:529
+msgid "Sub-Title"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:564
+msgid "Display some pages as slider."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:566
+msgid "Torch: Widget Slider"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:582
+msgid "Page"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:666
+msgid "Display sidebar social network."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:668
+msgid "Torch: Social Network"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:694
+msgid "Social Icon"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:707
+msgid "Social Link"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:751
+msgid "Display popular posts and latest posts tabs."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:753
+msgid "Torch: Posts Tabs"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:763
+msgid "Popular Posts List Num"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:768
+msgid "Resent Post List Num"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:793
+msgid "Popular Posts"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:794
+msgid "Recent Posts"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:875
+msgid "Display pages as blog."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:877
+msgid "Torch: Blog"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:885
+msgid "Posts List Num"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:922
+msgid "No Comments"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:924
+msgid " Comments"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:926
+msgid "1 Comment"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:985
+msgid "Torch testimonial."
+msgstr ""
+
+#: torch\/includes/theme-widget.php:987
+msgid "Torch: Testimonial"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:997
+msgid "Avatar"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:1002
+msgid "Byline"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:1007
+msgid "Rating"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:1094
+msgid "Torch: Carousel"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:1107
+msgid "Display Num"
+msgstr ""
+
+#: torch\/includes/theme-widget.php:1133
+msgid "Image URL"
+msgstr ""
+
+#: torch\/page.php:61
+#: torch\/single.php:73
+msgid "Pages:"
+msgstr ""
+
+#: torch\/search.php:27
+msgid "No results found"
+msgstr ""

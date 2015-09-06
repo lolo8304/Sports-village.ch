@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance PRO\n"
+"POT-Creation-Date: 2014-02-27 11:35+0200\n"
+"PO-Revision-Date: 2014-02-27 11:37+0200\n"
+"Last-Translator: \n"
+"Language-Team: fruitfulcode.com <yakovlev@fruitfulcode.com>\n"
+"Language: RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+
+#: includes/functions.php:51
+msgid "Days"
+msgstr "Dias"
+
+#: includes/functions.php:52
+msgid "Hours"
+msgstr "Observar"
+
+#: includes/functions.php:53
+msgid "Minutes"
+msgstr "Minutos"
+
+#: includes/functions.php:54
+msgid "Seconds"
+msgstr "Segundos"
+
+#: includes/functions.php:87
+msgid "User roles"
+msgstr "Funções do usuário"
+
+#: includes/functions.php:93
+msgid "Gallery"
+msgstr "Galeria"
+
+#: includes/functions.php:99
+msgid "Countdown"
+msgstr "Timer regressivo"
+
+#: includes/functions.php:106
+msgid "HTML"
+msgstr ""
+
+#: includes/functions.php:112
+msgid "MailChimp"
+msgstr ""
+
+#: includes/functions.php:118
+msgid "Social"
+msgstr "Social"
+
+#: includes/functions.php:238
+msgid "Add elements"
+msgstr "Adicionar elementos"
+
+#: includes/functions.php:239
+msgid "Remove all elements"
+msgstr "Remover todos os elementos"
+
+#: includes/functions.php:246
+msgid "select to set overlays"
+msgstr "marque para selecionar a sobreposição"
+
+#: includes/functions.php:247
+msgid "no overlay"
+msgstr "sem sobreposição"
+
+#: includes/functions.php:249
+#, php-format
+msgid "%1$s example"
+msgstr "%1$s exemplo"
+
+#: includes/functions.php:262
+msgid "Delay Time"
+msgstr "Tempo de retardo"
+
+#: includes/functions.php:294
+msgid "Set expiry date"
+msgstr "Selecione a data de expiração"
+
+#: includes/functions.php:304
+msgid "Set color scheme"
+msgstr "Selecione o esquema de cores"
+
+#: includes/functions.php:313
+msgid "Maintenance off after expiry"
+msgstr "Manutenção desligada"
+
+#: includes/functions.php:332
+msgid "Select user roles"
+msgstr "Selecione as funções do usuário"
+
+#: includes/functions.php:477
+msgid "API Key"
+msgstr ""
+
+#: includes/functions.php:485
+msgid "List ID"
+msgstr "Digite a List ID"
+
+#: includes/functions.php:546
+msgid "Facebook"
+msgstr ""
+
+#: includes/functions.php:547
+msgid "Twitter"
+msgstr ""
+
+#: includes/functions.php:548
+msgid "Google+"
+msgstr ""
+
+#: includes/functions.php:549
+msgid "LinkedIn"
+msgstr ""
+
+#: includes/functions.php:550
+msgid "Dribbble"
+msgstr ""
+
+#: includes/functions.php:551
+msgid "Behance"
+msgstr ""
+
+#: includes/functions.php:552
+msgid "Tumblr"
+msgstr ""
+
+#: includes/functions.php:553
+msgid "Flickr"
+msgstr ""
+
+#: includes/functions.php:554
+msgid "Pinterest"
+msgstr ""
+
+#: includes/functions.php:555
+msgid "Vimeo"
+msgstr ""
+
+#: includes/functions.php:556
+msgid "YouTube"
+msgstr ""
+
+#: includes/functions.php:557
+msgid "Skype"
+msgstr ""
+
+#: includes/functions.php:558
+msgid "Instagram"
+msgstr ""
+
+#: includes/functions.php:559
+msgid "E-mail"
+msgstr "E-mail"
+
+#: includes/functions.php:665
+msgid "Be the first to know when website is ready"
+msgstr "Seja o primeiro a saber quando o site estiver pronto"
+
+#: includes/functions.php:668
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/functions.php:670
+msgid "Subscribe"
+msgstr "Assinar"
+
+#: includes/functions.php:673
+msgid "Check the correct input \"APP ID\" or \"LIST ID\" to MailChimp access!"
+msgstr ""
+"Selecione a entrada correta \"APP ID\" ou \"LIST ID\" para o acesso ao "
+"MailChimp!"
+
+#: includes/_message.php:5
+msgid "Download free version"
+msgstr "Baixe a versão gratuita"
+
+#: includes/_message.php:8
+msgid "Maintenance free is required"
+msgstr "É necessário Maintenance free"
+
+#: includes/_message.php:8
+msgid "Please download and install free basic version to get PRO features"
+msgstr ""
+"Por-favor, baixe a versão gratuita para ter acesso as funcionalidade sPRO"
+
+#~ msgid "Set App ID"
+#~ msgstr "Digite o App ID"
