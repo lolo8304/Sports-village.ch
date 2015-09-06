@@ -1,0 +1,48 @@
+/**
+ * @package sporty
+ * @since sporty 1.0
+ * inspired by: http://www.colourlovers.com/palette/59489/Kotaku
+ *
+ *
+ */
+#wrap {
+	border-top: 8px solid #66CC99;
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a,
+.main-navigation ul ul a:hover {
+	color: #66CC99;
+}
+
+#primary {
+	border-top: 4px solid #66CC99;
+}
+.sticky h1{
+	border-bottom: 6px solid #66CC99;
+}
+.stickymore a:hover{
+	color: #6C9;
+}
+.featuretext_top {
+	background-color: #333;
+}
+.featuretext_top h3{
+	color: #FFF;
+}
+.home_widget h4{
+	border-bottom: 7px solid #6C9;
+}
+.site-footer {
+	border-top: 4px solid #66CC99;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover {
+	color: #66CC99;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #66CC99;
+}

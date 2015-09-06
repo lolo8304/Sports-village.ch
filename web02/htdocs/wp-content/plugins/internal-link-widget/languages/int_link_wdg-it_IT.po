@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Internal Link Widget v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-12-19 17:31:30+0000\n"
+"Last-Translator: noiza <martino@noiza.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: internal-link-widget.php:0
+#@ int_link_wdg
+msgid "Internal Link Widget"
+msgstr "Widget Link Interno"
+
+#. translators: plugin header field 'PluginURI'
+#: internal-link-widget.php:0
+#@ int_link_wdg
+msgid "http://wordpress.org/plugins/internal-link-widget"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: internal-link-widget.php:0
+#@ int_link_wdg
+msgid "Martino Stenta"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: internal-link-widget.php:0
+#@ int_link_wdg
+msgid "http://www.noiza.com"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: internal-link-widget.php:0
+#@ int_link_wdg
+msgid "0.1"
+msgstr ""
+
+#: internal-link-widget.php:24
+#@ int_link_wdg
+msgid "Internal Link"
+msgstr "Link Interno"
+
+#: internal-link-widget.php:61
+#@ int_link_wdg
+msgid "Link title:"
+msgstr "Titolo del link:"
+
+#: internal-link-widget.php:65
+#@ int_link_wdg
+msgid "Show title"
+msgstr "Mostra titolo"
+
+#: internal-link-widget.php:69
+#@ int_link_wdg
+msgid "Link text:"
+msgstr "Testo del link:"
+
+#: internal-link-widget.php:73
+#@ int_link_wdg
+msgid "Link to:"
+msgstr "Link interno:"
+
+#. translators: plugin header field 'Description'
+#: internal-link-widget.php:0
+#@ int_link_wdg
+msgid "Add a simple widget to handle interal link without hardcoding it as you would do with the normal text widget."
+msgstr "Aggiunge un semplice widget per la gestione dei link a pagine interne senza dover scrivere manualmente il link come avviene con il normale widget di testo."
+
+#: internal-link-widget.php:80
+#@ int_link_wdg
+msgid "None"
+msgstr "Nessuno"
+
+#: internal-link-widget.php:25
+#@ int_link_wdg
+msgid "Internal link with title and text"
+msgstr "Gestisci un link interno con controllo di titolo e testo."
+

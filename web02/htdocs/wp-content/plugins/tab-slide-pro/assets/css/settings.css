@@ -1,0 +1,278 @@
+.wrap {
+    margin: 50px 20px 0 2px;
+}
+a {
+   outline: 0!important;
+}
+input::-moz-focus-inner { 
+  border: 0!important; 
+}
+#close_about {
+	cursor: pointer;
+  font-size: 30px;
+	height: 12px;
+	margin-top: 7px;
+	position: absolute;
+	width: 12px;
+}
+#close_about:hover {
+  color:#ff0000;
+}
+#overlay {
+	background-color: black;
+	border-radius: 3px;
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	opacity: 0.75;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10000;
+}
+#about {
+  background-color: #FFFFFF;
+  font-size: medium;
+  padding: 10px;
+  position: fixed;
+  z-index: 10002;
+}
+@media only screen and (min-width: 768px) {
+  #logo {
+	  background-image: url("../images/TabSlideProLogo.png") !important;
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: 155px 155px;
+	  left:200px;
+	  height: 155px;
+	  margin-top: 7px;
+	  opacity: 0.2;
+	  position: absolute;
+	  top: 25%;
+	  width: 150px;
+	  z-index: 10001;
+  }
+  #about {
+    border-radius: 5px;
+    height: 350px;
+    left: 30%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    top: 133px;
+    width: 550px;
+  }
+  #close_about {
+    right: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #about {
+    border-radius: 0px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  #close_about {
+    right: 42px;
+  }
+}
+#about_content {
+	padding:20px;
+	position: absolute;
+	z-index: 10003;
+}
+#about a {
+	vertical-align: baseline!important;
+}
+.span {
+	padding-right: 10px;"
+}
+@media only screen and (max-width: 768px) {
+  #header-wrapper {
+    position:relative!important;
+    padding:20px;
+  }
+  #help {
+    position: relative!important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #header-wrapper {
+    margin-left: -22px;
+    padding-left: 25px;
+    position: fixed;
+    top: 32px;
+    width: 100%;
+    z-index:100;
+  }
+  
+  #help {
+      float: right;
+      position: fixed;
+      right: 5px;
+      top: 46px;
+  }
+}
+
+#header-wrapper > h3 {
+    display: inline-block;
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 15px;
+    padding: 0 15px 0 0;
+    position: relative;
+    z-index: 100;
+}
+#help_menu {
+	display: block;
+	position: absolute;
+	right: -2px;
+	top: -31px;  
+}
+.help_menu_button {
+	margin: 1px!important;
+}
+#setting-error-settings_updated {
+	margin-bottom: 0px!important;
+}
+.span {
+	padding-right: 10px;
+}
+#share {
+	z-index: 3;
+}
+#rate {
+    border-color: #d3d3d3;
+    color: #d3d3d3;
+    border-image: none;
+    border-radius: 7px 0 0 7px;
+    border-style: solid none solid solid;
+    border-width: 1px medium 1px 1px;
+    display: block;
+    margin-top: 60px;
+    padding: 20px 23px 20px 20px;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 140px;
+    z-index: 2;
+}
+#rate:hover {
+  border-color: #c0c0c0;
+  box-shadow: 1px 1px 1px #000000;
+  color:#000000;
+}
+#close-rate:hover {
+  color:#ff0000;
+}
+#close-rate {
+    color: #D3D3D3;
+    cursor:pointer;
+    margin-left: -12px;
+    margin-top: -15px;
+    position: absolute;
+}
+#reviews-submit-link {
+	padding-right: 23px;
+	padding-top: 130px;
+	position: fixed;
+	left: 800px;
+	z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  #share, #rate, #reviews-submit-link {
+    display:none;
+  }
+}
+#general{
+	font-size: medium;
+	padding: 10px;
+	width: 650px;
+}
+#advanced{
+	display:none;
+	font-size: medium;
+	padding: 10px;
+	width: 650px;
+}
+#advanced select {
+	width:100%;
+}
+#advanced p {
+  margin-bottom:5px;
+}
+#tab_image_upload {
+	display: none;
+	left: 357px;
+	position: absolute;
+	top: 467px;
+}
+.newline {
+	display: block;
+	line-height: 2.7em; 
+}
+.sections {
+	position: relative;
+}
+.padding {
+	padding-left: 20px;
+}
+#tabs {
+	 border-top-width: 1px;
+}
+.active_status {
+	background-color: #39E639;
+	border-radius: 3px 3px 3px 3px;
+	color: #000000;
+	padding: 4px;
+	text-shadow: none;
+}
+#instance-menu {
+    display: inline-block;
+    padding-bottom: 15px;
+    vertical-align: middle;
+}
+.instance_menu_item {
+	padding: 5px!important;
+	text-decoration: none;
+}
+.nav-tab-wrapper {
+    margin-bottom: 10px;
+    position: relative;
+}
+.tabslide-icon {
+	background-image: url('../images/tab-slide-logo.png') !important;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-size: 100% auto;
+	float: left;
+	height: 36px;
+	margin: 7px 8px 0 0;
+	width: 36px;
+	position: relative;
+	opacity: 0.75;
+}
+
+#setting-error-settings_updated {
+	margin-bottom: 0px!important;
+}
+#window_url, #picture_url, #video_url, #iframe_url {
+	width:100%;
+}
+
+.hidden {
+	display: none!important;
+}
+.shown {
+	display:inline-block!important;
+}
+.list-pick-sub,#cookie_settings_wrap, #cookie_count_wrap {
+	display:none;
+}
+.bsmListItemLabel {
+    min-height: 15px;
+}
+#disabled_pages {
+	width:100%;
+}
