@@ -20,6 +20,9 @@ function wpcf7_add_shortcode_mailpoetsignup() {
 
 function wpcf7_mailpoetsignup_shortcode_handler( $tag ) {
 
+	if( ! class_exists( WPCF7_Shortcode ) )
+		return;
+
 	$tag = new WPCF7_Shortcode( $tag );
 
 	if ( empty( $tag->name ) ) {
@@ -109,6 +112,10 @@ add_filter( 'wpcf7_validate_mailpoetsignup', 'wpcf7_mailpoetsignup_validation_fi
 add_filter( 'wpcf7_validate_mailpoetsignup*', 'wpcf7_mailpoetsignup_validation_filter', 10, 2 );
 
 function wpcf7_mailpoetsignup_validation_filter( $result, $tag ) {
+
+	if( ! class_exists( WPCF7_Shortcode ) )
+		return;
+
 	$tag = new WPCF7_Shortcode( $tag );
 
 	$type = $tag->type;
@@ -132,6 +139,9 @@ function wpcf7_mailpoetsignup_validation_filter( $result, $tag ) {
 add_action( 'admin_init', 'wpcf7_add_tag_generator_mailpoetsignup', 20 );
 
 function wpcf7_add_tag_generator_mailpoetsignup() {
+
+	if( ! class_exists( WPCF7_TagGenerator ) )
+		return;
 
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'mailpoetsignup', __( 'Mailpoet Signup', 'mpcf7' ),

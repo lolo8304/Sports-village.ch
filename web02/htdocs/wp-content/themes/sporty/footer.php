@@ -45,9 +45,7 @@
 	</div>
 
 		 <div class="site-info">
-            <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
-            <?php _e('Sporty WordPress Theme','sporty'); ?></a>
-            <?php echo __( 'Powered By WordPress ', 'sporty' ); ?>
+Ein Geschäft der Sport&nbsp;E.&M.&nbsp;Pfister&nbsp;Uster&nbsp;GmbH und Sport&nbsp;Miete&nbsp;Uster&nbsp;GmbH
 		</div><!-- .site-info -->
 	</footer><!-- #colophon .site-footer -->
     <a href="#top" id="smoothup"></a>

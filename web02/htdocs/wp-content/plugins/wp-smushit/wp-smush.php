@@ -4,9 +4,9 @@ Plugin Name: WP Smush
 Plugin URI: http://wordpress.org/extend/plugins/wp-smushit/
 Description: Reduce image file sizes, improve performance and boost your SEO using the free <a href="https://premium.wpmudev.org/">WPMU DEV</a> WordPress Smush API.
 Author: WPMU DEV
-Version: 2.0.6.1
+Version: 2.0.6.2
 Author URI: http://premium.wpmudev.org/
-Textdomain: wp_smush
+Textdomain: wp-smushit
 */
 
 /*
@@ -41,7 +41,6 @@ $smush_constatns = array(
 	'VERSON'            => $version,
 	'BASENAME'          => plugin_basename( __FILE__ ),
 	'API'               => 'https://smushpro.wpmudev.org/1.0/',
-	'DOMAIN'            => 'wp_smush',
 	'UA'                => 'WP Smush/' . $version . '; ' . network_home_url(),
 	'DIR'               => plugin_dir_path( __FILE__ ),
 	'URL'               => plugin_dir_url( __FILE__ ),
@@ -122,7 +121,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		}
 
 		function admin_init() {
-			load_plugin_textdomain( WP_SMUSH_DOMAIN, false, dirname( WP_SMUSH_BASENAME ) . '/languages/' );
+			load_plugin_textdomain( 'wp-smushit', false, dirname( WP_SMUSH_BASENAME ) . '/languages/' );
 			wp_enqueue_script( 'common' );
 		}
 
@@ -139,21 +138,21 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		function do_smushit( $file_path = '', $file_url = '' ) {
 			$errors = new WP_Error();
 			if ( empty( $file_path ) ) {
-				$errors->add( "empty_path", __( "File path is empty", WP_SMUSH_DOMAIN ) );
+				$errors->add( "empty_path", __( "File path is empty", 'wp-smushit' ) );
 			}
 
 			if ( empty( $file_url ) ) {
-				$errors->add( "empty_url", __( "File URL is empty", WP_SMUSH_DOMAIN ) );
+				$errors->add( "empty_url", __( "File URL is empty", 'wp-smushit' ) );
 			}
 
 			// check that the file exists
 			if ( ! file_exists( $file_path ) || ! is_file( $file_path ) ) {
-				$errors->add( "file_not_found", sprintf( __( "Could not find %s", WP_SMUSH_DOMAIN ), $file_path ) );
+				$errors->add( "file_not_found", sprintf( __( "Could not find %s", 'wp-smushit' ), $file_path ) );
 			}
 
 			// check that the file is writable
 			if ( ! is_writable( dirname( $file_path ) ) ) {
-				$errors->add( "not_writable", sprintf( __( "%s is not writable", WP_SMUSH_DOMAIN ), dirname( $file_path ) ) );
+				$errors->add( "not_writable", sprintf( __( "%s is not writable", 'wp-smushit' ), dirname( $file_path ) ) );
 			}
 
 			$file_size = file_exists( $file_path ) ? filesize( $file_path ) : 0;
@@ -163,12 +162,12 @@ if ( ! class_exists( 'WpSmush' ) ) {
 
 			//Check if file exists
 			if ( $file_size == 0 ) {
-				$errors->add( "image_not_found", sprintf( __( 'Skipped (%s), image not found.', WP_SMUSH_DOMAIN ), $this->format_bytes( $file_size ) ) );
+				$errors->add( "image_not_found", sprintf( __( 'Skipped (%s), image not found.', 'wp-smushit' ), $this->format_bytes( $file_size ) ) );
 			}
 
 			//Check size limit
 			if ( $file_size > $max_size ) {
-				$errors->add( "size_limit", sprintf( __( 'Skipped (%s), size limit exceeded.', WP_SMUSH_DOMAIN ), $this->format_bytes( $file_size ) ) );
+				$errors->add( "size_limit", sprintf( __( 'Skipped (%s), size limit exceeded.', 'wp-smushit' ), $this->format_bytes( $file_size ) ) );
 			}
 
 			if ( count( $errors->get_error_messages() ) ) {
@@ -183,7 +182,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			}
 			//If there is no data
 			if ( empty( $response['data'] ) ) {
-				$errors->add( "no_data", __( 'Unknown API error', WP_SMUSH_DOMAIN ) );
+				$errors->add( "no_data", __( 'Unknown API error', 'wp-smushit' ) );
 			}
 
 			if ( count( $errors->get_error_messages() ) ) {
@@ -327,7 +326,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 						list( $size_before, $size_after, $total_time, $compression, $bytes_saved )
 							= $this->_update_stats_data( $response['data'], $size_before, $size_after, $total_time, $bytes_saved );
 					} else {
-						$errors->add( "image_size_error" . $size_key, sprintf( __( "Size '%s' not processed correctly", WP_SMUSH_DOMAIN ), $size_key ) );
+						$errors->add( "image_size_error" . $size_key, sprintf( __( "Size '%s' not processed correctly", 'wp-smushit' ), $size_key ) );
 					}
 
 					if ( empty( $stats['stats']['api_version'] ) || $stats['stats']['api_version'] == - 1 ) {
@@ -349,7 +348,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				if ( ! empty( $full_image_response['data'] ) ) {
 					$stats['sizes']['full'] = (object) $this->_array_fill_placeholders( $this->_get_size_signature(), (array) $full_image_response['data'] );
 				} else {
-					$errors->add( "image_size_error", __( "Size 'full' not processed correctly", WP_SMUSH_DOMAIN ) );
+					$errors->add( "image_size_error", __( "Size 'full' not processed correctly", 'wp-smushit' ) );
 				}
 
 				//Update stats
@@ -357,7 +356,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 					list( $size_before, $size_after, $total_time, $compression, $bytes_saved )
 						= $this->_update_stats_data( $full_image_response['data'], $size_before, $size_after, $total_time, $bytes_saved );
 				} else {
-					$errors->add( "image_size_error", __( "Size 'full' not processed correctly", WP_SMUSH_DOMAIN ) );
+					$errors->add( "image_size_error", __( "Size 'full' not processed correctly", 'wp-smushit' ) );
 				}
 
 				//Api version and lossy, for some images, full image i skipped and for other images only full exists
@@ -473,13 +472,13 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			unset( $file_data );//free memory
 			if ( is_wp_error( $result ) ) {
 				//Handle error
-				$data['message'] = sprintf( __( 'Error posting to API: %s', WP_SMUSH_DOMAIN ), $result->get_error_message() );
+				$data['message'] = sprintf( __( 'Error posting to API: %s', 'wp-smushit' ), $result->get_error_message() );
 				$data['success'] = false;
 				unset( $result ); //free memory
 				return $data;
 			} else if ( '200' != wp_remote_retrieve_response_code( $result ) ) {
 				//Handle error
-				$data['message'] = sprintf( __( 'Error posting to API: %s %s', WP_SMUSH_DOMAIN ), wp_remote_retrieve_response_code( $result ), wp_remote_retrieve_response_message( $result ) );
+				$data['message'] = sprintf( __( 'Error posting to API: %s %s', 'wp-smushit' ), wp_remote_retrieve_response_code( $result ), wp_remote_retrieve_response_message( $result ) );
 				$data['success'] = false;
 				unset( $result ); //free memory
 
@@ -496,7 +495,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 					$image_md5 = md5( $response->data->image );
 					if ( $response->data->image_md5 != $image_md5 ) {
 						//Handle error
-						$data['message'] = __( 'Smush data corrupted, try again.', WP_SMUSH_DOMAIN );
+						$data['message'] = __( 'Smush data corrupted, try again.', 'wp-smushit' );
 						$data['success'] = false;
 						unset( $image );//free memory
 					} else {
@@ -512,7 +511,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				}
 			} else {
 				//Server side error, get message from response
-				$data['message'] = ! empty( $response->data ) ? $response->data : __( "Image couldn't be smushed", WP_SMUSH_DOMAIN );
+				$data['message'] = ! empty( $response->data ) ? $response->data : __( "Image couldn't be smushed", 'wp-smushit' );
 				$data['success'] = false;
 			}
 
@@ -683,13 +682,13 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				$percent        = $percent < 0 ? 0 : $percent;
 
 				if ( isset( $wp_smush_data['stats']['size_before'] ) && $wp_smush_data['stats']['size_before'] == 0 ) {
-					$status_txt  = __( 'Error processing request', WP_SMUSH_DOMAIN );
+					$status_txt  = __( 'Error processing request', 'wp-smushit' );
 					$show_button = true;
 				} else {
 					if ( $bytes == 0 || $percent == 0 ) {
-						$status_txt = __( 'Already Optimized', WP_SMUSH_DOMAIN );
+						$status_txt = __( 'Already Optimized', 'wp-smushit' );
 					} elseif ( ! empty( $percent ) && ! empty( $bytes_readable ) ) {
-						$status_txt = sprintf( __( "Reduced by %s (  %01.1f%% )", WP_SMUSH_DOMAIN ), $bytes_readable, number_format_i18n( $percent, 2, '.', '' ) );
+						$status_txt = sprintf( __( "Reduced by %s (  %01.1f%% )", 'wp-smushit' ), $bytes_readable, number_format_i18n( $percent, 2, '.', '' ) );
 					}
 				}
 
@@ -709,19 +708,19 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				//Check if premium user, compression was lossless, and lossy compression is enabled
 				if ( $this->is_pro() && ! $is_lossy && $opt_lossy_val && $image_type != 'image/gif' ) {
 					// the button text
-					$button_txt  = __( 'Super-Smush', WP_SMUSH_DOMAIN );
+					$button_txt  = __( 'Super-Smush', 'wp-smushit' );
 					$show_button = true;
 				}
 			} else {
 
 				// the status
-				$status_txt = __( 'Not processed', WP_SMUSH_DOMAIN );
+				$status_txt = __( 'Not processed', 'wp-smushit' );
 
 				// we need to show the smush button
 				$show_button = true;
 
 				// the button text
-				$button_txt = __( 'Smush Now!', WP_SMUSH_DOMAIN );
+				$button_txt = __( 'Smush Now!', 'wp-smushit' );
 			}
 			if ( $text_only ) {
 				return $status_txt;
@@ -857,15 +856,61 @@ if ( ! class_exists( 'WpSmush' ) ) {
 //Include Admin classes
 require_once( WP_SMUSH_DIR . '/lib/class-wp-smush-bulk.php' );
 require_once( WP_SMUSH_DIR . '/lib/class-wp-smush-admin.php' );
-//include_once( WP_SMUSH_DIR . '/extras/dash-notice/wpmudev-dash-notification.php' );
 
-//register items for the dashboard plugin
-global $wpmudev_notices;
-$wpmudev_notices[] = array(
-	'id'      => 912164,
-	'name'    => 'WP Smush Pro',
-	'screens' => array(
-		'media_page_wp-smush-bulk',
-		'upload'
-	)
+//require_once( WP_SMUSH_DIR . '/extras/dash-notice/wpmudev-dash-notification.php' );
+require_once( WP_SMUSH_DIR . '/extras/free-dashboard/module.php' );
+
+// Register the current plugin.
+do_action(
+	'wdev-register-plugin',
+	/* 1             Plugin ID */ plugin_basename( __FILE__ ), /* Plugin ID */
+	/* 2          Plugin Title */ 'WP Smush',
+	/* 3 https://wordpress.org */ '/plugins/wp-smushit/',
+	/* 4      Email Button CTA */ __( 'Get Fast', 'wp-smushit' ),
+	/* 5  getdrip Plugin param */ 'Smush'
 );
+
+// The rating message contains 2 variables: user-name, plugin-name
+add_filter(
+	'wdev-rating-message-' . plugin_basename( __FILE__ ),
+	'wp_smush_rating_message'
+);
+
+/**
+ * Filters the rating message, include stats if greater than 1Mb
+ * @param $message
+ *
+ * @return string
+ */
+function wp_smush_rating_message( $message ) {
+	global $wpsmushit_admin;
+	$savings     = $wpsmushit_admin->global_stats();
+	$image_count = $wpsmushit_admin->total_count();
+	$show_stats = false;
+
+	//If there is any saving, greater than 1Mb, show stats
+	if( !empty( $savings ) && !empty( $savings['bytes'] ) && $savings['bytes'] > 1048576 ) {
+		$show_stats = true;
+	}
+
+	$message = "Hey %s, you've been using %s for a while now, and we hope you're happy with it.";
+
+	//Conditionally Show stats in rating message
+	if( $show_stats ) {
+		$message .= sprintf( " You've smushed <strong>%s</strong> from %d images already, improving the speed and SEO ranking of this site!", $savings['human'], $image_count );
+	}
+	$message .= " We've spent countless hours developing this free plugin for you, and we would really appreciate it if you dropped us a quick rating!";
+
+	return $message;
+}
+
+// The email message contains 1 variable: plugin-name
+add_filter(
+	'wdev-email-message-' . plugin_basename( __FILE__ ),
+	'wp_smush_email_message'
+);
+function wp_smush_email_message( $message ) {
+	$message = "You're awesome for installing %s! Site speed isn't all image optimization though, so we've collected all the best speed resources we know in a single email - just for users of WP Smush!";
+	return $message;
+}
+// All done!
