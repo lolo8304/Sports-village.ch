@@ -4,7 +4,7 @@ Donate link: http://www.patrickrauland.com
 Tags: form, forms, contact form, mailpoet, wysija, contact form 7, newsletters, email
 Requires at least: 3.7.1
 Tested up to: 3.9.2
-Stable tag: 1.0.6
+Stable tag: 1.0.7.1
 
 License: GPLv2 or later
 
@@ -53,6 +53,12 @@ After installing & activating the plugin it's time to set up your form.
 
 
 == Changelog ==
+= 1.0.7.1 =
+* Fixed directory errors.
+
+= 1.0.7 =
+* Added class checking to make sure fatal errors are not thrown if CF7 classes do not exist.
+
 = 1.0.6 =
 * Updated tag generator form to new CF7 standard
 * Fixed css id output for signup checkbox
