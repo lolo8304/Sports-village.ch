@@ -1,0 +1,264 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Contact Form 7 Datepicker"
+msgstr ""
+
+#. Short description.
+msgid ""
+"Easily add a date field using jQuery UI&#039;s datepicker to your CF7 forms.\n"
+"This plugin depends on Contact Form 7."
+msgstr ""
+
+#. Screenshot description.
+msgid "The datepicker in action"
+msgstr ""
+
+#. Screenshot description.
+msgid "Change themes"
+msgstr ""
+
+#. Screenshot description.
+msgid "Date field generator"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Please follow the <a href=\"http://codex.wordpress.org/Managing_Plugins#Installing_Plugins\">standard installation procedure for WordPress plugins</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix i18n"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatible with CF7 4.3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add ability to set custom theme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Apply cf7dp_is_valid_date filter for date validation (Kudos to Viktor Szepe)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatible with CF7 3.7.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatible with CF7 3.6"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix min/max hour/minute/second"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update timepicker addon"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update jqueryui version number"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed inline date/time pickers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed minDate and maxDate attributes for date and datetime fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added noWeekend to date and datetime fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added stepHour, stepMinutes and stepSeconds attributes to time and datetime fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Make use of CF7's new Shortcode Tag API"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix year-range issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix date field generator not showing up anymore"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Validate dd/mm/yy dates correctly"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Made it work with CF7 3.4"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Use full jquery-ui version on asset paths"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add Date Range feature (thanks @dollardad)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added fix for watermark on field update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added basic date validation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed watermark"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added inline option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed tag generator"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed date format when localized"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Complete rewrite, using jquery-ui's datepicker"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "datepicker shortcode works now if contact form 7 is not installed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "fixed Janaury typo"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "fixed field value not showing up in email message when field values contain hyphens and other non-alphanumeric chars"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "fixed calendar not popping out when no id attribute specified in CF7 shortcode"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added new [datepicker] tag to use outside of CF7"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added CF7 specific attributes for the shortcodes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Now you can have input fields prefilled with a desired date either from the configuration menu, or by specifying it in the shortcode as an attribute"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "the entry in admin menu is now being translated"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "fixed an IE issue where clicking on move forward/backward (years and months) buttons would close the calendar (thanks to <a href=\"https://github.com/bik\">bik</a> for reporting)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "added Italian l11n (Kudos go to Andrea Cavaliero)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "the name of the js var that holds the jsDatePick object is now escaped so no illegal char gets printed (regards <a href=\"http://wordpress.org/support/profile/petrus006\">Petrus</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "removed any posibility of the calendar being displayed more than once at a time on a page when in Mode 2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "controls option now works"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "animate the calendar on display option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "added Dutch translations (regards <a href=\"http://wordpress.org/support/profile/petrus006\">Petrus</a>)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "limit selectable dates according to current date (before or or after)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "available years range option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "the posibility to show/hide the month and year controls (forward/backward)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added new scheme (red)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added the posibility to use custom stylesheet files with color schemes (located in css/schemes/.css)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed translations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added tag generator"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed input field not being populated on date selection"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed some romanian translation typos"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Only one calendar can be shown on a page at a time (datepicker closes onblur)"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Bugfixes:"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "New:"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "then in your theme's functions.php file you have two options:"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "or"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "First release"
+msgstr ""
+
+#. Found in faq header.
+msgid "Where do I submit a bug?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can <a href=\"https://github.com/relu/contact-form-7-datepicker/issues\">open an issue on github</a> or just contact me via email."
+msgstr ""
