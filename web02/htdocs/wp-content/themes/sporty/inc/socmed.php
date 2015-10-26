@@ -56,6 +56,6 @@
 			<li><a href="<?php echo esc_url( get_theme_mod( 'github' ) ); ?>" class="genericon genericon-github" target="_blank"></a></li>
 		<?php endif; ?>
 
-			<li><a href="whatsapp://+41765594775" class="genericon" target="_blank"><img src="/wp-content/uploads/2015/09/whatsapp-logo-18x18@2.png" style="width:18px"></a></li>
+			<li><a href="/kontakt-whatsapp/" class="genericon"><img src="/wp-content/uploads/2015/09/whatsapp-logo-18x18@2.png" style="width:18px"></a></li>
 
 	</ul><!-- #social-icons-->

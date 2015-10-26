@@ -215,7 +215,9 @@ class DigitalPointBetterAnalytics_Base_Public
 				),
 				'campaign_tracking' => 'anchor',
 
-				'sample_rate' => 100
+				'sample_rate' => 100,
+				'engagement_time' => 15
+
 			);
 
 			update_option('better_analytics', $_defaultOptions);

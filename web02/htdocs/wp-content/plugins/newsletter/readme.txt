@@ -1,6 +1,6 @@
 === Newsletter ===
 Tags: newsletter,email,subscription,mass mail,list build,email marketing,direct mailing
-Requires at least: 3.3.0
+Requires at least: 3.4.0
 Tested up to: 4.3.1
 Stable tag: trunk
 Contributors: satollo,webagile,michael-travan
@@ -42,6 +42,8 @@ our **premium, professional Extensions**! Let us introduce just two of them : )
 
 * [Reports Extension](http://www.thenewsletterplugin.com/plugins/newsletter/reports-module) is a regular WordPress plugin which improves the internal statistics collection system and provides better reports of data collected for each sent email. Neat.
 * [Feed By Mail Extension](http://www.thenewsletterplugin.com/feed-by-mail-extension) generates and sends your newsletters using your blog last posts, even custom ones like events or products. Just sit and watch! 
+* [WooCommerce Extension](http://www.thenewsletterplugin.com/woocommerce-extension) subscribe customers to a mailing list and generate product newletters.
+* [Amazon SES Extension](http://www.thenewsletterplugin.com/amazon-ses-extension-for-the-newsletter-plugin) seamlessly integrate Amazon SES with The Newsletter Plugin. Hassle-free.
 
 = Support =
 
@@ -73,6 +75,48 @@ Thank you, The Newsletter Team
 No screenshots are available at this time.
 
 == Changelog ==
+
+= 3.9.6 =
+
+* Fixed the online view
+
+= 3.9.5 =
+
+* Corrected the call to maybe_maybe_convert_table_to_utf8mb4
+* Private newsletter check
+* Force UTF-8 on newsletter online view
+* Re-enabled the antibot option for ajax subscriptions
+
+= 3.9.4 =
+
+* CSV export fix
+* Delete button on newsletter list fixed (wrong since version 3.9.3)
+
+= 3.9.3 =
+
+* Added the blog charset to the dagnostic panel
+* Fixed the read count (was due to antispam filter changes)
+* Language domain fixes
+
+= 3.9.2 =
+
+* Fixed the tab separator in CSV export
+* Removed the already subscribed option
+* Removed obsolete code for anchor tracking
+* Added the sent newsletters to the subscriber editing panel
+* Added a sent-to table
+
+= 3.9.1 =
+
+* Enable the tracking key edit
+* Removed the antibot option, active by default
+* First round of changes for translate.wordpress.org
+* Fixed few notices
+* Added deprecation notices for the email.php and email-alternative.php files
+* Fixed the export separator
+* Removed reference to plugin files in URLs to avoid spam filter
+* Removed the selection of Newsletter action URL
+* Removed obsolete files
 
 = 3.9.0 =
 

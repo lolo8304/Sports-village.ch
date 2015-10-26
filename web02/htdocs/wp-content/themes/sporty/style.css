@@ -910,14 +910,18 @@ body.archive .page-title {
 .comment-content thead th {
 	border-left: 1px solid #d9d9d9;
 	font-weight: bold;
-	padding: 0.5em 	1.25em;
+	padding: 0;
 }
+/* old padding: 0.5em 	1.25em; */ 
 .entry-content tr td,
 .comment-content tr td {
 	border: 1px solid #d9d9d9;
   	border-width: 1px 0 0 1px;
-	padding: 0.5em 	1.25em;
+	padding: 0;
 }
+/* old padding : 0.5em 	1.25em; */
+
+
 .entry-content tr.odd td,
 .comment-content tr.odd td {
 	background: #dfd6c7;
