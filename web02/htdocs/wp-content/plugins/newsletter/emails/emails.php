@@ -6,7 +6,6 @@ require_once NEWSLETTER_INCLUDES_DIR . '/module.php';
 class NewsletterEmails extends NewsletterModule {
 
     static $instance;
-    var $action;
 
     /**
      * @return NewsletterEmails
@@ -19,21 +18,37 @@ class NewsletterEmails extends NewsletterModule {
     }
 
     function __construct() {
-        // Grab it before a (stupid) plugin removes it.
-        $this->action = isset($_REQUEST['na']) ? $_REQUEST['na'] : '';
         $this->themes = new NewsletterThemes('emails');
-        parent::__construct('emails', '1.1.1');
-
-        if (!is_admin() && !empty($this->action)) {
-            add_action('wp_loaded', array($this, 'hook_wp_loaded'));
-        }
+        parent::__construct('emails', '1.1.2');
+        add_action('wp_loaded', array($this, 'hook_wp_loaded'));
     }
 
     function hook_wp_loaded() {
         global $newsletter, $wpdb;
-        switch ($this->action) {
+        switch ($newsletter->action) {
             case 'v':
-                include dirname(__FILE__) . '/../do/view.php';
+                // TODO: Change to Newsletter::instance()->get:email(), not urgent
+                $email = $this->get_email((int) $_GET['id']);
+                if (empty($email)) {
+                    die('Email not found');
+                }
+
+                if ($email->private == 1) {
+                    die('Email not found');
+                }
+
+                $user = NewsletterSubscription::instance()->get_user_from_request();
+                header('Content-Type: text/html;charset=UTF-8');
+                header('X-Robots-Tag: noindex,nofollow,noarchive');
+                header('Cache-Control: no-cache,no-store,private');
+
+                if (is_file(WP_CONTENT_DIR . '/extensions/newsletter/view.php')) {
+                    include WP_CONTENT_DIR . '/extensions/newsletter/view.php';
+                    die();
+                }
+
+                echo $newsletter->replace($email->message, $user, $email->id);
+
                 die();
         }
     }

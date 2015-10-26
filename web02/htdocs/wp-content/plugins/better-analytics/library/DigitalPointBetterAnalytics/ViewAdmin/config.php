@@ -1068,8 +1068,24 @@
 									<input type="number" name="better_analytics[sample_rate]" id="ba_sample_rate" min="1" max="100" step="1" value="<?php echo esc_attr( intval(@$betterAnalyticsOptions['sample_rate']) >= 1 && intval(@$betterAnalyticsOptions['sample_rate']) <= 100 ? intval(@$betterAnalyticsOptions['sample_rate']) : 100 ); ?>" /> %
 								</div>
 							</div>
+						</div>
+					</fieldset>
 
+				</td>
+			</tr>
 
+			<tr valign="top" class="group_advanced tab_content">
+				<th scope="row"><?php esc_html_e('User Engagement Time', 'better-analytics');?> <span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('This is the time (in seconds) before we consider the user "engaged".  This setting only applies if you use the "User Engagement" event tracking (under General tab).', 'better-analytics');?>"></span>
+				</th>
+				<td>
+
+					<fieldset>
+						<div style="display:table">
+							<div style="display:table-row">
+								<div style="display:table-cell">
+									<input type="number" name="better_analytics[engagement_time]" id="ba_engagement_time" min="1" max="600" step="1" value="<?php echo esc_attr( intval(@$betterAnalyticsOptions['engagement_time']) >= 1 && intval(@$betterAnalyticsOptions['engagement_time']) <= 600 ? intval(@$betterAnalyticsOptions['engagement_time']) : 15 ); ?>" /> <?php esc_html_e('seconds', 'better-analytics');?>
+								</div>
+							</div>
 						</div>
 					</fieldset>
 

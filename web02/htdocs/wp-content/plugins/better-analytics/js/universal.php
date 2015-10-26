@@ -81,6 +81,11 @@ if (@$betterAnalyticsOptions['sample_rate'] > 0 && $betterAnalyticsOptions['samp
 	$createOptions['sampleRate'] = intval($betterAnalyticsOptions['sample_rate']);
 }
 
+if (@$betterAnalyticsOptions['events']['user_engagement'])
+{
+	$jsonOptions['et'] = (@$betterAnalyticsOptions['engagement_time'] > 0 && $betterAnalyticsOptions['engagement_time'] <= 600 ? intval($betterAnalyticsOptions['engagement_time']) : 15);
+}
+
 if (!$createOptions)
 {
 	$createOptions = 'auto';

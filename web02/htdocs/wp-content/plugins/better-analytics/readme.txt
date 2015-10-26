@@ -3,8 +3,8 @@ Contributors: digitalpoint
 Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, google analytics plugin, google analytics widget, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, twitter, pinterest, linkedin, facebook, google, digitalpoint, ab testing, ab tests, split testing, google analytics content experiments, content experiments
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
-Tested up to: 4.3.0
-Stable tag: 1.1.1
+Tested up to: 4.3.1
+Stable tag: 1.1.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -146,7 +146,7 @@ If it's possible and it makes sense, then yes.  The best way to put in a feature
 The Google Analytics Content Experiments are run automatically on the server-side, so there is no special configuration or JavaScript you need to be injecting.  You also don't need to make duplicate pages with your variations.  We've simplified it so anyone can easily run A/B testing on their site with Google Analytics Content Experiments.
 
 = I speak a language that isn't supported by Better Google Analytics, can I help translate it? =
-Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating the Better Google Analytics plugin, please contact us in the [support forum over here](https://forums.digitalpoint.com/forums/better-analytics.31/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin).
+Yes.  Unfortunately we don't speak every language in the world, so if you would like to help with translating the Better Google Analytics plugin, you can use the [translation system on wordpress.org](https://translate.wordpress.org/projects/wp-plugins/better-analytics).
 
 = Does Better Google Analytics Support A WordPress Multisite Network? =
 Yes, you can install the Better Google Analytics plugin for a single site in the network or for all sites in the network.  Additionally, you can optionally link a single Google Analytics account for all sites in the network (or you can link unique Google Analytics accounts for each site in the network... either way, it's up to you).
@@ -167,7 +167,7 @@ The JavaScript used by Better Google Analytics should be able to be cached prope
 
 == Thanks ==
 
-Thank you to all the individuals who have contributed translations for Better Google Analytics:
+Thank you to all the individuals who have contributed translations for Better Google Analytics (please send us a note if you have helped translating Better Google Analytics):
 
 * Indonesian: [Arick](http://www.developingwp.com/#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin)
 
@@ -201,6 +201,10 @@ Thank you to all the individuals who have contributed translations for Better Go
 26. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.1.2 =
+* Feature: User Engagement Time can be set by the user (under Advanced settings tab)
+* Bug: Workaround Internet Explorer not having location origin variable available
+
 = 1.1.1 =
 * Enhancement: Changed how JavaScript loads so it still works with other plugins that throw JavaScript exceptions/errors (should also allow capturing of those errors within the Issue Monitoring area of Better Google Analytics)
 * Enhancement: Reintroduced option to put Google Analytics code in the page header (changed how loading system works to make it viable with running Google Analytics Content Experiments)
