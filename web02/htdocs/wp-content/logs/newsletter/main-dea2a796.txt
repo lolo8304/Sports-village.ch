@@ -1,0 +1,4 @@
+29-10-2015 23:21:06 - ERROR - 41,9 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: bBM61r00F1KuWt803BM6Db - Spam Detected (650)
+ SMTP code: 552 Additional SMTP info: 5.2.0
+29-10-2015 23:22:41 - ERROR - 41,9 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: bBNh1r0011KuWt803BNhNM - Spam Detected (650)
+ SMTP code: 552 Additional SMTP info: 5.2.0
