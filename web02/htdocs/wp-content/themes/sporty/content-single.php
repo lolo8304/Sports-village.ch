@@ -18,7 +18,7 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php sporty_posted_on(); ?>
+			<!--?php sporty_posted_on(); ?-->
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
