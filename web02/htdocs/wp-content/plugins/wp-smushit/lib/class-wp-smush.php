@@ -6,32 +6,29 @@ if ( ! class_exists( 'WpSmush' ) ) {
 
 		var $version = WP_SMUSH_VERSION;
 
-		var $is_pro;
-
 		/**
-		 * Meta key for api validity
-		 *
+		 * @var Stores the value of is_pro function
 		 */
-		const VALIDITY_KEY = "wp-smush-valid";
+		private $is_pro;
 
 		/**
 		 * Api server url to check api key validity
 		 *
 		 */
-		const API_SERVER = 'https://premium.wpmudev.org/wdp-un.php?action=smushit_check';
+		var $api_server = 'https://premium.wpmudev.org/wdp-un.php?action=smushit_check';
 
 		/**
 		 * Meta key to save smush result to db
 		 *
 		 *
 		 */
-		const SMUSHED_META_KEY = 'wp-smpro-smush-data';
+		var $smushed_meta_key = 'wp-smpro-smush-data';
 
 		/**
 		 * Meta key to save migrated version
 		 *
 		 */
-		const MIGRATED_VERSION = "wp-smush-migrated-version";
+		var $migrated_version_key = "wp-smush-migrated-version";
 
 		/**
 		 * Constructor
@@ -62,6 +59,9 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			//Add Smush Columns
 			add_filter( 'manage_media_columns', array( $this, 'columns' ) );
 			add_action( 'manage_media_custom_column', array( $this, 'custom_column' ), 10, 2 );
+			add_filter( 'manage_upload_sortable_columns', array( $this, 'sortable_column' ) );
+			//Manage column sorting
+			add_action( 'pre_get_posts', array( $this, 'smushit_orderby' ) );
 
 			//Enqueue Scripts
 			add_action( 'admin_init', array( $this, 'admin_init' ) );
@@ -69,10 +69,18 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			//Old Smush stats migration
 			add_action( "admin_init", array( $this, "migrate" ) );
 
+			//Load Translation files
+			add_action( 'plugins_loaded', array( $this, 'i18n' ), 12 );
+
+			//Load NextGen Gallery, if hooked too late or early, auto smush doesn't works, also Load after settings have been saved on init action
+			add_action( 'plugins_loaded', array( $this, 'load_nextgen' ), 90 );
+		}
+
+		function i18n() {
+			load_plugin_textdomain( 'wp-smushit', false, WP_SMUSH_DIR . '/languages/' );
 		}
 
 		function admin_init() {
-			load_plugin_textdomain( 'wp-smushit', false, dirname( WP_SMUSH_BASENAME ) . '/languages/' );
 			wp_enqueue_script( 'common' );
 		}
 
@@ -88,6 +96,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 */
 		function do_smushit( $file_path = '' ) {
 			$errors = new WP_Error();
+			$dir_name = dirname( $file_path );
 			if ( empty( $file_path ) ) {
 				$errors->add( "empty_path", __( "File path is empty", 'wp-smushit' ) );
 			}
@@ -98,11 +107,11 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			}
 
 			// check that the file is writable
-			if ( ! is_writable( dirname( $file_path ) ) ) {
-				$errors->add( "not_writable", sprintf( __( "%s is not writable", 'wp-smushit' ), dirname( $file_path ) ) );
+			if ( ! is_writable( $dir_name ) ) {
+				$errors->add( "not_writable", sprintf( __( "%s is not writable", 'wp-smushit' ), $dir_name ) );
 			}
 
-			$file_size = filesize( $file_path );
+			$file_size = file_exists( $file_path ) ? filesize( $file_path ) : '';
 
 			//Check if premium user
 			$max_size = $this->is_pro() ? WP_SMUSH_PREMIUM_MAX_BYTES : WP_SMUSH_MAX_BYTES;
@@ -183,7 +192,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 *
 		 * @return array
 		 */
-		private function _array_fill_placeholders( array $placeholders, array $data ) {
+		function _array_fill_placeholders( array $placeholders, array $data ) {
 			$placeholders['percent']     = $data['compression'];
 			$placeholders['bytes']       = $data['bytes_saved'];
 			$placeholders['size_before'] = $data['before_size'];
@@ -198,7 +207,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 *
 		 * @return array
 		 */
-		private function _get_size_signature() {
+		function _get_size_signature() {
 			return array(
 				'percent'     => - 1,
 				'bytes'       => - 1,
@@ -263,14 +272,15 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				}else{
 					$finfo = false;
 				}
+				$image_path = trailingslashit( dirname( $attachment_file_path ) );
 				foreach ( $meta['sizes'] as $size_key => $size_data ) {
 
 					// We take the original image. The 'sizes' will all match the same URL and
 					// path. So just get the dirname and replace the filename.
-					$attachment_file_path_size = trailingslashit( dirname( $attachment_file_path ) ) . $size_data['file'];
+					$attachment_file_path_size =  $image_path . $size_data['file'];
 
 					if ( $finfo ) {
-						$ext = $finfo->file( $attachment_file_path_size );
+						$ext = file_exists( $attachment_file_path_size ) ? $finfo->file( $attachment_file_path_size ) : '';
 					} elseif ( function_exists( 'mime_content_type' ) ) {
 						$ext = mime_content_type( $attachment_file_path_size );
 					} else {
@@ -289,6 +299,16 @@ if ( ! class_exists( 'WpSmush' ) ) {
 						if ( false === $valid_mime ) {
 							continue;
 						}
+					}
+					/**
+					 * Allows to skip a image from smushing
+					 *
+					 * @param bool , Smush image or not
+					 * @$size string, Size of image being smushed
+					 */
+					$smush_image = apply_filters( 'wp_smush_media_image', true, $size_key );
+					if ( ! $smush_image ) {
+						continue;
 					}
 
 					//Store details for each size key
@@ -319,8 +339,16 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				$smush_full = true;
 			}
 
+			/**
+			 * Allows to skip a image from smushing
+			 *
+			 * @param bool , Smush image or not
+			 * @$size string, Size of image being smushed
+			 */
+			$smush_full_image = apply_filters( 'wp_smush_media_image', true, 'full' );
+
 			//If original size is supposed to be smushed
-			if ( $smush_full ) {
+			if ( $smush_full && $smush_full_image ) {
 
 				$full_image_response = $this->do_smushit( $attachment_file_path );
 
@@ -360,7 +388,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			//Set smush status for all the images, store it in wp-smpro-smush-data
 			if ( ! $has_errors ) {
 
-				$existing_stats = get_post_meta( $ID, self::SMUSHED_META_KEY, true );
+				$existing_stats = get_post_meta( $ID, $this->smushed_meta_key, true );
 
 				if ( ! empty( $existing_stats ) ) {
 					//Update total bytes saved, and compression percent
@@ -382,7 +410,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 						}
 					}
 				}
-				update_post_meta( $ID, self::SMUSHED_META_KEY, $stats );
+				update_post_meta( $ID, $this->smushed_meta_key, $stats );
 			}
 
 			return $meta;
@@ -394,7 +422,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 *
 		 * Filters  wp_generate_attachment_metadata
 		 *
-		 * @uses WpSmush::resize_from_meta_data
+		 * @uses resize_from_meta_data
 		 *
 		 * @param $meta
 		 * @param null $ID
@@ -574,35 +602,37 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				return false;
 			}
 
-			$key = "wp-smush-premium-" . substr( $api_key, - 10, 10 ); //add last 10 chars of apikey to transient key in case it changes
-			if ( false === ( $valid = get_site_transient( $key ) ) ) {
+			//W3TC disk cache is buggy and always converts 0 to false, so we have to store as string
+			$key = "wp-smush-premium-" . substr( $api_key, - 5, 5 ); //add last 5 chars of apikey to transient key in case it changes
+			$valid = get_site_transient( $key );
+			if ( empty( $valid ) ) {
 				// call api
-				$url = self::API_SERVER . '&key=' . urlencode( $api_key );
+				$url = $this->api_server . '&key=' . urlencode( $api_key );
 
 				$request = wp_remote_get( $url, array(
 						"user-agent" => WP_SMUSH_UA,
-						"timeout"    => 3
+						"timeout"    => 10
 					)
 				);
 
 				if ( ! is_wp_error( $request ) && '200' == wp_remote_retrieve_response_code( $request ) ) {
 					$result = json_decode( wp_remote_retrieve_body( $request ) );
 					if ( $result && $result->success ) {
-						$valid = true;
-						set_site_transient( $key, 1, 12 * HOUR_IN_SECONDS );
+						$valid = 'true';
+						set_site_transient( $key, 'true', 12 * HOUR_IN_SECONDS );
 					} else {
-						$valid = false;
-						set_site_transient( $key, 0, 30 * MINUTE_IN_SECONDS ); //cache failure much shorter
+						$valid = 'false';
+						set_site_transient( $key, 'false', DAY_IN_SECONDS );
 					}
 
 				} else {
-					$valid = false;
-					set_site_transient( $key, 0, 5 * MINUTE_IN_SECONDS ); //cache network failure even shorter, we don't want a request every pageload
+					$valid = 'false';
+					set_site_transient( $key, 'false', 5 * MINUTE_IN_SECONDS ); //cache network failure even shorter, we don't want a request every pageload
 				}
 
 			}
 
-			$this->is_pro = (bool) $valid;
+			$this->is_pro = ( 'true' == $valid );
 
 			return $this->is_pro;
 		}
@@ -612,20 +642,12 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 *
 		 * @return mixed
 		 */
-		private function _get_api_key() {
-			//Try to fetch it from Cache
-			$api_key = wp_cache_get( 'wpmudev_apikey', 'smush' );
+		function _get_api_key() {
 
-			//If not available, get it from other means, and set it in cache
-			if ( ! $api_key ) {
-				if ( defined( 'WPMUDEV_APIKEY' ) ) {
-					$api_key = WPMUDEV_APIKEY;
-				} else {
-					$api_key = get_site_option( 'wpmudev_apikey' );
-				}
-				if ( $api_key ) {
-					wp_cache_add( "wpmudev_apikey", $api_key, 'smush', 6000 );
-				}
+			if ( defined( 'WPMUDEV_APIKEY' ) ) {
+				$api_key = WPMUDEV_APIKEY;
+			} else {
+				$api_key = get_site_option( 'wpmudev_apikey' );
 			}
 
 			return $api_key;
@@ -683,10 +705,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			$status_txt  = $button_txt = '';
 			$show_button = false;
 
-			//Stats are not received properly, otherwise
-//			wp_cache_delete( $id, 'post_meta' );
-
-			$wp_smush_data = get_post_meta( $id, self::SMUSHED_META_KEY, true );
+			$wp_smush_data = get_post_meta( $id, $this->smushed_meta_key, true );
 			$attachment_data = wp_get_attachment_metadata( $id );
 //
 			// if the image is smushed
@@ -828,7 +847,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				return;
 			}
 
-			$migrated_version = get_option( self::MIGRATED_VERSION );
+			$migrated_version = get_option( $this->migrated_version_key );
 
 			if ( $migrated_version === $this->version ) {
 				return;
@@ -847,11 +866,11 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			foreach ( $results as $attachment_meta ) {
 				$migrated_message = $migrator->migrate_api_message( maybe_unserialize( $attachment_meta->meta_value ) );
 				if ( $migrated_message !== array() ) {
-					update_post_meta( $attachment_meta->post_id, self::SMUSHED_META_KEY, $migrated_message );
+					update_post_meta( $attachment_meta->post_id, $this->smushed_meta_key, $migrated_message );
 				}
 			}
 
-			update_option( self::MIGRATED_VERSION, $this->version );
+			update_option( $this->migrated_version_key, $this->version );
 
 		}
 
@@ -864,7 +883,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 *
 		 * @return array
 		 */
-		private function _update_stats_data( $response_data, $size_before, $size_after, $total_time, $bytes_saved ) {
+		function _update_stats_data( $response_data, $size_before, $size_after, $total_time, $bytes_saved ) {
 			$size_before += ! empty( $response_data->before_size ) ? (int) $response_data->before_size : 0;
 			$size_after += ( ! empty( $response_data->after_size ) && $response_data->after_size > 0 ) ? (int) $response_data->after_size : (int) $response_data->before_size;
 			$total_time += ! empty( $response_data->time ) ? (float) $response_data->time : 0;
@@ -888,7 +907,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			$image_size = $image_size . '@2x';
 			$data       = $smush_stats['data'];
 			//Get existing Stats
-			$stats = get_post_meta( $id, self::SMUSHED_META_KEY, true );
+			$stats = get_post_meta( $id, $this->smushed_meta_key, true );
 			//Update existing Stats
 			if ( ! empty( $stats ) ) {
 				//Update total bytes saved, and compression percent
@@ -929,15 +948,47 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				$stats['sizes'][ $image_size ] = (object) $this->_array_fill_placeholders( $this->_get_size_signature(), (array) $data );
 			}
 			//Calculate Percent
-			update_post_meta( $id, self::SMUSHED_META_KEY, $stats );
+			update_post_meta( $id, $this->smushed_meta_key, $stats );
 
 		}
 
+		/**
+		 * Smush Retina images for WP Retina 2x, Update Stats
+		 *
+		 * @param $id
+		 * @param $retina_file
+		 * @param $image_size
+		 */
 		function smush_retina_image( $id, $retina_file, $image_size ) {
+
+			/**
+			 * Allows to Enable/Disable WP Retina 2x Integration
+			 */
+			$smush_retina_images = apply_filters( 'smush_retina_images', true );
+
+			//Check if Smush retina images is enbled
+			if ( ! $smush_retina_images ) {
+				return;
+			}
+			//Check for Empty fields
+			if ( empty( $id ) || empty( $retina_file ) || empty( $image_size ) ) {
+				return;
+			}
+
+			/**
+			 * Allows to skip a image from smushing
+			 *
+			 * @param bool , Smush image or not
+			 * @$size string, Size of image being smushed
+			 */
+			$smush_image = apply_filters( 'wp_smush_media_image', true, $image_size );
+			if ( ! $smush_image ) {
+				return;
+			}
 
 			$stats = $this->do_smushit( $retina_file );
 			//If we squeezed out something, Update stats
-			if ( ! empty( $stats['data'] ) && isset( $stats['data'] ) && $stats['data']->bytes_saved > 0 ) {
+			if ( !is_wp_error( $stats ) && ! empty( $stats['data'] ) && isset( $stats['data'] ) && $stats['data']->bytes_saved > 0 ) {
 				$this->update_smush_stats_single( $id, $stats, $image_size );
 			}
 		}
@@ -964,8 +1015,8 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				//For free version, Check the image size
 				if ( ! $this->is_pro() ) {
 					//For free version, check if full size is greater than 1 Mb, show the skipped status
-					$file_size = filesize( $full_image );
-					if ( ( $file_size / WP_SMUSH_MAX_BYTES ) > 1 ) {
+					$file_size = file_exists( $full_image ) ? filesize( $full_image ) : '';
+					if ( !empty( $file_size ) && ( $file_size / WP_SMUSH_MAX_BYTES ) > 1 ) {
 						$skipped[] = array(
 							'size'   => 'full',
 							'reason' => 'size_limit'
@@ -989,12 +1040,13 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			}
 			//For other sizes, check if the image was generated and not available in stats
 			if ( is_array( $media_size ) ) {
+				$dir_path = trailingslashit( dirname( $full_image ) );
 				foreach ( $media_size as $size ) {
-					if ( array_key_exists( $size, $attachment_metadata['sizes'] ) && ! array_key_exists( $size, $size_stats ) ) {
+					if ( array_key_exists( $size, $attachment_metadata['sizes'] ) && ! array_key_exists( $size, $size_stats ) && ! empty( $size['file'] ) ) {
 						//Image Path
-						$img_path   = trailingslashit( dirname( $full_image ) ) . $size['file'];
-						$image_size = filesize( $img_path );
-						if ( ( $image_size / WP_SMUSH_MAX_BYTES ) > 1 ) {
+						$img_path   =  $dir_path . $size['file'];
+						$image_size = file_exists( $img_path ) ? filesize( $img_path ) : '';
+						if ( ! empty( $image_size ) && ( $image_size / WP_SMUSH_MAX_BYTES ) > 1 ) {
 							$skipped[] = array(
 								'size'   => 'full',
 								'reason' => 'size_limit'
@@ -1013,8 +1065,10 @@ if ( ! class_exists( 'WpSmush' ) ) {
 		 * @return bool
 		 */
 		function skip_reason( $msg_id ) {
+			$count = count( get_intermediate_image_sizes() );
+			$smush_orgnl_txt = sprintf( esc_html__("When you upload an image to WordPress it automatically creates %s thumbnail sizes that are commonly used in your pages. WordPress also stores the original full-size image, but because these are not usually embedded on your site we don’t Smush them. Pro users can override this.", 'wp_smushit'), $count );
 			$skip_msg = array(
-				'large_size' => esc_html__( "For very large dimension images like those taken with a digital camera, the original full size image is almost never embedded (and really shouldn't be). Because of this WP Smush preserves it unaltered by default. Pro users can change this setting.", 'wp-smushit' ),
+				'large_size' => $smush_orgnl_txt,
 				'size_limit' => esc_html__( "Image couldn't be smushed as it exceeded the 1Mb size limit, Pro users can smush images with size upto 32Mb.", "wp-smushit" )
 			);
 			$skip_rsn = !empty( $skip_msg[$msg_id ] ) ? esc_html__(" Skipped", 'wp-smushit', 'wp-smushit'): '';
@@ -1061,11 +1115,11 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				}
 			}
 			//Show Sizes and their compression
-			foreach ( $size_stats as $size_key => $size_stats ) {
-				if ( $size_stats->bytes > 0 ) {
+			foreach ( $size_stats as $size_key => $size_value ) {
+				if ( $size_value->bytes > 0 ) {
 					$stats .= '<tr>
 					<td>' . strtoupper( $size_key ) . '</td>
-					<td>' . $this->format_bytes( $size_stats->bytes ) . ' ( ' . $size_stats->percent . '% )</td>
+					<td>' . $this->format_bytes( $size_value->bytes ) . ' ( ' . $size_value->percent . '% )</td>
 				</tr>';
 				}
 			}
@@ -1078,13 +1132,85 @@ if ( ! class_exists( 'WpSmush' ) ) {
 
 		/**
 		 * Compare Values
+		 *
 		 * @param $a
 		 * @param $b
 		 *
 		 * @return int
 		 */
-		function cmp($a, $b) {
+		function cmp( $a, $b ) {
 			return $a->bytes < $b->bytes;
+		}
+
+		/**
+		 * Check if NextGen is active or not
+		 * Include and instantiate classes
+		 */
+		function load_nextgen() {
+			if ( ! class_exists( 'C_NextGEN_Bootstrap' ) || ! $this->is_pro() ) {
+				return;
+			}
+			//Check if integration is Enabled or not
+			//Smush NextGen key
+			$opt_nextgen     = WP_SMUSH_PREFIX . 'nextgen';
+			$opt_nextgen_val = get_option( $opt_nextgen, 1 );
+			if ( ! $opt_nextgen_val ) {
+				return;
+			}
+
+			require_once( WP_SMUSH_DIR . '/lib/class-wp-smush-nextgen.php' );
+			require_once( WP_SMUSH_DIR . '/lib/nextgen-integration/class-wp-smush-nextgen-admin.php' );
+			require_once( WP_SMUSH_DIR . '/lib/nextgen-integration/class-wp-smush-nextgen-stats.php' );
+			require_once( WP_SMUSH_DIR . '/lib/nextgen-integration/class-wp-smush-nextgen-bulk.php' );
+
+			global $wpsmushnextgen, $wpsmushnextgenadmin, $wpsmushnextgenstats;
+			//Initialize Nextgen support
+			$wpsmushnextgen      = new WpSmushNextGen();
+			$wpsmushnextgenadmin = new WpSmushNextGenAdmin();
+			$wpsmushnextgenstats = new WpSmushNextGenStats();
+			new WPSmushNextGenBulk();
+		}
+
+		/**
+		 * Add the Smushit Column to sortable list
+		 * @param $columns
+		 *
+		 * @return mixed
+		 */
+		function sortable_column( $columns ) {
+			$columns['smushit'] = 'smushit';
+			return $columns;
+		}
+		/**
+		 * Orderby query for smush columns
+		 */
+		function smushit_orderby( $query ) {
+
+			global $current_screen, $wpdb;
+
+			//Filter only media screen
+			if ( ! is_admin() || ( !empty( $current_screen) && $current_screen->base != 'upload' ) ) {
+				return;
+			}
+
+			$orderby = $query->get( 'orderby' );
+
+			if ( isset( $orderby ) && 'smushit' == $orderby ) {
+				$query->set( 'meta_query', array(
+					'relation' => 'OR',
+					array(
+						'key'     => $this->smushed_meta_key,
+						'compare' => 'EXISTS'
+					),
+					array(
+						'key'     => $this->smushed_meta_key,
+						'compare' => 'NOT EXISTS'
+					)
+				) );
+				$query->set( 'orderby', 'meta_value_num' );
+			}
+			return $query;
+
 		}
 	}
 

@@ -438,6 +438,12 @@ function cms_tpv_promo_above_wrapper() {
 		$show_box = get_option('cms_tpv_show_promo', 1);
 	}
 
+	// Never show on dashboard, becuase highly annoying
+	$current_screen = get_current_screen();
+	if ( $current_screen->id === "dashboard" ) {
+		$show_box = false;
+	}
+
 	if ( ! $show_box ) {
 		return;
 	}
@@ -1927,7 +1933,7 @@ function cms_tpv_add_caps_to_role( $role, $caps ) {
 	global $wp_roles;
 
 	if ( $wp_roles->is_role( $role ) ) {
-		$role =& get_role( $role );
+		$role = get_role( $role );
 		foreach ( $caps as $cap )
 			$role->add_cap( $cap );
 	}
@@ -1941,7 +1947,7 @@ function cms_tpv_remove_caps_from_role( $role, $caps ) {
 	global $wp_roles;
 
 	if ( $wp_roles->is_role( $role ) ) {
-		$role =& get_role( $role );
+		$role = get_role( $role );
 		foreach ( $caps as $cap )
 			$role->remove_cap( $cap );
 	}

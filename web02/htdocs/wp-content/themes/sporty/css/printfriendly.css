@@ -1,0 +1,32 @@
+/* -----  Examples ------ */
+
+
+/* This will align images to the left */
+
+#printfriendly img{
+    float:left;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+/* Changes font family and size */
+
+#printfriendly {
+    font-family: Arial;
+    font-size: 14px;
+}
+
+/* Changes header color */
+
+#printfriendly h1, #printfriendly h2, #printfriendly h3, #printfriendly h4 {
+    color: Green;
+}
+
+#printfriendly table, #pf-body table {
+    width: 100% !important;
+    border: 1px  !important;
+    border-style: dotted  !important;
+}
+#printfriendly td, #pf-body td {
+    text-align: center  !important;
+}

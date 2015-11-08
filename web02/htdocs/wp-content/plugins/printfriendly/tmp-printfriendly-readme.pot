@@ -1,0 +1,648 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Print Friendly and PDF Button"
+msgstr ""
+
+#. Short description.
+msgid "The #1 Print and PDF button for your WordPress site. Printer Friendly pages without coding, css, or print.css. Fast, easy, and professional."
+msgstr ""
+
+#. Screenshot description.
+msgid "The Print Friendly widget optimizes and formats your pages for print. Users can remove images and text before printing plus get a PDF"
+msgstr ""
+
+#. Screenshot description.
+msgid "The Settings Page: choose your print button, text link, or use your own text or graphic."
+msgstr ""
+
+#. Screenshot description.
+msgid "Localization example: Spanish"
+msgstr ""
+
+#. Found in description header.
+msgid "Free - Ad Supported"
+msgstr ""
+
+#. Found in description header.
+msgid "Purchase an Ad-Free Subscription"
+msgstr ""
+
+#. Found in description header.
+msgid "Privacy &amp; Data"
+msgstr ""
+
+#. Found in description list item.
+msgid "Get a Printer Friendly and PDF button for your users."
+msgstr ""
+
+#. Found in description list item.
+msgid "Fully Customizable! Choose your favorite print and PDF button, use a text link, or use your own graphic."
+msgstr ""
+
+#. Found in description list item.
+msgid "Get precision placement with easy to change margins, alignment, and pages for your Print and PDF button."
+msgstr ""
+
+#. Found in description list item.
+msgid "On-Page-Lightbox. Have you noticed that other printer friendly buttons open new windows, or tabs? Not with Print Friendly &amp; PDF button. It opens in a Lightbox so you your users stay on the page, and your wp website."
+msgstr ""
+
+#. Found in description list item.
+msgid "Professional looking print and PDFs with branded headers."
+msgstr ""
+
+#. Found in description list item.
+msgid "More repeats and new users. Your brand/URL are printed on the page or saved in the PDF so users remember your site and new users can find you."
+msgstr ""
+
+#. Found in description list item.
+msgid "Optimizes pages for printing and PDF so you save money and the environment."
+msgstr ""
+
+#. Found in description list item.
+msgid "You can Print or get a PDF."
+msgstr ""
+
+#. Found in description list item.
+msgid "Edit the page before printing or getting a PDF: remove the images and paragraphs you don't need to save ink!"
+msgstr ""
+
+#. Found in description list item.
+msgid "Danish"
+msgstr ""
+
+#. Found in description list item.
+msgid "German"
+msgstr ""
+
+#. Found in description list item.
+msgid "English"
+msgstr ""
+
+#. Found in description list item.
+msgid "Spanish"
+msgstr ""
+
+#. Found in description list item.
+msgid "Estonian"
+msgstr ""
+
+#. Found in description list item.
+msgid "French"
+msgstr ""
+
+#. Found in description list item.
+msgid "Hebrew"
+msgstr ""
+
+#. Found in description list item.
+msgid "Croatian"
+msgstr ""
+
+#. Found in description list item.
+msgid "Hungarian"
+msgstr ""
+
+#. Found in description list item.
+msgid "Italian"
+msgstr ""
+
+#. Found in description list item.
+msgid "Korean"
+msgstr ""
+
+#. Found in description list item.
+msgid "Lithuanian"
+msgstr ""
+
+#. Found in description list item.
+msgid "Dutch/Netherlands"
+msgstr ""
+
+#. Found in description list item.
+msgid "Polish"
+msgstr ""
+
+#. Found in description list item.
+msgid "Portuguese"
+msgstr ""
+
+#. Found in description list item.
+msgid "Slovak"
+msgstr ""
+
+#. Found in description list item.
+msgid "Slovenian"
+msgstr ""
+
+#. Found in description list item.
+msgid "Serbian"
+msgstr ""
+
+#. Found in description list item.
+msgid "Swedish"
+msgstr ""
+
+#. Found in description list item.
+msgid "Thailand"
+msgstr ""
+
+#. Found in description list item.
+msgid "Turkish"
+msgstr ""
+
+#. Found in description list item.
+msgid "Chinese Simplified"
+msgstr ""
+
+#. Found in description list item.
+msgid "Chinese Traditional"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>We do not sell data.</strong> Period."
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>We do not share data,</strong> unless compelled by the law."
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>We do not ask for personal information,</strong> unless it's needed to provide a service."
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>We don’t store personal information,</strong>  unless required for the on-going operation of service."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The Print Friendly &amp; PDF button saves paper and ink when printing or creating a PDF. It's fast, easy, and looks great when printed. Add the button now, and your users will see the difference."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>How Print Friendly &amp; PDF Works</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The Print Friendly &amp; PDF button automatically creates printer friendly and PDF versions of your pages without the hassle of having to create a print CSS file. No coding, hacking or programming required. Simply install the Print Friendly &amp; PDF plugin, activate, and choose settings for full customization. It also gives your user the ability to remove images and paragraphs of text, so they really only have to print exactly what they want."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Cool Features For You:</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Cool Print Features for Users:</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Localized for 25 Languages</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "PrintFriendly &amp; PDF automatically changes language to match your visitor's language settings. For example, if your browser is set to Spanish, then PrintFriendly will use Spanish."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Supported languages:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://blog.printfriendly.com/2012/06/print-friendly-speaks-your-language.html\">Learn more...</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "PrintFriendly and PDF is the #1 print optimization technology, <strong>as featured in <a href=\"http://lifehacker.com/5272212/print-friendly-optimizes-web-pages-for-printing\" title=\"PrintFriendly &amp; PDF in Lifehacker\">Lifehacker</a>, <a href=\"http://mashable.com/2009/05/18/print-friendly/\" title=\"PrintFriendly &amp; PDF in Mashable\">Mashable</a> &amp; <a href=\"http://www.makeuseof.com/dir/printfriendly-save-on-paper-and-ink/#comment-95052\">makeuseof</a></strong>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Give PrintFriendly &amp; PDF a test drive at <a href=\"http://www.printfriendly.com\" title=\"PrintFriendly &amp; PDF\">PrintFriendly.com</a></strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This highly polished, professional plugin is free to use and fully functional. We maintain, improve, and offer support to all users."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You get all this for free, and in return tasteful ads are displayed in a non-interfering way."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Ads are only shown in the email confirmation window. No other ads are displayed or embedded in the content, or snuck in anywhere else."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "For example, <a href=\"http://www.printfriendly.com/images/pf-free-ad-supported.gif\">click here to see image</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Get a quality product for reasonable price. Remove the ads by purchasing an ad-free subscription. It’s cheap, easy, and straightforward."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Your ad-free subscription applies to this email plugin, and our popular PrintFriendly &amp; PDF plugin."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Purchase now at <a href=\"http://printfriendly.com/pro\">PrintFriendly.com/pro</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "PDFs are generated on our server; ** this plugin “phones home” **.  Also if the end-user shares the page via email, the email is sent by our server."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Our Fundamental Principles:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Specifically, here’s what we do with the data and information:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Page content is not sent or stored on server,</strong> except to generate the PDF. After the PDF is generated, we temporarily store the PDF to allow the end-user time to download. After this time has expired, the PDF is permanently deleted."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you’re using the non-JavaScript option in the plugin, then the preview is generated on our server and temporarily stored in cache for a few minutes. After that time it is permanently deleted."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Email Address &amp; Content get permanently deleted</strong> In order to send the email, we need to store the email address and message on our server. After the email has been sent and found not to be a spammer, the email address is permanently deleted."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Server log files get created and deleted.</strong> Browsers and Servers pass non-personally-identifying information, such as the browser type, language, referrer, and the date/time. We may use this data to analyze how the service is being used. Non-personally-identifying aggregate data may get published, e.g., by a report on trends in the usage of the service."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Search for PrintFriendly in your WordPress backend and click install, or download the printfriendly.zip file and unzip it."
+msgstr ""
+
+#. Found in installation list item.
+msgid "If you downloaded the zip, upload the printfriendly folder into wp-content/plugins folder"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin in your WordPress Admin area."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Select \"Settings\" to customize button style and placement."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed page content selection option - Wordpress Standard/Strict"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed the issue occured due to new changes made in the page content selection options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved page content selection options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed the admin javascript error and increased plugin text boxes size"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enabled Print Friendly button href to www.printfriendly.com only when the plugin JavaScript option is enabled"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Made some plugin text translation ready"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Implemented both Classic Google Analytics and Google Universal Analytics code"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed WP Slimstat conflict"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed the functionality that opens new window when JavaScript is disabled"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Shortcode bug fix"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Urlencoded button href to produce valid html"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Readme.txt update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed JS optimization Bug"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Wordpress 3.8 support"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Provided Algorithm Options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Using WP content hook for all Buttons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "SSL Support bug fixes. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Optimized JavaScript, reducing the file size by 65%!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better syncing between client-side/server-side content detection algorithm. This will make improvements to content detection easier than ever."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support for international language sub-regions, for example PT-BR vs. PT (Portuguese-Brazil vs. Portuguese for Portugal)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support for Wordpress - 3.6 ."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Printfriendly custom commands support. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Bug in Google Analytics generation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enabled support for Google Analytics"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Algorithm Update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed Break tag from button code. "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed Button behavior when displayed on Homepage for NON-JS version."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed CSS issue with Button when placed above content."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed box-shadow issue with button."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Custom print and pdf options now available for Non-JS version. Custom options include header, css, image alignment, etc.."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bug for custom tagline."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added hide images and image style options."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved input validation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved output escaping."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed printfriendly post_class."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Small i8n fix."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Few small HTML fixes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add printfriendly post_class."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed minor JS bug."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added redundancy to uninstall script."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Rolling back to version 3.2.1"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add printfriendly button display settings per individual category."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improve script loading."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important chrome issue fix. Ie syntax error fix."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor css detail."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add printfriendly options to allow/not allow print, pdf, email from the Printfriendly and PDF dialog."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Revert default print button show settings. Prevent easy override of print button text-decoration and border style properties."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adding PrintFriendly and PDF alignment style classes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Set button appearance in more flexible way. Remove styles that interfered with wordpress themes. Add shortcode for printfriendly button. Fix redirect to printfriendly.com link. Added custom css feature."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed https url. Don't hide text change box when disabling css."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed bug with disable css option."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added disable css option to admin settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed admin js caching."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed admin css caching."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New features: Custom header, disable click-to-delete, https support (beta), PrintFriendly Pro (ad-free)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reordered PrintFriendly &amp; PDF buttons. CSS stylesheet option is now checked by default."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added additional images for print button."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix bug that displays button on category pages when posts and pages is selected."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "PrintFriendly &amp; PDF button will now display on category pages (archive pages), if \"Homepage, Archives, Posts, and Pages\" was selected in the Settings for PrintFriendly &amp; PDF (button placement)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Align-right and align-center support for themes that remove WordPress core css."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Support for bad themes that alter template tags and prevent JavaScript from loading in footer."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed JS bug with Google Chrome not submitting and fixed input validation issues."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "A complete overhaul of the plugin by renowned WordPress plugin developer <a href=\"http://yoast.com/\">Joost de Valk</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Redone the admin page."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Plugin is now fully i18n ready."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Plugin now uses the settings API."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSS loading is now optional."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "JavaScript loading is now optional."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Plugin now uses WordPress default align classes for outlining."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added an FAQ."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Screenshots."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "The Print Button was showing up on printed, or PDF, pages. Junk! Print or PDF button no longer displayed on printed out page or PDF."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed print button from <code>&lt;span&gt;</code> to <code>&lt;div&gt;</code> to support floating the print and PDF button to right."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added rel=\"nofollow\" to the print links to avoid search engines indexing the print pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changed print button from link <code>&lt;a&gt;</code> to <code>&lt;span&gt;</code>. Some tracking plugins added target_new/blank to link, therefore breaking print friendly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "To avoid conflicts with Google Analytics widgets, changed link structure. No longer uses onclick to call PrintFriendly Javascript. Now the javascript is called in the href."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Custom image support for hosted solutions"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid ""
+"= 3.3.2= \n"
+"* Algorithm Update"
+msgstr ""
+
+#. Found in faq header.
+msgid "I set the button to align left / right and it doesn't align right!"
+msgstr ""
+
+#. Found in faq header.
+msgid "The Print Friendly button is loading but it's not doing anything, what's wrong?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Some of the input fields in the admin are disabled!"
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm manually adding the button but it's aligning wrong!"
+msgstr ""
+
+#. Found in faq header.
+msgid "I still need help!"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Check whether your theme includes the <a href=\"http://codex.wordpress.org/CSS#WordPress_Generated_Classes\">required CSS class</a>, PrintFriendly uses these to align your button. If that doesn't work for you, uncheck the \"Add CSS to Pages\" checkbox and style the button yourself."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Check the \"JavaScript fallback\" checkbox in the settings and check again. If the button starts working now, the JavaScript isn't loading correctly. Check your source for a mention of <code>cdn.printfriendly.com/printfriendly.js</code>. If it's not there, make sure your theme has the required <a href=\"http://codex.wordpress.org/Function_Reference/wp_footer\">wp_footer</a> call."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you've disabled the loading of CSS and / or set \"Add PrintFriendly To\" to Manual, some of the input boxes will be disabled as you've basically disabled that functionality."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you're getting unexpected results, you might want to set Horizontal Alignment to \"None\"."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you have any other issues with the plugin or the PrintFriendly widget, please write to support@printfriendly.com."
+msgstr ""

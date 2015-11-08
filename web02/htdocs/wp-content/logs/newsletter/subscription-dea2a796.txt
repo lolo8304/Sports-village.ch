@@ -1,0 +1,254 @@
+30-10-2015 10:30:26 - INFO  - 30,6 MB - Subscription of an address with status C
+30-10-2015 10:34:40 - INFO  - 30,6 MB - Subscription of an address with status U
+30-10-2015 10:34:40 - INFO  - 30,6 MB - Email address subscribed but not confirmed
+30-10-2015 11:35:35 - INFO  - 30,6 MB - New email address
+30-10-2015 15:51:06 - INFO  - 31,2 MB - New email address
+30-10-2015 15:51:06 - DEBUG - 31,3 MB - Array
+(
+    [0] => 1
+)
+
+30-10-2015 18:12:04 - INFO  - 30,6 MB - New email address
+30-10-2015 18:12:04 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+)
+
+31-10-2015 11:50:12 - INFO  - 30,6 MB - New email address
+31-10-2015 11:50:12 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+31-10-2015 11:55:05 - INFO  - 30,6 MB - New email address
+31-10-2015 11:55:05 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+31-10-2015 11:56:15 - INFO  - 30,6 MB - New email address
+31-10-2015 11:56:15 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+31-10-2015 11:57:05 - INFO  - 30,6 MB - New email address
+31-10-2015 11:57:05 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+31-10-2015 12:25:46 - INFO  - 30,7 MB - New email address
+31-10-2015 12:25:46 - DEBUG - 30,7 MB - Array
+(
+    [0] => 1
+)
+
+01-11-2015 00:08:32 - INFO  - 31,6 MB - Subscription of an address with status S
+01-11-2015 00:08:32 - INFO  - 31,6 MB - Email address subscribed but not confirmed
+01-11-2015 00:08:32 - DEBUG - 31,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+01-11-2015 00:09:29 - INFO  - 31,6 MB - Subscription of an address with status S
+01-11-2015 00:09:29 - INFO  - 31,6 MB - Email address subscribed but not confirmed
+01-11-2015 00:09:29 - DEBUG - 31,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+01-11-2015 06:48:17 - INFO  - 30,9 MB - New email address
+01-11-2015 06:48:17 - DEBUG - 31,0 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+01-11-2015 11:52:53 - INFO  - 30,9 MB - New email address
+01-11-2015 11:52:53 - DEBUG - 31,0 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+02-11-2015 00:27:25 - DEBUG - 30,9 MB - Unsubscription for:
+02-11-2015 00:27:25 - DEBUG - 30,9 MB - stdClass Object
+(
+    [id] => 213
+    [email] => roto@totaro.ch
+    [name] => 
+    [surname] => Roberto Totara
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:07
+    [token] => 043f50cb4d
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 0
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+02-11-2015 14:36:48 - DEBUG - 30,9 MB - Unsubscription for:
+02-11-2015 14:36:48 - DEBUG - 30,9 MB - stdClass Object
+(
+    [id] => 36
+    [email] => ski-miete@roger-bossard.net
+    [name] => 
+    [surname] => Roger Bossard
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:06
+    [token] => a6b9880a17
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 0
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+04-11-2015 22:01:51 - INFO  - 31,3 MB - New email address
+04-11-2015 22:01:51 - DEBUG - 31,3 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+04-11-2015 22:01:55 - INFO  - 31,3 MB - Subscription of an address with status S
+04-11-2015 22:01:55 - INFO  - 31,3 MB - Email address subscribed but not confirmed
+04-11-2015 22:01:55 - DEBUG - 31,3 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+04-11-2015 22:02:39 - DEBUG - 31,2 MB - Not found
+04-11-2015 22:02:50 - DEBUG - 31,2 MB - Not found
