@@ -252,3 +252,33 @@
 
 04-11-2015 22:02:39 - DEBUG - 31,2 MB - Not found
 04-11-2015 22:02:50 - DEBUG - 31,2 MB - Not found
+20-11-2015 07:58:30 - INFO  - 31,3 MB - New email address
+20-11-2015 07:58:30 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+)
+
+26-11-2015 15:34:50 - INFO  - 31,3 MB - New email address
+26-11-2015 15:34:50 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+)
+
+26-11-2015 15:34:54 - INFO  - 31,3 MB - Subscription of an address with status S
+26-11-2015 15:34:54 - INFO  - 31,3 MB - Email address subscribed but not confirmed
+26-11-2015 15:34:54 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+)
+
+05-12-2015 16:46:54 - INFO  - 31,3 MB - New email address
+05-12-2015 16:46:54 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
