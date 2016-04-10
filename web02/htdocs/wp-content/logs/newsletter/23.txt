@@ -1,0 +1,1127 @@
+23-12-2015 00:10:20 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 00:10:21 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 00:10:21 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 00:10:22 - DEBUG - 32,0 MB - Replace start
+23-12-2015 00:10:22 - DEBUG - 32,0 MB - Replace end
+23-12-2015 00:10:46 - DEBUG - 32,0 MB - Replace start
+23-12-2015 00:10:46 - DEBUG - 32,0 MB - Replace end
+23-12-2015 00:11:38 - DEBUG - 32,0 MB - Replace start
+23-12-2015 00:11:38 - DEBUG - 32,0 MB - Replace end
+23-12-2015 00:11:53 - DEBUG - 32,0 MB - Replace start
+23-12-2015 00:11:53 - DEBUG - 32,0 MB - Replace end
+23-12-2015 00:26:43 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 00:26:44 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 00:26:44 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 00:55:18 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 00:55:18 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 00:55:18 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 00:55:20 - DEBUG - 32,0 MB - Replace start
+23-12-2015 00:55:20 - DEBUG - 32,0 MB - Replace end
+23-12-2015 01:33:13 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 01:33:13 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 01:33:13 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 01:37:55 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 01:37:55 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 01:37:55 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 01:42:54 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 01:42:54 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 01:42:54 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 01:47:56 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 01:47:56 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 01:47:56 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 01:53:08 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 01:53:09 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 01:53:09 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 01:57:58 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 01:57:59 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 01:57:59 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 03:34:48 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 03:34:48 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 03:34:48 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 03:36:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 03:36:59 - DEBUG - 32,0 MB - Replace end
+23-12-2015 03:37:09 - DEBUG - 31,9 MB - Replace start
+23-12-2015 03:37:09 - DEBUG - 31,9 MB - Replace end
+23-12-2015 03:37:13 - DEBUG - 31,9 MB - Replace start
+23-12-2015 03:37:13 - DEBUG - 31,9 MB - Replace end
+23-12-2015 03:37:18 - DEBUG - 31,9 MB - Replace start
+23-12-2015 03:37:18 - DEBUG - 31,9 MB - Replace end
+23-12-2015 03:37:22 - DEBUG - 32,0 MB - Replace start
+23-12-2015 03:37:22 - DEBUG - 32,0 MB - Replace end
+23-12-2015 03:37:27 - DEBUG - 32,1 MB - Replace start
+23-12-2015 03:37:27 - DEBUG - 32,1 MB - Replace end
+23-12-2015 03:37:31 - DEBUG - 31,9 MB - Replace start
+23-12-2015 03:37:31 - DEBUG - 31,9 MB - Replace end
+23-12-2015 03:37:36 - DEBUG - 32,0 MB - Replace start
+23-12-2015 03:37:36 - DEBUG - 32,0 MB - Replace end
+23-12-2015 03:37:40 - DEBUG - 32,0 MB - Replace start
+23-12-2015 03:37:40 - DEBUG - 32,0 MB - Replace end
+23-12-2015 03:37:53 - DEBUG - 31,9 MB - Replace start
+23-12-2015 03:37:53 - DEBUG - 31,9 MB - Replace end
+23-12-2015 03:37:59 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 03:38:00 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 03:38:00 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 03:38:33 - DEBUG - 32,2 MB - Replace start
+23-12-2015 03:38:33 - DEBUG - 32,2 MB - Replace end
+23-12-2015 03:45:30 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 03:45:31 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 03:45:31 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 03:47:54 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 03:47:55 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 03:47:55 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 04:04:07 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 04:04:08 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 04:04:08 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 06:10:25 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 06:10:25 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 06:10:25 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 06:17:08 - DEBUG - 32,0 MB - Replace start
+23-12-2015 06:17:08 - DEBUG - 32,0 MB - Replace end
+23-12-2015 06:17:17 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 06:17:18 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 06:17:18 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 06:49:00 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 06:49:01 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 06:49:01 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 06:49:03 - DEBUG - 32,0 MB - Replace start
+23-12-2015 06:49:03 - DEBUG - 32,0 MB - Replace end
+23-12-2015 07:04:43 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 07:04:43 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 07:04:43 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 07:04:45 - DEBUG - 32,0 MB - Replace start
+23-12-2015 07:04:45 - DEBUG - 32,0 MB - Replace end
+23-12-2015 07:19:18 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 07:19:19 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 07:19:19 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 07:19:19 - DEBUG - 32,1 MB - Replace start
+23-12-2015 07:19:19 - DEBUG - 32,1 MB - Replace end
+23-12-2015 07:52:30 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 07:52:31 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 07:52:31 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 07:53:05 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 07:53:06 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 07:53:06 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 07:53:07 - DEBUG - 32,0 MB - Replace start
+23-12-2015 07:53:07 - DEBUG - 32,0 MB - Replace end
+23-12-2015 08:02:08 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 08:02:08 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 08:02:08 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 08:03:31 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 08:03:32 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 08:03:32 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 08:25:34 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 08:25:34 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 08:25:34 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 08:50:20 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 08:50:20 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 08:50:20 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 08:50:22 - DEBUG - 32,0 MB - Replace start
+23-12-2015 08:50:22 - DEBUG - 32,0 MB - Replace end
+23-12-2015 08:59:29 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 08:59:30 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 08:59:30 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 09:34:12 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 09:34:12 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 09:34:12 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 09:34:18 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:34:18 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:34:26 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:34:26 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:34:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:34:30 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:34:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:34:34 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:34:43 - DEBUG - 32,1 MB - Replace start
+23-12-2015 09:34:43 - DEBUG - 32,1 MB - Replace end
+23-12-2015 09:34:47 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:34:47 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:34:55 - DEBUG - 32,0 MB - Replace start
+23-12-2015 09:34:55 - DEBUG - 32,0 MB - Replace end
+23-12-2015 09:34:59 - DEBUG - 32,0 MB - Replace start
+23-12-2015 09:34:59 - DEBUG - 32,0 MB - Replace end
+23-12-2015 09:35:10 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:35:10 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:35:14 - DEBUG - 31,9 MB - Replace start
+23-12-2015 09:35:14 - DEBUG - 31,9 MB - Replace end
+23-12-2015 09:59:41 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 09:59:41 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 09:59:41 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 09:59:43 - DEBUG - 32,1 MB - Replace start
+23-12-2015 09:59:43 - DEBUG - 32,1 MB - Replace end
+23-12-2015 10:14:54 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 10:14:54 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 10:14:54 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 10:14:57 - DEBUG - 32,0 MB - Replace start
+23-12-2015 10:14:57 - DEBUG - 32,0 MB - Replace end
+23-12-2015 10:20:24 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 10:20:24 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 10:20:24 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 10:20:26 - DEBUG - 32,0 MB - Replace start
+23-12-2015 10:20:26 - DEBUG - 32,0 MB - Replace end
+23-12-2015 10:26:05 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 10:26:05 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 10:26:05 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 10:33:30 - DEBUG - 32,0 MB - Replace start
+23-12-2015 10:33:30 - DEBUG - 32,0 MB - Replace end
+23-12-2015 11:01:29 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 11:01:30 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 11:01:30 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 11:05:14 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 11:05:14 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 11:05:14 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 11:30:34 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 11:30:34 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 11:30:34 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 11:30:44 - DEBUG - 31,9 MB - Replace start
+23-12-2015 11:30:44 - DEBUG - 31,9 MB - Replace end
+23-12-2015 11:30:47 - DEBUG - 32,0 MB - Replace start
+23-12-2015 11:30:47 - DEBUG - 32,0 MB - Replace end
+23-12-2015 11:30:49 - DEBUG - 31,9 MB - Replace start
+23-12-2015 11:30:49 - DEBUG - 31,9 MB - Replace end
+23-12-2015 11:34:32 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 11:34:33 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 11:34:33 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 11:34:40 - DEBUG - 32,0 MB - Replace start
+23-12-2015 11:34:40 - DEBUG - 32,0 MB - Replace end
+23-12-2015 11:34:43 - DEBUG - 32,0 MB - Replace start
+23-12-2015 11:34:43 - DEBUG - 32,0 MB - Replace end
+23-12-2015 11:34:45 - DEBUG - 31,9 MB - Replace start
+23-12-2015 11:34:45 - DEBUG - 31,9 MB - Replace end
+23-12-2015 11:34:47 - DEBUG - 32,0 MB - Replace start
+23-12-2015 11:34:47 - DEBUG - 32,0 MB - Replace end
+23-12-2015 11:34:50 - DEBUG - 31,9 MB - Replace start
+23-12-2015 11:34:50 - DEBUG - 31,9 MB - Replace end
+23-12-2015 11:37:59 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 11:37:59 - DEBUG - 32,1 MB - Replace start
+23-12-2015 11:37:59 - DEBUG - 32,1 MB - Replace end
+23-12-2015 11:37:59 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 11:37:59 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 11:46:27 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 11:46:28 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 11:46:28 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 11:46:29 - DEBUG - 32,0 MB - Replace start
+23-12-2015 11:46:29 - DEBUG - 32,0 MB - Replace end
+23-12-2015 11:46:31 - DEBUG - 31,9 MB - Replace start
+23-12-2015 11:46:31 - DEBUG - 31,9 MB - Replace end
+23-12-2015 11:46:35 - DEBUG - 31,9 MB - Replace start
+23-12-2015 11:46:35 - DEBUG - 31,9 MB - Replace end
+23-12-2015 12:29:13 - DEBUG - 31,9 MB - Replace start
+23-12-2015 12:29:13 - DEBUG - 31,9 MB - Replace end
+23-12-2015 12:29:20 - DEBUG - 32,1 MB - Replace start
+23-12-2015 12:29:20 - DEBUG - 32,1 MB - Replace end
+23-12-2015 12:29:30 - DEBUG - 32,0 MB - Replace start
+23-12-2015 12:29:30 - DEBUG - 32,0 MB - Replace end
+23-12-2015 12:30:04 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 12:30:05 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 12:30:05 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 12:30:21 - DEBUG - 32,0 MB - Replace start
+23-12-2015 12:30:21 - DEBUG - 32,0 MB - Replace end
+23-12-2015 12:45:31 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 12:45:32 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 12:45:32 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 12:45:34 - DEBUG - 32,0 MB - Replace start
+23-12-2015 12:45:34 - DEBUG - 32,0 MB - Replace end
+23-12-2015 12:51:47 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 12:51:47 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 12:51:47 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 12:53:02 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 12:53:03 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 12:53:03 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 12:57:57 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 12:57:58 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 12:57:58 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 13:23:55 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 13:23:56 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 13:23:56 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 13:33:04 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 13:33:04 - DEBUG - 32,0 MB - Replace start
+23-12-2015 13:33:04 - DEBUG - 32,0 MB - Replace end
+23-12-2015 13:33:04 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 13:33:04 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 13:33:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 13:33:59 - DEBUG - 32,0 MB - Replace end
+23-12-2015 13:40:12 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 13:40:12 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 13:40:12 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 13:40:14 - DEBUG - 32,0 MB - Replace start
+23-12-2015 13:40:14 - DEBUG - 32,0 MB - Replace end
+23-12-2015 13:40:20 - DEBUG - 32,0 MB - Replace start
+23-12-2015 13:40:20 - DEBUG - 32,0 MB - Replace end
+23-12-2015 13:41:10 - DEBUG - 32,0 MB - Replace start
+23-12-2015 13:41:10 - DEBUG - 32,0 MB - Replace end
+23-12-2015 13:42:01 - DEBUG - 32,0 MB - Replace start
+23-12-2015 13:42:01 - DEBUG - 32,0 MB - Replace end
+23-12-2015 13:42:30 - DEBUG - 32,1 MB - Replace start
+23-12-2015 13:42:30 - DEBUG - 32,1 MB - Replace end
+23-12-2015 13:43:10 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 13:43:10 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 13:43:10 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 13:43:11 - DEBUG - 32,0 MB - Replace start
+23-12-2015 13:43:11 - DEBUG - 32,0 MB - Replace end
+23-12-2015 14:24:08 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 14:24:09 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 14:24:09 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 14:24:16 - DEBUG - 31,9 MB - Replace start
+23-12-2015 14:24:16 - DEBUG - 31,9 MB - Replace end
+23-12-2015 14:36:13 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 14:36:13 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 14:36:13 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 14:36:14 - DEBUG - 32,0 MB - Replace start
+23-12-2015 14:36:14 - DEBUG - 32,0 MB - Replace end
+23-12-2015 14:42:32 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 14:42:33 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 14:42:33 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 14:42:35 - DEBUG - 31,9 MB - Replace start
+23-12-2015 14:42:35 - DEBUG - 31,9 MB - Replace end
+23-12-2015 14:49:43 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 14:49:44 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 14:49:44 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 14:49:44 - DEBUG - 32,0 MB - Replace start
+23-12-2015 14:49:44 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:02:09 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:02:09 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:02:09 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:02:09 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:02:09 - DEBUG - 31,5 MB - mail> To: sophia.wepfer@swissonine.ch
+23-12-2015 15:02:09 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:02:10 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:02:10 - ERROR - 32,2 MB - mail> SMTP Error: The following recipients failed: sophia.wepfer@swissonine.ch: <sophia.wepfer@swissonine.ch> recipient rejected (510)
+23-12-2015 15:02:10 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:02:10 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:02:14 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:02:14 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:02:15 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:02:15 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:05:34 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:05:34 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:05:34 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:05:34 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:05:34 - DEBUG - 31,5 MB - mail> To: sed.bicer@gmx.net
+23-12-2015 15:05:34 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:05:34 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x35a1r0031KuWt80335aWk - Spam Detected (650)
+23-12-2015 15:05:34 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:05:35 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:05:35 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:05:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:05:59 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:05:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:05:59 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:10:40 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:10:40 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:10:40 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:10:40 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:10:40 - DEBUG - 31,5 MB - mail> To: susheela.peresdacosta@gmail.com
+23-12-2015 15:10:40 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:10:40 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3Ag1r0061KuWt8033Agbb - Spam Detected (650)
+23-12-2015 15:10:40 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:10:40 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:10:40 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:10:44 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:10:44 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:10:44 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:10:44 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:12:20 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:12:20 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:12:20 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:12:20 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:12:20 - DEBUG - 31,3 MB - mail> To: m.dreher@sunrise.ch
+23-12-2015 15:12:20 - DEBUG - 31,3 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:12:20 - ERROR - 32,1 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3CL1r00E1KuWt8033CL1h - Spam Detected (650)
+23-12-2015 15:12:24 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:12:24 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:12:24 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:12:24 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:14:20 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:14:20 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:14:20 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:14:20 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:14:20 - DEBUG - 31,5 MB - mail> To: german.lauber@bluewin.ch
+23-12-2015 15:14:20 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:14:20 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3EL1r00o1KuWt8033ELPs - Spam Detected (650)
+23-12-2015 15:14:21 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:14:22 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:14:22 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:14:25 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:14:25 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:14:25 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:14:25 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:15:35 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:15:35 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:15:35 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:15:35 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:15:35 - DEBUG - 31,5 MB - mail> To: michelle.laeubli@gmx.ch
+23-12-2015 15:15:35 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:15:35 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3Fb1r00H1KuWt8033FbgM - Spam Detected (650)
+23-12-2015 15:15:39 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:15:39 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:15:39 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:15:39 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:25:10 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:25:10 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:25:10 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:25:10 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:25:10 - DEBUG - 31,5 MB - mail> To: lacoste@pip.ch
+23-12-2015 15:25:10 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:25:10 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3RA1r00Y1KuWt8033RAM1 - Spam Detected (650)
+23-12-2015 15:25:11 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:25:12 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:25:12 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:25:15 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:25:15 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:25:15 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:25:15 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:26:25 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:26:25 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:26:25 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:26:25 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:26:25 - DEBUG - 31,3 MB - mail> To: v.lamia@ggaweb.ch
+23-12-2015 15:26:25 - DEBUG - 31,3 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:26:25 - ERROR - 32,1 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3SR1r00K1KuWt8033SRgt - Spam Detected (650)
+23-12-2015 15:26:28 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:26:28 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:26:28 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:26:28 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:29:19 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 15:29:19 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:29:19 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 15:29:20 - DEBUG - 32,0 MB - Replace start
+23-12-2015 15:29:20 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:29:26 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:29:26 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:29:26 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:29:26 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:29:26 - DEBUG - 31,5 MB - mail> To: emesser@bluewin.ch
+23-12-2015 15:29:26 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:29:26 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3VS1r00C1KuWt8033VSNe - Spam Detected (650)
+23-12-2015 15:29:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:29:30 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:29:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:29:30 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:29:32 - DEBUG - 32,0 MB - Replace start
+23-12-2015 15:29:32 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:29:53 - DEBUG - 32,0 MB - Replace start
+23-12-2015 15:29:53 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:31:03 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:31:03 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:31:03 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:31:03 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:31:03 - DEBUG - 31,3 MB - mail> To: danielpfeuti@ggaweb.ch
+23-12-2015 15:31:03 - DEBUG - 31,3 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:31:03 - ERROR - 32,1 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3X31r0051KuWt8033X3ck - Spam Detected (650)
+23-12-2015 15:31:06 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:31:06 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:31:06 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:31:06 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:31:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:31:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:31:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:31:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:31:53 - DEBUG - 31,5 MB - mail> To: dpreiswerk@gmail.com
+23-12-2015 15:31:53 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:31:53 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3Xt1r00M1KuWt8033XtmW - Spam Detected (650)
+23-12-2015 15:31:57 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:31:57 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:31:57 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:31:57 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:55:02 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:55:02 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:55:02 - DEBUG - 31,3 MB - Replace start
+23-12-2015 15:55:02 - DEBUG - 31,4 MB - Replace end
+23-12-2015 15:55:02 - DEBUG - 31,4 MB - mail> To: hanspeter.schneibel@gmail.com
+23-12-2015 15:55:02 - DEBUG - 31,4 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:55:02 - ERROR - 32,1 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3v21r0051KuWt8033v2LA - Spam Detected (650)
+23-12-2015 15:55:02 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:55:03 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:55:03 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:55:07 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:55:07 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:55:08 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:55:08 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:56:02 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:56:02 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:56:02 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:56:02 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:56:02 - DEBUG - 31,5 MB - mail> To: tabeaschwab98@gmail.com
+23-12-2015 15:56:02 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:56:02 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3w21r00E1KuWt8033w2UG - Spam Detected (650)
+23-12-2015 15:56:05 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:56:06 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:56:06 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:56:06 - DEBUG - 31,9 MB - Replace end
+23-12-2015 15:57:23 - DEBUG - 32,0 MB - Replace start
+23-12-2015 15:57:23 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:59:23 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:59:23 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:59:23 - DEBUG - 31,5 MB - Replace start
+23-12-2015 15:59:23 - DEBUG - 31,5 MB - Replace end
+23-12-2015 15:59:23 - DEBUG - 31,5 MB - mail> To: christoph.strebel@gmail.com
+23-12-2015 15:59:23 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 15:59:23 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x3zP1r0021KuWt8033zPtt - Spam Detected (650)
+23-12-2015 15:59:23 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 15:59:24 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 15:59:24 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 15:59:28 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:59:28 - DEBUG - 32,0 MB - Replace end
+23-12-2015 15:59:28 - DEBUG - 31,9 MB - Replace start
+23-12-2015 15:59:28 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:00:39 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:00:39 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:00:39 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:00:39 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:00:39 - DEBUG - 31,5 MB - mail> To: lea.weiss@ksuster.ch
+23-12-2015 16:00:39 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:00:40 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x40f1r00V1KuWt80340f5C - Spam Detected (650)
+23-12-2015 16:00:42 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:00:42 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:00:43 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:00:43 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:01:28 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:01:28 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:02:48 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:02:48 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:02:48 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:02:48 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:02:48 - DEBUG - 31,5 MB - mail> To: patrice.zuercher@gam.com
+23-12-2015 16:02:48 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:02:48 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x42o1r0081KuWt80342oRn - Spam Detected (650)
+23-12-2015 16:02:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:02:52 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:02:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:02:52 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:40:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:40:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:40:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:40:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:40:51 - DEBUG - 31,5 MB - mail> To: rene.beutler@gmx.ch
+23-12-2015 16:40:51 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:40:52 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4gr1r00L1KuWt8034grJL - Spam Detected (650)
+23-12-2015 16:40:52 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 16:40:53 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 16:40:53 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 16:40:56 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:40:56 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:40:56 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:40:56 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:41:46 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:41:46 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:41:46 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:41:46 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:41:46 - DEBUG - 31,5 MB - mail> To: julia_brun@bluewin.ch
+23-12-2015 16:41:46 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:41:46 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4hm1r00A1KuWt8034hmVK - Spam Detected (650)
+23-12-2015 16:41:50 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:41:50 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:41:50 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:41:50 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:42:22 - DEBUG - 32,0 MB - Replace start
+23-12-2015 16:42:22 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:42:54 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 16:42:54 - DEBUG - 32,0 MB - Replace start
+23-12-2015 16:42:54 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:42:54 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 16:42:54 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 16:42:56 - DEBUG - 31,4 MB - Replace start
+23-12-2015 16:42:56 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:42:56 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:42:56 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:42:56 - DEBUG - 31,5 MB - mail> To: markus.danhel@gmx.ch
+23-12-2015 16:42:56 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:42:56 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4iw1r00C1KuWt8034iwpx - Spam Detected (650)
+23-12-2015 16:42:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:42:59 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:42:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:42:59 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:44:00 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:44:00 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:44:00 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:44:00 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:44:00 - DEBUG - 31,5 MB - mail> To: dominik.egli@hispeed.ch
+23-12-2015 16:44:00 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:44:00 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4k01r0041KuWt8034k02j - Spam Detected (650)
+23-12-2015 16:44:06 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:44:06 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:44:06 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:44:06 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:44:08 - DEBUG - 31,4 MB - Replace start
+23-12-2015 16:44:08 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:44:08 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:44:08 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:44:08 - DEBUG - 31,5 MB - mail> To: dominik.egli@hispeed.ch
+23-12-2015 16:44:08 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:44:08 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4k81r00L1KuWt8034k83i - Spam Detected (650)
+23-12-2015 16:44:12 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:44:12 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:44:12 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:44:12 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:46:16 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:46:16 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:46:16 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:46:16 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:46:16 - DEBUG - 31,5 MB - mail> To: hugo9@gmx.ch
+23-12-2015 16:46:16 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:46:16 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4mG1r00A1KuWt8034mGVZ - Spam Detected (650)
+23-12-2015 16:46:20 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:46:20 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:46:20 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:46:20 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:47:29 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:47:29 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:47:29 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:47:29 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:47:29 - DEBUG - 31,5 MB - mail> To: rene.guentert@bluewin.ch
+23-12-2015 16:47:29 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:47:29 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4nV1r00H1KuWt8034nVkz - Spam Detected (650)
+23-12-2015 16:47:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:47:34 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:47:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:47:34 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:48:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:48:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:48:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:48:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:48:53 - DEBUG - 31,5 MB - mail> To: christoph.krinninger@me.com
+23-12-2015 16:48:53 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:48:53 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4ot1r00K1KuWt8034ot1H - Spam Detected (650)
+23-12-2015 16:48:53 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 16:48:54 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 16:48:54 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 16:48:57 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:48:57 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:48:57 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:48:57 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:50:08 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:50:08 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:50:08 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:50:08 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:50:08 - DEBUG - 31,5 MB - mail> To: meier-wehrli@hispeed.ch
+23-12-2015 16:50:08 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:50:08 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4q81r00A1KuWt8034q8GE - Spam Detected (650)
+23-12-2015 16:50:12 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:50:12 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:50:12 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:50:12 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:51:16 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:51:16 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:51:16 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:51:16 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:51:16 - DEBUG - 31,5 MB - mail> To: margritpignat@gmail.com
+23-12-2015 16:51:16 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:51:16 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4rG1r00F1KuWt8034rGWY - Spam Detected (650)
+23-12-2015 16:51:21 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:51:21 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:51:21 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:51:21 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:52:30 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:52:30 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:52:30 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:52:30 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:52:30 - DEBUG - 31,5 MB - mail> To: sylviepignat@hotmail.com
+23-12-2015 16:52:30 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:52:30 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4sW1r00V1KuWt8034sWn7 - Spam Detected (650)
+23-12-2015 16:52:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:52:34 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:52:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:52:34 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:52:47 - DEBUG - 32,0 MB - Replace start
+23-12-2015 16:52:47 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:53:55 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 16:53:55 - DEBUG - 32,0 MB - Replace start
+23-12-2015 16:53:55 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:53:55 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 16:53:55 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 16:55:57 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:55:57 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:55:57 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:55:57 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:55:57 - DEBUG - 31,5 MB - mail> To: info@rohweder.com
+23-12-2015 16:55:57 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:55:57 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4vx1r0021KuWt8034vxK0 - Spam Detected (650)
+23-12-2015 16:56:02 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:56:02 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:56:02 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:56:02 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:57:08 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:57:08 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:57:08 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:57:08 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:57:08 - DEBUG - 31,5 MB - mail> To: erling.sennels@gmail.com
+23-12-2015 16:57:08 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:57:08 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4x81r00D1KuWt8034x8Wa - Spam Detected (650)
+23-12-2015 16:57:15 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:57:15 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:57:15 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:57:15 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:58:19 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:58:19 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:58:19 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:58:19 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:58:19 - DEBUG - 31,5 MB - mail> To: mmarius@sieberfamily.ch
+23-12-2015 16:58:19 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:58:20 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 16:58:20 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4yK1r00N1KuWt8034yLhF - Spam Detected (650)
+23-12-2015 16:58:21 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 16:58:21 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 16:58:23 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:58:23 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:58:23 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:58:23 - DEBUG - 31,9 MB - Replace end
+23-12-2015 16:59:45 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:59:45 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:59:45 - DEBUG - 31,5 MB - Replace start
+23-12-2015 16:59:45 - DEBUG - 31,5 MB - Replace end
+23-12-2015 16:59:45 - DEBUG - 31,5 MB - mail> To: mischki@gmx.ch
+23-12-2015 16:59:45 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 16:59:45 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x4zl1r0091KuWt8034zluF - Spam Detected (650)
+23-12-2015 16:59:50 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:59:50 - DEBUG - 32,0 MB - Replace end
+23-12-2015 16:59:50 - DEBUG - 31,9 MB - Replace start
+23-12-2015 16:59:50 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:03:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:03:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:03:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:03:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:03:53 - DEBUG - 31,5 MB - mail> To: markus.schoeni@hispeed.ch
+23-12-2015 17:03:53 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:03:54 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x53u1r00L1KuWt80353uYM - Spam Detected (650)
+23-12-2015 17:03:54 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:03:55 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:03:55 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:03:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:03:59 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:03:59 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:03:59 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:05:17 - DEBUG - 31,3 MB - Replace start
+23-12-2015 17:05:17 - DEBUG - 31,4 MB - Replace end
+23-12-2015 17:05:17 - DEBUG - 31,3 MB - Replace start
+23-12-2015 17:05:17 - DEBUG - 31,4 MB - Replace end
+23-12-2015 17:05:17 - DEBUG - 31,3 MB - mail> To: esther.hasler@gmx.net
+23-12-2015 17:05:17 - DEBUG - 31,3 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:05:17 - ERROR - 32,1 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x55H1r00G1KuWt80355Hfv - Spam Detected (650)
+23-12-2015 17:05:20 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:05:20 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:05:20 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:05:20 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:08:12 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:08:12 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:08:12 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:08:12 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:08:12 - DEBUG - 31,5 MB - mail> To: dave_zh@vtxmail.ch
+23-12-2015 17:08:12 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:08:12 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x58C1r0061KuWt80358C2Z - Spam Detected (650)
+23-12-2015 17:08:13 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:08:13 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:08:13 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:08:18 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:08:18 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:08:18 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:08:18 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:09:18 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:09:18 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:09:18 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:09:18 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:09:18 - DEBUG - 31,5 MB - mail> To: arthur-wall@bluewin.ch
+23-12-2015 17:09:18 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:09:18 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x59J1r00F1KuWt80359J8B - Spam Detected (650)
+23-12-2015 17:09:22 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:09:22 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:09:22 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:09:22 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:11:20 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:11:20 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:11:20 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:11:20 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:11:20 - DEBUG - 31,5 MB - mail> To: alexandervchan@gmail.com
+23-12-2015 17:11:20 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:11:20 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5BL1r0081KuWt8035BLN6 - Spam Detected (650)
+23-12-2015 17:16:29 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:16:29 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:16:29 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:16:29 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:16:29 - DEBUG - 31,5 MB - mail> To: darhaszimona@yahoo.com
+23-12-2015 17:16:29 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:16:29 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5GV1r0041KuWt8035GVxU - Spam Detected (650)
+23-12-2015 17:16:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:16:34 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:16:34 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:16:34 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:16:41 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:16:42 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:16:42 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:18:05 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:18:05 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:18:05 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:18:05 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:18:05 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:18:05 - DEBUG - 31,5 MB - mail> To: hanspeter.luethi@gmx.net
+23-12-2015 17:18:05 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:18:05 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5J51r0061KuWt8035J558 - Spam Detected (650)
+23-12-2015 17:18:05 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:18:05 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:18:09 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:18:09 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:18:09 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:18:09 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:19:21 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:19:21 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:19:21 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:19:21 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:19:21 - DEBUG - 31,5 MB - mail> To: t.meile@gmx.ch
+23-12-2015 17:19:21 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:19:21 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5KM1r0031KuWt8035KM88 - Spam Detected (650)
+23-12-2015 17:19:24 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:19:24 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:19:24 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:19:24 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:20:25 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:20:25 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:20:25 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:20:25 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:20:25 - DEBUG - 31,5 MB - mail> To: joeggi_thalmann@hotmail.com
+23-12-2015 17:20:25 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:20:25 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5LR1r00K1KuWt8035LRBd - Spam Detected (650)
+23-12-2015 17:20:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:20:30 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:20:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:20:30 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:24:48 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:24:48 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:24:48 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:24:48 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:24:48 - DEBUG - 31,5 MB - mail> To: sarahandreawyrsch@outlook.com
+23-12-2015 17:24:48 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:24:48 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5Qo1r0011KuWt8035Qom5 - Spam Detected (650)
+23-12-2015 17:24:48 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:24:48 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:24:48 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:24:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:24:52 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:24:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:24:52 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:26:33 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:26:33 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:26:33 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:26:33 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:26:33 - DEBUG - 31,5 MB - mail> To: dublo88@gmail.com
+23-12-2015 17:26:33 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:26:33 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5SZ1r0091KuWt8035SZ2q - Spam Detected (650)
+23-12-2015 17:26:37 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:26:37 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:26:37 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:26:37 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:28:47 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:28:47 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:28:47 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:28:47 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:28:47 - DEBUG - 31,5 MB - mail> To: j.miguel.trad@gmail.com
+23-12-2015 17:28:47 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:28:47 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5Un1r00B1KuWt8035UnMb - Spam Detected (650)
+23-12-2015 17:28:48 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 17:28:48 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:28:48 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 17:28:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:28:52 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:28:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:28:52 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:33:22 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:33:22 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:33:22 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:33:22 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:33:22 - DEBUG - 31,5 MB - mail> To: stephi.bat@gmail.com
+23-12-2015 17:33:22 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:33:22 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5ZN1r0061KuWt8035ZN2J - Spam Detected (650)
+23-12-2015 17:33:22 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:33:22 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:33:22 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:33:27 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:33:27 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:33:28 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:33:28 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:35:06 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:35:06 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:35:06 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:35:06 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:35:06 - DEBUG - 31,5 MB - mail> To: lucafilisetti@gmx.ch
+23-12-2015 17:35:06 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:35:06 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5b61r00M1KuWt8035b6LY - Spam Detected (650)
+23-12-2015 17:35:11 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:35:11 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:35:11 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:35:11 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:36:48 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:36:48 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:36:48 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:36:48 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:36:48 - DEBUG - 31,5 MB - mail> To: marion.gubser_lohrer@gmx.ch
+23-12-2015 17:36:48 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:36:48 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5co1r00B1KuWt8035coga - Spam Detected (650)
+23-12-2015 17:36:54 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:36:54 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:36:54 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:36:54 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:37:39 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:37:39 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:37:39 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:37:39 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:37:39 - DEBUG - 31,5 MB - mail> To: telemarker69@gmail.com
+23-12-2015 17:37:39 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:37:39 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5df1r00C1KuWt8035dfqe - Spam Detected (650)
+23-12-2015 17:37:42 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:37:42 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:37:42 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:37:42 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:39:35 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:39:35 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:39:35 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:39:35 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:39:35 - DEBUG - 31,5 MB - mail> To: d_ianeselli@hotmail.com
+23-12-2015 17:39:35 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:39:35 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5fb1r00Q1KuWt8035fbEe - Spam Detected (650)
+23-12-2015 17:39:36 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:39:36 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:39:36 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:39:39 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:39:39 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:39:39 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:39:39 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:40:47 - DEBUG - 31,3 MB - Replace start
+23-12-2015 17:40:47 - DEBUG - 31,4 MB - Replace end
+23-12-2015 17:40:47 - DEBUG - 31,3 MB - Replace start
+23-12-2015 17:40:47 - DEBUG - 31,4 MB - Replace end
+23-12-2015 17:40:47 - DEBUG - 31,4 MB - mail> To: allenberg@bluewin.ch
+23-12-2015 17:40:47 - DEBUG - 31,4 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:40:47 - ERROR - 32,1 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5gn1r00L1KuWt8035gnUq - Spam Detected (650)
+23-12-2015 17:40:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:40:52 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:40:52 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:40:52 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:44:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:44:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:44:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 17:44:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 17:44:51 - DEBUG - 31,5 MB - mail> To: luca.loeblein.24.12.2000@gmail.com
+23-12-2015 17:44:51 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 17:44:51 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x5kr1r00C1KuWt8035kr1W - Spam Detected (650)
+23-12-2015 17:44:51 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:44:52 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:44:52 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 17:44:55 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:44:55 - DEBUG - 32,0 MB - Replace end
+23-12-2015 17:44:55 - DEBUG - 31,9 MB - Replace start
+23-12-2015 17:44:55 - DEBUG - 31,9 MB - Replace end
+23-12-2015 17:48:31 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 17:48:31 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 17:48:31 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 19:12:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:12:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:12:53 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:12:53 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:12:53 - DEBUG - 31,5 MB - mail> To: joycelynn.maher@gmail.com
+23-12-2015 19:12:53 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:12:53 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Ct1r00B1KuWt8037CtrQ - Spam Detected (650)
+23-12-2015 19:12:54 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 19:12:55 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 19:12:55 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 19:13:00 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:13:00 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:13:00 - DEBUG - 31,4 MB - Replace start
+23-12-2015 19:13:00 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:13:00 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:13:00 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:13:00 - DEBUG - 31,5 MB - mail> To: joycelynn.maher@gmail.com
+23-12-2015 19:13:00 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:13:00 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7D01r0091KuWt8037D0s9 - Spam Detected (650)
+23-12-2015 19:13:00 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:13:00 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:13:04 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:13:04 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:13:04 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:13:04 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:13:40 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:13:40 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:13:40 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:13:40 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:13:40 - DEBUG - 31,5 MB - mail> To: mike.martin1999@me.com
+23-12-2015 19:13:40 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:13:40 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Dg1r00A1KuWt8037DgvL - Spam Detected (650)
+23-12-2015 19:13:44 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:13:44 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:13:44 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:13:44 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:16:16 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:16:16 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:16:16 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:16:16 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:16:16 - DEBUG - 31,5 MB - mail> To: ingrid.mueller@koeln.de
+23-12-2015 19:16:16 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:16:16 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7GG1r0031KuWt8037GGAs - Spam Detected (650)
+23-12-2015 19:16:23 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:16:23 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:16:23 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:16:23 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:17:25 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:17:25 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:17:25 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:17:25 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:17:25 - DEBUG - 31,5 MB - mail> To: ullrich.preuss@sunrise.ch
+23-12-2015 19:17:25 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:17:25 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7HR1r00Q1KuWt8037HRLA - Spam Detected (650)
+23-12-2015 19:17:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:17:30 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:17:30 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:17:30 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:18:37 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 19:18:37 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:18:37 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:18:37 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:18:37 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:18:37 - DEBUG - 31,5 MB - mail> To: ziz_92@hotmail.com
+23-12-2015 19:18:37 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:18:37 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Jd1r0081KuWt8037JdTn - Spam Detected (650)
+23-12-2015 19:18:37 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 19:18:37 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 19:18:40 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:18:40 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:18:41 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:18:41 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:21:49 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:21:49 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:21:49 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:21:49 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:21:49 - DEBUG - 31,5 MB - mail> To: juerg@rothmayr.ch
+23-12-2015 19:21:49 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:21:50 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Mp1r0041KuWt8037MpGT - Spam Detected (650)
+23-12-2015 19:21:55 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:21:55 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:21:56 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:21:56 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:22:59 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 19:23:00 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:23:00 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:23:00 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:23:00 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:23:00 - DEBUG - 31,5 MB - mail> To: juan.simisterra@gmx.ch
+23-12-2015 19:23:00 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:23:00 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7P01r0021KuWt8037P0SW - Spam Detected (650)
+23-12-2015 19:23:00 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 19:23:00 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 19:23:03 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:23:03 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:23:03 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:23:03 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:24:07 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:24:07 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:24:07 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:24:07 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:24:07 - DEBUG - 31,5 MB - mail> To: chris.schwarz99@yahoo.de
+23-12-2015 19:24:07 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:24:07 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Q71r0061KuWt8037Q7Yy - Spam Detected (650)
+23-12-2015 19:24:11 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:24:11 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:24:11 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:24:11 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:24:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:24:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:24:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:24:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:24:51 - DEBUG - 31,5 MB - mail> To: manuel.steiner@bzu.ch
+23-12-2015 19:24:51 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:24:51 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Qr1r0031KuWt8037QrdD - Spam Detected (650)
+23-12-2015 19:24:54 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:24:54 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:24:54 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:24:54 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:25:33 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:25:33 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:25:33 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:25:33 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:25:33 - DEBUG - 31,5 MB - mail> To: harry.tanner@hispeed.ch
+23-12-2015 19:25:33 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:25:33 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7RZ1r0091KuWt8037RZiP - Spam Detected (650)
+23-12-2015 19:25:36 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:25:36 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:25:36 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:25:36 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:26:32 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:26:32 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:26:32 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:26:32 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:26:32 - DEBUG - 31,5 MB - mail> To: taivo.varik@gmail.com
+23-12-2015 19:26:32 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:26:32 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7SY1r0081KuWt8037SYqD - Spam Detected (650)
+23-12-2015 19:26:35 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:26:35 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:26:35 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:26:35 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:27:13 - DEBUG - 32,0 MB - Replace start
+23-12-2015 19:27:13 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:27:34 - DEBUG - 32,0 MB - Replace start
+23-12-2015 19:27:34 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:27:40 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:27:40 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:27:40 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:27:40 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:27:40 - DEBUG - 31,5 MB - mail> To: info@a-vogt.ch
+23-12-2015 19:27:40 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:27:40 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Tg1r0071KuWt8037Tg06 - Spam Detected (650)
+23-12-2015 19:27:43 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:27:43 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:27:43 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:27:43 - DEBUG - 31,9 MB - Replace end
+23-12-2015 19:27:51 - DEBUG - 32,0 MB - Replace start
+23-12-2015 19:27:51 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:28:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:28:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:28:51 - DEBUG - 31,5 MB - Replace start
+23-12-2015 19:28:51 - DEBUG - 31,5 MB - Replace end
+23-12-2015 19:28:51 - DEBUG - 31,5 MB - mail> To: dino.1996@windowslive.com
+23-12-2015 19:28:51 - DEBUG - 31,5 MB - mail> Subject: Sports-Village Uster Newsletter - Anmeldebestätigung
+23-12-2015 19:28:51 - ERROR - 32,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: x7Ur1r0051KuWt8037Ur8j - Spam Detected (650)
+23-12-2015 19:28:52 - DEBUG - 34,1 MB - hook_newsletter> Start
+23-12-2015 19:28:52 - DEBUG - 34,1 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 19:28:52 - DEBUG - 34,1 MB - hook_newsletter> End
+23-12-2015 19:28:55 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:28:55 - DEBUG - 32,0 MB - Replace end
+23-12-2015 19:28:55 - DEBUG - 31,9 MB - Replace start
+23-12-2015 19:28:55 - DEBUG - 31,9 MB - Replace end
+23-12-2015 20:59:29 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 20:59:29 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 20:59:29 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 20:59:38 - DEBUG - 31,9 MB - Replace start
+23-12-2015 20:59:38 - DEBUG - 31,9 MB - Replace end
+23-12-2015 20:59:53 - DEBUG - 32,0 MB - Replace start
+23-12-2015 20:59:53 - DEBUG - 32,0 MB - Replace end
+23-12-2015 21:00:02 - DEBUG - 32,1 MB - Replace start
+23-12-2015 21:00:02 - DEBUG - 32,1 MB - Replace end
+23-12-2015 21:00:07 - DEBUG - 31,9 MB - Replace start
+23-12-2015 21:00:07 - DEBUG - 31,9 MB - Replace end
+23-12-2015 21:00:11 - DEBUG - 32,0 MB - Replace start
+23-12-2015 21:00:11 - DEBUG - 32,0 MB - Replace end
+23-12-2015 21:00:20 - DEBUG - 32,0 MB - Replace start
+23-12-2015 21:00:20 - DEBUG - 32,0 MB - Replace end
+23-12-2015 21:00:38 - DEBUG - 31,9 MB - Replace start
+23-12-2015 21:00:38 - DEBUG - 31,9 MB - Replace end
+23-12-2015 21:00:44 - DEBUG - 31,9 MB - Replace start
+23-12-2015 21:00:44 - DEBUG - 31,9 MB - Replace end
+23-12-2015 21:00:49 - DEBUG - 32,0 MB - Replace start
+23-12-2015 21:00:49 - DEBUG - 32,0 MB - Replace end
+23-12-2015 21:44:20 - DEBUG - 31,9 MB - Replace start
+23-12-2015 21:44:20 - DEBUG - 31,9 MB - Replace end
+23-12-2015 21:44:24 - DEBUG - 31,9 MB - Replace start
+23-12-2015 21:44:24 - DEBUG - 31,9 MB - Replace end
+23-12-2015 21:44:35 - DEBUG - 32,0 MB - Replace start
+23-12-2015 21:44:35 - DEBUG - 32,0 MB - Replace end
+23-12-2015 21:44:49 - DEBUG - 31,9 MB - Replace start
+23-12-2015 21:44:49 - DEBUG - 31,9 MB - Replace end
+23-12-2015 21:45:13 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 21:45:13 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 21:45:13 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 21:45:28 - DEBUG - 32,0 MB - Replace start
+23-12-2015 21:45:28 - DEBUG - 32,0 MB - Replace end
+23-12-2015 22:23:19 - DEBUG - 31,0 MB - hook_newsletter> Start
+23-12-2015 22:23:20 - DEBUG - 31,0 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 22:23:20 - DEBUG - 31,0 MB - hook_newsletter> End
+23-12-2015 22:48:03 - DEBUG - 34,3 MB - hook_newsletter> Start
+23-12-2015 22:48:03 - DEBUG - 34,3 MB - hook_newsletter> Emails found in sending status: 0
+23-12-2015 22:48:03 - DEBUG - 34,3 MB - hook_newsletter> End
+23-12-2015 22:48:05 - DEBUG - 32,0 MB - Replace start
+23-12-2015 22:48:05 - DEBUG - 32,0 MB - Replace end
