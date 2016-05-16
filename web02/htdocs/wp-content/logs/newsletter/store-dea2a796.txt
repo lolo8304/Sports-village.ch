@@ -1,2 +1,4 @@
 01-11-2015 22:46:53 - FATAL - 42,8 MB - 
 01-11-2015 22:47:52 - FATAL - 42,7 MB - 
+23-12-2015 17:11:42 - FATAL - 31,3 MB - Duplicate entry 'alexandervchan@gmail.com' for key 'email'
+06-03-2016 15:18:46 - FATAL - 39,2 MB - 

@@ -105,7 +105,7 @@ button,
 input,
 select,
 textarea {
-	color: #999;	
+	color: #111;	
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -346,7 +346,7 @@ a:visited {
 	-moz-transition: all .3s ease-in-out;
 }
 a:hover{
-	color: #999;
+	color: #111;
 }
 a:focus,
 a:active {
@@ -503,18 +503,18 @@ a:active {
 	padding-bottom: 5px;
 	padding-top: 5px;
 	border-bottom: 1px solid #EFEFEF;
-	color: #999;
+	color: #111;
 }
 
 #secondary li a{
-	color: #999;
+	color: #111;
 }
 #secondary li a:hover{
 	color: #333;
 }
 
 #tertiary li a{
-	color: #999;
+	color: #111;
 }
 
 #tertiary li a:hover{
@@ -623,6 +623,7 @@ a:active {
 	margin: 0 auto;
 	max-width: 960px;
 	background-color: #333;
+        color: #FFF !important;
 	border-top: 4px solid #666;
 }
 
@@ -939,7 +940,7 @@ body.archive .page-title {
     color: #69C;
 }
 .entry-content a:hover, .entry-summary a:hover{
-    color: #999;
+    color: #111;
 }
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
 	clear: none;
@@ -1219,11 +1220,11 @@ p.nocomments {
 	padding-bottom: 5px;
 	padding-top: 5px;
 	border-bottom: 1px solid #EFEFEF;
-	color: #999;
+	color: #111;
 }
 
 #helpfullinks li a{
-	color: #999;
+	color: #111;
 }
 #helpfullinks li a:hover{
 	color: #333;
@@ -1248,8 +1249,12 @@ p.nocomments {
 	color: #FFF;
 }
 .site-footer .widget p{
+	color: #FFF;
+}
+.site-footer .widget a,a:visited {
 	color: #AAA;
 }
+
 .site-footer .widget{
 	padding: 8px;
 }
@@ -1564,7 +1569,7 @@ http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 	float: left;
 	margin-left: 8px;
 	font-size: 12px;
-	color: #999;
+	color: #111;
 	border-bottom: 1px solid #CCC;
 }
 
@@ -1575,7 +1580,7 @@ http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 	float: left;
 	margin-left: 8px;
 	font-size: 12px;
-	color: #999;
+	color: #111;
 }
 
 .blog-lists-title a{

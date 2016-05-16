@@ -282,3 +282,3311 @@
     [5] => 6
 )
 
+14-12-2015 11:44:21 - INFO  - 31,3 MB - New email address
+14-12-2015 11:44:21 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 5
+)
+
+16-12-2015 18:05:25 - INFO  - 31,3 MB - New email address
+16-12-2015 18:05:25 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 5
+    [4] => 6
+)
+
+23-12-2015 15:02:09 - INFO  - 31,3 MB - New email address
+23-12-2015 15:02:09 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 15:05:34 - INFO  - 31,3 MB - New email address
+23-12-2015 15:05:34 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-12-2015 15:10:40 - INFO  - 31,3 MB - New email address
+23-12-2015 15:10:40 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-12-2015 15:12:20 - INFO  - 31,3 MB - Subscription of an address with status C
+23-12-2015 15:14:20 - INFO  - 31,3 MB - New email address
+23-12-2015 15:14:20 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 5
+)
+
+23-12-2015 15:15:35 - INFO  - 31,3 MB - New email address
+23-12-2015 15:15:35 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 15:25:10 - INFO  - 31,3 MB - New email address
+23-12-2015 15:25:10 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+23-12-2015 15:26:25 - INFO  - 31,3 MB - Subscription of an address with status C
+23-12-2015 15:29:26 - INFO  - 31,3 MB - New email address
+23-12-2015 15:29:26 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-12-2015 15:31:03 - INFO  - 31,3 MB - Subscription of an address with status C
+23-12-2015 15:31:53 - INFO  - 31,3 MB - New email address
+23-12-2015 15:31:53 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-12-2015 15:55:02 - INFO  - 31,3 MB - Subscription of an address with status C
+23-12-2015 15:56:02 - INFO  - 31,3 MB - New email address
+23-12-2015 15:56:02 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-12-2015 15:59:23 - INFO  - 31,3 MB - New email address
+23-12-2015 15:59:23 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 16:00:39 - INFO  - 31,3 MB - New email address
+23-12-2015 16:00:39 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-12-2015 16:02:48 - INFO  - 31,3 MB - New email address
+23-12-2015 16:02:48 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+23-12-2015 16:40:51 - INFO  - 31,3 MB - New email address
+23-12-2015 16:40:51 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:41:46 - INFO  - 31,3 MB - New email address
+23-12-2015 16:41:46 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:42:56 - INFO  - 31,3 MB - New email address
+23-12-2015 16:42:56 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:44:00 - INFO  - 31,3 MB - New email address
+23-12-2015 16:44:00 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 16:44:07 - INFO  - 31,3 MB - Subscription of an address with status S
+23-12-2015 16:44:07 - INFO  - 31,3 MB - Email address subscribed but not confirmed
+23-12-2015 16:44:07 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 16:46:16 - INFO  - 31,3 MB - New email address
+23-12-2015 16:46:16 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:47:29 - INFO  - 31,3 MB - New email address
+23-12-2015 16:47:29 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:48:53 - INFO  - 31,3 MB - New email address
+23-12-2015 16:48:53 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 16:50:08 - INFO  - 31,3 MB - New email address
+23-12-2015 16:50:08 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:51:16 - INFO  - 31,3 MB - New email address
+23-12-2015 16:51:16 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:52:30 - INFO  - 31,3 MB - New email address
+23-12-2015 16:52:30 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:55:57 - INFO  - 31,3 MB - New email address
+23-12-2015 16:55:57 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 16:57:08 - INFO  - 31,3 MB - New email address
+23-12-2015 16:57:08 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:58:19 - INFO  - 31,3 MB - New email address
+23-12-2015 16:58:19 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 16:59:45 - INFO  - 31,3 MB - New email address
+23-12-2015 16:59:45 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 17:03:53 - INFO  - 31,3 MB - New email address
+23-12-2015 17:03:53 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+23-12-2015 17:05:17 - INFO  - 31,3 MB - Subscription of an address with status C
+23-12-2015 17:08:12 - INFO  - 31,3 MB - New email address
+23-12-2015 17:08:12 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+23-12-2015 17:09:18 - INFO  - 31,3 MB - New email address
+23-12-2015 17:09:18 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+23-12-2015 17:11:20 - INFO  - 31,3 MB - New email address
+23-12-2015 17:11:20 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 17:11:42 - INFO  - 31,3 MB - New email address
+23-12-2015 17:11:42 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-12-2015 17:16:29 - INFO  - 31,3 MB - New email address
+23-12-2015 17:16:29 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 6
+)
+
+23-12-2015 17:18:05 - INFO  - 31,3 MB - New email address
+23-12-2015 17:18:05 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+23-12-2015 17:19:21 - INFO  - 31,3 MB - New email address
+23-12-2015 17:19:21 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+23-12-2015 17:20:25 - INFO  - 31,3 MB - New email address
+23-12-2015 17:20:25 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+23-12-2015 17:24:47 - INFO  - 31,3 MB - New email address
+23-12-2015 17:24:47 - DEBUG - 31,4 MB - Array
+(
+    [0] => 5
+    [1] => 6
+)
+
+23-12-2015 17:26:33 - INFO  - 31,3 MB - New email address
+23-12-2015 17:26:33 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+23-12-2015 17:28:47 - INFO  - 31,3 MB - New email address
+23-12-2015 17:28:47 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+23-12-2015 17:33:22 - INFO  - 31,3 MB - New email address
+23-12-2015 17:33:22 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+23-12-2015 17:35:06 - INFO  - 31,3 MB - New email address
+23-12-2015 17:35:06 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+23-12-2015 17:36:48 - INFO  - 31,3 MB - New email address
+23-12-2015 17:36:48 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 5
+)
+
+23-12-2015 17:37:39 - INFO  - 31,3 MB - New email address
+23-12-2015 17:37:39 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 5
+)
+
+23-12-2015 17:39:35 - INFO  - 31,3 MB - New email address
+23-12-2015 17:39:35 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+23-12-2015 17:40:47 - INFO  - 31,3 MB - Subscription of an address with status C
+23-12-2015 17:44:51 - INFO  - 31,3 MB - New email address
+23-12-2015 17:44:51 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+23-12-2015 19:12:53 - INFO  - 31,3 MB - New email address
+23-12-2015 19:12:53 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+23-12-2015 19:12:59 - INFO  - 31,3 MB - Subscription of an address with status S
+23-12-2015 19:12:59 - INFO  - 31,3 MB - Email address subscribed but not confirmed
+23-12-2015 19:12:59 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+23-12-2015 19:13:40 - INFO  - 31,3 MB - New email address
+23-12-2015 19:13:40 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+23-12-2015 19:16:16 - INFO  - 31,3 MB - New email address
+23-12-2015 19:16:16 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+23-12-2015 19:17:25 - INFO  - 31,3 MB - New email address
+23-12-2015 19:17:25 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 5
+)
+
+23-12-2015 19:18:37 - INFO  - 31,3 MB - New email address
+23-12-2015 19:18:37 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+23-12-2015 19:21:49 - INFO  - 31,3 MB - New email address
+23-12-2015 19:21:49 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 5
+)
+
+23-12-2015 19:22:59 - INFO  - 31,3 MB - New email address
+23-12-2015 19:22:59 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+23-12-2015 19:24:07 - INFO  - 31,3 MB - New email address
+23-12-2015 19:24:07 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+23-12-2015 19:24:50 - INFO  - 31,3 MB - New email address
+23-12-2015 19:24:50 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+23-12-2015 19:25:33 - INFO  - 31,3 MB - New email address
+23-12-2015 19:25:33 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 5
+)
+
+23-12-2015 19:26:32 - INFO  - 31,3 MB - New email address
+23-12-2015 19:26:32 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+23-12-2015 19:27:40 - INFO  - 31,3 MB - New email address
+23-12-2015 19:27:40 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 5
+)
+
+23-12-2015 19:28:51 - INFO  - 31,3 MB - New email address
+23-12-2015 19:28:51 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+24-12-2015 08:37:04 - INFO  - 31,3 MB - New email address
+24-12-2015 08:37:04 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 08:38:20 - INFO  - 31,3 MB - New email address
+24-12-2015 08:38:20 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:39:20 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:40:18 - INFO  - 31,3 MB - New email address
+24-12-2015 08:40:18 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:41:52 - INFO  - 31,3 MB - New email address
+24-12-2015 08:41:52 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:42:58 - INFO  - 31,3 MB - New email address
+24-12-2015 08:42:58 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:43:40 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:44:26 - INFO  - 31,3 MB - New email address
+24-12-2015 08:44:26 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 08:45:51 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:47:09 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:48:14 - INFO  - 31,3 MB - New email address
+24-12-2015 08:48:14 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:49:17 - INFO  - 31,3 MB - New email address
+24-12-2015 08:49:17 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+24-12-2015 08:50:06 - INFO  - 31,3 MB - New email address
+24-12-2015 08:50:06 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:51:06 - INFO  - 31,3 MB - New email address
+24-12-2015 08:51:06 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 08:52:15 - INFO  - 31,3 MB - New email address
+24-12-2015 08:52:15 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:53:33 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:54:24 - INFO  - 31,3 MB - New email address
+24-12-2015 08:54:24 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:55:10 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:55:11 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 08:56:06 - INFO  - 31,3 MB - New email address
+24-12-2015 08:56:06 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 08:57:22 - INFO  - 31,3 MB - New email address
+24-12-2015 08:57:22 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:58:05 - INFO  - 31,3 MB - New email address
+24-12-2015 08:58:05 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:59:05 - INFO  - 31,3 MB - New email address
+24-12-2015 08:59:05 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 08:59:55 - INFO  - 31,3 MB - New email address
+24-12-2015 08:59:55 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+24-12-2015 09:00:44 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 09:08:19 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 09:11:07 - INFO  - 31,3 MB - New email address
+24-12-2015 09:11:07 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:12:05 - INFO  - 31,3 MB - New email address
+24-12-2015 09:12:05 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:12:55 - INFO  - 31,3 MB - New email address
+24-12-2015 09:12:55 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:13:39 - INFO  - 31,3 MB - New email address
+24-12-2015 09:13:39 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:14:14 - INFO  - 31,3 MB - New email address
+24-12-2015 09:14:14 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:15:11 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 09:16:15 - INFO  - 31,3 MB - New email address
+24-12-2015 09:16:15 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:16:51 - INFO  - 31,3 MB - New email address
+24-12-2015 09:16:51 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:18:09 - INFO  - 31,3 MB - New email address
+24-12-2015 09:18:09 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 5
+    [2] => 6
+)
+
+24-12-2015 09:19:06 - INFO  - 31,3 MB - New email address
+24-12-2015 09:19:06 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:20:24 - INFO  - 31,3 MB - New email address
+24-12-2015 09:20:24 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+24-12-2015 09:21:35 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 09:22:19 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 09:23:57 - INFO  - 31,3 MB - New email address
+24-12-2015 09:23:57 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 09:24:49 - INFO  - 31,3 MB - New email address
+24-12-2015 09:24:49 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+24-12-2015 09:25:47 - INFO  - 31,3 MB - New email address
+24-12-2015 09:25:47 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+24-12-2015 09:26:59 - INFO  - 31,3 MB - New email address
+24-12-2015 09:26:59 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 09:28:03 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 09:28:50 - INFO  - 31,3 MB - New email address
+24-12-2015 09:28:50 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+24-12-2015 09:29:53 - INFO  - 31,3 MB - New email address
+24-12-2015 09:29:53 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 09:30:42 - INFO  - 31,3 MB - New email address
+24-12-2015 09:30:42 - DEBUG - 31,4 MB - Array
+(
+    [0] => 3
+    [1] => 6
+)
+
+24-12-2015 11:03:54 - INFO  - 31,3 MB - New email address
+24-12-2015 11:03:54 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 11:37:02 - INFO  - 31,3 MB - Subscription of an address with status S
+24-12-2015 11:37:02 - INFO  - 31,3 MB - Email address subscribed but not confirmed
+24-12-2015 11:37:02 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+)
+
+24-12-2015 16:08:05 - INFO  - 31,3 MB - New email address
+24-12-2015 16:08:05 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+24-12-2015 16:08:54 - INFO  - 31,3 MB - New email address
+24-12-2015 16:08:54 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+24-12-2015 16:09:56 - INFO  - 31,3 MB - Subscription of an address with status C
+24-12-2015 16:10:49 - INFO  - 31,3 MB - New email address
+24-12-2015 16:10:49 - DEBUG - 31,4 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+24-12-2015 16:12:33 - INFO  - 31,3 MB - New email address
+24-12-2015 16:12:33 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+24-12-2015 16:13:31 - INFO  - 31,3 MB - New email address
+24-12-2015 16:13:31 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+24-12-2015 16:27:57 - INFO  - 31,3 MB - New email address
+24-12-2015 16:27:57 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+24-12-2015 16:29:35 - INFO  - 31,3 MB - New email address
+24-12-2015 16:29:35 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+28-12-2015 06:19:09 - INFO  - 31,3 MB - New email address
+28-12-2015 06:19:09 - DEBUG - 31,4 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+28-12-2015 14:39:22 - DEBUG - 30,5 MB - Unsubscription for:
+28-12-2015 14:39:22 - DEBUG - 30,5 MB - stdClass Object
+(
+    [id] => 341
+    [email] => sv@loopperu.com
+    [name] => Johnny Sanders
+    [surname] => 
+    [sex] => n
+    [status] => C
+    [created] => 2015-12-24 17:27:57
+    [token] => 15b349047d
+    [feed] => 0
+    [feed_time] => 0
+    [country] => CH
+    [list_1] => 1
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 0
+    [list_5] => 1
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => http://sports-village.ch/newsletter/?nm=confirmation&nk=340-963103fa16
+    [wp_user_id] => 0
+    [ip] => 83.78.239.118
+    [test] => 0
+    [flow] => 0
+)
+
+29-12-2015 09:54:17 - DEBUG - 30,5 MB - Unsubscription for:
+29-12-2015 09:54:17 - DEBUG - 30,5 MB - stdClass Object
+(
+    [id] => 157
+    [email] => pietro.mazzone@bluewin.ch
+    [name] => 
+    [surname] => Pietro Mazzone
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:07
+    [token] => eb84cbdfbc
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 1
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+29-12-2015 10:29:52 - INFO  - 30,5 MB - New email address
+29-12-2015 10:29:52 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+29-12-2015 12:20:26 - INFO  - 30,5 MB - New email address
+29-12-2015 12:20:26 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 12:20:32 - INFO  - 30,6 MB - Subscription of an address with status S
+29-12-2015 12:20:32 - INFO  - 30,6 MB - Email address subscribed but not confirmed
+29-12-2015 12:20:32 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:14:37 - INFO  - 30,6 MB - New email address
+29-12-2015 15:14:37 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+29-12-2015 15:18:37 - INFO  - 30,6 MB - New email address
+29-12-2015 15:18:37 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:19:36 - INFO  - 30,5 MB - New email address
+29-12-2015 15:19:36 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+29-12-2015 15:20:37 - INFO  - 30,5 MB - New email address
+29-12-2015 15:20:37 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:21:33 - INFO  - 30,5 MB - New email address
+29-12-2015 15:21:33 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:24:35 - INFO  - 30,6 MB - New email address
+29-12-2015 15:24:35 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:25:26 - INFO  - 30,5 MB - New email address
+29-12-2015 15:25:26 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:26:09 - INFO  - 30,5 MB - New email address
+29-12-2015 15:26:09 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:28:16 - INFO  - 30,6 MB - New email address
+29-12-2015 15:28:16 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+29-12-2015 15:29:14 - INFO  - 30,5 MB - New email address
+29-12-2015 15:29:14 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+29-12-2015 16:01:16 - DEBUG - 30,5 MB - Unsubscription for:
+29-12-2015 16:01:16 - DEBUG - 30,5 MB - stdClass Object
+(
+    [id] => 40
+    [email] => abrucato@me.com
+    [name] => 
+    [surname] => Aurelio Brucato
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:06
+    [token] => 8f7ab6eafe
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 0
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+30-12-2015 17:58:42 - INFO  - 30,6 MB - New email address
+30-12-2015 17:58:42 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-12-2015 17:59:53 - INFO  - 30,5 MB - New email address
+30-12-2015 17:59:53 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 5
+)
+
+30-12-2015 18:00:44 - INFO  - 30,5 MB - New email address
+30-12-2015 18:00:44 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+30-12-2015 18:01:35 - INFO  - 30,5 MB - New email address
+30-12-2015 18:01:35 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+30-12-2015 18:02:35 - INFO  - 30,6 MB - New email address
+30-12-2015 18:02:35 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-12-2015 18:03:19 - INFO  - 30,5 MB - New email address
+30-12-2015 18:03:19 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+30-12-2015 18:04:42 - INFO  - 30,5 MB - New email address
+30-12-2015 18:04:42 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+30-12-2015 18:11:04 - INFO  - 30,6 MB - New email address
+30-12-2015 18:11:04 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-12-2015 18:14:05 - INFO  - 30,5 MB - New email address
+30-12-2015 18:14:05 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 6
+)
+
+30-12-2015 18:15:53 - INFO  - 30,5 MB - New email address
+30-12-2015 18:15:53 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+    [2] => 6
+)
+
+30-12-2015 18:17:25 - INFO  - 30,6 MB - New email address
+30-12-2015 18:17:25 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+30-12-2015 18:18:26 - INFO  - 30,6 MB - Subscription of an address with status C
+30-12-2015 18:19:35 - INFO  - 30,5 MB - New email address
+30-12-2015 18:19:35 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-12-2015 18:20:22 - INFO  - 30,5 MB - New email address
+30-12-2015 18:20:22 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+30-12-2015 18:21:15 - INFO  - 30,5 MB - New email address
+30-12-2015 18:21:15 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+30-12-2015 18:22:06 - INFO  - 30,5 MB - New email address
+30-12-2015 18:22:06 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+    [2] => 6
+)
+
+03-01-2016 14:29:56 - INFO  - 30,6 MB - Subscription of an address with status C
+03-01-2016 14:29:59 - INFO  - 30,6 MB - Subscription of an address with status C
+05-01-2016 07:00:13 - DEBUG - 30,5 MB - Unsubscription for:
+05-01-2016 07:00:13 - DEBUG - 30,5 MB - stdClass Object
+(
+    [id] => 131
+    [email] => ch@bubu.ch
+    [name] => 
+    [surname] => Christof Krinninger
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:07
+    [token] => 1d8be39135
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 0
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+05-01-2016 15:51:07 - INFO  - 30,6 MB - New email address
+05-01-2016 15:51:07 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+06-01-2016 15:23:15 - INFO  - 30,6 MB - New email address
+06-01-2016 15:23:15 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 6
+)
+
+06-01-2016 15:24:59 - INFO  - 30,5 MB - New email address
+06-01-2016 15:24:59 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 6
+)
+
+06-01-2016 15:28:58 - INFO  - 30,6 MB - New email address
+06-01-2016 15:28:58 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 5
+)
+
+06-01-2016 15:30:51 - INFO  - 30,6 MB - New email address
+06-01-2016 15:30:51 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+06-01-2016 15:46:19 - INFO  - 30,6 MB - New email address
+06-01-2016 15:46:19 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+06-01-2016 15:50:05 - INFO  - 30,6 MB - Subscription of an address with status C
+06-01-2016 16:20:07 - INFO  - 30,6 MB - New email address
+06-01-2016 16:20:07 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+06-01-2016 16:29:53 - INFO  - 30,6 MB - Subscription of an address with status C
+06-01-2016 16:33:57 - INFO  - 30,6 MB - New email address
+06-01-2016 16:33:57 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+06-01-2016 16:35:20 - INFO  - 30,6 MB - New email address
+06-01-2016 16:35:20 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+06-01-2016 16:38:50 - INFO  - 30,6 MB - New email address
+06-01-2016 16:38:50 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+06-01-2016 16:40:10 - INFO  - 30,6 MB - New email address
+06-01-2016 16:40:10 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+06-01-2016 16:46:05 - INFO  - 30,6 MB - New email address
+06-01-2016 16:46:05 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+06-01-2016 16:47:59 - INFO  - 30,6 MB - New email address
+06-01-2016 16:47:59 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+06-01-2016 16:48:03 - INFO  - 30,6 MB - Subscription of an address with status S
+06-01-2016 16:48:03 - INFO  - 30,6 MB - Email address subscribed but not confirmed
+06-01-2016 16:48:03 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+07-01-2016 16:16:45 - INFO  - 30,6 MB - New email address
+07-01-2016 16:16:45 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+07-01-2016 16:18:15 - INFO  - 30,6 MB - New email address
+07-01-2016 16:18:15 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+07-01-2016 16:19:37 - INFO  - 30,6 MB - New email address
+07-01-2016 16:19:37 - DEBUG - 30,6 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+07-01-2016 16:20:58 - INFO  - 30,6 MB - New email address
+07-01-2016 16:20:58 - DEBUG - 30,6 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+07-01-2016 16:23:04 - INFO  - 30,6 MB - New email address
+07-01-2016 16:23:04 - DEBUG - 30,6 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+08-01-2016 07:34:57 - DEBUG - 30,2 MB - Unsubscription for:
+08-01-2016 07:34:57 - DEBUG - 30,2 MB - stdClass Object
+(
+    [id] => 129
+    [email] => amoscomenius@gmail.com
+    [name] => 
+    [surname] => Jan Kohut
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:07
+    [token] => 111765a7b0
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 0
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+08-01-2016 12:09:17 - INFO  - 30,3 MB - New email address
+08-01-2016 12:09:17 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+08-01-2016 12:10:48 - INFO  - 30,3 MB - New email address
+08-01-2016 12:10:48 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+08-01-2016 12:12:34 - INFO  - 30,3 MB - New email address
+08-01-2016 12:12:34 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+08-01-2016 12:15:29 - INFO  - 30,3 MB - New email address
+08-01-2016 12:15:29 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+08-01-2016 12:16:21 - INFO  - 30,3 MB - New email address
+08-01-2016 12:16:21 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+08-01-2016 12:17:36 - INFO  - 30,3 MB - New email address
+08-01-2016 12:17:36 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 5
+    [2] => 6
+)
+
+08-01-2016 12:19:40 - INFO  - 30,3 MB - New email address
+08-01-2016 12:19:40 - DEBUG - 30,3 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+09-01-2016 13:20:33 - INFO  - 30,3 MB - New email address
+09-01-2016 13:20:33 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+09-01-2016 13:22:13 - INFO  - 30,3 MB - New email address
+09-01-2016 13:22:13 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 5
+)
+
+09-01-2016 13:25:11 - INFO  - 30,3 MB - New email address
+09-01-2016 13:25:11 - DEBUG - 30,3 MB - Array
+(
+    [0] => 5
+    [1] => 6
+)
+
+09-01-2016 13:27:02 - INFO  - 30,3 MB - New email address
+09-01-2016 13:27:02 - DEBUG - 30,3 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+09-01-2016 13:28:24 - INFO  - 30,3 MB - New email address
+09-01-2016 13:28:24 - DEBUG - 30,3 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+12-01-2016 15:27:22 - INFO  - 29,5 MB - New email address
+12-01-2016 15:27:22 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+12-01-2016 15:28:23 - INFO  - 29,5 MB - New email address
+12-01-2016 15:28:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+12-01-2016 15:31:24 - INFO  - 29,5 MB - New email address
+12-01-2016 15:31:24 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+12-01-2016 15:34:22 - INFO  - 29,5 MB - New email address
+12-01-2016 15:34:22 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+12-01-2016 15:41:43 - INFO  - 29,5 MB - New email address
+12-01-2016 15:41:43 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+12-01-2016 15:44:16 - INFO  - 29,5 MB - New email address
+12-01-2016 15:44:16 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+12-01-2016 15:45:52 - INFO  - 29,5 MB - New email address
+12-01-2016 15:45:52 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+12-01-2016 15:49:21 - INFO  - 29,5 MB - New email address
+12-01-2016 15:49:21 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+12-01-2016 15:50:48 - INFO  - 29,5 MB - New email address
+12-01-2016 15:50:48 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+16-01-2016 09:20:47 - INFO  - 29,5 MB - New email address
+16-01-2016 09:20:47 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 5
+    [2] => 6
+)
+
+16-01-2016 09:22:11 - INFO  - 29,5 MB - New email address
+16-01-2016 09:22:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+16-01-2016 09:24:32 - INFO  - 29,5 MB - New email address
+16-01-2016 09:24:32 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+16-01-2016 09:30:10 - INFO  - 29,5 MB - Subscription of an address with status C
+16-01-2016 09:32:59 - INFO  - 29,5 MB - New email address
+16-01-2016 09:32:59 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+16-01-2016 09:51:18 - INFO  - 29,5 MB - New email address
+16-01-2016 09:51:18 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+16-01-2016 09:53:07 - INFO  - 29,5 MB - New email address
+16-01-2016 09:53:07 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+16-01-2016 09:55:14 - INFO  - 29,5 MB - New email address
+16-01-2016 09:55:14 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+16-01-2016 09:58:22 - INFO  - 29,5 MB - New email address
+16-01-2016 09:58:22 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+16-01-2016 10:05:55 - INFO  - 29,5 MB - Subscription of an address with status C
+16-01-2016 10:14:49 - INFO  - 29,5 MB - New email address
+16-01-2016 10:14:49 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+16-01-2016 10:16:01 - INFO  - 29,5 MB - Subscription of an address with status S
+16-01-2016 10:16:01 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+16-01-2016 10:16:01 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+16-01-2016 10:18:02 - INFO  - 29,5 MB - New email address
+16-01-2016 10:18:02 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+20-01-2016 15:36:11 - INFO  - 29,5 MB - New email address
+20-01-2016 15:36:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+20-01-2016 15:37:27 - INFO  - 29,5 MB - New email address
+20-01-2016 15:37:27 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+20-01-2016 15:38:55 - INFO  - 29,5 MB - New email address
+20-01-2016 15:38:55 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+20-01-2016 15:40:23 - INFO  - 29,5 MB - New email address
+20-01-2016 15:40:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+20-01-2016 15:43:32 - INFO  - 29,5 MB - New email address
+20-01-2016 15:43:32 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+20-01-2016 15:55:54 - INFO  - 29,5 MB - New email address
+20-01-2016 15:55:54 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+20-01-2016 15:57:23 - INFO  - 29,5 MB - New email address
+20-01-2016 15:57:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+20-01-2016 15:58:49 - INFO  - 29,5 MB - New email address
+20-01-2016 15:58:49 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+20-01-2016 16:01:53 - INFO  - 29,5 MB - New email address
+20-01-2016 16:01:53 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+20-01-2016 16:03:52 - INFO  - 29,5 MB - New email address
+20-01-2016 16:03:52 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+20-01-2016 16:06:04 - INFO  - 29,5 MB - Subscription of an address with status C
+21-01-2016 17:16:46 - INFO  - 29,5 MB - New email address
+21-01-2016 17:16:46 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+21-01-2016 17:18:15 - INFO  - 29,5 MB - New email address
+21-01-2016 17:18:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+21-01-2016 17:19:15 - INFO  - 29,5 MB - New email address
+21-01-2016 17:19:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+21-01-2016 17:20:21 - INFO  - 29,5 MB - New email address
+21-01-2016 17:20:21 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+21-01-2016 17:21:23 - INFO  - 29,5 MB - New email address
+21-01-2016 17:21:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+21-01-2016 17:22:18 - INFO  - 29,5 MB - New email address
+21-01-2016 17:22:18 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+21-01-2016 17:23:41 - INFO  - 29,5 MB - New email address
+21-01-2016 17:23:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 4
+)
+
+21-01-2016 17:25:01 - INFO  - 29,5 MB - New email address
+21-01-2016 17:25:01 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+21-01-2016 17:25:57 - INFO  - 29,5 MB - New email address
+21-01-2016 17:25:57 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+21-01-2016 17:26:00 - INFO  - 29,5 MB - Subscription of an address with status S
+21-01-2016 17:26:00 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+21-01-2016 17:26:00 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+21-01-2016 17:26:55 - INFO  - 29,5 MB - New email address
+21-01-2016 17:26:55 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+21-01-2016 17:27:40 - INFO  - 29,5 MB - New email address
+21-01-2016 17:27:40 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+21-01-2016 17:28:31 - INFO  - 29,5 MB - New email address
+21-01-2016 17:28:31 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 5
+)
+
+21-01-2016 17:29:22 - INFO  - 29,5 MB - New email address
+21-01-2016 17:29:22 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+21-01-2016 17:30:09 - INFO  - 29,5 MB - New email address
+21-01-2016 17:30:09 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+21-01-2016 17:30:57 - INFO  - 29,5 MB - New email address
+21-01-2016 17:30:57 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 6
+)
+
+21-01-2016 17:31:43 - INFO  - 29,5 MB - Subscription of an address with status S
+21-01-2016 17:31:43 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+21-01-2016 17:31:43 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 6
+)
+
+21-01-2016 17:32:32 - INFO  - 29,5 MB - New email address
+21-01-2016 17:32:32 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+21-01-2016 17:33:25 - INFO  - 29,5 MB - New email address
+21-01-2016 17:33:25 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+21-01-2016 17:34:18 - INFO  - 29,5 MB - New email address
+21-01-2016 17:34:18 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+25-01-2016 18:27:28 - INFO  - 29,5 MB - New email address
+25-01-2016 18:27:28 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+25-01-2016 18:28:35 - INFO  - 29,5 MB - New email address
+25-01-2016 18:28:35 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+25-01-2016 18:29:39 - INFO  - 29,5 MB - New email address
+25-01-2016 18:29:39 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+25-01-2016 18:30:41 - INFO  - 29,5 MB - New email address
+25-01-2016 18:30:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+25-01-2016 18:31:24 - INFO  - 29,5 MB - New email address
+25-01-2016 18:31:24 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+25-01-2016 18:32:16 - INFO  - 29,5 MB - New email address
+25-01-2016 18:32:16 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+25-01-2016 18:41:12 - INFO  - 29,5 MB - New email address
+25-01-2016 18:41:12 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 6
+)
+
+25-01-2016 18:42:12 - INFO  - 29,5 MB - New email address
+25-01-2016 18:42:12 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+25-01-2016 18:44:37 - INFO  - 29,5 MB - New email address
+25-01-2016 18:44:37 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+25-01-2016 18:45:37 - INFO  - 29,5 MB - New email address
+25-01-2016 18:45:37 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 6
+)
+
+26-01-2016 20:19:30 - INFO  - 29,5 MB - New email address
+26-01-2016 20:19:30 - DEBUG - 29,5 MB - Array
+(
+    [0] => 6
+)
+
+26-01-2016 20:24:06 - INFO  - 29,5 MB - Subscription of an address with status S
+26-01-2016 20:24:06 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+26-01-2016 20:24:06 - DEBUG - 29,5 MB - Array
+(
+    [0] => 6
+)
+
+26-01-2016 20:28:36 - DEBUG - 29,4 MB - Unsubscription for:
+26-01-2016 20:28:36 - DEBUG - 29,4 MB - stdClass Object
+(
+    [id] => 291
+    [email] => ullrich.preuss@gmail.com
+    [name] => Ullrich Preuss
+    [surname] => 
+    [sex] => n
+    [status] => C
+    [created] => 2015-12-23 20:17:25
+    [token] => deb2f96b3b
+    [feed] => 0
+    [feed_time] => 0
+    [country] => CH
+    [list_1] => 1
+    [list_2] => 0
+    [list_3] => 1
+    [list_4] => 0
+    [list_5] => 1
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => http://sports-village.ch/newsletter/?nm=confirmation&nk=290-e40e3a40b8
+    [wp_user_id] => 0
+    [ip] => 83.78.239.118
+    [test] => 0
+    [flow] => 0
+)
+
+30-01-2016 08:30:41 - INFO  - 29,5 MB - New email address
+30-01-2016 08:30:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+30-01-2016 08:33:08 - INFO  - 29,5 MB - New email address
+30-01-2016 08:33:08 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-01-2016 08:34:46 - INFO  - 29,5 MB - New email address
+30-01-2016 08:34:46 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 08:36:30 - INFO  - 29,5 MB - New email address
+30-01-2016 08:36:30 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+30-01-2016 08:40:14 - INFO  - 29,5 MB - New email address
+30-01-2016 08:40:14 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-01-2016 08:41:38 - INFO  - 29,5 MB - New email address
+30-01-2016 08:41:38 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+30-01-2016 08:42:53 - INFO  - 29,5 MB - New email address
+30-01-2016 08:42:53 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 08:45:06 - INFO  - 29,5 MB - Subscription of an address with status S
+30-01-2016 08:45:06 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+30-01-2016 08:45:06 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 08:46:07 - INFO  - 29,5 MB - New email address
+30-01-2016 08:46:07 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 08:46:08 - INFO  - 29,5 MB - Subscription of an address with status S
+30-01-2016 08:46:08 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+30-01-2016 08:46:08 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 08:46:47 - INFO  - 29,5 MB - New email address
+30-01-2016 08:46:47 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+30-01-2016 08:47:45 - INFO  - 29,5 MB - New email address
+30-01-2016 08:47:45 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 6
+)
+
+30-01-2016 08:48:29 - INFO  - 29,5 MB - New email address
+30-01-2016 08:48:29 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+30-01-2016 08:49:54 - INFO  - 29,5 MB - New email address
+30-01-2016 08:49:54 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 6
+)
+
+30-01-2016 08:51:01 - INFO  - 29,5 MB - New email address
+30-01-2016 08:51:01 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 08:52:28 - INFO  - 29,5 MB - New email address
+30-01-2016 08:52:28 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+30-01-2016 08:53:44 - INFO  - 29,5 MB - New email address
+30-01-2016 08:53:44 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-01-2016 08:54:49 - INFO  - 29,5 MB - New email address
+30-01-2016 08:54:49 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-01-2016 08:55:38 - INFO  - 29,5 MB - New email address
+30-01-2016 08:55:38 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+30-01-2016 08:56:35 - INFO  - 29,5 MB - New email address
+30-01-2016 08:56:35 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+30-01-2016 08:58:59 - INFO  - 29,5 MB - New email address
+30-01-2016 08:58:59 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+30-01-2016 09:00:11 - INFO  - 29,5 MB - New email address
+30-01-2016 09:00:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 6
+)
+
+30-01-2016 09:01:09 - INFO  - 29,5 MB - New email address
+30-01-2016 09:01:09 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 5
+)
+
+30-01-2016 09:02:07 - INFO  - 29,5 MB - Subscription of an address with status C
+30-01-2016 09:03:11 - INFO  - 29,5 MB - New email address
+30-01-2016 09:03:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 09:04:45 - INFO  - 29,5 MB - New email address
+30-01-2016 09:04:45 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+30-01-2016 09:06:00 - INFO  - 29,5 MB - New email address
+30-01-2016 09:06:00 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 6
+)
+
+30-01-2016 09:06:51 - INFO  - 29,5 MB - New email address
+30-01-2016 09:06:51 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+30-01-2016 09:07:43 - INFO  - 29,5 MB - New email address
+30-01-2016 09:07:43 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+30-01-2016 09:09:00 - INFO  - 29,5 MB - New email address
+30-01-2016 09:09:00 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+30-01-2016 09:30:13 - INFO  - 29,5 MB - New email address
+30-01-2016 09:30:13 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+03-02-2016 14:30:47 - INFO  - 29,5 MB - New email address
+03-02-2016 14:30:47 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 6
+)
+
+03-02-2016 14:33:06 - INFO  - 29,5 MB - New email address
+03-02-2016 14:33:06 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+03-02-2016 14:34:40 - INFO  - 29,5 MB - New email address
+03-02-2016 14:34:40 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+03-02-2016 14:35:53 - INFO  - 29,5 MB - New email address
+03-02-2016 14:35:53 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 5
+    [3] => 6
+)
+
+03-02-2016 14:38:48 - INFO  - 29,5 MB - New email address
+03-02-2016 14:38:48 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+03-02-2016 14:40:06 - INFO  - 29,5 MB - New email address
+03-02-2016 14:40:06 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+03-02-2016 14:41:03 - INFO  - 29,5 MB - New email address
+03-02-2016 14:41:03 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+03-02-2016 14:42:03 - INFO  - 29,5 MB - Subscription of an address with status B
+03-02-2016 14:43:05 - INFO  - 29,5 MB - New email address
+03-02-2016 14:43:05 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+03-02-2016 14:44:50 - INFO  - 29,5 MB - New email address
+03-02-2016 14:44:50 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+03-02-2016 14:46:10 - INFO  - 29,5 MB - New email address
+03-02-2016 14:46:10 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+04-02-2016 16:44:17 - INFO  - 29,4 MB - New email address
+04-02-2016 16:44:17 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+04-02-2016 16:45:13 - INFO  - 29,4 MB - New email address
+04-02-2016 16:45:13 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+04-02-2016 16:46:04 - INFO  - 29,4 MB - New email address
+04-02-2016 16:46:04 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+10-02-2016 11:26:15 - INFO  - 29,5 MB - New email address
+10-02-2016 11:26:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+10-02-2016 11:28:35 - INFO  - 29,5 MB - New email address
+10-02-2016 11:28:35 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+10-02-2016 11:36:33 - INFO  - 29,5 MB - New email address
+10-02-2016 11:36:33 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+10-02-2016 11:37:23 - INFO  - 29,5 MB - Subscription of an address with status C
+10-02-2016 11:38:46 - INFO  - 29,5 MB - New email address
+10-02-2016 11:38:46 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+10-02-2016 11:39:42 - INFO  - 29,5 MB - New email address
+10-02-2016 11:39:42 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+10-02-2016 11:40:42 - INFO  - 29,5 MB - New email address
+10-02-2016 11:40:42 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+10-02-2016 11:41:31 - INFO  - 29,5 MB - New email address
+10-02-2016 11:41:31 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+10-02-2016 11:42:33 - INFO  - 29,5 MB - New email address
+10-02-2016 11:42:33 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+10-02-2016 11:43:58 - INFO  - 29,5 MB - New email address
+10-02-2016 11:43:58 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+10-02-2016 11:44:55 - INFO  - 29,5 MB - New email address
+10-02-2016 11:44:55 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+10-02-2016 11:45:39 - INFO  - 29,5 MB - New email address
+10-02-2016 11:45:39 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+10-02-2016 11:48:02 - INFO  - 29,5 MB - New email address
+10-02-2016 11:48:02 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+10-02-2016 11:48:44 - INFO  - 29,5 MB - New email address
+10-02-2016 11:48:44 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+11-02-2016 16:44:28 - INFO  - 29,5 MB - New email address
+11-02-2016 16:44:28 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+11-02-2016 16:46:02 - INFO  - 29,5 MB - New email address
+11-02-2016 16:46:02 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+11-02-2016 17:30:15 - INFO  - 29,5 MB - Subscription of an address with status S
+11-02-2016 17:30:15 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+11-02-2016 17:30:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+11-02-2016 17:31:59 - INFO  - 29,5 MB - New email address
+11-02-2016 17:31:59 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+11-02-2016 17:36:42 - INFO  - 29,5 MB - New email address
+11-02-2016 17:36:42 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+11-02-2016 17:38:05 - INFO  - 29,5 MB - New email address
+11-02-2016 17:38:05 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+11-02-2016 17:38:11 - INFO  - 29,5 MB - Subscription of an address with status S
+11-02-2016 17:38:11 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+11-02-2016 17:38:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+11-02-2016 17:39:07 - INFO  - 29,5 MB - New email address
+11-02-2016 17:39:07 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 5
+    [2] => 6
+)
+
+11-02-2016 17:41:14 - INFO  - 29,5 MB - New email address
+11-02-2016 17:41:14 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+11-02-2016 17:41:58 - INFO  - 29,5 MB - New email address
+11-02-2016 17:41:58 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+11-02-2016 17:42:41 - INFO  - 29,5 MB - New email address
+11-02-2016 17:42:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+13-02-2016 09:23:35 - INFO  - 29,5 MB - Subscription of an address with status C
+13-02-2016 09:28:54 - INFO  - 29,5 MB - New email address
+13-02-2016 09:28:54 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+13-02-2016 09:30:06 - INFO  - 29,5 MB - New email address
+13-02-2016 09:30:06 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+13-02-2016 09:31:41 - INFO  - 29,5 MB - New email address
+13-02-2016 09:31:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+13-02-2016 09:37:23 - INFO  - 29,5 MB - New email address
+13-02-2016 09:37:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+13-02-2016 10:50:28 - INFO  - 29,5 MB - New email address
+13-02-2016 10:50:28 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+13-02-2016 10:52:02 - INFO  - 29,5 MB - New email address
+13-02-2016 10:52:02 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+13-02-2016 10:53:35 - INFO  - 29,5 MB - New email address
+13-02-2016 10:53:35 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+13-02-2016 10:55:56 - INFO  - 29,5 MB - New email address
+13-02-2016 10:55:56 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+13-02-2016 10:58:13 - INFO  - 29,5 MB - New email address
+13-02-2016 10:58:13 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+13-02-2016 11:01:49 - INFO  - 29,5 MB - New email address
+13-02-2016 11:01:49 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+    [2] => 6
+)
+
+13-02-2016 11:03:06 - INFO  - 29,5 MB - Subscription of an address with status S
+13-02-2016 11:03:06 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+13-02-2016 11:03:06 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+13-02-2016 11:05:39 - INFO  - 29,5 MB - New email address
+13-02-2016 11:05:39 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+23-02-2016 11:22:22 - INFO  - 29,5 MB - New email address
+23-02-2016 11:22:22 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:24:34 - INFO  - 29,5 MB - New email address
+23-02-2016 11:24:34 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+)
+
+23-02-2016 11:25:33 - INFO  - 29,5 MB - New email address
+23-02-2016 11:25:33 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 6
+)
+
+23-02-2016 11:26:45 - INFO  - 29,5 MB - New email address
+23-02-2016 11:26:45 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:29:05 - INFO  - 29,5 MB - New email address
+23-02-2016 11:29:05 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:30:30 - INFO  - 29,5 MB - New email address
+23-02-2016 11:30:30 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:31:31 - INFO  - 29,5 MB - New email address
+23-02-2016 11:31:31 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:35:48 - INFO  - 29,5 MB - New email address
+23-02-2016 11:35:48 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 5
+)
+
+23-02-2016 11:36:55 - INFO  - 29,5 MB - New email address
+23-02-2016 11:36:55 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:37:40 - INFO  - 29,5 MB - New email address
+23-02-2016 11:37:40 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:39:13 - INFO  - 29,5 MB - New email address
+23-02-2016 11:39:13 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:40:18 - INFO  - 29,5 MB - New email address
+23-02-2016 11:40:18 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:41:24 - INFO  - 29,5 MB - New email address
+23-02-2016 11:41:24 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:42:15 - INFO  - 29,4 MB - New email address
+23-02-2016 11:42:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:43:19 - INFO  - 29,5 MB - New email address
+23-02-2016 11:43:19 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-02-2016 11:44:23 - INFO  - 29,5 MB - New email address
+23-02-2016 11:44:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:45:19 - INFO  - 29,5 MB - Subscription of an address with status C
+23-02-2016 11:46:10 - INFO  - 29,4 MB - New email address
+23-02-2016 11:46:10 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:47:15 - INFO  - 29,5 MB - New email address
+23-02-2016 11:47:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+
+23-02-2016 11:48:14 - INFO  - 29,5 MB - New email address
+23-02-2016 11:48:14 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+23-02-2016 11:49:15 - INFO  - 29,5 MB - New email address
+23-02-2016 11:49:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:50:01 - INFO  - 29,5 MB - New email address
+23-02-2016 11:50:01 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:50:55 - INFO  - 29,5 MB - New email address
+23-02-2016 11:50:55 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:52:45 - INFO  - 29,5 MB - New email address
+23-02-2016 11:52:45 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 11:53:39 - INFO  - 29,5 MB - New email address
+23-02-2016 11:53:39 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 11:55:52 - INFO  - 29,5 MB - Subscription of an address with status S
+23-02-2016 11:55:52 - INFO  - 29,5 MB - Email address subscribed but not confirmed
+23-02-2016 11:55:52 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:00:08 - INFO  - 29,5 MB - New email address
+23-02-2016 12:00:08 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-02-2016 12:01:54 - INFO  - 29,5 MB - New email address
+23-02-2016 12:01:54 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+23-02-2016 12:02:34 - INFO  - 29,5 MB - New email address
+23-02-2016 12:02:34 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+23-02-2016 12:04:36 - INFO  - 29,5 MB - New email address
+23-02-2016 12:04:36 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:05:16 - INFO  - 29,4 MB - New email address
+23-02-2016 12:05:16 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+23-02-2016 12:06:18 - INFO  - 29,5 MB - New email address
+23-02-2016 12:06:18 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:07:44 - INFO  - 29,5 MB - New email address
+23-02-2016 12:07:44 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 12:08:35 - INFO  - 29,4 MB - New email address
+23-02-2016 12:08:35 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:09:28 - INFO  - 29,5 MB - New email address
+23-02-2016 12:09:28 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:10:59 - INFO  - 29,5 MB - New email address
+23-02-2016 12:10:59 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 12:12:45 - INFO  - 29,4 MB - New email address
+23-02-2016 12:12:45 - DEBUG - 29,5 MB - Array
+(
+    [0] => 4
+)
+
+23-02-2016 12:13:38 - INFO  - 29,4 MB - New email address
+23-02-2016 12:13:38 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:15:08 - INFO  - 29,4 MB - New email address
+23-02-2016 12:15:08 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 12:15:59 - INFO  - 29,4 MB - New email address
+23-02-2016 12:15:59 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 12:17:15 - INFO  - 29,4 MB - New email address
+23-02-2016 12:17:15 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:18:03 - INFO  - 29,4 MB - New email address
+23-02-2016 12:18:03 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:19:49 - INFO  - 29,4 MB - New email address
+23-02-2016 12:19:49 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 12:20:41 - INFO  - 29,4 MB - New email address
+23-02-2016 12:20:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+23-02-2016 14:12:09 - INFO  - 29,4 MB - New email address
+23-02-2016 14:12:09 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 14:12:59 - INFO  - 29,4 MB - New email address
+23-02-2016 14:12:59 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 14:42:34 - INFO  - 29,4 MB - New email address
+23-02-2016 14:42:34 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 5
+)
+
+23-02-2016 17:17:19 - INFO  - 29,4 MB - New email address
+23-02-2016 17:17:19 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+23-02-2016 18:59:08 - INFO  - 29,5 MB - New email address
+23-02-2016 18:59:08 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+24-02-2016 17:22:57 - INFO  - 29,5 MB - New email address
+24-02-2016 17:22:57 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+24-02-2016 17:25:53 - INFO  - 29,4 MB - New email address
+24-02-2016 17:25:53 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+25-02-2016 11:24:55 - INFO  - 29,5 MB - New email address
+25-02-2016 11:24:55 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+25-02-2016 11:26:04 - INFO  - 29,5 MB - New email address
+25-02-2016 11:26:04 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+25-02-2016 13:34:26 - INFO  - 29,5 MB - Subscription of an address with status C
+25-02-2016 16:03:23 - INFO  - 29,5 MB - New email address
+25-02-2016 16:03:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+25-02-2016 16:04:24 - INFO  - 29,5 MB - New email address
+25-02-2016 16:04:24 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 5
+)
+
+25-02-2016 16:46:48 - INFO  - 29,5 MB - New email address
+25-02-2016 16:46:48 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+25-02-2016 17:57:11 - INFO  - 29,5 MB - New email address
+25-02-2016 17:57:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+26-02-2016 14:04:43 - INFO  - 29,5 MB - New email address
+26-02-2016 14:04:43 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+)
+
+26-02-2016 14:11:23 - INFO  - 29,5 MB - New email address
+26-02-2016 14:11:23 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+26-02-2016 14:12:14 - INFO  - 29,5 MB - New email address
+26-02-2016 14:12:14 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+26-02-2016 14:13:20 - INFO  - 29,5 MB - New email address
+26-02-2016 14:13:20 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 6
+)
+
+26-02-2016 14:14:39 - INFO  - 29,5 MB - New email address
+26-02-2016 14:14:39 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 6
+)
+
+27-02-2016 09:59:41 - INFO  - 29,5 MB - New email address
+27-02-2016 09:59:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+27-02-2016 10:01:05 - INFO  - 29,5 MB - New email address
+27-02-2016 10:01:05 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+)
+
+27-02-2016 10:06:33 - INFO  - 29,5 MB - New email address
+27-02-2016 10:06:33 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+27-02-2016 10:08:01 - INFO  - 29,5 MB - Subscription of an address with status C
+27-02-2016 10:12:01 - INFO  - 29,5 MB - New email address
+27-02-2016 10:12:01 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+27-02-2016 10:14:32 - INFO  - 29,5 MB - Subscription of an address with status C
+27-02-2016 18:22:36 - INFO  - 29,5 MB - New email address
+27-02-2016 18:22:36 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+)
+
+29-02-2016 12:11:52 - INFO  - 29,5 MB - New email address
+29-02-2016 12:11:52 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 4
+    [3] => 5
+    [4] => 6
+)
+
+02-03-2016 10:24:03 - INFO  - 29,5 MB - New email address
+02-03-2016 10:24:03 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+)
+
+03-03-2016 15:09:31 - INFO  - 29,4 MB - New email address
+03-03-2016 15:09:31 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+03-03-2016 15:10:21 - INFO  - 29,4 MB - New email address
+03-03-2016 15:10:21 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+03-03-2016 15:11:21 - INFO  - 29,4 MB - New email address
+03-03-2016 15:11:21 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+03-03-2016 15:12:24 - INFO  - 29,4 MB - New email address
+03-03-2016 15:12:24 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 6
+)
+
+03-03-2016 15:13:58 - INFO  - 29,4 MB - New email address
+03-03-2016 15:13:58 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+03-03-2016 15:14:45 - INFO  - 29,4 MB - New email address
+03-03-2016 15:14:45 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+03-03-2016 15:16:11 - INFO  - 29,4 MB - New email address
+03-03-2016 15:16:11 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+06-03-2016 17:25:38 - DEBUG - 29,4 MB - Unsubscription for:
+06-03-2016 17:25:38 - DEBUG - 29,4 MB - stdClass Object
+(
+    [id] => 204
+    [email] => mail@martin-schumacher.ch
+    [name] => 
+    [surname] => Martin Schumacher
+    [sex] => n
+    [status] => C
+    [created] => 2015-11-01 01:31:07
+    [token] => 82a1456493
+    [feed] => 0
+    [feed_time] => 0
+    [country] => 
+    [list_1] => 0
+    [list_2] => 0
+    [list_3] => 0
+    [list_4] => 1
+    [list_5] => 0
+    [list_6] => 0
+    [list_7] => 0
+    [list_8] => 0
+    [list_9] => 0
+    [list_10] => 0
+    [list_11] => 0
+    [list_12] => 0
+    [list_13] => 0
+    [list_14] => 0
+    [list_15] => 0
+    [list_16] => 0
+    [list_17] => 0
+    [list_18] => 0
+    [list_19] => 0
+    [list_20] => 0
+    [profile_1] => 
+    [profile_2] => 
+    [profile_3] => 
+    [profile_4] => 
+    [profile_5] => 
+    [profile_6] => 
+    [profile_7] => 
+    [profile_8] => 
+    [profile_9] => 
+    [profile_10] => 
+    [profile_11] => 
+    [profile_12] => 
+    [profile_13] => 
+    [profile_14] => 
+    [profile_15] => 
+    [profile_16] => 
+    [profile_17] => 
+    [profile_18] => 
+    [profile_19] => 
+    [profile_20] => 
+    [referrer] => 
+    [http_referer] => 
+    [wp_user_id] => 0
+    [ip] => 
+    [test] => 0
+    [flow] => 0
+)
+
+07-03-2016 19:35:41 - INFO  - 29,4 MB - New email address
+07-03-2016 19:35:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 3
+    [1] => 4
+    [2] => 6
+)
+
+09-03-2016 13:20:47 - INFO  - 29,4 MB - New email address
+09-03-2016 13:20:47 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+09-03-2016 13:21:54 - INFO  - 29,4 MB - New email address
+09-03-2016 13:21:54 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+09-03-2016 13:22:56 - INFO  - 29,4 MB - New email address
+09-03-2016 13:22:56 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 5
+    [2] => 6
+)
+
+09-03-2016 13:23:51 - INFO  - 29,4 MB - New email address
+09-03-2016 13:23:51 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+09-03-2016 13:24:41 - INFO  - 29,4 MB - Subscription of an address with status S
+09-03-2016 13:24:41 - INFO  - 29,4 MB - Email address subscribed but not confirmed
+09-03-2016 13:24:41 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
+09-03-2016 13:27:31 - INFO  - 29,4 MB - Subscription of an address with status S
+09-03-2016 13:27:31 - INFO  - 29,4 MB - Email address subscribed but not confirmed
+09-03-2016 13:27:31 - DEBUG - 29,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+)
+
+10-03-2016 12:39:51 - INFO  - 29,4 MB - New email address
+10-03-2016 12:39:51 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 5
+)
+
+10-03-2016 12:41:32 - INFO  - 29,4 MB - New email address
+10-03-2016 12:41:32 - DEBUG - 29,5 MB - Array
+(
+    [0] => 2
+    [1] => 4
+)
+
