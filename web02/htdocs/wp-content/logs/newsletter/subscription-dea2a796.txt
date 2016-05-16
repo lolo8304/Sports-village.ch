@@ -3590,3 +3590,7 @@
     [1] => 4
 )
 
+16-05-2016 21:09:50 - INFO  - 22.6 MB - Version changed from 1.1.6 to 2.0.1
+16-05-2016 21:09:50 - INFO  - 22.7 MB - upgrade_query> Executing update wp_options set autoload='no' where option_name='newsletter_subscription_profile' limit 1
+16-05-2016 21:09:50 - INFO  - 22.6 MB - upgrade_query> Executing update wp_options set autoload='no' where option_name='newsletter_subscription_lists' limit 1
+16-05-2016 21:09:50 - INFO  - 22.6 MB - upgrade_query> Executing update wp_options set autoload='no' where option_name='newsletter_subscription_template' limit 1

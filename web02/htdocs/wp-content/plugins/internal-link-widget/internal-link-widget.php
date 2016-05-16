@@ -3,7 +3,7 @@
 Plugin Name: Internal Link Widget
 Plugin URI: http://wordpress.org/plugins/internal-link-widget
 Description: Add a simple widget to handle interal link without hardcoding it as you would do with the normal text widget.
-Version: 0.2
+Version: 0.3
 Author: Martino Stenta
 Author URI: http://www.noiza.com
 License: GPLv2 or later

@@ -2,8 +2,8 @@
 Contributors: molokom
 Tags: widget, link, sidebar
 Requires at least: 3.0
-Tested up to: 4
-Stable tag: trunk
+Tested up to: 4.4.2
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,9 @@ It is not responsible for any harm or wrong doing this Plugin may cause. Users a
 4. A simple CSS customization
 
 == Changelog ==
+
+= 0.3 =
+* Update version compatibility
 
 = 0.2 =
 * Added serbian localization.

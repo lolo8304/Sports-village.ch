@@ -1,4 +1,5 @@
 <?php
+
 require_once NEWSLETTER_INCLUDES_DIR . '/controls.php';
 $controls = new NewsletterControls();
 $module = NewsletterUsers::instance();
@@ -49,37 +50,67 @@ if (!$controls->is_action()) {
 }
 
 $options_profile = get_option('newsletter_profile');
+
+$panels = Newsletter::instance()->panels;
+
+//$wpdb->query($wpdb->prepare("insert ignore into " . $wpdb->prefix . "newsletter_sent (user_id, email_id, time) select user_id, email_id, UNIX_TIMESTAMP(created) from " . NEWSLETTER_STATS_TABLE . " where user_id=%d", $id));
+
+function percent($value, $total) {
+    if ($total == 0)
+        return '-';
+    return sprintf("%.2f", $value / $total * 100) . '%';
+}
+
+function percentValue($value, $total) {
+    if ($total == 0)
+        return 0;
+    return round($value / $total * 100);
+}
+    
 ?>
-<div class="wrap">
-    <?php $help_url = 'http://www.thenewsletterplugin.com/plugins/newsletter/subscribers-module'; ?>
-    <?php include NEWSLETTER_DIR . '/header-new.php'; ?>
 
-    <div id="newsletter-title">
-        <?php include NEWSLETTER_DIR . '/users/menu.inc.php'; ?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages': ['corechart', 'geomap']});
+</script>
 
-        <h2>Editing <?php echo esc_html($controls->data['email'])?></h2>
-    </div>
-    <div class="newsletter-separator"></div> 
+<div class="wrap" id="tnp-wrap">
 
-    <?php $controls->show(); ?>
+    <?php include NEWSLETTER_DIR . '/tnp-header.php'; ?>
 
+	<div id="tnp-heading">
+
+        <h2><?php _e('Editing', 'newsletter') ?> <?php echo esc_html($controls->data['email'])?></h2>
+
+        </div>
+
+	<div id="tnp-body">
+        
     <form method="post" action="">
+        <p>
+            <?php $controls->button_back('?page=newsletter_users_index'); ?>
+            <?php $controls->button_save(); ?>
+        </p>
         <?php $controls->init(); ?>
 
         <div id="tabs">
 
             <ul>
                 <li><a href="#tabs-general">General</a></li>
-                <li><a href="#tabs-preferences">Preferences</a></li>
+                <li><a href="#tabs-preferences">Lists</a></li>
                 <li><a href="#tabs-profile">Profile</a></li>
                 <li><a href="#tabs-other">Other</a></li>
-                <li><a href="#tabs-newsletters">Newsletters</a></li>
+		<li><a href="#tabs-newsletters">Newsletters</a></li>
+                
             </ul>
 
             <div id="tabs-general">
-
+	    
+		<?php do_action('newsletter_users_edit_general', $id) ?>
+                
                 <table class="form-table">
-                    <tr valign="top">
+
+                        <tr valign="top">
                         <th>Email address</th>
                         <td>
                             <?php $controls->text('email', 60); ?>
@@ -89,9 +120,9 @@ $options_profile = get_option('newsletter_profile');
                         <th>First name</th>
                         <td>
                             <?php $controls->text('name', 50); ?>
-                            <div class="hints">
+                            <p class="description">
                                 If you collect only the name of the subscriber without distinction of first and last name this field is used.
-                            </div>
+                            </p>
                         </td>
                     </tr>
                     <tr valign="top">
@@ -116,10 +147,10 @@ $options_profile = get_option('newsletter_profile');
                         <th>Test subscriber?</th>
                         <td>
                             <?php $controls->yesno('test'); ?>
-                            <div class="hints">
+                            <p class="description">
                                 A test subscriber is a regular subscriber that is even used as recipint when sending test newsletter are sent
                                 (for example to check the layout).
-                            </div>
+                            </p>
                         </td>
                     </tr>
 
@@ -129,10 +160,10 @@ $options_profile = get_option('newsletter_profile');
                         <th>Feed by mail</th>
                         <td>
                             <?php $controls->yesno('feed'); ?>
-                            <div class="hints">
+                            <p class="description">
                                 "Yes" when this subscriber has the feed by mail service active. The 
                                 <a href="http://www.thenewsletterplugin.com/feed-by-mail-extension?utm_source=plugin&utm_medium=link&utm_campaign=newsletter-feed" target="_blank">feed by mail is an extension of this plugin</a>.
-                            </div>
+                            </p>
                         </td>
                     </tr>
                 </table>
@@ -161,7 +192,7 @@ $options_profile = get_option('newsletter_profile');
                         or when the user's editing his profile. Those fields can be configured in the "Subscription Form" panel.
                     </p>
                 </div>
-                <table class="widefat" style="width:auto">
+                <table class="widefat">
                     <thead>
                         <tr>
                             <th>Number</th>
@@ -207,27 +238,27 @@ $options_profile = get_option('newsletter_profile');
                         <th>From IP address</th>
                         <td>
                             <?php $controls->value('ip'); ?>
-                            <div class="hints">
+                            <p class="description">
                                 Internet address from which the subscription started. Required by many providers.
-                            </div>
+                            </p>
                         </td>
                     </tr>
                     <tr valign="top">
                         <th>Secret token</th>
                         <td>
                             <?php $controls->text('token', 50); ?>
-                            <div class="hints">
+                            <p class="description">
                                 This secret token is used to access the profile page and edit profile data, to confirm and cancel the subscription.
-                            </div>
+                            </p>
                         </td>
                     </tr>
                     <tr valign="top">
                         <th>Profile URL</th>
                         <td>
                             <?php echo plugins_url('newsletter/do/profile.php') . '?nk=' . $id . '-' . $controls->data['token']; ?>
-                            <div class="hints">
+                            <p class="description">
                                 The URL which lands on the user profile editing page. It can be added on newsletters using the {profile_url} tag.
-                            </div>
+                            </p>
                         </td>
                     </tr>
 
@@ -235,13 +266,24 @@ $options_profile = get_option('newsletter_profile');
             </div>
             <div id="tabs-newsletters">
                 <p>Newsletter sent to this subscriber.</p>
-                <?php if (!has_action('newsletter_user_newsletters_tab')) { ?>
+                <?php if (!has_action('newsletter_user_newsletters_tab') && !has_action('newsletter_users_edit_newsletters')) { ?>
                 <div class="tnp-tab-notice">
-                    This panel requires the <a href="http://www.thenewsletterplugin.com/plugins/newsletter/reports-module" target="_blank">Reports Extension 2.2.3</a>.
-
+                    This panel requires the <a href="http://www.thenewsletterplugin.com/plugins/newsletter/reports-module" target="_blank">Reports Extension 4+</a>.
                 </div>
-                <?php } else do_action('newsletter_user_newsletters_tab', $id) ?>
+                <?php } else {
+                    do_action('newsletter_user_newsletters_tab', $id);
+                    do_action('newsletter_users_edit_newsletters', $id);
+                }?>
             </div>
+            
+            <?php 
+                if (isset($panels['user_edit'])) { 
+                    foreach ($panels['user_edit'] as $panel) {
+                        call_user_func($panel['callback'], $id, $controls);
+                    }
+                }
+            ?>
+            
         </div>
 
         <p class="submit">
@@ -250,4 +292,8 @@ $options_profile = get_option('newsletter_profile');
         </p>
 
     </form>
+</div>
+
+    <?php include NEWSLETTER_DIR . '/tnp-footer.php'; ?>
+    
 </div>

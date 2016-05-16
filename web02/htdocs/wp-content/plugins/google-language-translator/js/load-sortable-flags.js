@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
 	$('#order').val(newOrder);
     }
   });
+  
   $("#sortable,#sortable-toolbar").disableSelection();
 });
 	    

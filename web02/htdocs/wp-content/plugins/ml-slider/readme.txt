@@ -3,8 +3,8 @@ Contributors: matchalabs
 Tags: wordpress slideshow,seo,slideshow,slider,widget,wordpress slider,image slider,flexslider,flex slider,nivoslider,nivo slider,responsive,responsive slides,coinslider,coin slider,slideshow,carousel,responsive slider,vertical slides
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CQ84KC4X8YKW8
 Requires at least: 3.5
-Tested up to: 4.3.1
-Stable tag: 3.3.4.1
+Tested up to: 4.5
+Stable tag: 3.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -147,7 +147,15 @@ See www.metaslider.com/documentation/image-cropping/
 
 == Changelog ==
 
-= 3.3.5 [11/09/15] =
+= 3.3.7 [06/05/15] =
+
+* Fix: "Maximum level reached" error when inserting the shortcode for a slideshow into it's own caption. Thanks to Zhouyuan @ Fortinet for reporting this.
+
+= 3.3.6 [14/12/15] =
+
+* Fix: Save Spinner
+
+= 3.3.5 [22/09/15] =
 
 * Prepare plugin for WordPress.org translation project (rename textdomain from 'metaslider' to 'ml-slider')
 * Small styling fix

@@ -17,6 +17,7 @@
 	}
 	
 	function mt_register_settings() {
+		global	$maintenance;
 		if ( !empty($_POST['lib_options']) && check_admin_referer('maintenance_edit_post','maintenance_nonce') ) {
 			if (!isset($_POST['lib_options']['state'])) { $_POST['lib_options']['state'] = 0; } 
 			else {	   $_POST['lib_options']['state'] = 1; }
@@ -27,6 +28,7 @@
 			
 			if (isset($_POST['lib_options'])) {
 			    update_option( 'maintenance_options',  $_POST['lib_options']);
+				$maintenance->mt_clear_cache();
 			}	
 		}
 	}
@@ -51,7 +53,9 @@
 			wp_enqueue_style  ('select2',    MAINTENANCE_URI .'js/select2/select2.css' );	
 			
 			wp_enqueue_script ('uplaods_',    MAINTENANCE_URI .'js/uploads_.min.js' );
-			wp_enqueue_script ('maintenance', MAINTENANCE_URI .'js/init.min.js', array( 'wp-color-picker' ), false, true );
+			wp_register_script ('maintenance', MAINTENANCE_URI .'js/init.min.js', array( 'wp-color-picker' ), false, true );
+			wp_localize_script( 'maintenance', 'maintenance', 	array( 	'path' 	=> MAINTENANCE_URI)	);  
+			wp_enqueue_script  ('maintenance');
 			wp_enqueue_style  ('maintenance', MAINTENANCE_URI .'css/admin.css' );	
 	}
 	
@@ -64,14 +68,12 @@
 		$mt_option = mt_get_plugin_options(true);
 	?>
 		<div id="maintenance-options" class="wrap">	
-			<h2></h2>						
 			<form method="post" action="" enctype="multipart/form-data" name="options-form">
 				<?php wp_nonce_field('maintenance_edit_post','maintenance_nonce'); ?>
 				<?php wp_nonce_field('meta-box-order',  'meta-box-order-nonce', false ); ?>
 				<?php wp_nonce_field('closedpostboxes', 'closedpostboxesnonce', false ); ?>
 				<?php screen_icon(); ?>
-				<h2><?php _e('Maintenance', 'maintenance'); ?></h2>						
-				<input type="checkbox" id="state" name="lib_options[state]" <?php checked($mt_option['state'], 1); ?> />
+				<h1><?php _e('Maintenance', 'maintenance'); ?><input type="checkbox" id="state" name="lib_options[state]" <?php checked($mt_option['state'], 1); ?> /></h1>						
 				<div class="clear"></div>
 				<div id="poststuff">
 					 <div class="metabox-holder">

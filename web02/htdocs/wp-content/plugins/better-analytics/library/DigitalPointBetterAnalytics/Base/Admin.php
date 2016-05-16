@@ -59,13 +59,16 @@ class DigitalPointBetterAnalytics_Base_Admin
 			add_action('admin_notices', array($this, 'not_configured' ) );
 		}
 
-		if (!get_site_option('ba_site_tokens') && !get_option('ba_tokens'))
+		if (strpos(@$_SERVER['REQUEST_URI'], 'page=better-analytics') !== false || @!$betterAnalyticsOptions['hide_api_message'])
 		{
-			add_action('admin_notices', array($this, 'cant_auto_configure' ) );
-		}
-		elseif (!$betterAnalyticsOptions['api']['profile'])
-		{
-			add_action('admin_notices', array($this, 'can_auto_configure' ) );
+			if (!get_site_option('ba_site_tokens') && !get_option('ba_tokens'))
+			{
+				add_action('admin_notices', array($this, 'cant_auto_configure' ) );
+			}
+			elseif (!$betterAnalyticsOptions['api']['profile'])
+			{
+				add_action('admin_notices', array($this, 'can_auto_configure' ) );
+			}
 		}
 
 		if (get_transient('ba_last_error'))
@@ -85,6 +88,10 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 	public function admin_menu()
 	{
+		$betterAnalyticsOptions = get_option('better_analytics');
+		$currentUser = wp_get_current_user();
+		$canViewSettings = (empty($betterAnalyticsOptions['lock_settings_user_id']) || $betterAnalyticsOptions['lock_settings_user_id'] == $currentUser->ID);
+
 		add_management_page( esc_html__('Test Analytics Setup', 'better-analytics'), esc_html__('Test Analytics Setup', 'better-analytics'), 'manage_options', 'better-analytics_test', array($this, 'display_test_page') );
 		add_management_page( esc_html__('OAuth2 Endpoint', 'better-analytics'), esc_html__('OAuth2 Endpoint', 'better-analytics'), 'manage_options', 'better-analytics_auth', array($this, 'api_authentication') );
 
@@ -100,12 +107,20 @@ class DigitalPointBetterAnalytics_Base_Admin
 
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Goals', 'better-analytics'), esc_html__('Goals', 'better-analytics'), 'manage_options', 'better-analytics_goals', array($this, 'display_page') );
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('A/B Testing', 'better-analytics'), esc_html__('A/B Testing', 'better-analytics'), 'manage_options', 'better-analytics_experiments', array($this, 'display_page') );
-		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics' );
+
+		if ($canViewSettings)
+		{
+			add_submenu_page('better-analytics_heatmaps', esc_html__('Settings', 'better-analytics'), esc_html__('Settings', 'better-analytics'), 'manage_options', 'options-general.php' . '?page=better-analytics');
+		}
+
 		add_submenu_page( 'better-analytics_heatmaps', esc_html__('Test Setup', 'better-analytics'), esc_html__('Test Setup', 'better-analytics'), 'manage_options', 'tools.php' . '?page=better-analytics_test' );
 
+		if ($canViewSettings)
+		{
+			$hook = add_options_page( esc_html__('Better Analytics', 'better-analytics'), esc_html__('Better Analytics', 'better-analytics'), 'manage_options', 'better-analytics', array($this, 'display_configuration_page'));
+			add_action( "load-$hook", array($this, 'admin_help'));
+		}
 
-		$hook = add_options_page( esc_html__('Better Analytics', 'better-analytics'), esc_html__('Better Analytics', 'better-analytics'), 'manage_options', 'better-analytics', array($this, 'display_configuration_page'));
-		add_action( "load-$hook", array($this, 'admin_help'));
 	}
 
 	public function network_admin_menu()

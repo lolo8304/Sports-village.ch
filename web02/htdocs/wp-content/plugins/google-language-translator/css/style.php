@@ -63,7 +63,7 @@ if (get_option('googlelanguagetranslator_showbranding')=='Yes') {
       echo '#google_language_translator { width:auto !important; }';
     }
   
-} elseif(get_option('googlelanguagetranslator_showbranding')=='No') {
+} elseif(get_option('googlelanguagetranslator_showbranding')=='No' && get_option('googlelanguagetranslator_display')!='SIMPLE') {
     if(get_option('googlelanguagetranslator_active')==1) { 
       echo '#google_language_translator a {display: none !important; }';
       echo '.goog-te-gadget {color:transparent !important;}';  

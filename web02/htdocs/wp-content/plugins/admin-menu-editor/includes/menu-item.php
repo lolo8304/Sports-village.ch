@@ -11,6 +11,9 @@ abstract class ameMenuItem {
 	const unclickableTemplateId = '>special:none';
 	const unclickableTemplateClass = 'ame-unclickable-menu-item';
 
+	const embeddedPageTemplateId = '>special:embed_page';
+	const embeddedPagePlaceholderHeading = '[Same as menu title]';
+
 	/**
 	 * @var array A partial list of files in /wp-admin/. Correct as of WP 3.8-RC1, 2013.12.04.
 	 * When trying to determine if a menu links to one of the default WP admin pages, it's faster
@@ -32,20 +35,20 @@ abstract class ameMenuItem {
 	 *
 	 * @param array $item An menu item.
 	 * @param int $position The position (index) of the the menu item.
-	 * @param string $parent The slug of the parent menu that owns this item. Blank for top level menus.
+	 * @param string|null $parent The slug of the parent menu that owns this item. Null for top level menus.
 	 * @return array
 	 */
-	public static function fromWpItem($item, $position = 0, $parent = '') {
+	public static function fromWpItem($item, $position = 0, $parent = null) {
 		static $separator_count = 0;
-		$default_css_class = empty($parent) ? 'menu-top' : '';
+		$default_css_class = ($parent === null) ? 'menu-top' : '';
 		$item = array(
-			'menu_title'   => $item[0],
-			'access_level' => $item[1], //= required capability
+			'menu_title'   => strval($item[0]),
+			'access_level' => strval($item[1]), //= required capability
 			'file'         => $item[2],
-			'page_title'   => (isset($item[3]) ? $item[3] : ''),
-			'css_class'    => (isset($item[4]) ? $item[4] : $default_css_class),
-			'hookname'     => (isset($item[5]) ? $item[5] : ''), //Used as the ID attr. of the generated HTML tag.
-			'icon_url'     => (isset($item[6]) ? $item[6] : 'dashicons-admin-generic'),
+			'page_title'   => (isset($item[3]) ? strval($item[3]) : ''),
+			'css_class'    => (isset($item[4]) ? strval($item[4]) : $default_css_class),
+			'hookname'     => (isset($item[5]) ? strval($item[5]) : ''), //Used as the ID attr. of the generated HTML tag.
+			'icon_url'     => (isset($item[6]) ? strval($item[6]) : 'dashicons-admin-generic'),
 			'position'     => $position,
 			'parent'       => $parent,
 		);
@@ -55,8 +58,8 @@ abstract class ameMenuItem {
 			$item['access_level'] = $dummyUser->translate_level_to_cap($item['access_level']);
 		}
 
-		if ( empty($parent) ) {
-			$item['separator'] = empty($item['file']) || empty($item['menu_title']) || (strpos($item['css_class'], 'wp-menu-separator') !== false);
+		if ( $parent === null ) {
+			$item['separator'] = (strpos($item['css_class'], 'wp-menu-separator') !== false);
 			//WP 3.0 in multisite mode has two separators with the same filename. Fix by reindexing separators.
 			if ( $item['separator'] ) {
 				$item['file'] = 'separator_' . ($separator_count++);
@@ -67,10 +70,10 @@ abstract class ameMenuItem {
 		}
 
 		//Flag plugin pages
-		$item['is_plugin_page'] = (get_plugin_page_hook($item['file'], $parent) != null);
+		$item['is_plugin_page'] = (get_plugin_page_hook($item['file'], strval($parent)) != null);
 
 		if ( !$item['separator'] ) {
-			$item['url'] = self::generate_url($item['file'], $parent);
+			$item['url'] = self::generate_url($item['file'], strval($parent));
 		}
 
 		$item['template_id'] = self::template_id($item, $parent);
@@ -93,7 +96,7 @@ abstract class ameMenuItem {
 			'file' => '',
 			'page_heading' => '',
 	        'position' => 0,
-	        'parent' => '',
+	        'parent' => null,
 
 	        //Fields that apply only to top level menus.
 	        'css_class' => 'menu-top',
@@ -101,13 +104,17 @@ abstract class ameMenuItem {
 	        'icon_url' => 'dashicons-admin-generic',
 	        'separator' => false,
 			'colors' => false,
+			'is_always_open' => false,
 
 	        //Internal fields that may not map directly to WP menu structures.
 			'open_in' => 'same_window', //'new_window', 'iframe' or 'same_window' (the default)
+            'iframe_height' => 0,
 			'template_id' => '', //The default menu item that this item is based on.
 			'is_plugin_page' => false,
 			'custom' => false,
 			'url' => '',
+			'embedded_page_id' => 0,
+			'embedded_page_blog_id' => function_exists('get_current_blog_id') ? get_current_blog_id() : 1,
 		);
 
 		return $basic_defaults;
@@ -125,12 +132,18 @@ abstract class ameMenuItem {
 			'items' => array(), //List of sub-menu items.
 			'grant_access' => array(), //Per-role and per-user access. Supersedes role_access.
 			'colors' => null,
+			'is_always_open' => null,
 
 			'custom' => false,  //True if item is made-from-scratch and has no template.
 			'missing' => false, //True if our template is no longer present in the default admin menu. Note: Stored values will be ignored. Set upon merging.
 			'unused' => false,  //True if this item was generated from an unused default menu. Note: Stored values will be ignored. Set upon merging.
 			'hidden' => false,  //Hide/show the item. Hiding is purely cosmetic, the item remains accessible.
+			'hidden_from_actor' => array(), //Like the "hidden" flag, but per-role. Lets the user hide an item without changing its permissions.
 			'separator' => false,  //True if the item is a menu separator.
+
+			'restrict_access_to_items' => false, //True = Deny access to all submenu items if the user doesn't have access to this item.
+
+			'had_access_before_hiding' => null, //Roles who had access to this item before the user clicked the "hide" button. Usually empty.
 
 			'defaults' => self::basic_defaults(),
 		));
@@ -147,9 +160,13 @@ abstract class ameMenuItem {
 			'hookname' => '',
 			'icon_url' => 'dashicons-admin-generic',
 			'open_in' => 'same_window',
+			'iframe_height' => 0,
 			'is_plugin_page' => false,
 			'page_heading' => '',
 			'colors' => false,
+			'embedded_page_id' => 0,
+			'embedded_page_blog_id' => function_exists('get_current_blog_id') ? get_current_blog_id() : 1,
+			'is_always_open' => false,
 		);
 	}
 
@@ -187,12 +204,12 @@ abstract class ameMenuItem {
 	  * in the same sub-menu, this combination is not necessarily unique.
 	  *
 	  * @param array|string $item The menu item in question.
-	  * @param string $parent_file The parent menu. If omitted, $item['defaults']['parent'] will be used.
+	  * @param string|null $parent_file The parent menu. If omitted, $item['defaults']['parent'] will be used.
 	  * @return string Template ID, or an empty string if this is a custom item.
 	  */
-	public static function template_id($item, $parent_file = ''){
+	public static function template_id($item, $parent_file = null){
 		if (is_string($item)) {
-			return $parent_file . '>' . $item;
+			return strval($parent_file) . '>' . $item;
 		}
 
 		if ( self::get($item, 'custom') ) {
@@ -211,7 +228,7 @@ abstract class ameMenuItem {
 			$item_file = self::get($item, 'file');
 		}
 
-		if ( empty($parent_file) ) {
+		if ( $parent_file === null ) {
 			if ( isset($item['defaults']['parent']) ) {
 				$parent_file = $item['defaults']['parent'];
 			} else {
@@ -231,7 +248,19 @@ abstract class ameMenuItem {
 			$item_file = remove_query_arg('return', $item_file);
 		}
 
-		return $parent_file . '>' . $item_file;
+		//Special case: A menu item can have an empty slug. This is technically very wrong, but it works (sort of)
+		//as long as the item has at least one submenu. This has happened at least once in practice. A user had
+		//a theme based on the Redux framework, and inexplicably the framework was configured to use an empty page slug.
+		if ( empty($item['separator']) ) {
+			if ( $item_file === '' ) {
+				$item_file = '[ame-no-slug]';
+			}
+			if ( $parent_file === '' ) {
+				$parent_file = '[ame-no-slug]';
+			}
+		}
+
+		return strval($parent_file) . '>' . $item_file;
 	}
 
   /**
@@ -279,7 +308,10 @@ abstract class ameMenuItem {
 	 */
 	public static function normalize($item) {
 		if ( isset($item['defaults']) ) {
-			$item['defaults'] = array_merge(self::basic_defaults(), $item['defaults']);
+			$item['defaults'] = array_merge(
+				empty($item['custom']) ? self::basic_defaults() : self::custom_item_defaults(),
+				$item['defaults']
+			);
 		}
 		$item = array_merge(self::blank_menu(), $item);
 
@@ -433,7 +465,14 @@ abstract class ameMenuItem {
    * @return int
    */
 	public static function compare_position($a, $b){
-		return self::get($a, 'position', 0) - self::get($b, 'position', 0);
+		$result = self::get($a, 'position', 0) - self::get($b, 'position', 0);
+		//Support for non-integer positions.
+		if ($result > 0) {
+			return 1;
+		} else if ($result < 0) {
+			return -1;
+		}
+		return 0;
 	}
 
 	/**
@@ -447,10 +486,10 @@ abstract class ameMenuItem {
 		$menu_url = is_array($item_slug) ? self::get($item_slug, 'file') : $item_slug;
 		$parent_url = !empty($parent_slug) ? $parent_slug : 'admin.php';
 
-		//Workaround for WooCommerce 2.1.12: For some reason, it uses "&amp;" instead of a plain "&" to separate
-		//query parameters. We need a plain URL, not a HTML-entity-encoded one.
-		//It is theoretically possible that another plugin might want to use a literal "&amp;", but its very unlikely.
-		$menu_url = str_replace('&amp;', '&', $menu_url);
+		//Workaround for components that HTML-entity-encode menu URLs. Most plugins and themes don't do that, but there's
+		//at least one plugin that does (WooCommerce). WP core also encodes some menu URLs (e.g. Appearance -> Header).
+		//We need a raw URL here.
+		$menu_url = html_entity_decode($menu_url);
 
 		if ( strpos($menu_url, '://') !== false ) {
 			return $menu_url;

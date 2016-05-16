@@ -72,7 +72,6 @@ $unzip_errors = array(
     82 => 'No files were found due to bad decryption password(s)'
 );
 
-
 class IWP_MMB_Backup_Singlecall extends IWP_MMB_Core
 {
     var $site_name;
@@ -358,7 +357,14 @@ function delete_task_now($task_name){
 				
                 $backup_settings['account_info']['iwp_amazon_s3']['backup_file'] = $backup_file;
 				iwp_mmb_print_flush('Amazon S3 upload: Start');
-                $amazons3_result                              = $this->amazons3_backup($backup_settings['account_info']['iwp_amazon_s3']);
+				if(is_new_s3_compatible()){
+					require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+					$new_s3_obj = new IWP_MMB_S3_SINGLECALL();
+					$amazons3_result = $new_s3_obj->amazons3_backup($backup_settings['account_info']['iwp_amazon_s3']);
+				}
+				else{
+					$amazons3_result = $this->amazons3_backup_bwd_comp($backup_settings['account_info']['iwp_amazon_s3']);
+				}
 				iwp_mmb_print_flush('Amazon S3 upload: End');
                 if ($amazons3_result !== true && $del_host_file) {
                     @unlink($backup_file);
@@ -478,16 +484,16 @@ function delete_task_now($task_name){
 				iwp_mmb_print_flush('DB ZIP CMD: End');
 				/*zip_backup_db */
 				if(!$result){
-				$zip_archive_db_result = false;
-				if (class_exists("ZipArchive")) {
-					$this->_log("DB zip, fallback to ZipArchive");
-					iwp_mmb_print_flush('DB ZIP Archive: Start');
-					$zip_archive_db_result = $this->zip_archive_backup_db($task_name, $db_result, $backup_file);
-					iwp_mmb_print_flush('DB ZIP Archive Result: '.$zip_archive_db_result);
-					iwp_mmb_print_flush('DB ZIP Archive: End');
-				}
+					$zip_archive_db_result = false;
+					if (class_exists("ZipArchive")) {
+						$this->_log("DB zip, fallback to ZipArchive");
+						iwp_mmb_print_flush('DB ZIP Archive: Start');
+						$zip_archive_db_result = $this->zip_archive_backup_db($task_name, $db_result, $backup_file);
+						iwp_mmb_print_flush('DB ZIP Archive Result: '.$zip_archive_db_result);
+						iwp_mmb_print_flush('DB ZIP Archive: End');
+					}
 				
-				if (!$zip_archive_db_result) {
+					if (!$zip_archive_db_result) {
 						$pcl_result = $this->fail_safe_pcl_db($backup_file,$fail_safe_db,$disable_comp);
 						if(is_array($pcl_result) && isset($pcl_result['error'])){
 							return $pcl_result;
@@ -512,7 +518,6 @@ function delete_task_now($task_name){
 	    
     function backup_files_alone($task_name, $backup_file, $exclude = array(), $include = array(), $comp_level = 0, $exclude_file_size = 0, $exclude_extensions = "")
     {
-        
 		global $zip_errors;
         $sys = substr(PHP_OS, 0, 3);
         
@@ -536,7 +541,16 @@ function delete_task_now($task_name){
             trim(basename(WP_CONTENT_DIR)) . "/infinitewp/backups",
             trim(basename(WP_CONTENT_DIR)) . "/" . md5('iwp_mmb-client') . "/iwp_backups",
 			trim(basename(WP_CONTENT_DIR)) . "/cache",
-			trim(basename(WP_CONTENT_DIR)) . "/w3tc"
+			trim(basename(WP_CONTENT_DIR)) . "/w3tc",
+			trim(basename(WP_CONTENT_DIR)) . "/logs",
+			trim(basename(WP_CONTENT_DIR)) . "/widget_cache",
+			trim(basename(WP_CONTENT_DIR)) . "/tmp",
+			trim(basename(WP_CONTENT_DIR)) . "/updraft",
+			trim(basename(WP_CONTENT_DIR)) . "/updraftplus",
+			trim(basename(WP_CONTENT_DIR)) . "/backups",
+			trim(basename(WP_CONTENT_DIR)) . "/uploads/wp-clone",
+			trim(basename(WP_CONTENT_DIR)) . "/uploads/db-backup",
+			trim(basename(WP_PLUGIN_DIR)) . "/cache",
         );
 		
 		//removing files which are larger than the specified size
@@ -676,8 +690,8 @@ function delete_task_now($task_name){
 				$command  = "$zip -q -r $comp_level $backup_file $include_data $exclude_data";
 				ob_start();	
 				$result_d = $this->iwp_mmb_exec($command, false, true);  
-				ob_get_clean();        
-				if ($result_d && $result_d != 18) {
+				ob_get_clean();     
+				if (!$result_d || ($result_d && $result_d != 18)){
 					@unlink($backup_file);
 					$do_cmd_zip_alternative = true;
 					
@@ -712,13 +726,13 @@ function delete_task_now($task_name){
 					iwp_mmb_print_flush('Files ZIP Archive: End');
 				}
 					
-					if (!$zip_archive_result) {
-						$pcl_result = $this->fail_safe_pcl_files($task_name, $backup_file, $exclude, $include, $fail_safe_files, $disable_comp, $add, $remove);
-						if(is_array($pcl_result) && isset($pcl_result['error'])){
-							return $pcl_result;
-						}
+				if (!$zip_archive_result) {
+					$pcl_result = $this->fail_safe_pcl_files($task_name, $backup_file, $exclude, $include, $fail_safe_files, $disable_comp, $add, $remove);
+					if(is_array($pcl_result) && isset($pcl_result['error'])){
+						return $pcl_result;
 					}
 				}
+			}
 	    }
 	     
         //Reconnect
@@ -873,9 +887,7 @@ function delete_task_now($task_name){
      * @return 	array|bool				true if successful or an array with error message if not
      */
     function zip_archive_backup($task_name, $backup_file, $exclude, $include, $overwrite = false) {
-
 		$filelist = $this->get_backup_files($exclude, $include);
-		
 		$disable_comp = $this->tasks['args']['disable_comp'];
 		if (!$disable_comp) {
 			$this->_log("Compression is not supported by ZipArchive");
@@ -885,20 +897,54 @@ function delete_task_now($task_name){
 
 		if ($overwrite) {
 			$result = $zip->open($backup_file, ZipArchive::OVERWRITE); // Tries to open $backup_file for acrhiving			
-		} else {
+		}
+		else{
 			if(file_exists($backup_file)){
 				$result = $zip->open($backup_file); // Tries to open $backup_file for acrhiving
 			}else{
 				$result = $zip->open($backup_file, ZIPARCHIVE::CREATE);
 			}
 		}
+                
+        $max_mb_size=1;
 		if ($result === true) {
+			$size_checker = 0;
 			foreach ($filelist as $file) {
 				iwp_mmb_auto_print('zip_archive_backup');
-				$result = $result && $zip->addFile($file, sprintf("%s", str_replace(ABSPATH, '', $file))); // Tries to add a new file to $backup_file
+				if(is_readable($file)){ //checking file is readable
+					$file_size_in_bytes=filesize($file); //getting file size
+					if($file_size_in_bytes > $max_mb_size*1024*1024){ //if file size more than 1 MB it will be added sepearately
+						$result = $result && $zip->close();
+						$size_checker = 0; //reset $size_checker
+						if(file_exists($backup_file)){
+							$result = $zip->open($backup_file);
+						}
+						$result = $result && $zip->addFile($file, sprintf("%s", str_replace(ABSPATH, '', $file))); // Tries to add a new file to $backup_file
+						$result = $result && $zip->close();
+						$size_checker = 0; //reset $size_checker
+						if(file_exists($backup_file)){
+							$result = $zip->open($backup_file);
+						}
+					}
+					else{
+						if($size_checker<$max_mb_size*1024*1024){ //checking $size_checker
+							$result = $result && $zip->addFile($file, sprintf("%s", str_replace(ABSPATH, '', $file))); // Tries to add a new file to $backup_file
+							$size_checker = $size_checker + $file_size_in_bytes; //adding added file size
+						}
+						else {
+							$result = $result && $zip->close();
+							$size_checker = 0; //reset $size_checker
+							if(file_exists($backup_file)){
+								$result = $zip->open($backup_file);
+							}
+							$result = $result && $zip->addFile($file, sprintf("%s", str_replace(ABSPATH, '', $file))); // Tries to add a new file to $backup_file
+							$size_checker=$size_checker + $file_size_in_bytes; //adding added file size
+						}
+					}
+				}
 			}
 			$result = $result && $zip->close(); // Tries to close $backup_file
-		} else {
+		}else{
 			$result = false;
 		}
 		return $result; // true if $backup_file iz zipped successfully, false if error is occurred in zip process
@@ -1001,85 +1047,70 @@ function delete_task_now($task_name){
 		if(empty($GLOBALS['fail_safe_db'])){
 			iwp_mmb_print_flush('DB DUMP PHP Normal: Start');
 			$fp = fopen( $file, 'w' );
-			if ( !mysql_ping( $wpdb->dbh ) ) {
-				mysql_connect( DB_HOST, DB_USER, DB_PASSWORD );
-				mysql_select_db( DB_NAME );
-			}
 			$_count = 0;
 			$insert_sql = '';
-			//$result = mysql_query( 'SHOW TABLES' );
-			$result = mysql_query( 'SHOW TABLES LIKE "'.$wpdb->base_prefix.'%"' );
+			$result = $wpdb->get_results( 'SHOW TABLES LIKE "'.$wpdb->base_prefix.'%"');
 			if(!$result)
 			{
 				 return array(
-					'error' => 'MySQL '.mysql_error()." ", 'error_code' => 'MySQL '.str_replace(" ", "_", mysql_error())." "
+					'error' => 'MySQL '.$wpdb->print_error()." ", 'error_code' => 'MySQL '.str_replace(" ", "_", $wpdb->print_error())." "
 				);
 			}
-			while( $row = mysql_fetch_row( $result ) ) {
-				$tables[]=$row[0];
-				//array_push( $tables, $row[0] );
+
+            foreach($result as $index => $value) {
+              foreach($value as $tableName) {
+               //echo $tableName . '<br />';
+                      $tables[]=$tableName; 
+                 }
 			}
 			
 	
-			//$tables = $wpdb->get_results('SHOW TABLES', ARRAY_N);
 			foreach ($tables as $table) {
 				iwp_mmb_auto_print('backup_db_php_normal');
-				
 				$insert_sql .= "DROP TABLE IF EXISTS $table;";
-				//create table
-				$table_descr_query = mysql_query("SHOW CREATE TABLE `$table`");
-				$fetch_table_descr_row = mysql_fetch_array( $table_descr_query );
-				$insert_sql .= "\n\n" . $fetch_table_descr_row[1] . ";\n\n";
+                $table_descr_query = $wpdb->get_results("SHOW CREATE TABLE `$table`", ARRAY_N);
 				
+                $insert_sql .= "\n\n" . $table_descr_query[0][1] . ";\n\n";
 				fwrite( $fp, $insert_sql );
 				$insert_sql = '';
 				
-				$table_query = mysql_query("SELECT * FROM `$table`");
-				$num_fields = mysql_num_fields($table_query);
-				while ( $fetch_row = mysql_fetch_array( $table_query ) ) {
+                $table_query = $wpdb->get_results("SELECT * FROM `$table`", ARRAY_N);
+                $num_fields = $wpdb->num_rows;
+                
+                 foreach ($table_query as $final) {
+                    $counts=count($final);
 					$insert_sql .= "INSERT INTO $table VALUES(";
-					for ( $n=1; $n<=$num_fields; $n++ ) {
-						$m = $n - 1;
 										
-						if ( $fetch_row[$m] === NULL ) {
-							$insert_sql .= "NULL, ";
-						} else {
-							$insert_sql .= "'" . mysql_real_escape_string( $fetch_row[$m] ) . "', ";
+                    for ($i=0; $i <$counts ; $i++) { 
+                         if($final[$i]== NULL) {
+                             $insert_sql .= "'', ";
+                        }
+                        else {
+
+                            $insert_sql .= "'" . esc_sql($final[$i]). "', ";
 						}
+                       //mb_convert_encoding(esc_sql($final[$i] ), "HTML-ENTITIES", "ISO-8859-1")
 					}
 					$insert_sql = substr( $insert_sql, 0, -2 );
 					$insert_sql .= ");\n";
-					
 					fwrite( $fp, $insert_sql );
 					$insert_sql = '';
-					
-					// Help keep HTTP alive.
 					$_count++;
 					if ($_count >= 400) {
 						echo ' ';
 						flush();
 						$_count = 0;
 					}
-				} // End foreach $tables.
-				
+               }
 				$insert_sql .= "\n\n\n";
 				
-				// testing: mysql_close( $wpdb->dbh );
-				// Verify database is still connected and working properly. Sometimes mysql runs out of memory and dies in the above foreach.
-				// No point in reconnecting as we can NOT trust that our dump was succesful anymore (it most likely was not).
-				if ( @mysql_ping( $wpdb->dbh ) ) { // Still connected to database.
-					mysql_free_result( $table_query ); // Free memory.
-				} /*else { // Database not connected.
-			
-					return false;
-				}*/
-				
+                $wpdb->flush(); // Free memory.   
 				// Help keep HTTP alive.
 				echo ' ';
 				flush();
 				
 				//unset( $tables[$table_key] );
-			}
+            }
 			fclose( $fp );
 			unset ($fp);
 			iwp_mmb_print_flush('DB DUMP PHP Normal: End');
@@ -1991,11 +2022,10 @@ function ftp_backup($args)
     	//return true;
 	}
 	
-
-    function amazons3_backup($args)
+	function amazons3_backup_bwd_comp($args)
     {
         if ($this->iwp_mmb_function_exists('curl_init')) {
-            require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3/sdk.class.php');
+            require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3_bwd_comp/sdk.class.php');
 			extract($args);
             
             if ($as3_site_folder == true)
@@ -2269,11 +2299,10 @@ function ftp_backup($args)
 		return $gDriveID;			
 	}
     
-	
-    function remove_amazons3_backup($args)
+	function remove_amazons3_backup_bwd_comp($args)
     {
     	if ($this->iwp_mmb_function_exists('curl_init')) {
-        require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3/sdk.class.php');
+        require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3_bwd_comp/sdk.class.php');
 		extract($args);
 		
 		if(!is_array($backup_file))
@@ -2636,7 +2665,14 @@ function ftp_backup($args)
 				$amazons3_file       = $task_result['task_results'][$backup_data['historyID']]['amazons3'];
 				$args                = $thisRequestParams['account_info']['iwp_amazon_s3'];
 				$args['backup_file'] = $amazons3_file;
-				$this->remove_amazons3_backup($args);
+				if(is_new_s3_compatible()){
+					require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+					$new_s3_obj = new IWP_MMB_S3_SINGLECALL();
+					$new_s3_obj->remove_amazons3_backup($args);
+				}
+				else{
+					$this->remove_amazons3_backup_bwd_comp($args);
+				}
 			}
 			
 			if (isset($task_result['task_results'][$backup_data['historyID']]['dropbox']) && isset($thisRequestParams['account_info']['iwp_dropbox'])) {
@@ -2714,7 +2750,14 @@ function ftp_backup($args)
             $amazons3_file       = $backup['amazons3'];
             $args                = $args['iwp_amazon_s3'];
             $args['backup_file'] = $amazons3_file;
-            $this->remove_amazons3_backup($args);
+            if(is_new_s3_compatible()){
+				require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+				$new_s3_obj = new IWP_MMB_S3_SINGLECALL();
+				$new_s3_obj->remove_amazons3_backup($args);
+			}
+			else{
+				$this->remove_amazons3_backup_bwd_comp($args);
+			}
         }
         
         if (isset($backup['dropbox'])) {
@@ -2754,11 +2797,12 @@ function ftp_backup($args)
     {
 		$tasks = $this->get_all_tasks(); //all backups task results array.
 		
-		
         $backup_folder     = WP_CONTENT_DIR . '/' . md5('iwp_mmb-client') . '/iwp_backups/';
         $backup_folder_new = IWP_BACKUP_DIR . '/';
+		$backup_temp_folder = IWP_PCLZIP_TEMPORARY_DIR;
         $files             = glob($backup_folder . "*");
         $new               = glob($backup_folder_new . "*");
+		$new_temp               = glob($backup_temp_folder . "*");
         
         //Failed db files first
         $db_folder = IWP_DB_DIR . '/';
@@ -2773,7 +2817,7 @@ function ftp_backup($args)
         
         
         //clean_old folder?
-        if ((basename($files[0]) == 'index.php' && count($files) == 1) || (!empty($files))) {  //USE  (!empty($files)
+        if ((count($files) == 1 && basename($files[0]) == 'index.php') || (!empty($files))) {  //USE  (!empty($files)
             foreach ($files as $file) {
                 @unlink($file);
             }
@@ -2786,6 +2830,11 @@ function ftp_backup($args)
 	            $files[] = $b;
 	        }
         }
+			if (!empty($new_temp)) {
+				foreach ($new_temp as $c) {
+					$files[] = $c;
+				}
+			}
         $deleted = array();
         
         if (is_array($files) && count($files)) {
@@ -2814,18 +2863,17 @@ function ftp_backup($args)
                     }
                 }
             }
-            
             $num_deleted = 0;
+            
             foreach ($files as $file) {
                 if (!in_array($file, $results) && basename($file) != 'index.php') {
                     @unlink($file);
-                    $deleted[] = basename($file);
+                    //$deleted[] = basename($file);
+					$deleted[] = $file;
                     $num_deleted++;
                 }
             }
         }
-
-        
         return $deleted;
     }
     
@@ -2936,8 +2984,14 @@ function ftp_backup($args)
 		$old_wpdb = $wpdb;
     	//Reconnect to avoid timeout problem after ZIP files
       	if(class_exists('wpdb') && function_exists('wp_set_wpdb_vars')){
-      		@mysql_close($wpdb->dbh);
-        	$wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
+            if ($wpdb->use_mysqli) {
+                @mysqli_close($wpdb->dbh);
+            } else {
+                if (function_exists('mysql_close')){
+                    @mysql_close($wpdb->dbh);
+                }
+            }
+           	$wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
         	wp_set_wpdb_vars(); 
 			$wpdb->options = $old_wpdb->options;//fix for multi site full backup
       	}
@@ -3084,4 +3138,14 @@ if (!function_exists('get_all_files_from_dir_recursive')) {
 		}
 	}
 }
+
+if( !function_exists('is_new_s3_compatible') ){
+	function is_new_s3_compatible(){
+		if(phpversion() >= '5.3.3'){
+			return true;
+		}
+		return false;
+	}
+}
+
 ?>

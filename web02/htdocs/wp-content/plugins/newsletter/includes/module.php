@@ -28,6 +28,7 @@ class NewsletterModule {
      * @var string
      */
     var $version;
+    var $old_version;
     var $module_id;
     var $available_version;
 
@@ -56,9 +57,14 @@ class NewsletterModule {
         //$this->logger->debug($module . ' constructed');
         // Version check
         if (is_admin()) {
-            $old_version = get_option($this->prefix . '_version', '');
-            if (strcmp($old_version, $this->version) != 0) {
-                $this->logger->info('Version changed from ' . $old_version . ' to ' . $this->version);
+            $this->old_version = get_option($this->prefix . '_version', '0.0.0');
+
+            if ($this->old_version == '0.0.0') {
+                $this->first_install();
+            }
+
+            if (strcmp($this->old_version, $this->version) != 0) {
+                $this->logger->info('Version changed from ' . $this->old_version . ' to ' . $this->version);
                 // Do all the stuff for this version change
                 $this->upgrade();
                 update_option($this->prefix . '_version', $this->version);
@@ -67,9 +73,10 @@ class NewsletterModule {
             add_action('admin_menu', array($this, 'admin_menu'));
             $this->available_version = get_option($this->prefix . '_available_version');
         }
-//        if (!empty($this->module_id)) {
-//            add_action($this->prefix . '_version_check', array($this, 'hook_version_check'), 1);
-//        }
+    }
+
+    function first_install() {
+        
     }
 
     /**
@@ -78,18 +85,25 @@ class NewsletterModule {
      * internal $options.
      */
     function upgrade() {
-        $this->logger->info('upgrade> Start');
-
         $default_options = $this->get_default_options();
         if (empty($this->options) || !is_array($this->options)) {
             $this->save_options($default_options);
         } else {
             $this->save_options(array_merge($default_options, $this->options));
         }
-//        if (!empty($this->module_id)) {
-//            wp_clear_scheduled_hook($this->prefix . '_version_check');
-//            wp_schedule_event(time() + 30, 'daily', $this->prefix . '_version_check');
-//        }
+    }
+
+    function init_options($sub, $autoload = true) {
+        global $wpdb;
+        $default_options = $this->get_default_options($sub);
+        $options = $this->get_options($sub);
+        $options = array_merge($default_options, $options);
+        $this->save_options($options, $sub);
+        if ($autoload) {
+            $this->upgrade_query('update ' . $wpdb->options . " set autoload='no' where option_name='" . $this->get_prefix($sub) . "' limit 1");
+        } else {
+            $this->upgrade_query('update ' . $wpdb->options . " set autoload='no' where option_name='" . $this->get_prefix($sub) . "' limit 1");
+        }
     }
 
     function upgrade_query($query) {
@@ -133,8 +147,9 @@ class NewsletterModule {
      */
     function get_options($sub = '') {
         $options = get_option($this->get_prefix($sub));
-        if ($options === false)
+        if ($options === false) {
             return array();
+        }
         return $options;
     }
 
@@ -143,9 +158,9 @@ class NewsletterModule {
             $sub .= '-';
         }
         @include NEWSLETTER_DIR . '/' . $this->module . '/languages/' . $sub . 'en_US.php';
-        @include WP_CONTENT_DIR . '/extensions/newsletter/' . $this->module . '/languages/' . $sub . 'en_US.php';
-        @include NEWSLETTER_DIR . '/' . $this->module . '/languages/' . $sub . WPLANG . '.php';
-        @include WP_CONTENT_DIR . '/extensions/newsletter/' . $this->module . '/languages/' . $sub . WPLANG . '.php';
+        if (defined('WPLANG') && WPLANG != 'en_US') {
+            @include NEWSLETTER_DIR . '/' . $this->module . '/languages/' . $sub . WPLANG . '.php';
+        }
         if (!isset($options) || !is_array($options)) {
             return array();
         }
@@ -179,6 +194,18 @@ class NewsletterModule {
             if (isset($options['log_level']))
                 update_option('newsletter_' . $this->module . '_log_level', $options['log_level']);
         }
+    }
+
+    function delete_options($sub = '') {
+        delete_option($this->get_prefix($sub));
+        if (empty($sub)) {
+            $this->options = array();
+        }
+    }
+
+    function merge_options($options, $sub = '') {
+        $old_options = $this->get_options($sub);
+        $this->save_options(array_merge($old_options, $options), $sub);
     }
 
     function backup_options($sub) {
@@ -223,6 +250,8 @@ class NewsletterModule {
      * @return boolean False if the semaphore is red and you should not proceed, true is it was not active and has been activated.
      */
     function check_transient($name, $time) {
+        if ($time < 60)
+            $time = 60;
         usleep(rand(0, 1000000));
         if (($value = get_transient($this->get_prefix() . '_' . $name)) !== false) {
             $this->logger->error('Blocked by transient ' . $this->get_prefix() . '_' . $name . ' set ' . (time() - $value) . ' seconds ago');
@@ -321,8 +350,9 @@ class NewsletterModule {
     }
 
     static function format_date($time) {
-        if (empty($time))
+        if (empty($time)) {
             return '-';
+        }
         return gmdate(get_option('date_format') . ' ' . get_option('time_format'), $time + get_option('gmt_offset') * 3600);
     }
 
@@ -496,30 +526,40 @@ class NewsletterModule {
 
     function add_menu_page($page, $title) {
         global $newsletter;
-        $file = WP_PLUGIN_DIR . '/newsletter-' . $this->module . '/' . $page . '.php';
-        if (!is_file($file)) {
-            $file = WP_CONTENT_DIR . '/extensions/newsletter/' . $this->module . '/' . $page . '.php';
-        }
-        if (!is_file($file)) {
-            $file = NEWSLETTER_DIR . '/' . $this->module . '/' . $page . '.php';
-        }
-        $file = str_replace('\\', '\\\\', $file);
+
+//        Why check the plugin dir? I don't remember!
+//        $file = WP_PLUGIN_DIR . '/newsletter-' . $this->module . '/' . $page . '.php';
+//        if (!is_file($file)) {
+//            $file = WP_CONTENT_DIR . '/extensions/newsletter/' . $this->module . '/' . $page . '.php';
+//        }
+//        if (!is_file($file)) {
+//            $file = NEWSLETTER_DIR . '/' . $this->module . '/' . $page . '.php';
+//        }
+
         $name = 'newsletter_' . $this->module . '_' . $page;
-        eval('function ' . $name . '(){global $newsletter, $wpdb;require \'' . $file . '\';}');
-        // Rather stupid system to enable a menu voice... it would suffice to say "to editors"
-        add_submenu_page('newsletter_main_index', $title, $title, ($newsletter->options['editor'] == 1) ? 'manage_categories' : 'manage_options', $name, $name);
+        add_submenu_page('newsletter_main_index', $title, $title, ($newsletter->options['editor'] == 1) ? 'manage_categories' : 'manage_options', $name, array($this, 'menu_page'));
     }
 
     function add_admin_page($page, $title) {
         global $newsletter;
-        $file = WP_CONTENT_DIR . '/extensions/newsletter/' . $this->module . '/' . $page . '.php';
-        if (!is_file($file)) {
-            $file = NEWSLETTER_DIR . '/' . $this->module . '/' . $page . '.php';
-        }
-        $file = str_replace('\\', '\\\\', $file);
         $name = 'newsletter_' . $this->module . '_' . $page;
-        eval('function ' . $name . '(){global $newsletter, $wpdb;require \'' . $file . '\';}');
-        add_submenu_page(null, $title, $title, ($newsletter->options['editor'] == 1) ? 'manage_categories' : 'manage_options', $name, $name);
+        $name = apply_filters('newsletter_admin_page', $name);
+        add_submenu_page(null, $title, $title, ($newsletter->options['editor'] == 1) ? 'manage_categories' : 'manage_options', $name, array($this, 'menu_page'));
+    }
+
+    function menu_page() {
+        global $plugin_page, $newsletter, $wpdb;
+
+        $parts = explode('_', $plugin_page, 3);
+        $module = sanitize_file_name($parts[1]);
+        $page = sanitize_file_name($parts[2]);
+        $page = str_replace('_', '-', $page);
+
+        $file = WP_CONTENT_DIR . '/extensions/newsletter/' . $module . '/' . $page . '.php';
+        if (!is_file($file)) {
+            $file = NEWSLETTER_DIR . '/' . $module . '/' . $page . '.php';
+        }
+        require $file;
     }
 
     function get_admin_page_url($page) {
@@ -553,6 +593,84 @@ class NewsletterModule {
 
     function get_email($id, $format = OBJECT) {
         return $this->store->get_single(NEWSLETTER_EMAILS_TABLE, $id, $format);
+    }
+
+    function get_email_status_label($email) {
+        switch ($email->status) {
+            case 'sending':
+                if ($email->send_on > time()) {
+                    return __('Scheduled', 'newsletter');
+                } else {
+                    return __('Sending', 'newsletter');
+                }
+
+            case 'sent':
+                return __('Sent', 'newsletter');
+            case 'paused':
+                return __('Paused', 'newsletter');
+            case 'new':
+                return __('Draft', 'newsletter');
+            default:
+                return ucfirst($email->status);
+        }
+    }
+
+    function get_email_type_label($type) {
+
+        // Is an email?
+        if (is_object($type))
+            $type = $type->type;
+
+        switch ($type) {
+            case 'followup':
+                return 'Followup';
+            case 'message':
+                return 'Standard Newsletter';
+            case 'feed':
+                return 'Feed by Mail';
+        }
+
+        if (strpos($type, 'automated') === 0) {
+            list($a, $id) = explode('_', $type->type);
+            return 'Automated Channel ' . $id;
+        }
+
+        return ucfirst($type);
+    }
+
+    function get_email_progress_label($email) {
+        if ($email->status == 'sent' || $email->status == 'sending') {
+            return $email->sent . ' ' . __('of', 'newsletter') . ' ' . $email->total;
+        }
+        return '-';
+    }
+
+    /** Searches for a user using the nk parameter or the ni and nt parameters. Tries even with the newsletter cookie.
+     * If found, the user object is returned or null.
+     * The user is returned without regards to his status that should be checked by caller.
+     *
+     * @return null
+     */
+    function check_user() {
+        global $wpdb;
+
+        if (isset($_REQUEST['nk'])) {
+            list($id, $token) = @explode('-', $_REQUEST['nk'], 2);
+        } else if (isset($_REQUEST['ni'])) {
+            $id = (int) $_REQUEST['ni'];
+            $token = $_REQUEST['nt'];
+        } else if (isset($_COOKIE['newsletter'])) {
+            list ($id, $token) = @explode('-', $_COOKIE['newsletter'], 2);
+        }
+
+        $user = $this->get_user($id);
+        if ($user == null || $token != $user->token) {
+            $user = null;
+            if (is_user_logged_in()) {
+                $user = $this->get_user_by_wp_user_id(get_current_user_id());
+            }
+        }
+        return $user;
     }
 
     /** Returns the user identify by an id or an email. If $id_or_email is an object or an array, it is assumed it contains
@@ -651,6 +769,9 @@ class NewsletterModule {
                 echo esc_attr(stripslashes($value));
                 echo '">';
             }
+        }
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            echo '<input type="hidden" name="nhr" value="' . esc_attr($_SERVER['HTTP_REFERER']) . '">';
         }
         echo '<input type="hidden" name="ts" value="' . time() . '">';
         echo '<noscript><input type="submit" value="';

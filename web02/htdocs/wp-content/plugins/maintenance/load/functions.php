@@ -27,7 +27,9 @@ function get_custom_login_code() {
 					 
 		if (!empty($mt_options['roles_array'])) {
 			foreach (array_keys($mt_options['roles_array']) as $key) {
-				if ($key == $current_role) { $is_role_check = true; }	
+				if ($key == $current_role) { 
+					$is_role_check = false; 
+				}	
 			}
 		}  else {
 			$is_role_check = true;
@@ -74,6 +76,8 @@ function get_custom_login_code() {
 		if (!empty($mt_options['body_font_family'])) {
 			$font_link = '';
 			$font_link = mt_get_google_font(esc_attr($mt_options['body_font_family']));
+			$font_subset = esc_attr($mt_options['body_font_subset']);
+			$font_link .= "&subset=".$font_subset."";
 			if ($font_link != '') {
 				wp_register_style('_custom_fonts', $font_link);
 				$wp_styles->do_items('_custom_fonts');		
@@ -95,12 +99,21 @@ function get_custom_login_code() {
 		wp_register_script( '_backstretch', 	MAINTENANCE_URI  .'load/js/jquery.backstretch.min.js', 'jquery');
 		wp_register_script( '_frontend', 		MAINTENANCE_URI  .'load/js/jquery.frontend.min.js', 'jquery');
 		wp_register_script( '_blur',			MAINTENANCE_URI  .'load/js/jquery.blur.min.js', 'jquery');
+		if(class_exists('WPCF7')) {
+			wp_register_script( '_cf7form',		MAINTENANCE_URI  .'../contact-form-7/includes/js/jquery.form.min.js', 'jquery');
+			wp_register_script( '_cf7scripts',	MAINTENANCE_URI  .'../contact-form-7/includes/js/scripts.js', 'jquery');
+		}
+		
 		
 		$wp_scripts->do_items('jquery');
 		$wp_scripts->do_items('_placeholder');
 		$wp_scripts->do_items('_backstretch');		
 		$wp_scripts->do_items('_blur');
 		$wp_scripts->do_items('_frontend');
+		if(class_exists('WPCF7')) {
+			$wp_scripts->do_items('_cf7form');
+			$wp_scripts->do_items('_cf7scripts');
+		}
 	}
 	
 	add_action ('load_custom_scripts', 'add_custom_style',   5);
@@ -138,7 +151,7 @@ function get_custom_login_code() {
 		
 		if ( !empty($mt_options['font_color']) ) {
 			 $font_color = esc_attr($mt_options['font_color']);
-			 $options_style .= '.site-title, .preloader i, .login-form, .login-form a.lost-pass, .btn-open-login-form, .site-content, .user-content-wrapper, .user-content, footer {color: '. $font_color .';} ';
+			 $options_style .= '.site-title, .preloader i, .login-form, .login-form a.lost-pass, .btn-open-login-form, .site-content, .user-content-wrapper, .user-content, footer, .maintenance a {color: '. $font_color .';} ';
 			 $options_style .= '.ie7 .login-form input[type="text"], .ie7 .login-form input[type="password"], .ie7 .login-form input[type="submit"]  {color: '. $font_color .'} ';
 			 $options_style .= 'a.close-user-content, #mailchimp-box form input[type="submit"], .login-form input#submit.button  {border-color:'. $font_color .'} ';
 			 $options_style .= '.ie7 .company-name {color: '. $font_color .'} ';
@@ -154,20 +167,36 @@ function get_custom_login_code() {
 	
 	function get_logo_box() {
 		$mt_options = mt_get_plugin_options(true);
-		$out_html = '';
+		$logo_w = $logo_h = '';
+
+			if ( !empty($mt_options['logo_width']) ) { $logo_w = $mt_options['logo_width']; }
+			if ( !empty($mt_options['logo_height']) ) { $logo_h = $mt_options['logo_height']; }
+			if ( !empty($mt_options['logo']) || !empty($mt_options['retina_logo']) ) { 
+				$logo = wp_get_attachment_image_src( $mt_options['logo'], 'full');
+				$retina_logo = wp_get_attachment_image_src( $mt_options['retina_logo'], 'full');
+				if (!empty($logo)) {
+					$image_link = esc_url_raw($logo[0]);
+				}
+				else {
+					$image_link = $mt_options['logo'];
+				}
+				if (!empty($retina_logo)) {
+					$image_link_retina = esc_url_raw($retina_logo[0]);
+				}
+				else {
+					$image_link_retina = $mt_options['retina_logo'];
+				}
+
+				if (!empty($mt_options['logo'])) echo '<div class="logo-box" rel="home"><img class="logo" width="'.$logo_w.'" height="'.$logo_h.'" src="'. esc_url($logo[0]) .'" alt="logo"/></div>';
+				if (!empty($mt_options['retina_logo'])) echo '<div class="logo-box-retina" rel="home"><img class="logo-retina" width="'.$logo_w.'" height="'.$logo_h.'" src="'. esc_url($retina_logo[0]) .'" alt="logo"/></div>';
+				if (!empty($mt_options['logo']) && empty($mt_options['retina_logo'])) echo '<div class="logo-box-retina" rel="home"><img class="logo-retina" width="'.$logo_w.'" height="'.$logo_h.'" src="'. esc_url($logo[0]) .'" alt="logo"/></div>';
+				if (empty($mt_options['logo']) && !empty($mt_options['retina_logo'])) echo '<div class="logo-box" rel="home"><img class="logo" width="'.$logo_w.'" height="'.$logo_h.'" src="'. esc_url($retina_logo[0]) .'" alt="logo"/></div>';		
 			
-			if ( !empty($mt_options['logo']) ) { 
-				$logo = wp_get_attachment_image_src( $mt_options['logo'], 'full'); 
-				$out_html = '<a class="logo" rel="home" href="'.esc_url(site_url('')) .'" style="width:'.$logo[1].'px">';
-					$out_html .= '<img src="'. esc_url($logo[0]) .'" alt="logo"/>';
-				$out_html .= '</a>'; 
 			} else { 
-				$out_html = '<a class="logo istext" rel="home" href="'.esc_url(site_url('')) .'">';
-					$out_html .= '<h1 class="site-title">'. get_bloginfo( 'name' ) .'</h1>';
+				echo '<div class="logo-box istext" rel="home" href="'.esc_url(site_url('')) .'"><h1 class="site-title">'. get_bloginfo( 'name' ) .'</h1></div>';
+				echo '<div class="logo-box-retina istext" rel="home" href="'.esc_url(site_url('')) .'"><h1 class="site-title">'. get_bloginfo( 'name' ) .'</h1></div>';
 			} 
-			$out_html .= '</a>'; 
 			
-		echo $out_html;
 	}
 	add_action ('logo_box', 'get_logo_box', 10);
 	
@@ -223,19 +252,16 @@ function get_custom_login_code() {
 	
 	function get_footer_section() {
 		$mt_options  = mt_get_plugin_options(true);
+		$out_ftext   = null;
 		
-		$out_ftext = '';
-		$out_ftext .= '<a class="company-name" rel="footer" href="'.esc_url(site_url('')) .'">';
-			if (isset($mt_options['footer_text']) && !empty($mt_options['footer_text'])) {
-				$out_ftext .= $mt_options['footer_text'];
-			} else {			
-				$out_ftext .= '&copy; ' . get_bloginfo( 'name' ) . ' ' . date('Y');
-			}	
-		$out_ftext .= '</a>';
+		if (isset($mt_options['footer_text']) && !empty($mt_options['footer_text'])) {
+			$out_ftext .= '<a class="company-name" rel="footer" href="'.esc_url(site_url('')) .'">';
+				$out_ftext .= wp_kses_post(stripslashes($mt_options['footer_text']));
+			$out_ftext .= '</a>';
+		}
 		echo $out_ftext;
 	}
 	add_action('footer_section', 'get_footer_section', 10);
-	
 	
 	function do_button_login_form($error = -1) {
 		?>
@@ -266,6 +292,15 @@ function get_custom_login_code() {
 			echo $out_login_form;
 		}	
 	}
+
+	function reset_pass_url() {
+		include_once(ABSPATH . 'wp-admin/includes/plugin.php'); 
+		if (is_plugin_active('woocommerce/woocommerce.php')) {
+			$siteURL = get_option('siteurl');
+			return "{$siteURL}/wp-login.php?action=lostpassword";
+		}
+	}
+	add_filter( 'lostpassword_url',  'reset_pass_url', 999, 0 );
 	
 	function get_preloader_element() {
 		$out = '';

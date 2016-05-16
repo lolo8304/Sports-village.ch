@@ -79,6 +79,7 @@
 							<div>
 								<?php
 
+								/*
 									if (version_compare($GLOBALS['wp_version'], '4.0.0', '<' ))
 									{
 										$localeName = get_locale();
@@ -101,7 +102,8 @@
 									}
 									printf('Better Analytics currently supports %1$u languages, but unfortunately %3$s%2$s%4$s isn\'t one of them.', count($locales), $localeName, '<strong>', '</strong>');
 									echo '<p />';
-									printf('If you would like to help translate it into your language, please visit the %1$ssupport forum%2$s and we can show you how it\'s done.', '<a href="' . esc_url(BETTER_ANALYTICS_SUPPORT_URL . '#utm_source=admin_settings&utm_medium=wordpress&utm_campaign=plugin') . '" target="_blank">', '</a>');
+								*/
+									printf('If you would like to help translate Better Analytics into your language, please visit the %1$swordpress.org translation site%2$s and you can help in translating.', '<a href="' . esc_url('https://translate.wordpress.org/projects/wp-plugins/better-analytics/dev') . '" target="_blank">', '</a>');
 								?>
 							</div>
 						</div>
@@ -129,9 +131,9 @@
 							<li>
 								<?php esc_html_e('More A/B testing objective metrics', 'better-analytics'); ?>
 							</li>
-							<li>
-								<?php esc_html_e('eCommerce tracking', 'better-analytics'); ?>
-							</li>
+
+								<?php //esc_html_e('eCommerce tracking', 'better-analytics'); ?>
+
 							<li>
 								<?php esc_html_e('Option for server-side tracking of users (or bots) with Analytics/privacy blockers', 'better-analytics'); ?>
 							</li>
@@ -929,6 +931,25 @@
 				</td>
 			</tr>
 
+			<?php
+				$currentUser = wp_get_current_user();
+			?>
+
+			<tr valign="top" class="group_advanced tab_content">
+				<th scope="row"><?php esc_html_e('Permissions To Settings', 'better-analytics');?></th>
+				<td>
+					<fieldset>
+						<label for="ba_lock_settings_user_id">
+							<input name="better_analytics[lock_settings_user_id]" type="checkbox" id="ba_lock_settings_user_id" value="<?php echo @$currentUser->ID; ?>" <?php checked('1', @$betterAnalyticsOptions['lock_settings_user_id'] ); ?>>
+							<?php esc_html_e('Only Your User Account', 'better-analytics');?></label>
+						<span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('If you want to disable all other admin accounts from having access to the Better Analytics settings, use this option.  Keep in mind, that only your account will have access to change any Better Analytics settings.', 'better-analytics');?>"></span>
+
+					</fieldset>
+
+				</td>
+			</tr>
+
+
 
 			<tr valign="top" class="group_advanced tab_content">
 				<th scope="row"><?php esc_html_e('File Extensions To Track As Downloads', 'better-analytics');?> <span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('If a logged in user is part of one of these groups, Analytics will not track them.', 'better-analytics');?>"></span></th>
@@ -939,6 +960,7 @@
 						<?php
 							$fileTypes = array(
 								'avi' => esc_html__('Audio Video Interleave (.avi)', 'better-analytics'),
+								'dmg' => esc_html__('Apple Disk Image (.dmg)', 'better-analytics'),
 								'doc' => esc_html__('Word (.doc)', 'better-analytics'),
 								'exe' => esc_html__('Executable (.exe)', 'better-analytics'),
 								'gz' => esc_html__('gzip (.gz)', 'better-analytics'),
@@ -1114,6 +1136,19 @@
 				</td>
 			</tr>
 
+			<tr valign="top" class="group_advanced tab_content">
+				<th scope="row"><?php esc_html_e('Suppress Dashboard Notices', 'better-analytics');?></th>
+				<td>
+					<fieldset>
+						<label for="ba_hide_api_message">
+							<input name="better_analytics[hide_api_message]" type="checkbox" id="ba_hide_api_message" value="1" <?php checked('1', @$betterAnalyticsOptions['hide_api_message'] ); ?>>
+							<?php esc_html_e('Hide "API Not Linked" Notice', 'better-analytics');?></label>
+						<span class="dashicons-before dashicons-info tooltip" title="<?php esc_html_e('If you choose not to link your Google Analytics account for reporting and management, you can disable the notice about it with this option (the notice will still show on Better Analytics config/reporting pages).', 'better-analytics');?>"></span>
+
+					</fieldset>
+
+				</td>
+			</tr>
 
 		</table>
 

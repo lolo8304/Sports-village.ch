@@ -5,6 +5,8 @@ class NewsletterControls {
     var $data;
     var $action = false;
     var $button_data = '';
+    var $errors = '';
+    var $messages = '';
 
     function __construct($options = null) {
         if ($options == null) {
@@ -90,16 +92,29 @@ class NewsletterControls {
      * Show the errors and messages.
      */
     function show() {
+        static $shown = false;
+
+        if ($shown) {
+            return;
+        }
+        $shown = true;
+
         if (!empty($this->errors)) {
-            echo '<div class="error"><p>';
+            echo '<div class="tnp-error">';
             echo $this->errors;
-            echo '</p></div>';
+            echo '</div>';
         }
         if (!empty($this->messages)) {
-            echo '<div class="updated"><p>';
+            echo '<div class="tnp-message">';
             echo $this->messages;
-            echo '</p></div>';
+            echo '</div>';
         }
+    }
+
+    function add_message_saved() {
+        if (!empty($this->messages))
+            $this->messages .= '<br><br>';
+        $this->messages .= __('Saved.', 'newsletter');
     }
 
     function hint($text, $url = '') {
@@ -131,13 +146,30 @@ class NewsletterControls {
 
         echo '<select style="width: 100px" name="options[' . $name . ']">';
         echo '<option value="0"';
+        if ($value == 0) {
+            echo ' selected';
+        }
+        echo '>Disabled</option>';
+        echo '<option value="1"';
+        if ($value == 1) {
+            echo ' selected';
+        }
+        echo '>Enabled</option>';
+        echo '</select>';
+    }
+
+    function disabled($name) {
+        $value = isset($this->data[$name]) ? (int) $this->data[$name] : 0;
+
+        echo '<select style="width: 100px" name="options[' . $name . ']">';
+        echo '<option value="0"';
         if ($value == 0)
             echo ' selected';
-        echo '>Disabled</option>';
+        echo '>Enabled</option>';
         echo '<option value="1"';
         if ($value == 1)
             echo ' selected';
-        echo '>Enabled</option>';
+        echo '>Disabled</option>';
         echo '</select>';
     }
 
@@ -159,13 +191,13 @@ class NewsletterControls {
         echo "<div class='newsletter-checkboxes-group'>";
         foreach ($values_labels as $value => $label) {
             echo "<div class='newsletter-checkboxes-item'>";
-            echo "<input type='checkbox' id='$name' name='options[$name][]' value='$value'";
+            echo "<label><input type='checkbox' id='$name' name='options[$name][]' value='$value'";
             if (array_search($value, $value_array) !== false)
                 echo " checked";
             echo '/>';
             if ($label != '')
-                echo " <label for='$name'>$label</label>";
-            echo "</div>";
+                echo $label;
+            echo "</label></div>";
         }
         echo "</div><div style='clear: both'></div>";
     }
@@ -319,44 +351,59 @@ class NewsletterControls {
         if ($function != null) {
             echo '<input class="button-secondary" type="button" value="' . $label . '" onclick="this.form.act.value=\'' . $action . '\';' . htmlspecialchars($function) . '"/>';
         } else {
-            echo '<input class="button-secondary" type="button" value="' . $label . '" onclick="this.form.act.value=\'' . $action . '\';this.form.submit()"/>';
+            echo '<input class="button-secondary" type="submit" value="' . $label . '" onclick="this.form.act.value=\'' . $action . '\';return true;"/>';
         }
     }
-    
+
     /**
      * With translated "Save" label.
      */
     function button_save($function = null) {
-        $this->button('save', __('Save', 'newsletter'), $function);
+        $this->button_primary('save', __('Save', 'newsletter'), $function);
     }
-    
+
+    function button_reset($data = '') {
+        echo '<button class="button-secondary" onclick="this.form.btn.value=\'' . esc_attr($data) . '\';this.form.act.value=\'reset\';if (!confirm(\'';
+        echo esc_attr(__('Proceed?', 'newsletter'));
+        echo '\')) return false;">';
+        //echo '<i class="fa fa-times"></i> ';
+        echo esc_html(__('Reset', 'newsletter'));
+        echo '</button>';
+    }
+
+    function button_back($url) {
+        echo '<a href="';
+        echo $url;
+        echo '" class="button"><i class="fa fa-chevron-left"></i>&nbsp;';
+        _e('Back', 'newsletter');
+        echo '</a>';
+    }
+
     /**
      * Creates a button with "copy" action.
      * @param type $data
      */
-    function button_copy($data = '')
-    {
+    function button_copy($data = '') {
         echo '<button class="button-secondary" onclick="this.form.btn.value=\'' . esc_attr($data) . '\';this.form.act.value=\'copy\';if (!confirm(\'';
-        echo esc_attr(__('Proceed', 'newsletter'));
+        echo esc_attr(__('Proceed?', 'newsletter'));
         echo '\')) return false;">';
         echo '<i class="fa fa-copy"></i> ';
         echo esc_html(__('Copy', 'newsletter'));
         echo '</button>';
     }
-    
+
     /**
      * Creates a button wirh "delete" action.
      * @param type $data
      */
-    function button_delete($data = '')
-    {
+    function button_delete($data = '') {
         echo '<button class="button-secondary" onclick="this.form.btn.value=\'' . esc_attr($data) . '\';this.form.act.value=\'delete\';if (!confirm(\'';
-        echo esc_attr(__('Proceed', 'newsletter'));
+        echo esc_attr(__('Proceed?', 'newsletter'));
         echo '\')) return false;">';
         echo '<i class="fa fa-times"></i> ';
         echo esc_html(__('Delete', 'newsletter'));
         echo '</button>';
-    }    
+    }
 
     function button_primary($action, $label, $function = null) {
         if ($function != null) {
@@ -382,38 +429,43 @@ class NewsletterControls {
     }
 
     function wp_editor($name, $settings = array()) {
-        wp_editor($this->data[$name], $name, array_merge(array('textarea_name' => 'options[' . $name . ']', 'wpautop' => false), $settings));
+        $value = $this->get_value($name);
+        wp_editor($value, $name, array_merge(array('textarea_name' => 'options[' . $name . ']', 'wpautop' => false), $settings));
         if (!is_plugin_active('mce_table_buttons/mce_table_buttons.php')) {
             echo '<p class="description">You can install <a href="https://wordpress.org/plugins/mce-table-buttons/" target="_blank">MCE Table Button</a> for a table management toolbar add on.</p>';
         }
     }
 
     function textarea($name, $width = '100%', $height = '50') {
+        $value = $this->get_value($name);
         echo '<textarea class="dynamic" name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . '">';
-        echo htmlspecialchars($this->data[$name]);
+        echo htmlspecialchars($value);
         echo '</textarea>';
     }
 
     function textarea_fixed($name, $width = '100%', $height = '200') {
+        $value = $this->get_value($name);
         echo '<textarea id="options-' . $name . '" name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . 'px">';
-        echo htmlspecialchars($this->data[$name]);
+        echo htmlspecialchars($value);
         echo '</textarea>';
     }
-    
+
     function textarea_preview($name, $width = '100%', $height = '200', $header = '', $footer = '') {
+        $value = $this->get_value($name);
         //do_action('newsletter_controls_textarea_preview', $name);
         echo '<input class="button" type="button" onclick="newsletter_textarea_preview(\'options-' . $name . '\', \'\', \'\')" value="Switch editor/preview">';
+        echo '<br><br>';
         echo '<div style="position: relative">';
         echo '<textarea id="options-' . $name . '" name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . 'px">';
-        echo htmlspecialchars($this->data[$name]);
+        echo htmlspecialchars($value);
         echo '</textarea>';
         echo '<iframe id="options-' . $name . '-iframe" class="newsletter-textarea-preview" style="background-color: #fff; width: ' . $width . '; height: ' . $height . 'px; position: absolute; top: 0; left: 0; z-index: 10000; display: none"></iframe>';
         echo '</div>';
-    }    
+    }
 
     function email($prefix, $editor = null, $disable_option = false) {
         if ($disable_option) {
-            $this->checkbox($prefix . '_disabled', 'Disable this email');
+            $this->disabled($prefix . '_disabled');
             echo '<br>';
         }
         //echo 'Subject:<br />';
@@ -438,7 +490,22 @@ class NewsletterControls {
         if ($label != '')
             echo '&nbsp;' . $label . '</label>';
     }
-    
+
+    function checkbox2($name, $label = '') {
+        if ($label != '')
+            echo '<label>';
+        echo '<input type="checkbox" id="' . $name . '" onchange="document.getElementById(\'' . $name . '_hidden\').value=this.checked?\'1\':\'0\'"';
+        if (!empty($this->data[$name]))
+            echo ' checked="checked"';
+        echo '/>';
+        if ($label != '')
+            echo '&nbsp;' . $label . '</label>';
+        echo '<input type="hidden" id="' . $name . '_hidden" name="options[' . $name . ']" value="';
+
+        echo empty($this->data[$name]) ? '0' : '1';
+        echo '"/>';
+    }
+
     function radio($name, $value, $label = '') {
         if ($label != '') {
             echo '<label>';
@@ -452,19 +519,20 @@ class NewsletterControls {
         if ($label != '') {
             echo '&nbsp;' . $label . '</label>';
         }
-    }    
+    }
 
     /**
      * Creates a checkbox named $name and checked if the internal data contains under
      * the key $name an array containig the passed value.
      */
     function checkbox_group($name, $value, $label = '') {
-        echo '<input type="checkbox" id="' . $name . '" name="options[' . $name . '][]" value="' . $value . '"';
+        echo '<label><input type="checkbox" id="' . $name . '" name="options[' . $name . '][]" value="' . $value . '"';
         if (is_array($this->data[$name]) && array_search($value, $this->data[$name]) !== false)
             echo ' checked="checked"';
         echo '/>';
         if ($label != '')
-            echo ' <label for="' . $name . '">' . $label . '</label>';
+            echo $label;
+        echo '</label>';
     }
 
     function color($name) {
@@ -517,7 +585,7 @@ class NewsletterControls {
             if (empty($options_profile['list_' . $i]))
                 continue;
             echo '<div class="newsletter-preferences-item">';
-            $this->checkbox($name . '_' . $i, '<span class="newsletter-badge">' . $i . '</span> ' . htmlspecialchars($options_profile['list_' . $i]));
+            $this->checkbox2($name . '_' . $i, esc_html($options_profile['list_' . $i]));
             echo '</div>';
         }
         echo '<div style="clear: both"></div>';
@@ -547,7 +615,7 @@ class NewsletterControls {
         echo '<div style="clear: both"></div>';
         echo '<a href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-preferences" target="_blank">'
         . 'Click here to read more about preferences.'
-                . '</a> They can be configured on Subscription Form - Profile fields panel.';
+        . '</a> They can be configured on Subscription Form - Profile fields panel.';
         echo '</div>';
     }
 
@@ -679,7 +747,8 @@ class NewsletterControls {
 
     function init($options = array()) {
         $cookie_name = 'newsletter_tab';
-        if (isset($options['cookie_name'])) $cookie_name = $options['cookie_name'];
+        if (isset($options['cookie_name']))
+            $cookie_name = $options['cookie_name'];
         echo '<script type="text/javascript">
     jQuery(document).ready(function(){
         jQuery("textarea.dynamic").focus(function() {
@@ -850,6 +919,26 @@ class NewsletterControls {
         $output .= '<br class="clear"/>';
 
         echo $output;
+    }
+
+    static function print_date($time = null, $now = false, $left = false) {
+        if (is_null($time)) {
+            $time = time();
+        }
+        if ($time == false) {
+            $buffer = 'none';
+        } else {
+            $buffer = gmdate(get_option('date_format') . ' ' . get_option('time_format'), $time + get_option('gmt_offset') * 3600);
+        }
+        if ($now) {
+            $buffer .= ' (now: ' . gmdate(get_option('date_format') . ' ' .
+                            get_option('time_format'), time() + get_option('gmt_offset') * 3600);
+            $buffer .= ')';
+        }
+        if ($left) {
+            $buffer .= ', ' . gmdate('H:i:s', $time - time()) . ' left';
+        }
+        return $buffer;
     }
 
 }

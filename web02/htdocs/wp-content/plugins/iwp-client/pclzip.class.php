@@ -606,81 +606,67 @@ endif;
 	{
 		$complete_folder_list = array();
 	}
-	if(empty($complete_folder_list))
+	$new_complete_folder_list = array();
+	$folder_list_result = array();
+	manual_debug('', 'pclbeforeGettingFileListFirst', 0);
+	//if(empty($complete_folder_list))
+	if(true)
 	{
+		global $total_count;
+		$old_next_file_index = $next_file_index;
+		
+		
+		/* $folder_list_result = $this->getFolderListManual('F:\\wamp\\www\\plugin_for_bugs/wp-dark/', $v_options, $next_file_index);
+		if(!empty($folder_list_result) && $folder_list_result['break']){
+			$next_file_index = $folder_list_result['loop_count'];
+		} */
+		
 		//first am getting the number of directories and its list
 		foreach($v_filedescr_list as $value)
 		{
 			$folder_list = array();
 			if(is_dir($value['filename']))
 			{
-				$folder_list = $this->getFolderList($value['filename']);
-				$complete_folder_list = $folder_list;
+				//$folder_list = $this->getFolderList($value['filename']);
+				$folder_list_result = $this->getFolderListManual($value['filename'], $v_options, $old_next_file_index);
+				if(!empty($folder_list_result) && $folder_list_result['break']){
+					$next_file_index = $folder_list_result['loop_count'];
+					break;
+				}
 			}
 			else
 			{
-				$folder_list = $value['filename'];
-				//$folder_list = array_merge($complete_folder_list, array( 0 => array( 0 => $value)));
-				//$folder_list = array_merge($complete_folder_list, $value);
-				$complete_folder_list[][] = $value;
+				global $total_count;
+				$folder_list_result = $this->fileDetailsExpandManual($value['filename'], $v_options, $next_file_index);
+				if(!empty($folder_list_result) && $folder_list_result['break']){
+					$next_file_index = $folder_list_result['loop_count'];
+					break;
+				}
 			}
-			
-			//$complete_folder_list = $folder_list;
 		}
-		//then am getting all the files in each folder
-		/* $dirs_iwp = array();
-		$files_iwp = array();
-		foreach($complete_folder_list as $value)
-		{
-			if(is_dir($value))
-			{
-				$this->getFilesListForCurrentDir($value, $dirs_iwp, $files_iwp);
 			}
-		} */
+	
+	if(empty($folder_list_result)){
+		$next_file_index = 0;
 	}
 	$timeTaken65 = microtime(true) - $startTImeForlist;
-	
+	manual_debug('', 'pclAfterGettingFileListFirst', 0);
 	//for the file list prepared am doing the pclZip file preparation
-	
+	//manual_debug('', 'pclbeforeGettingFileListSecond', 0);
 	$prevlistCount = count($prevFileList);
 	$current_file_array = array();
 	$current_file_array = $prevFileList;
 	$file_list_result = array();
 	$file_list_result['status'] = 'completed';
 	$file_list_result['next_file_index'] = $next_file_index;
-	foreach($complete_folder_list as $keyy => $value)
-	{
-		if($keyy < $next_file_index)
-		{
-			continue;
-		}
-		$current_file_array_temp = $value;
-		$v_result = $this->privFileDescrExpand($current_file_array_temp, $v_options, "getFileList");
-		if(!empty($current_file_array_temp))
-		{
-			foreach($current_file_array_temp as $thisVal)
-			{
-				$current_file_array[] = $thisVal;
-			}
-		}
-		unset($current_file_array_temp);
-		$endTime = microtime(true);
-		$timeTaken = $endTime - $GLOBALS['IWP_MMB_PROFILING']['ACTION_START'];
-		//if(count($current_file_array) >= ($prevlistCount + 500))
-		if($timeTaken >= 11)
-		{
+	
+	if(!empty($folder_list_result) && !empty($folder_list_result['break'])){
 			$file_list_result['status'] = 'partiallyCompleted';
-			$file_list_result['next_file_index'] = $keyy + 1;
-			$file_list_result['complete_folder_list'] = $complete_folder_list;
-			break;
+		$file_list_result['next_file_index'] = $next_file_index + 1;
 		}
-		else
-		{
-			$file_list_result['next_file_index'] = 0;
-		}
-		iwp_mmb_auto_print("fileListLoop");
-	}
-	$file_list_result['p_filedescr_list'] = $current_file_array;
+	$file_list_result['p_filedescr_list'] = array();
+	global $total_FL_count;
+	$file_list_result['total_FL_count'] = $total_FL_count;
     if ($v_result != 1) {
       return 0;
     }
@@ -753,6 +739,71 @@ endif;
 	  clearstatcache();	
 	  return $info['all'];
 	
+  }
+  
+  function getFolderListManual($dir, $v_options = array(), $next_file_index = 0)
+  {
+	  global $total_count;
+	  global $for_every_count;
+	  static $info = array();
+	  
+	  static $this_result;
+	  
+	  if(empty($this_result)){
+		  if( is_dir( $dir = rtrim( $dir, "/\\" ) ) ) {
+			foreach( scandir( $dir) as $item ) {
+			  if(true){
+				  if( $item != "." && $item != ".." ) {
+					$absPath = $dir . DIRECTORY_SEPARATOR . $item;
+					$this_result = $this->fileDetailsExpandManual($absPath, $v_options, $next_file_index);
+					if(!empty($this_result) && !empty($this_result['break'])){
+						return $this_result;
+						//break;
+					}
+					if(empty($this_result)){
+						$stat = stat( $absPath );
+						switch( $stat['mode'] & 0170000 ) {
+							//case 0010000: $info['files'][]       = $absPath; break;
+							case 0040000: $this_result = $this->getFolderListManual($absPath, $v_options, $next_file_index); break;
+							//case 0120000: $info['links'][]       = $absPath; break;
+							//case 0140000: $info['sockets'][]     = $absPath; break;
+							//case 0010000: $info['pipes'][]       = $absPath; break;
+						}
+						if(!empty($this_result) && !empty($this_result['break'])){
+							return $this_result;
+							//break;
+						}
+					}
+				  }
+			  }
+			}
+		  }
+	  }
+	  clearstatcache();
+	  return $this_result;
+  }
+  
+  function fileDetailsExpandManual($absPath, $v_options, $next_file_index = 0){
+	    global $total_FL_count;
+		global $total_count;
+		$total_count++;
+		$this_result = false;
+		if($total_count >= $next_file_index){
+			$to_be_expanded_array = array( 0 => array( 'filename' => $absPath ) );
+			$v_result = $this->privFileDescrExpand($to_be_expanded_array, $v_options, "getFileList");
+			if($v_result == 1 && !empty($to_be_expanded_array)){
+				foreach($to_be_expanded_array as $key => $value){
+					$this_result = save_in_iwp_files_db(0, $value);
+					if(!empty($this_result) && !empty($this_result['break'])){
+						$total_count = $total_count - 1;
+						$this_result['loop_count'] = $total_count;
+						return $this_result;
+					}
+				}
+				$total_FL_count++;
+			}
+		}
+		return $this_result;
   }
   
   
@@ -3579,14 +3630,20 @@ endif;
     }
 
     // ----- Read the file by IWP_PCLZIP_READ_BLOCK_SIZE octets blocks
-    fseek($v_file_compressed, 10);
+    @fseek($v_file_compressed, 10);
     $v_size = $p_header['compressed_size'];
     while ($v_size != 0)
     {
       $v_read_size = ($v_size < IWP_PCLZIP_READ_BLOCK_SIZE ? $v_size : IWP_PCLZIP_READ_BLOCK_SIZE);
       $v_buffer = @fread($v_file_compressed, $v_read_size);
+	  if($v_buffer === false){
+		  return -1;
+	  }
       //$v_binary_data = pack('a'.$v_read_size, $v_buffer);
-      @fwrite($this->zip_fd, $v_buffer, $v_read_size);
+      $wr_result = @fwrite($this->zip_fd, $v_buffer, $v_read_size);
+	  if($wr_result === false){
+		  return -1;
+	  }
       $v_size -= $v_read_size;
     }
 
@@ -6066,7 +6123,9 @@ endif;
 
 	// ----- Disable magic_quotes
 	if ($this->magic_quotes_status == 1) {
-	  @set_magic_quotes_runtime(0);
+      if (function_exists('set_magic_quotes_runtime')) {
+	       @set_magic_quotes_runtime(0);
+      }
 	}
 
     // ----- Return
@@ -6097,7 +6156,9 @@ endif;
 
 	// ----- Swap back magic_quotes
 	if ($this->magic_quotes_status == 1) {
-  	  @set_magic_quotes_runtime($this->magic_quotes_status);
+      if (function_exists('set_magic_quotes_runtime')) {
+  	     @set_magic_quotes_runtime($this->magic_quotes_status);
+      }
 	}
 
     // ----- Return

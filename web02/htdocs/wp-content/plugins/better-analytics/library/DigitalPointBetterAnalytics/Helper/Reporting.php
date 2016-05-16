@@ -2,6 +2,19 @@
 
 class DigitalPointBetterAnalytics_Helper_Reporting extends DigitalPointBetterAnalytics_Helper_Reporting_Advanced
 {
+	/**
+	 * These credentials are Google API Project credentials, not credentials for a Google account.
+	 *
+	 * For reference, the credentials ARE supposed to be embedded in the source for "Installed Applications" (which is what a WordPress plugin is).
+	 *
+	 * Quote from: https://developers.google.com/identity/protocols/OAuth2#installed
+	 *
+	 * "The process results in a client ID and, in some cases, a client secret, which you embed in the source
+	 * code of your application. (In this context, the client secret is obviously not treated as a secret.)"
+	 *
+	 * OAuth2 tokens (which are never stored or transmitted outside the individual WordPress install) are the magic sauce that allows API calls to be made.
+	 **/
+
 	protected $_credentials = array(
 		'client_id' => '416831151869-fks5s6f1d9q3a1j6ua0158hqclde21ta.apps.googleusercontent.com',
 		'client_secret' => 'zkhfn3qPn0y-Dg8ZXHBeHBR9',

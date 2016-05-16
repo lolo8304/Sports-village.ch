@@ -3,8 +3,8 @@ Contributors: digitalpoint
 Tags: analytics, google analytics, universal analytics, statistics, tracking, code, dashboard, analytics dashboard, google analytics dashboard, google analytics plugin, google analytics widget, reports, charts, multisite, api, stats, web stats, visits, javascript, pageviews, marketing, widget, realtime, real time, youtube, outbrain, taboola, adsense, twitter, pinterest, linkedin, facebook, google, digitalpoint, ab testing, ab tests, split testing, google analytics content experiments, content experiments
 Donate link: https://marketplace.digitalpoint.com/better-analytics.3354/item#utm_source=readme&utm_medium=wordpress&utm_campaign=plugin
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.1.2
+Tested up to: 4.5
+Stable tag: 1.1.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,7 +134,7 @@ If you are using Google PageSpeed to combine JavaScript files, you will want to 
 You need a WordPress site (of course), running WordPress 3.8 or higher and a Google Analytics account (which is [free over here](https://www.google.com/analytics/) if you don't already have a Google Analytics account).
 
 = Can Better Google Analytics be used with legacy Google Analytics code? =
-No, the Better Google Analytics plugin is for Google Universal Analytics.  You can upgrade any old non-Universal Google Analytics property to support both legacy and Universal under your [Google Analytics Property Settings](https://www.google.com/analytics/web/?#management/Settings/).
+No, the Better Google Analytics plugin is for Google Universal Analytics.  And really, you wouldn't want to.  All Google Analytics accounts have been upgraded to Universal Analytics, and the [non-Universal tracking libraries have been deprecated](https://developers.google.com/analytics/devguides/collection/upgrade/) by Google.
 
 = What do I do with the JavaScript code that Google gives me from within my Google Analytics account? =
 Nothing.  Better Google Analytics handles all the JavaScript code generation internally.  If you want to add your own custom JavaScript, there is an option for that under the Advanced settings.
@@ -201,6 +201,17 @@ Thank you to all the individuals who have contributed translations for Better Go
 26. Advanced settings allow you to fine tune how the system works with Google Analytics.
 
 == Changelog ==
+= 1.1.4 =
+* Updated options container to pass W3C validation
+* Updated for WordPress 4.5
+
+= 1.1.3 =
+* Feature: New option under Advanced tab - Hide "API Not Linked" Notice
+* Feature: New option under Advanced tab - Ability to limit access to settings to current admin account
+* Enhancement: Added option for tracking downloads of .dmg files
+* Fixed cosmetic issue within Goal Management with WordPress 4.4
+* Updated for WordPress 4.4
+
 = 1.1.2 =
 * Feature: User Engagement Time can be set by the user (under Advanced settings tab)
 * Bug: Workaround Internet Explorer not having location origin variable available

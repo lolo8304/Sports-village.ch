@@ -203,4 +203,4 @@ if (DigitalPointBetterAnalytics_Base_Public::getInstance()->experimentId !== nul
 	);
 }
 
-echo "<meta id='ba_s' data-o=\"" . htmlentities(json_encode($jsonOptions)) . "\" />";
+echo "<meta id=\"ba_s\" property=\"options\" content=\"\" data-o=\"" . htmlentities(json_encode($jsonOptions)) . "\" />";

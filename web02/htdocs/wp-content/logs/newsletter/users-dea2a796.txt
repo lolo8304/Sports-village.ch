@@ -1,0 +1,117 @@
+16-05-2016 21:09:50 - INFO  - 22.8 MB - Version changed from 1.0.4 to 1.0.5
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing create table if not exists wp_newsletter (id int auto_increment, `email` varchar(100) not null default '', primary key (id), unique key email (email)) DEFAULT CHARACTER SET utf8
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column name varchar(100) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'name'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column surname varchar(100) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'surname'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column sex char(1) not null default 'n'
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'sex'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter change column sex sex char(1) not null default 'n'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column status char(1) not null default 'S'
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'status'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column created timestamp not null default current_timestamp
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'created'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column token varchar(50) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'token'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column feed tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'feed'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column feed_time bigint(20) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'feed_time'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column country varchar(4) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'country'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_1 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_1'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_2 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_2'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_3 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_3'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_4 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_4'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_5 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_5'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_6 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_6'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_7 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_7'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_8 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_8'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_9 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_9'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_10 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_10'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_11 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_11'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_12 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_12'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_13 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_13'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_14 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_14'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_15 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_15'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_16 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_16'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_17 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_17'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_18 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_18'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_19 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_19'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column list_20 tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'list_20'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_1 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_1'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_2 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_2'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_3 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_3'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_4 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_4'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_5 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_5'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_6 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_6'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_7 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_7'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_8 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_8'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_9 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_9'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_10 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_10'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_11 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_11'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_12 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_12'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_13 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_13'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_14 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_14'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_15 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_15'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_16 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_16'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_17 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_17'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_18 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_18'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_19 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_19'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column profile_20 varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'profile_20'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column referrer varchar(50) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'referrer'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column http_referer varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'http_referer'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column wp_user_id int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'wp_user_id'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column ip varchar(50) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'ip'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column test tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'test'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column flow tinyint(4) not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.8 MB - Duplicate column name 'flow'
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter convert to character set utf8
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing update wp_newsletter set sex='n' where sex='' or sex=' '
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column unsub_email_id int not null default 0
+16-05-2016 21:09:50 - INFO  - 22.8 MB - upgrade_query> Executing alter table wp_newsletter add column unsub_time int not null default 0

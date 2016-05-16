@@ -206,7 +206,7 @@ class DigitalPointBetterAnalytics_Base_Public
 				),
 				'roles_view_reports' => array('administrator'),
 				'file_extensions' => array(
-					'avi', 'doc', 'exe', 'gz', 'mpg', 'mp3', 'pdf', 'ppt', 'psd', 'rar', 'wmv', 'xls', 'zip'
+					'avi', 'dmg', 'doc', 'exe', 'gz', 'mpg', 'mp3', 'pdf', 'ppt', 'psd', 'rar', 'wmv', 'xls', 'zip'
 				),
 				'track_blocked' => 'never',
 				'javascript' => array(

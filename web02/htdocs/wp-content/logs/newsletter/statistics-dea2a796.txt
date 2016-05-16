@@ -1,0 +1,32 @@
+16-05-2016 21:09:50 - INFO  - 22.9 MB - Version changed from 1.1.3 to 1.1.6
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats change column newsletter_id user_id int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Unknown column 'newsletter_id' in 'wp_newsletter_stats'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats change column newsletter_id user_id int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Unknown column 'newsletter_id' in 'wp_newsletter_stats'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats change column date created timestamp not null default current_timestamp
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Unknown column 'date' in 'wp_newsletter_stats'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing create table if not exists wp_newsletter_stats (id int auto_increment, primary key (id)) DEFAULT CHARACTER SET utf8
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column user_id int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'user_id'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column email_id int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'email_id'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column link_id int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'link_id'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column created timestamp not null default current_timestamp
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'created'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column url varchar(255) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'url'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column anchor varchar(200) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'anchor'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column ip varchar(20) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'ip'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_stats add column country varchar(4) not null default ''
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate column name 'country'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing ALTER TABLE `wp_newsletter_stats` ADD INDEX `email_id` (`email_id`)
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate key name 'email_id'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing ALTER TABLE `wp_newsletter_stats` ADD INDEX `user_id` (`user_id`)
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Duplicate key name 'user_id'
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing ALTER TABLE `wp_newsletter_emails` ADD COLUMN `open_count` int UNSIGNED NOT NULL DEFAULT 0
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing ALTER TABLE `wp_newsletter_emails` ADD COLUMN `click_count`  int UNSIGNED NOT NULL DEFAULT 0
+16-05-2016 21:09:50 - INFO  - 22.9 MB - upgrade_query> Executing alter table wp_newsletter_emails change column read_count open_count int not null default 0
+16-05-2016 21:09:50 - DEBUG - 22.9 MB - Unknown column 'read_count' in 'wp_newsletter_emails'

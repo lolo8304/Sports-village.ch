@@ -1,7 +1,7 @@
 === Newsletter ===
 Tags: newsletter,email,subscription,mass mail,list build,email marketing,direct mailing
 Requires at least: 3.4.0
-Tested up to: 4.3.1
+Tested up to: 4.5
 Stable tag: trunk
 Contributors: satollo,webagile,michael-travan
 
@@ -25,6 +25,7 @@ send and track e-mails, headache-free. It just works out of box!
 * Html and Text versions of Emails 
 * All messages are **fully translatable** from Admin Panel (no .po/.mo)
 * Diagnostics Panel to check your blog mailing capability 
+* **Compatible with Postman, WP Mail SMTP, Easy WP SMTP, Easy SMTP Mail, WP Mail Bank**
 
 **Set Up Your First Newsletter In Just A Couple Of Clicks**
 [youtube https://www.youtube.com/watch?v=JaxK7XwqvVI]
@@ -41,7 +42,7 @@ Need *more power*? Feel *something's missing*? The Newsletter Plugin features ca
 our **premium, professional Extensions**! Let us introduce just two of them : )
 
 * [Reports Extension](http://www.thenewsletterplugin.com/plugins/newsletter/reports-module) is a regular WordPress plugin which improves the internal statistics collection system and provides better reports of data collected for each sent email. Neat.
-* [Feed By Mail Extension](http://www.thenewsletterplugin.com/feed-by-mail-extension) generates and sends your newsletters using your blog last posts, even custom ones like events or products. Just sit and watch! 
+* [Feed By Mail Extension](http://www.thenewsletterplugin.com/feed-by-mail-extension) generates and sends your newsletters using your blog last posts, even custom ones like events or products. Just sit and watch!
 * [WooCommerce Extension](http://www.thenewsletterplugin.com/woocommerce-extension) subscribe customers to a mailing list and generate product newletters.
 * [Amazon SES Extension](http://www.thenewsletterplugin.com/amazon-ses-extension-for-the-newsletter-plugin) seamlessly integrate Amazon SES with The Newsletter Plugin. Hassle-free.
 
@@ -76,20 +77,101 @@ No screenshots are available at this time.
 
 == Changelog ==
 
-= 3.9.7 =
+= 4.2.2 =
 
-* Fixed the traking link for test email so logged in user can test them
+* Fixed the newsletter sent table
 
-= 3.9.6 =
+= 4.2.1 =
 
-* Fixed the online view
+* Fixed the progress indicator on newsletter list
+
+= 4.2.0 =
+
+* New statistics dashboard
+* Newsletter Reports 4 support
+
+= 4.1.3 =
+
+* Fixed the notice dismiss not working on every page
+* Fixed debug notice on WP 4.5
+* Added unverified SSL connection option on SMTP panel
+
+= 4.1.2 =
+
+* Minor security fix (on admin side with admin access)
+= 4.2.0 =
+
+* Added support for Reports Extension 4
+* Improved license check
+
+= 4.1.1 =
+
+* Added compatibility with SMTP plugins (Newsletter now sends with wp_mail if not otherwise configured)
+* Small CSS fixes
+
+= 4.1.0 =
+
+* Fix statistics link in the dashboard newsletter list
+
+= 4.0.9 =
+
+* Updated jQuery UI
+* Updated compatibility notice
+* Fixed tabs on subscriber stats panel
+* Fixed documentation on profile page
+
+= 4.0.8 =
+
+* Dashboard style fix for WordPress >= 4.4
+* Minor improvements
+
+= 4.0.7 =
+
+* New check to prevent not correct message template settings to block emails
+* Improved confirmation email test
+* Added welcome email test
+* Resubscription in single opt-in does not send the confirmation email anymore
+* Fixed second subscription with Facebook extension
+
+= 4.0.6 =
+
+* Fixed forced lists on subscription panel
+* Fixed few i18n tags
+* Fixed background color on theme selector
+
+= 4.0.5 =
+
+* Fixed an error on content lock
+* Fixed CSS for extensions
+* Fixed few debug notices
+* Improved the content lock user recognition
+* Subscriber search by list 
+
+= 4.0.4 =
+
+* Fixed and improved the email template for service messages
+
+= 4.0.3 =
+
+* Fixed the welcome email enable/disable setting 
+
+= 4.0.2 =
+
+* Fixed main settings saving
+* Fixed unsubscription settings saving
+
+= 4.0.0 =
+
+* Shiny new look
+* New top menu
+* Locked content feature moved into the subscription module
+* Separated SMTP configuration panel
+* Newsletter users import transfer first and last name
+* Various bug fixes and improvements
 
 = 3.9.5 =
 
 * Corrected the call to maybe_maybe_convert_table_to_utf8mb4
-* Private newsletter check
-* Force UTF-8 on newsletter online view
-* Re-enabled the antibot option for ajax subscriptions
 
 = 3.9.4 =
 

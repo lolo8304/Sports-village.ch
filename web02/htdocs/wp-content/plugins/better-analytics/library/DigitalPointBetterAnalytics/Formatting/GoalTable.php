@@ -198,7 +198,7 @@ class DigitalPointBetterAnalytics_Formatting_GoalTable extends WP_List_Table
 		$this->single_row_columns($item);
 		echo '</tr>';
 
-		echo '<tr class="extra_info' . ($item['active'] ? ' active' : '') . '"><td></td><td colspan="' . (count($this->get_columns()) - 1) . '">' . '<div>' . DigitalPointBetterAnalytics_Model_Goals::getTypeNameByCode($item['type']) . ': ' . '<strong style="padding-left: 5px;">';
+		echo '<tr class="extra_info no-items' . ($item['active'] ? ' active' : '') . '"><td></td><td colspan="' . (count($this->get_columns()) - 1) . '">' . '<div>' . DigitalPointBetterAnalytics_Model_Goals::getTypeNameByCode($item['type']) . ': ' . '<strong style="padding-left: 5px;">';
 
 		switch ($item['type'])
 		{

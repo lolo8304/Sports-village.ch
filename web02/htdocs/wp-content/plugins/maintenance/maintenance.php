@@ -3,7 +3,7 @@
 	Plugin Name: Maintenance
 	Plugin URI: http://wordpress.org/plugins/maintenance/
 	Description: Take your website for maintenance away from public view. Use maintenance plugin if your website is in development or you need to change a few things, run an upgrade. Make it only accessible by login and password. Plugin has a options to add a logo, background, headline, message, colors, login, etc. Extended PRO with more features version is available for purchase.
-	Version: 2.5
+	Version: 2.7.1
 	Author: fruitfulcode
 	Author URI: http://fruitfulcode.com
 	License: GPL2
@@ -35,12 +35,12 @@ class maintenance {
 			add_action( 'plugins_loaded', array( &$this, 'admin'),	 	4);
 
 			
-			register_activation_hook  ( __FILE__, array( &$this,  'activation' ));
-			register_deactivation_hook( __FILE__, array( &$this,'deactivation') );
+			register_activation_hook  ( __FILE__, array( &$this,  'mt_activation' ));
+			register_deactivation_hook( __FILE__, array( &$this, 'mt_deactivation') );
 			
-			add_action('wp', array( &$this, 'mt_template_redirect'), 1);
+			add_action('wp', 		array( &$this, 'mt_template_redirect'), 1);
 			add_action('wp_logout',	array( &$this, 'mt_user_logout'));
-			add_action('init', array( &$this, 'mt_admin_bar'));
+			add_action('init', 		array( &$this, 'mt_admin_bar'));
 		}
 		
 		function constants() {
@@ -69,12 +69,21 @@ class maintenance {
 			}	
 		}
 		
-		function activation() {
+		function mt_activation() {
+			/*Activation Plugin*/
+			self::mt_clear_cache();
 		}
-		function deactivation() {
-			delete_option('maintenance_options');
-			delete_option('maintenance_db_version');
+		
+		function mt_deactivation() {
+			/*Deactivation Plugin*/
+			self::mt_clear_cache();
 		}
+		
+		public static function mt_clear_cache() {
+			global $file_prefix;
+			if ( function_exists( 'w3tc_pgcache_flush' ) ) w3tc_pgcache_flush(); 
+			if ( function_exists( 'wp_cache_clean_cache' ) ) wp_cache_clean_cache( $file_prefix, true );
+		}	
 		
 		function mt_user_logout() { 
 			wp_safe_redirect(get_bloginfo('url'));
@@ -87,7 +96,7 @@ class maintenance {
 		
 		function mt_admin_bar() {
 			add_action('admin_bar_menu', 'maintenance_add_toolbar_items', 100);
-			if (!is_admin() ) {
+			if (!is_super_admin() ) {
 				$mt_options = mt_get_plugin_options(true);
 				if (isset($mt_options['admin_bar_enabled']) && is_user_logged_in()) { 
 					add_filter('show_admin_bar', '__return_true');  																	 

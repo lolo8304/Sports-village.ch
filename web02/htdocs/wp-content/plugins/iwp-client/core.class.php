@@ -259,9 +259,9 @@ class IWP_MMB_Core extends IWP_MMB_Helper
        /* IWP */
 		if(defined('MULTISITE') && MULTISITE == true){	
 			global $blog_id;			
-			$user_id_from_email = get_user_id_from_string( get_blog_option($blog_id, 'admin_email'));
-			$details = get_userdata($user_id_from_email);
-			$username = $details->user_login;			
+			$details = get_user_by( 'email',get_blog_option($blog_id, 'admin_email'));
+			//$details = get_userdata($user_id_from_email->ID);
+			$username = $details->user_login;				
 		}
 		else{
 			$current_user = wp_get_current_user(); 

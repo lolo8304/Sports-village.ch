@@ -31,7 +31,6 @@ if(!defined('IWP_PCLZIP_TEMPORARY_DIR')){
 define('IWP_PCLZIP_TEMPORARY_DIR', WP_CONTENT_DIR . '/infinitewp/temp/');
 }
 
-
 $zip_errors   = array(
     'No error',
     'No error',
@@ -73,7 +72,6 @@ $unzip_errors = array(
     82 => 'No files were found due to bad decryption password(s)'
 );
 
-
 class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 {
     var $site_name;
@@ -87,6 +85,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	var $backup_url;
 	var $backup_settings_vals = array();
 	var $iwpScriptStartTime;
+	
     function __construct()
     {
         
@@ -146,22 +145,56 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			$action = $responseParams['nextFunc'];
 			if(empty($action))
 			{
+				manual_debug('', 'triggerError');
 				return $this->statusLog($datas['backupParentHID'], array('stage' => 'trigger_check', 'status' => 'error', 'statusMsg' => 'Calling Next Function failed - Error while fetching table data', 'statusCode' => 'calling_next_function_failed_error_while_fetching_table_data'));
 			}
 
 			unset($responseParams);
-		
-			if(method_exists('IWP_MMB_Backup_Multicall', $action)){
-				$result = self::$action($datas['backupParentHID']);
+			
+			$is_s3 = false;
+			$is_s3 = $this->check_if_s3_backup($action, $datas['backupParentHID']);
+			
+			if(method_exists('IWP_MMB_Backup_Multicall', $action) || !empty($is_s3)){
+				manual_debug('', 'triggerStart');
+				if(empty($is_s3)){
+					$result = self::$action($datas['backupParentHID']);
+				}
+				else{
+					$result = $is_s3;
+				}
+				manual_debug('', 'triggerEnd');
 				return $result;
 			}
 		}
+	}
+	
+	function check_if_s3_backup($action, $h_id){
+		$amazons3_result = false;
+		if($action == 'amazons3_backup'){
+			if(is_new_s3_compatible()){
+				require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+				$new_s3_obj = new IWP_MMB_S3_MULTICALL();
+				$amazons3_result = $new_s3_obj->amazons3_backup($h_id);
+			}
+			else{
+				$action = 'amazons3_backup_bwd_comp';
+				$amazons3_result = self::$action($h_id);
+			}
+		}
+		return $amazons3_result;
 	}
 	
 	function set_backup_task($params)
 	{
 		if(!empty($params))
 		{
+			initialize_manual_debug();
+			
+			$initialize_result = refresh_iwp_files_db();
+			if(is_array($initialize_result) && isset($initialize_result['error'])){
+				return $initialize_result;
+			}
+
 			//darkCode testing purpose static values
 			if((empty($params['args']['file_block_size']))||($params['args']['file_block_size'] < 1))
 			{
@@ -177,7 +210,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			}
 			if((empty($params['args']['file_loop_break_time']))||($params['args']['file_loop_break_time'] < 6))
 			{
-				$params['args']['file_loop_break_time'] = 23;
+				$params['args']['file_loop_break_time'] = 17;
 			}
 			if((empty($params['args']['db_loop_break_time']))||($params['args']['db_loop_break_time'] < 6))
 			{
@@ -287,32 +320,11 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	
 	function backup($historyID)
 	{
-		$zipPartNotOver = true;
 		$this -> hisID = $historyID;
-		$args = $this->getRequiredData($historyID, "requestParams");
-		//argsInsideBackup argsFormat
-		extract($args['args']);
-		extract($args);
-		//$task_name = $args['task_name'];	
-		//Prepare .zip file name  
-		$hash        = md5(microtime(true).uniqid('',true).substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, rand(20,60)));
-        $label       = $type ? $type : 'manual';
-		$backup_file_name = $this->site_name . '_' . $label . '_' . $what . '_' . date('Y-m-d') . '_' . $hash . '.zip';
-        $backup_file = IWP_BACKUP_DIR . '/' . $this->site_name . '_' . $label . '_' . $what . '_' . date('Y-m-d') . '_' . $hash . '.zip';
-        $backup_url  = content_url() . '/infinitewp/backups/' . $this->site_name . '_' . $label . '_' . $what . '_' . date('Y-m-d') . '_' . $hash . '.zip';
-		$this -> backup_url = $backup_url;
-		//$backup_url = $backup_file;
+			$args = $this->getRequiredData($historyID, "requestParams");		//format available - $args
 		
-		$backup_file_info = array();
-		$backup_file_info['backup_file_name'] = $backup_file_name;
-		$backup_file_info['backup_file'] = $backup_file;
-		$backup_file_info['backup_url'] = $backup_url;
-		
-		if(empty($account_info))
-		{
-			$account_info = array();
-		}
-		
+		$backup_file_details = $this->prepareBackupFileDetails($args);
+		extract($backup_file_details);
 		if($what == 'db')
 		{
 			//DB alone funcion			
@@ -330,7 +342,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			//both files and db.
 			
 			$result = $this->backupDB($historyID,$backup_file,$account_info);
-			//$result = $this->backupFiles($historyID,$backup_file);
 			return $result;
 		}
 		
@@ -339,14 +350,11 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	
 	function backup_uploads($historyID)
 	{
-		
 		//after creating the backup file dont forget to include it in the account_info array 
 		$this -> hisID = $historyID;
-		$files_to_zip = '';
 		$responseParams = $this -> getRequiredData($historyID,"responseParams");
 		$account_info = $responseParams['response_data']['account_info'];
 		$backup_file = $responseParams['response_data']['backup_file'];
-		
 		//storing the filesize value into settings array - first get the values and then append the value of filesize to it
 		$this -> backup_settings_vals = get_option('iwp_client_multi_backup_temp_values');
 		$backup_settings_values = $this -> backup_settings_vals;	
@@ -379,18 +387,17 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		if (isset($account_info['iwp_amazon_s3']) && !empty($account_info['iwp_amazon_s3'])) {
 			$account_info['iwp_amazon_s3']['backup_file'] = $backup_file;
 			iwp_mmb_print_flush('Amazon S3 upload: Start');
-			$amazons3_result                              = $this->amazons3_backup($historyID,$account_info['iwp_amazon_s3']);
-			iwp_mmb_print_flush('Amazon S3 upload: End');
-			
-			if (empty($amazons3_result) && $del_host_file) {
-				$this->unlinkBackupFiles($backup_file);
+			if(is_new_s3_compatible()){
+				require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+				$new_s3_obj = new IWP_MMB_S3_MULTICALL();
+				$amazons3_result = $new_s3_obj->amazons3_backup($historyID,$account_info['iwp_amazon_s3']);
 			}
+			else{
+				$amazons3_result = $this->amazons3_backup_bwd_comp($historyID,$account_info['iwp_amazon_s3']);
+			}
+			iwp_mmb_print_flush('Amazon S3 upload: End');
 			if (is_array($amazons3_result) && isset($amazons3_result['error'])) {
 				$this->unlinkBackupFiles($backup_file);
-			}
-			if($amazons3_result['status'] == 'partiallyCompleted')										//darkCode true loop
-			{
-				return $amazons3_result;
 			}
 			return $amazons3_result;
 			
@@ -399,16 +406,12 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		if (isset($account_info['iwp_gdrive']) && !empty($account_info['iwp_gdrive'])) {
 			$account_info['iwp_gdrive']['backup_file'] = $backup_file;
 			iwp_mmb_print_flush('google Drive upload: Start');
-			$gdrive_result                              = $this->google_drive_backup($historyID, $account_info['iwp_gdrive']);
+			$gdrive_result = $this->google_drive_backup($historyID, $account_info['iwp_gdrive']);
 			iwp_mmb_print_flush('google Drive upload: End');
-			
 			if (is_array($gdrive_result) && isset($gdrive_result['error'])){
 				if($del_host_file){
 					$this->unlinkBackupFiles($backup_file);
 				}
-			}
-			if(empty($gdrive_result) && $del_host_file){
-				$this->unlinkBackupFiles($backup_file);
 			}
 			
 			return $gdrive_result;
@@ -461,6 +464,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	
 	function backupDB($historyID,$backup_file,$account_info = array())
 	{
+		manual_debug('', 'backupDBStart');
 		$this->statusLog($historyID, array('stage' => 'backupDB', 'status' => 'processing', 'statusMsg' => 'backupDBInitiated'));
 		
 		if(file_exists(IWP_DB_DIR) && is_dir(IWP_DB_DIR))
@@ -487,8 +491,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			}
 		}
 		
-		if(true) // if the verification is true go for the DB process
-		{
 			$db_index_file = '<?php
 			global $old_url, $old_file_path;
 			$old_url = \''.get_option('siteurl').'\';
@@ -516,10 +518,9 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			return $db_result;	
 		}
 		
-	}
-		
 	function backupDBZip($historyID)
 	{
+		manual_debug('', 'backupDBZipStart');
 		// if the DB backup is successful do the zip operations 
 		$responseParams = $this -> getRequiredData($historyID,"responseParams");
 		$responseParams['category'] = 'dbZip';
@@ -565,10 +566,9 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			
 		}
 		//$this->statusLog($historyID, array('stage' => 'backupDBZip', 'status' => 'completed', 'statusMsg' => 'backupZipCompleted'));
-		
+		manual_debug('', 'backupDBZipEnd');
 		return $result;
 	}
-	
 	
 	function backupDBPHP($historyID)    //file must be db name alone ; $response_array should be table_name and its fields and callCount 
 	{
@@ -665,7 +665,8 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			file_put_contents($file, '');//safe  to reset any old data
 		} */
 		//$tables = $wpdb->get_results('SHOW TABLES', ARRAY_N);
-		$tables = $wpdb->get_results('SHOW TABLES LIKE "'.$wpdb->base_prefix.'%"', ARRAY_N);
+			$this_prefix = $wpdb->base_prefix;
+			$tables = $wpdb->get_results('SHOW TABLES LIKE "'.$this_prefix.'%"', ARRAY_N);
 		
 		foreach ($tables as $table) {
 			$is_continue = '';
@@ -716,6 +717,11 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			else{
 				$breakingCount = 0;
 			}
+				
+			if(!$breakingCount)
+			{
+				$breakingCount = 0;
+			}
 			if ($count > 100)
 			{
 				$count = ceil($count / 100);
@@ -749,6 +755,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				
 				if (is_array($rows)) {
 						foreach ($rows as $row) {
+						manual_debug('', 'eachRow', 1000);
 						//insert single row
 						if(($table[0] != $left_out_table))
 						$dump_data = "INSERT INTO $table[0] VALUES(";
@@ -788,7 +795,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 								$break_flag == '';
 							}
 						}
-						if(($left_out_table == $table[0])&&($count_field <= $left_out_count-1))
+							if(($left_out_table == $table[0])&&(($count_field <= $left_out_count-1)&&(!empty($count_field))))
 						{
 							continue;
 						}
@@ -818,6 +825,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			{
 				$dump_data = "\n\n\n";
 				file_put_contents($file, $dump_data, FILE_APPEND);
+				//manual_debug('', 'endingTableSingle');
 			}
 			else
 			{
@@ -843,6 +851,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				$db_res_array['status'] = $db_final_response['success']['status'];
 				$db_res_array['backupParentHID'] = $db_final_response['success']['backupParentHID'];
 				$db_res_array['parentHID'] = $db_final_response['success']['parentHID'];
+				//manual_debug('', 'endingTableMulti');
 				return $db_res_array;
 				
 				break;
@@ -895,8 +904,13 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	
 	function backupFiles($historyID, $backup_file='', $account_info = array(), $exclude = array(), $include = array())
 	{
+		iwp_mmb_auto_print("backupFiles");
 		$this -> hisID = $historyID;
 		
+		$initialize_result = refresh_iwp_files_db();
+		if(is_array($initialize_result) && isset($initialize_result['error'])){
+			return $initialize_result;
+		}
 		//for exclude and include
 		$requestParams = $this->getRequiredData($historyID, "requestParams");
 		$exclude = $requestParams['args']['exclude'];
@@ -950,12 +964,21 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
             trim(basename(WP_CONTENT_DIR)) . "/infinitewp/backups",
             trim(basename(WP_CONTENT_DIR)) . "/" . md5('iwp_mmb-client') . "/iwp_backups",
 			trim(basename(WP_CONTENT_DIR)) . "/cache",
-			trim(basename(WP_CONTENT_DIR)) . "/w3tc"
+			trim(basename(WP_CONTENT_DIR)) . "/w3tc",
+			trim(basename(WP_CONTENT_DIR)) . "/logs",
+			trim(basename(WP_CONTENT_DIR)) . "/widget_cache",
+			trim(basename(WP_CONTENT_DIR)) . "/tmp",
+			trim(basename(WP_CONTENT_DIR)) . "/updraft",
+			trim(basename(WP_CONTENT_DIR)) . "/updraftplus",
+			trim(basename(WP_CONTENT_DIR)) . "/backups",
+			trim(basename(WP_CONTENT_DIR)) . "/uploads/wp-clone",
+			trim(basename(WP_CONTENT_DIR)) . "/uploads/db-backup",
+			trim(basename(WP_PLUGIN_DIR)) . "/cache",
         );
-        
+		manual_debug('', 'beforeExclude', 0);
 		if((!empty($exclude_file_size))||(!empty($exclude_extensions)))
 		{
-			//removing files which are larger than the specified size
+				/* //removing files which are larger than the specified size
 			$total_files_array = get_all_files_from_dir(ABSPATH, $remove);
 			$files_excluded_by_size = array();
 			foreach($total_files_array as $key => $value)
@@ -992,10 +1015,10 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 					}
 				}
 			}
-			$remove = array_merge($remove, $files_excluded_by_size);
+				$remove = array_merge($remove, $files_excluded_by_size); */
 		}
 		$exclude = array_merge($exclude, $remove);
-		
+		manual_debug('', 'afterExclude', 0);
         //Exclude paths
        
                      
@@ -1050,6 +1073,12 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$result_arr['response_data']['nextCount'] = 0;
 		$result_arr['status'] = 'processing';
 		$result_arr['category'] = $category;
+		/* $include_data = array (
+			0 => 'F:\\wamp\\www\\plugin_for_bugs/wp-new-dark/',
+		); */
+		/* $include_data = array (
+			0 => '/mnt/weba/e2/89/53672689/htdocs/wordpress_v2/wp-content/uploads/2015/03/',
+		); */
 		$result_arr['response_data']['include_data'] = $include_data;
 		$result_arr['response_data']['exclude_data'] = $exclude_data;
 		$result_arr['response_data']['backup_file'] = $backup_file;
@@ -1068,10 +1097,8 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	function backupFilesZIP($historyID)
 	{
 		$this -> hisID = $historyID;
-		$files_to_zip = '';
 		$files_with_error = array();
 		$files_excluded_by_size = array();
-		$start34 = microtime(true);
 		//get the backup settings values from options table
 		$this -> backup_settings_vals = get_option('iwp_client_multi_backup_temp_values');
 		$backup_settings_values = $this -> backup_settings_vals;
@@ -1089,7 +1116,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$exclude_file_size = $requestParams['args']['exclude_file_size'];
 		$exclude_extensions = $requestParams['args']['exclude_extensions'];
 		$zip_split_size = $requestParams['args']['zip_split_size'];
-		
+		$v_offset = 0;
 		if(isset($backup_settings_values['dbFileHashValue']) && !empty($backup_settings_values['dbFileHashValue'][$historyID]))
 		{
 			$dbFileHashValue = $backup_settings_values['dbFileHashValue'][$historyID];
@@ -1117,10 +1144,13 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$p_filedescr_list = isset($responseParams['response_data']['p_filedescr_list']) ? $responseParams['response_data']['p_filedescr_list'] : array();
 		$zip_split_part = isset($responseParams['response_data']['zip_split_part']) ? $responseParams['response_data']['zip_split_part'] : 0; 
 		$is_new_zip = isset($responseParams['response_data']['is_new_zip']) ? $responseParams['response_data']['is_new_zip'] : 0;
+			$get_file_list = isset($responseParams['response_data']['get_file_list']) ? $responseParams['response_data']['get_file_list'] : '';
+			$next_file_index = isset($responseParams['response_data']['next_file_index']) ? $responseParams['response_data']['next_file_index'] : 0;
 		/* if(empty($zip_split_part))
 		{
 			$zip_split_part = 1;
 		} */
+			//If the zip file exceeds ~1.6 GB we are splitting the zip file into many parts.
 		if((!empty($zip_split_part))&&(!empty($is_new_zip)))
 		{
 			if(strpos($backup_file, '_iwp_part_'))
@@ -1134,43 +1164,23 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				$backup_url = substr($backup_url, 0, strpos($backup_url, '.zip')).'_iwp_part_'.$zip_split_part.'.zip';
 			}
 		}
-		else
+		if(empty($zip_split_part))
 		{
 			$zip_split_part = 0;
 		}
 		
-		if(empty($p_filedescr_list))
-		{
-			$p_filedescr_list = array();
-		}
-		if(empty($files_with_error))
-		{
-			$files_with_error = array();
-		}
-		if(empty($files_excluded_by_size))
-		{
-			$files_excluded_by_size = array();
-		}
-		
 		include_once $GLOBALS['iwp_mmb_plugin_dir'].'/pclzip.class.php';
-		//define('IWP_PCLZIP_TEMPORARY_DIR', IWP_BACKUP_DIR . '/');
-		
-		//include_once $GLOBALS['iwp_mmb_plugin_dir'].'/pclzip.class.split.php';
 		$returnArr = array();
-		if(!$nextCount)
-		{
-			$nextCount = 0;
-		}
 		if((($nextCount != 0)||($category == 'fileZipAfterDBZip'))&&(empty($is_new_zip)))
 		{
 			unset($responseParams);
 			$initialFileSize = iwp_mmb_get_file_size($backup_file)/1024/1024;
 			$returnArr = $this->backupFilesNext($include_data, $exclude_data, $backup_file, $backup_url, $nextCount, $p_filedescr_list, $account_info, $files_with_error, $files_excluded_by_size, $zip_split_part);
 			$fileNextTimeTaken = microtime(true) - $this->iwpScriptStartTime;
-			echo "<br>Total file size".(iwp_mmb_get_file_size($backup_file)/1024/1024);
+				echo "<br>iwpmsg Total file size".(iwp_mmb_get_file_size($backup_file)/1024/1024);
 			$file_size_in_this_call = (iwp_mmb_get_file_size($backup_file)/1024/1024) - $initialFileSize;
-			echo "<br>file size in this call".$file_size_in_this_call;
-			echo "<br>Time taken in this call ".$fileNextTimeTaken."<br>";
+				echo "<br>iwpmsg file size in this call".$file_size_in_this_call;
+				echo "<br>iwpmsg Time taken in this call ".$fileNextTimeTaken."<br>";
 			if(($file_size_in_this_call == 0) && !(is_array($returnArr) && !empty($returnArr['error'])) && !(is_array($returnArr) && !empty($returnArr['isGetFileList'])))
 			{
 				return array( 'error' => 'Zip-error: Unable to zip', 'error_code' => 'zip_error_unable_to_zip');
@@ -1188,20 +1198,24 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$archive = new IWPPclZip($backup_file);
 		if($category == 'dbZip')
 		{
-			if(empty($p_filedescr_list))
+					if(empty($get_file_list))
 			{
+						manual_debug('', 'beforeGettingFileList', 0);
 				//define('IWP_PCLZIP_TEMPORARY_DIR', IWP_BACKUP_DIR . '/');
 				$p_filedescr_list_array = $archive->getFileList(IWP_DB_DIR, IWP_PCLZIP_OPT_REMOVE_PATH, IWP_BACKUP_DIR, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);				//darkCode set the file block size here .. static values
-				$p_filedescr_list = $p_filedescr_list_array['p_filedescr_list'];
-				unset($p_filedescr_list_array['p_filedescr_list']);
-				
+						//$p_filedescr_list = $p_filedescr_list_array['p_filedescr_list'];
+						//unset($p_filedescr_list_array['p_filedescr_list']);
+						$next_file_index = $p_filedescr_list_array['next_file_index'];
+						manual_debug('', 'afterGettingFileList', 0);
 				if($p_filedescr_list_array['status'] == 'partiallyCompleted')
 				{
+							echo('iwpmsg fileListDBInMultiPart');
 					$result_arr = array();
 					$result_arr = $responseParams;
 					$result_arr['nextFunc'] = 'backupFilesZIP';
 					$result_arr['response_data']['p_filedescr_list'] = $p_filedescr_list;
 					unset($p_filedescr_list);
+					$result_arr['response_data']['next_file_index'] = $next_file_index;
 					$result_arr['response_data']['complete_folder_list'] = $p_filedescr_list_array['complete_folder_list'];
 					unset($p_filedescr_list_array);
 					$this->statusLog($this -> hisID, array('stage' => 'gettingFileList', 'status' => 'processing', 'statusMsg' => 'gettingFileListInMultiCall','responseParams' => $result_arr));
@@ -1222,22 +1236,22 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		}
 		else
 		{
-			if(empty($p_filedescr_list))
+			if(empty($get_file_list))
 			{
-				$p_filedescr_list_array = $archive->getFileList($include_data, IWP_PCLZIP_OPT_REMOVE_PATH, ABSPATH, IWP_PCLZIP_OPT_IWP_EXCLUDE, $exclude_data, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);  //testing	darkCode set the file block size here .. static values
+				manual_debug('', 'beforeGettingFileList', 0);
+						
+						//$p_filedescr_list_array = $archive->getFileList($include_data, IWP_PCLZIP_OPT_REMOVE_PATH, ABSPATH, IWP_PCLZIP_OPT_IWP_EXCLUDE, $exclude_data, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);  //testing	darkCode set the file block size here .. static values
 				
-				$p_filedescr_list = $p_filedescr_list_array['p_filedescr_list'];
-				unset($p_filedescr_list_array['p_filedescr_list']);
+				$p_filedescr_list_array = $archive->getFileList($include_data, IWP_PCLZIP_OPT_REMOVE_PATH, ABSPATH, IWP_PCLZIP_OPT_FILE_EXCLUDE_SIZE, $exclude_file_size, IWP_PCLZIP_OPT_IWP_EXCLUDE, $exclude_data, IWP_PCLZIP_OPT_IWP_EXCLUDE_EXT, $exclude_extensions, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);
+				
+						manual_debug('', 'afterGettingFileList', 0);
+						//$p_filedescr_list = $p_filedescr_list_array['p_filedescr_list'];
+						//unset($p_filedescr_list_array['p_filedescr_list']);
 				$next_file_index = $p_filedescr_list_array['next_file_index'];
 				
-				/* $resArray = array();
-				$resArray['status'] = 'completed';
-				//$resArray['backupParentHID'] = $historyID;
-				return $resArray;
-				exit; */
-			
 				if($p_filedescr_list_array['status'] == 'partiallyCompleted')
 				{
+							echo('iwpmsg fileListInMultiPart');
 					$result_arr = array();
 					$result_arr = $responseParams;
 					$result_arr['nextFunc'] = 'backupFilesZIP';
@@ -1272,17 +1286,25 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		);
 		$v_result = 1;
 		$v_header = array();
+				$v_header_list = array();
+				$v_nb = get_iwp_files_db_count('headers');
+				$v_nb_initial = get_iwp_files_db_count('headers');
 		$p_result_list = array();
-		$v_nb = sizeof($p_result_list);
-		$v_header_list = array();
-		$v_comment = '';
 		//$nextCount = 0;
 		$archive->privOpenFd('wb');
 		$p_filedescr_list_omitted = array();
 		$omitted_flag = '';
-		$p_filedescr_list_size = sizeof($p_filedescr_list);
-		echo "loopStarted";
+				//$p_filedescr_list_size = sizeof($p_filedescr_list);
+				//$p_filedescr_list_size = $p_filedescr_list_array['total_FL_count'];
+				$p_filedescr_list_size = get_iwp_files_db_count('files');
+				echo "iwpmsg loopStarted";
+				echo "iwpmsg ". $p_filedescr_list_size;
+				manual_debug('', 'beforeStartingLoop', 0);
 		for ($j=$nextCount; ($j<$p_filedescr_list_size) && ($v_result==1); $j++) {
+					
+					//new method of getting fileList
+					$p_filedescr_list[$j] = get_from_iwp_files_db($j);
+					
 			// ----- Format the filename
 			$p_filedescr_list[$j]['filename'] = IWPPclZipUtilTranslateWinPath($p_filedescr_list[$j]['filename'], false);
 			
@@ -1296,7 +1318,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			// ----- Check the filename
 			if (   ($p_filedescr_list[$j]['type'] != 'virtual_file')
 					&& (!file_exists($p_filedescr_list[$j]['filename']))) {
-				echo 'FILE DOESNT EXIST';
+						echo 'iwpmsg FILE DOESNT EXIST';
 			}
 
 			// ----- Look if it is a file or a dir with no all path remove option
@@ -1310,41 +1332,42 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 							|| !$p_options[IWP_PCLZIP_OPT_REMOVE_ALL_PATH]))
 					) {
 				
-				$time = microtime(true);
-				$finish_part = $time;
-				$total_time_part = $finish_part - $start;
-				/* if(($total_time_part > 2)&&($p_filedescr_list[$j]['size'] > 5000000))
-				{
-					$p_filedescr_list_omitted[$j] = $p_filedescr_list[$j];
-					$v_nb++;
-					$nextCount = $v_nb;
-					$omitted_flag = 'set';
-					continue;
-					
-				}  
-				 */
 				// ----- Add the file
 				$v_result = $archive->privAddFile($p_filedescr_list[$j], $v_header, $p_options);
+						//saving the header in DB
+						$cur_file = $p_filedescr_list[$j]['filename'];
+						if($v_result == 1){
+							$header_save_result = save_in_iwp_files_db(0, array(), $v_header, 'update', $v_nb);
+						}
+						else{
+							$header_save_result = save_in_iwp_files_db(0, array(), array('error' => 1), 'update', $v_nb);
+							$files_with_error[] = $cur_file;
+						}
+						if(is_array($header_save_result) && isset($header_save_result['error'])){
+							return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-error: Error while updating the file "'.$cur_file.'" in the file list table.', 'statusCode' => 'zip_error_while_updating_file_list_table'));
+						}
+						$v_nb++;
+						unset($p_filedescr_list);
 
 				// ----- Store the file infos
-				$p_result_list[$v_nb++] = $v_header;
+						//$v_header_list[$v_nb++] = $v_header;
 				$nextCount = $j+1;
 				
+						//unset($v_header_list[$v_nb++]);
+						
 				if ($v_result != 1) {
-					echo 'Error zipping this file'.$p_filedescr_list[$j]['filename'];
-					$files_with_error[] = $p_filedescr_list[$j]['filename'];
+					echo 'iwpmsg Error zipping this file'.$cur_file;
+					$files_with_error[] = $cur_file;
 					if($v_result == -10)
 					{
-						return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-error: Error compressing the file "'.$p_filedescr_list[$j]['filename'].'".Try excluding this file and try again.', 'statusCode' => 'zip_error_while_compressing_file'));
+						return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-error: Error compressing the file "'.$cur_file.'".Try excluding this file and try again.', 'statusCode' => 'zip_error_while_compressing_file'));
 					}
 					continue;
 					//return $v_result;
 				}
 			}
 			
-			$time = microtime(true);
-			$finish = $time;
-			$total_time = $finish - $this->iwpScriptStartTime;
+			$total_time = microtime(true) - $this->iwpScriptStartTime;
 			//if(($total_time > $file_loop_break_time)||)							//darkCode static Values
 			$buffer_size = $zip_split_size*1024*1024 - 3*1024*1024*$file_block_size;
 			$is_new_zip = false;
@@ -1360,13 +1383,22 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			//iwp_mmb_print_flush("|");
 			iwp_mmb_auto_print("multiCallZip");
 			echo("|");
+					manual_debug('', "zipLoop", 1000);
 		}
-		echo "loopEnded";
+				echo "iwpmsg loopEnded";
+				manual_debug('', 'afterEndingLoop', 0);
 		$v_offset = @ftell($archive->zip_fd);
-		$v_header_list = $p_result_list;
+				$size_of_v_header_list = 0;
+				//$v_header_list = $p_result_list;
 		//$nextCount = sizeof($p_result_list);
-		for ($i=0,$v_count=0; $i<sizeof($v_header_list); $i++)
+				manual_debug('', 'beforeStartingHeaderWrite', 0);
+				$total_header_count = get_iwp_files_db_count('headers');
+				//for ($i=$v_nb_initial, $v_count=$v_nb_initial; $i<sizeof($v_header_list); $i++)
+				for ($i=$v_nb_initial, $v_count=0; $i<$total_header_count; $i++)
 		{
+					//getting header list from db
+					$v_header_list[$i] = get_from_iwp_files_db($i, 'thisFileHeader');
+					
 			// ----- Create the file header
 			if ($v_header_list[$i]['status'] == 'ok') {
 				if (($v_result = $archive->privWriteCentralFileHeader($v_header_list[$i])) != 1) {
@@ -1379,12 +1411,18 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 
 			// ----- Transform the header to a 'usable' info
 			$archive->privConvertHeader2FileInfo($v_header_list[$i], $p_result_list[$i]);
+					unset($v_header_list);
+					unset($p_result_list);
+					
+					//manual_debug('', "duringEachHeaderWrite", 100);
 		}
+				manual_debug('', 'afterHeaderWrite', 0);
 		$v_size = @ftell($archive->zip_fd)-$v_offset;
 		$archive->privWriteCentralHeader($v_count, $v_size, $v_offset, $v_comment);
 		$archive->privCloseFd();
-		echo 'next Count -'.$nextCount;
-		if(($nextCount == sizeof($p_filedescr_list)+1)||($nextCount == sizeof($p_filedescr_list)))
+				echo 'iwpmsg next Count -'.$nextCount;
+				//if(($nextCount == sizeof($p_filedescr_list)+1)||($nextCount == sizeof($p_filedescr_list)))
+				if(($nextCount == get_iwp_files_db_count('files')+1)||($nextCount == get_iwp_files_db_count('files')))
 		{
 			$nextCount = "completed";
 			$status = "completed";
@@ -1393,6 +1431,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		{ 
 			$status = "partiallyCompleted"; 
 		}
+				manual_debug('', 'afterWholeHeaderWrite', 0);
 		$result_arr = array();
 		
 		//return $p_result_list;
@@ -1408,6 +1447,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$result_arr['response_data']['files_with_error'] = $files_with_error; 
 		$result_arr['response_data']['files_excluded_by_size'] = $files_excluded_by_size;
 		$result_arr['response_data']['is_new_zip'] = $is_new_zip;
+				$result_arr['response_data']['get_file_list'] = 'completed';
 		//$result_arr['response_data']['p_filedescr_list'] = $p_filedescr_list;
 		$result_arr['response_data']['zip_split_part'] = $zip_split_part;
 		$resArray = array (
@@ -1432,8 +1472,8 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		}
 		if($status == 'partiallyCompleted')
 		{
-			echo 'filesNextCount: '.$nextCount;
-			echo 'totalFilesCount: '.count($p_filedescr_list);
+					echo 'iwpmsg filesNextCount: '.$nextCount;
+					echo 'iwpmsg totalFilesCount: '.get_iwp_files_db_count('files');
 			$result_arr['response_data']['p_filedescr_list'] = $p_filedescr_list;
 			unset($p_filedescr_list);
 			$this->statusLog($this -> hisID, array('stage' => 'backupFiles', 'status' => 'completed', 'statusMsg' => 'backupFileSingleCall'.$status,'nextFunc' => 'backupFilesZIP', 'responseParams' => $result_arr));
@@ -1457,6 +1497,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 			}
 			else
 			{
+				refresh_iwp_files_db();			//truncating table on final call.
 				$paths           = array();
 				$tempPaths = array();
 				
@@ -1491,6 +1532,12 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				$paths['task_results'][$historyID] = $tempPath;
 				if(empty($account_info))
 				{
+					$tempPath['server']['dbHost'] = DB_HOST;
+					$tempPath['server']['dbName'] = DB_NAME;
+					$tempPath['server']['dbUser'] = DB_USER;
+					$tempPath['server']['dbPassword'] = DB_PASSWORD;
+					$resArray['task_results'][$historyID] = $tempPath;
+					
 					$result_arr['nextFunc'] = 'backupFilesZIPOver';
 				}
 				else
@@ -1539,25 +1586,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		}
 	}
 	
-	
-	function get_exclude_ext_array($exclude_extensions){
-		if(empty($exclude_extensions))
-		{
-			$exclude_extensions = array();
-		}
-		else if($exclude_extensions == 'eg. .zip,.mp4')
-		{
-			$exclude_extensions = array();
-		}
-		else
-		{
-			$exclude_extensions_array = explode(",",$exclude_extensions);
-			$exclude_extensions = array();
-			$exclude_extensions = $exclude_extensions_array;
-		}
-		return $exclude_extensions;
-	}
-	
 	function get_total_files_size($backup_files)
 	{
 		if(is_array($backup_files))
@@ -1578,7 +1606,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 	function backupFilesNext($include_data, $exclude_data, $backup_file, $backup_url, $nextCount, $p_filedescr_list = array(), $account_info = array(), $files_with_error = array(), $files_excluded_by_size = array(), $zip_split_part = 0)
 	{
 		$historyID = $this -> hisID;
-		$start34 = microtime(true);
 		$is_new_zip = false;
 		$backup_settings_values = $this -> backup_settings_vals;
 		//$file_block_size = $backup_settings_values['file_block_size'];
@@ -1604,6 +1631,9 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$responseParams = $this -> getRequiredData($historyID,"responseParams");
 		$category =  $responseParams['category'];                        //Am getting the category to perform the dbZip actions
 	
+			$get_file_list = isset($responseParams['response_data']['get_file_list']) ? $responseParams['response_data']['get_file_list'] : '';
+			
+			
 		$this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'processing', 'statusMsg' => 'backupMultiCallInitiated', 'responseParams' => $responseParams));
 		
 		$time = microtime(true);
@@ -1615,8 +1645,10 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		{
 			if(empty($p_filedescr_list)||($nextCount == 0))
 			{
+					if($get_file_list != 'completed'){
 				$p_filedescr_list_array = $archive->getFileList(IWP_DB_DIR, IWP_PCLZIP_OPT_REMOVE_PATH, IWP_BACKUP_DIR, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);//darkCode set the file block size here .. static values
 				$p_filedescr_list = $p_filedescr_list_array['p_filedescr_list'];
+						$next_file_index = $p_filedescr_list_array['next_file_index'];
 				
 				if($p_filedescr_list_array['status'] == 'partiallyCompleted')
 				{
@@ -1626,6 +1658,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 					$result_arr['response_data']['p_filedescr_list'] = $p_filedescr_list;
 					$result_arr['response_data']['next_file_index'] = $p_filedescr_list_array['next_file_index'];
 					$result_arr['response_data']['complete_folder_list'] = $p_filedescr_list_array['complete_folder_list'];
+							unset($p_filedescr_list_array);
 					$this->statusLog($this -> hisID, array('stage' => 'gettingFileList', 'status' => 'processing', 'statusMsg' => 'gettingFileListInMultiCall','responseParams' => $result_arr));
 					
 					$resArray = array();
@@ -1643,11 +1676,15 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				}
 			}
 		}
+			}
 		else
 		{
 			if(empty($p_filedescr_list)||($nextCount == 0))
 			{
-				$p_filedescr_list_array = $archive->getFileList($include_data, IWP_PCLZIP_OPT_REMOVE_PATH, ABSPATH, IWP_PCLZIP_OPT_IWP_EXCLUDE, $exclude_data, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);  //testing	darkCode set the file block size here .. static values
+					if($get_file_list != 'completed'){
+						//$p_filedescr_list_array = $archive->getFileList($include_data, IWP_PCLZIP_OPT_REMOVE_PATH, ABSPATH, IWP_PCLZIP_OPT_IWP_EXCLUDE, $exclude_data, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);  //testing	darkCode set the file block size here .. static values
+						
+						$p_filedescr_list_array = $archive->getFileList($include_data, IWP_PCLZIP_OPT_REMOVE_PATH, ABSPATH, IWP_PCLZIP_OPT_FILE_EXCLUDE_SIZE, $exclude_file_size, IWP_PCLZIP_OPT_IWP_EXCLUDE, $exclude_data, IWP_PCLZIP_OPT_IWP_EXCLUDE_EXT, $exclude_extensions, IWP_PCLZIP_OPT_CHUNK_BLOCK_SIZE, $file_block_size, IWP_PCLZIP_OPT_HISTORY_ID, $historyID);
 				
 				$p_filedescr_list = $p_filedescr_list_array['p_filedescr_list'];
 				
@@ -1663,7 +1700,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 					$result_arr['response_data']['complete_folder_list'] = $p_filedescr_list_array['complete_folder_list'];
 					
 					$this->statusLog($this -> hisID, array('stage' => 'gettingFileList', 'status' => 'processing', 'statusMsg' => 'gettingFileListInMultiCall','responseParams' => $result_arr));
-					$timeTaken34 = microtime(true) - $start34;
 					unset($p_filedescr_list_array);
 					$resArray = array();
 					$resArray['status'] = 'partiallyCompleted';
@@ -1681,6 +1717,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				}
 			}
 		}
+			}
 		$archive->privDisableMagicQuotes();
 		if (($v_result=$archive->privOpenFd('rb+')) != 1)
 			{
@@ -1694,7 +1731,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$v_central_dir = array();
 		if (($v_result = $archive->privReadEndCentralDir($v_central_dir)) != 1)
 		{
-			echo 'error2';
+				echo 'iwpmsg error2';
 			$archive->privCloseFd();
 			$archive->privSwapBackMagicQuotes();
 			if(is_array($v_result) && !empty($v_result['error']))
@@ -1718,7 +1755,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		{
 			$archive->privCloseFd();
 			$archive->privSwapBackMagicQuotes();
-			echo 'error3';
+				echo 'iwpmsg error3';
 			return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Unable to open temporary file', 'statusCode' => 'unable_to_open_temporary_file'));  // ----- Return
 			
 		}
@@ -1762,19 +1799,23 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$v_header = array();
 		$p_result_list = array();
 		$v_header_list = array();
-		$v_nb = sizeof($v_header_list);
+			$v_nb = $v_nb_initial = get_iwp_files_db_count('headers');
 		$v_comment = '';
 		//$nextCount = $_REQUEST['nextCount'];
 		$omitted_flag = '';
 		$nextCountHere = 0;
-		$p_filedescr_list_size = sizeof($p_filedescr_list);
-		$timeBeforeAdd = microtime(true) - $start34;
+			$p_filedescr_list_size = get_iwp_files_db_count('files');
 		iwp_mmb_print_flush("loopStarted");
+			echo $p_filedescr_list_size;
+			manual_debug('', 'beforeStartingNextLoop', 0);
+			$p_filedescr_list = array();
 		for ($j=($nextCount); ($j<$p_filedescr_list_size) && ($v_result==1); $j++) {
+				
+				//new method of getting fileList
+				$p_filedescr_list[$j] = get_from_iwp_files_db($j);
+				
 			// ----- Format the filename
-			$p_filedescr_list[$j]['filename']
-			= IWPPclZipUtilTranslateWinPath($p_filedescr_list[$j]['filename'], false);
-			
+				$p_filedescr_list[$j]['filename'] = IWPPclZipUtilTranslateWinPath($p_filedescr_list[$j]['filename'], false);
 
 			// ----- Skip empty file names
 			// TBC : Can this be possible ? not checked in DescrParseAtt ?
@@ -1813,18 +1854,33 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				} */
 				
 				// ----- Add the file
+					echo "|";
+					//global $cur_file;
+					$cur_file = $p_filedescr_list[$j]['filename'];
 				$v_result = $archive->privAddFile($p_filedescr_list[$j], $v_header, $p_options);
+					//saving the header in DB
+					if($v_result == 1){
+						$header_save_result = save_in_iwp_files_db(0, array(), $v_header, 'update', $v_nb);
+					}
+					else{
+						$header_save_result = save_in_iwp_files_db(0, array(), array('error' => 1), 'update', $v_nb);
+					}
+					if(is_array($header_save_result) && isset($header_save_result['error'])){
+						return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-error: Error while updating the file "'.$cur_file.'" in the file list table.', 'statusCode' => 'zip_error_while_updating_file_list_table'));
+					}
+					$v_nb++;
+					unset($p_filedescr_list);
 				// ----- Store the file infos
-				$v_header_list[$v_nb++] = $v_header;
+					//$v_header_list[$v_nb++] = $v_header;
 				
 				if ($v_result != 1) {
 					//$this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'SomeError1'));
-					echo "error zipping this file:".$p_filedescr_list[$j]['filename'];
-					echo 'errorCode - '.$v_result;
-					$files_with_error[] = $p_filedescr_list[$j]['filename'];
+						echo "iwpmsg error zipping this file:".$cur_file;
+						echo 'iwpmsg errorCode - '.$v_result;
+						$files_with_error[] = $cur_file;
 					if($v_result == -10)
 					{
-						return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-error: Error compressing the file "'.$p_filedescr_list[$j]['filename'].'".Try excluding this file and try again.', 'statusCode' => 'zip_error_while_compressing_file'));
+							return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-error: Error compressing the file "'.$cur_file.'".Try excluding this file and try again.', 'statusCode' => 'zip_error_while_compressing_file'));
 					}
 					continue;
 					//return $v_result;
@@ -1841,14 +1897,17 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				{
 					$zip_split_part += 1;
 					$is_new_zip = true;
+						echo "iwpmsg splitting into new zip";
 				}
 				break;
 			}
 			//iwp_mmb_print_flush("|");
 			iwp_mmb_auto_print("multiCallZip");
 			//echo "|";
+				manual_debug('', "zipLoop", 1000);
 		}
-		echo "loopEnded";
+			echo "iwpmsg loopEnded";
+			manual_debug('', 'afterNextLoop', 0);
 		$v_offset = @ftell($archive->zip_fd);
 		$v_size = $v_central_dir['size'];
 		/* while ($v_size != 0)
@@ -1872,17 +1931,22 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$v_buffer = fread($v_zip_temp_fd, $v_central_dir['size']);
 		$writeResult = fwrite($archive->zip_fd, $v_buffer);
 		
+			manual_debug('', 'beforeStartingNextHeaderWrite', 0);
 		
-		
+			$v_header_list = array();
 		//array_pop($v_header_list);
 		//$v_header_list = $p_result_list;
 		// ----- Create the Central Dir files header
-		for ($i=0, $v_count=0; $i<sizeof($v_header_list); $i++)
+		$total_header_count = get_iwp_files_db_count('headers');
+		for ($i=$v_nb_initial, $v_count=0; $i<$total_header_count; $i++)
 		{
+			//getting header list from db
+			$v_header_list[$i] = get_from_iwp_files_db($i, 'thisFileHeader');
+			
 			// ----- Create the file header
 			if ($v_header_list[$i]['status'] == 'ok') {
 				if (($v_result = $archive->privWriteCentralFileHeader($v_header_list[$i])) != 1) {
-					echo 'error4';
+						echo 'iwpmsg error4';
 					fclose($v_zip_temp_fd);
 					$archive->privCloseFd();
 					@unlink($v_zip_temp_name);
@@ -1895,7 +1959,10 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 
 			// ----- Transform the header to a 'usable' info
 			$archive->privConvertHeader2FileInfo($v_header_list[$i], $p_result_list[$i]);
+				unset($v_header_list);
+				unset($p_result_list);
 		}
+			manual_debug('', 'afterNextHeaderWrite', 0);
 		// ----- Calculate the size of the central header
 		$v_size = @ftell($archive->zip_fd)-$v_offset;
 
@@ -1903,7 +1970,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		if (($v_result = $archive->privWriteCentralHeader($v_count+$v_central_dir['entries'], $v_size, $v_offset, $v_comment)) != 1)
 		{
 			// ----- Reset the file list
-			echo 'error5';
+				echo 'iwpmsg error5';
 			unset($v_header_list);
 			$archive->privSwapBackMagicQuotes();
 			return $this->statusLog($historyID, array('stage' => 'backupFilesMultiCall', 'status' => 'error', 'statusMsg' => 'Zip-Error: Error while writing footer', 'statusCode' => 'zip_error_while_writing_footer'));
@@ -1935,7 +2002,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		
 		$nextCount = $nextCountHere;
 		
-		$size_file_des = sizeof($p_filedescr_list);
+			$size_file_des = get_iwp_files_db_count('files');
 		if($nextCount == $size_file_des)
 		//if(true)
 		{
@@ -1946,7 +2013,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		else{ 
 			$status = "partiallyCompleted"; 
 		}
-		
+			manual_debug('', 'afterWholeHeaderWrite', 0);
 		$result_arr = array();
 		$result_arr['response_data']['nextCount'] = $nextCount;
 		$result_arr['status'] = $status;
@@ -1961,6 +2028,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		$result_arr['response_data']['is_new_zip'] = $is_new_zip;
 		$result_arr['response_data']['files_with_error'] = $files_with_error; 
 		$result_arr['response_data']['files_excluded_by_size'] = $files_excluded_by_size;
+			$result_arr['response_data']['get_file_list'] = 'completed';
 		
 		//$result_arr['response_data']['p_filedescr_list'] = $p_filedescr_list;
 		$resArray = array (
@@ -1983,9 +2051,9 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		}
 		if($status == "partiallyCompleted")
 		{
-			echo 'filesNextCount: '.$nextCount;
-			echo 'totalFilesCount: '.count($p_filedescr_list);
-			$result_arr['response_data']['p_filedescr_list'] = $p_filedescr_list;
+				echo 'iwpmsg filesNextCount: '.$nextCount;
+				echo 'iwpmsg totalFilesCount: '.$p_filedescr_list_size;
+				$result_arr['response_data']['p_filedescr_list'] = array();
 			unset($p_filedescr_list);
 			$this->statusLog($this -> hisID, array('stage' => 'backupFilesMultiCall', 'status' => 'completed', 'statusMsg' => 'nextCall'.$status,'nextFunc' => 'backupFilesZIP', 'responseParams' => $result_arr));
 			unset($result_arr);
@@ -2005,14 +2073,15 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				$resArray['status'] = 'partiallyCompleted';
 				$result_arr['nextFunc'] = 'backupFiles';
 				$result_arr['status'] = 'partiallyCompleted';
+				$result_arr['response_data']['get_file_list'] = '';
 				$this->statusLog($this -> hisID, array('stage' => 'backupFiles', 'status' => 'completed', 'statusMsg' => 'nextCall'.$status,'nextFunc' => 'backupFiles', 'responseParams' => $result_arr));
 			}
 			else
 			{
 				
 				//$this->statusLog($this -> hisID, array('stage' => 'backupFiles', 'status' => 'completed', 'statusMsg' => 'nextCall'.$status, 'responseParams' => $result_arr));
-				
-				$paths           = array();
+				refresh_iwp_files_db();			//truncating table on final call.
+				$paths = array();
 				$tempPaths = array();
 				
 				$backup_files_array = $this->get_files_array_from_iwp_part($backup_file);
@@ -2050,6 +2119,14 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				{
 					//this is where the call goes to upload after backup zip completion .. 
 					$resArray['status'] = 'completed';
+					
+					$tempPath['server']['dbHost'] = DB_HOST;
+					$tempPath['server']['dbName'] = DB_NAME;
+					$tempPath['server']['dbUser'] = DB_USER;
+					$tempPath['server']['dbPassword'] = DB_PASSWORD;
+					
+					$resArray['task_results'][$historyID] = $tempPath;
+					
 					$result_arr['nextFunc'] = 'backupFilesZIPOver';
 					$result_arr['status'] = 'completed';
 				}
@@ -2060,7 +2137,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 					$result_arr['nextFunc'] = 'backup_uploads';
 					$result_arr['status'] = 'partiallyCompleted';
 					$result_arr['actual_file_size'] = $size;
-					$result_arr['backup_file'] = $backup_file;
+					$result_arr['response_data']['backup_file'] = $backup_file;
 				}
 				
 				$this->statusLog($this -> hisID, array('stage' => 'backupFiles', 'status' => 'completed', 'statusMsg' => 'nextCall'.$status, 'responseParams' => $result_arr,'task_result' => $paths));
@@ -2094,8 +2171,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				
 			}
 		}
-		$fileNextTimeTaken = microtime(true) - $start34;
-		
 		return $resArray;
 
 	}
@@ -2149,8 +2224,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		}
 	}
 
-	
-	
 	function getHashValuesArray($p_filedescr_list)
 	{
 		$hashValues = array();
@@ -2341,6 +2414,8 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		{
 			if($statusArray['status'] == 'error')
 			{
+					refresh_iwp_files_db();    //truncating the file list table on error
+					
 				$returnParams = array();
 				$returnParams['parentHID'] = $historyID;
 				$returnParams['backupRowID'] = $insertID;
@@ -2606,7 +2681,14 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				{
 					$args['backup_file'] = $value;
 					iwp_mmb_print_flush('Amazon S3 download: Start '.$key);
-					$backup_file[]         = $this->get_amazons3_backup($args);
+					if(is_new_s3_compatible()){
+						require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+						$new_s3_obj = new IWP_MMB_S3_MULTICALL();
+						$backup_file[]         = $new_s3_obj->get_amazons3_backup($args);
+					}
+					else{
+						$backup_file[]         = $this->get_amazons3_backup_bwd_comp($args);
+					}
 					iwp_mmb_print_flush('Amazon S3 download: End '.$key);
 					if ($backup_file[$key] == false) {
 						return array(
@@ -2867,20 +2949,6 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 				
 			}
 						
-			
-			/*if(!empty($clone_options['iwp_client_backup_tasks'])){
-				
-				if(mysql_num_rows(mysql_query("SHOW TABLES LIKE '".$table."'")) == 1){
-					echo "Table exists";
-					
-					$delete = $wpdb->query("DELETE TABLE wp_iwp_backup_status");
-				}
-					iwp_mmb_create_backup_table();
-					
-					insertBackupStatusContens($clone_options['iwp_client_backup_tasks']);
-					
-			}*/
-						
 			//Backup file will be extracted to a temporary path
 			if(!is_array($backup_file))
 			{
@@ -3109,9 +3177,8 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
 		global $wpdb;
 		
 		$table = $GLOBALS['table_prefix'].'iwp_backup_status';
-		
-		if(mysql_num_rows(mysql_query("SHOW TABLES LIKE '".$table."'")) == 1){
-			
+		$wpdb->query("SHOW TABLES LIKE '".$table."'");
+		if($wpdb->num_rows  == 1){
 			$delete = $wpdb->query("DROP TABLE '".$table."' ");
 		}
 			
@@ -3278,7 +3345,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
     function restore_db($new_temp_folder)
     {
         global $wpdb;
-        $paths     = $this->check_mysql_paths();
+        $paths     = $this->check_mysqli_paths();
         $file_path = $new_temp_folder . '/iwp_db';
         @chmod($file_path,0755);
         $file_name = glob($file_path . '/*.sql');
@@ -3389,7 +3456,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
     }
     
     ### Function: Auto Detect MYSQL and MYSQL Dump Paths
-    function check_mysql_paths()
+    function check_mysqli_paths()
     {
         global $wpdb;
         $paths = array(
@@ -3542,7 +3609,7 @@ class IWP_MMB_Backup_Multicall extends IWP_MMB_Core
         
         $reqs['Unzip']['pass'] = true;
         
-        $paths = $this->check_mysql_paths();
+        $paths = $this->check_mysqli_paths();
         
         if (!empty($paths['mysqldump'])) {
             $reqs['MySQL Dump']['status'] = $paths['mysqldump'];
@@ -3854,7 +3921,7 @@ function ftp_backup($historyID,$args = '')
 		return $backup_files_base_name;
 	}
 	
-    function postUploadVerification(&$obj, $backup_file, $destFile, $type = "", $as3_bucket = "")
+    function postUploadVerification(&$obj, $backup_file, $destFile, $type = "", $as3_bucket = "", $as3_access_key = "", $as3_secure_key = "", $as3_bucket_region = "")
 	{
 		$actual_file_size = iwp_mmb_get_file_size($backup_file);
 		$size1 = $actual_file_size-((0.1) * $actual_file_size);
@@ -3874,26 +3941,13 @@ function ftp_backup($historyID,$args = '')
 		}
 		else if($type == "amazons3")
 		{
-			$response = $obj -> if_object_exists($as3_bucket, $destFile);
-			if($response == true)
-			{
-				$meta = $obj -> get_object_headers($as3_bucket, $destFile);
-				$cfu_obj = new CFUtilities;
-				$meta_response_array = $cfu_obj->convert_response_to_array($meta);
-				$s3_filesize = $meta_response_array['header']['content-length'];
-				echo "S3 fileszie during verification - ".$s3_filesize;
-				if((($s3_filesize >= $size1 && $s3_filesize <= $actual_file_size) || ($s3_filesize <= $size2 && $s3_filesize >= $actual_file_size) || ($s3_filesize == $actual_file_size)) && ($s3_filesize != 0))
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+			if(is_new_s3_compatible()){
+				require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+				$new_s3_obj = new IWP_MMB_S3_MULTICALL();
+				return $new_s3_obj->postUploadS3Verification($backup_file, $destFile, $type, $as3_bucket, $as3_access_key, $as3_secure_key, $as3_bucket_region, $size1, $size2);
 			}
-			else
-			{
-				return false;
+			else{
+				return $this->postUploadS3VerificationBwdComp($backup_file, $destFile, $type, $as3_bucket, $as3_access_key, $as3_secure_key, $as3_bucket_region, $obj, $actual_file_size, $size1, $size2);
 			}
 		}
 		else if($type == "ftp")
@@ -3918,6 +3972,29 @@ function ftp_backup($historyID,$args = '')
 		}
 	}
 	
+	function postUploadS3VerificationBwdComp($backup_file, $destFile, $type = "", $as3_bucket = "", $as3_access_key = "", $as3_secure_key = "", $as3_bucket_region = "", &$obj, $actual_file_size, $size1, $size2){
+		$response = $obj -> if_object_exists($as3_bucket, $destFile);
+		if($response == true)
+		{
+			$meta = $obj -> get_object_headers($as3_bucket, $destFile);
+			$cfu_obj = new CFUtilities;
+			$meta_response_array = $cfu_obj->convert_response_to_array($meta);
+			$s3_filesize = $meta_response_array['header']['content-length'];
+			echo "S3 fileszie during verification - ".$s3_filesize;
+			if((($s3_filesize >= $size1 && $s3_filesize <= $actual_file_size) || ($s3_filesize <= $size2 && $s3_filesize >= $actual_file_size) || ($s3_filesize == $actual_file_size)) && ($s3_filesize != 0))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
 	
     function remove_ftp_backup($args)
     {
@@ -4376,8 +4453,7 @@ function ftp_backup($historyID,$args = '')
 	
 	*/
 	
-
-    function amazons3_backup($historyID , $args='' )
+	function amazons3_backup_bwd_comp($historyID , $args='' )
     {
 		$s3StartTime = $this->iwpScriptStartTime;
 		$this -> backup_settings_vals = get_option('iwp_client_multi_backup_temp_values');
@@ -4390,9 +4466,6 @@ function ftp_backup($historyID,$args = '')
 		{
 			$s3_retrace_count = 0;
 		}
-		//$upload_file_block_size = $backup_settings_values['upload_file_block_size'];
-		//$del_host_file = $backup_settings_values['del_host_file'];
-		
 		//get the settings by other method
 		$requestParams = $this -> getRequiredData($historyID,"requestParams");
 		$upload_loop_break_time = $requestParams['account_info']['upload_loop_break_time'];			//darkcode changed
@@ -4408,12 +4481,6 @@ function ftp_backup($historyID,$args = '')
 		@set_time_limit(0);
 		$this -> hisID = $historyID;
 		
-		
-		//the multiCall arguments
-		/* $uploadLoopCount = 0;
-		$upload_id = false;
-		$partsArray = array(); */
-		
 		$uploadLoopCount = 0;
 		$upload_id = 'start';
 		$partsArray = array();
@@ -4421,7 +4488,6 @@ function ftp_backup($historyID,$args = '')
 		$retrace = 'notSet';
 		$doComplete = false;
 
-		
 		if($args == '')
 		{
 			//on the next call $args would be ''
@@ -4467,8 +4533,6 @@ function ftp_backup($historyID,$args = '')
 				$backup_settings_values['s3_retrace_count'][$historyID] = $s3_retrace_count;
 				update_option('iwp_client_multi_backup_temp_values', $backup_settings_values);
 				
-				//$partsArray = $s3->list_parts($as3_bucket, $as3_file, $upload_id);//commenting this line because of fatal error $s3 object is not created, looks like these lines not required here
-				//$nextPart = (count($partsArray) + 1);//commenting this line because of fatal error $s3 object is not created, looks like these lines not required here
 			}
 			else
 			{
@@ -4476,26 +4540,13 @@ function ftp_backup($historyID,$args = '')
 			}
 		}
 		
-		//tracback ends
-		
-		/* $upload_id = 'myAQl0R72GE2s6qqlCWnQrIl9NQcPS8rm_GSICHAuon58n9z9M9qjpkUOFiT1G9tj966VLb6WqsxRI7rB9CCPg--'; 
-		$partsArray = array (
-		  1 => 
-		  array (
-			'PartNumber' => 1,
-			'ETag' => '"84658f71569196e8a3e249c48186e166"',
-		  ),
-		); */
-		
-		//$this->statusLog($this -> hisID, array('stage' => 'uploadingFilesAmazon', 'status' => 'partiallyCompleted', 'statusMsg' => 's3SingleCall'));
-		
         if (!$this->iwp_mmb_function_exists('curl_init')) {
 			return array(
                 'error' => 'You cannot use Amazon S3 on your server. Please enable curl first.',
                 'partial' => 1, 'error_code' => 'cannot_use_s3_enable_curl_first'
             );
 		}
-            require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3/sdk.class.php');
+            require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3_bwd_comp/sdk.class.php');
 			
 			$tempArgs = $args;
             extract($args);
@@ -4644,6 +4695,7 @@ function ftp_backup($historyID,$args = '')
 				$s3ChunkCount = 0;
 				$reloop = false;
 				$reloopCount = 0;
+				$status = '';
 				do
 				{
 					$uploadLoopCount = 0;
@@ -4774,7 +4826,7 @@ function ftp_backup($historyID,$args = '')
 						else
 						{
 							//to continue zip split parts
-							
+							$status = 'partiallyCompleted';
 							$chunkResult = array();
 							$chunkResult['partsArray'] = array();
 							$chunkResult['nextPart'] = 1;
@@ -4879,12 +4931,10 @@ function ftp_backup($historyID,$args = '')
 			}
     }
     
-	
-	
-    function remove_amazons3_backup($args)
+	function remove_amazons3_backup_bwd_comp($args)
     {
     	if ($this->iwp_mmb_function_exists('curl_init')) {
-        require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3/sdk.class.php');
+        require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3_bwd_comp/sdk.class.php');
         extract($args);
 		
 		if(!is_array($backup_file))
@@ -4927,10 +4977,10 @@ function ftp_backup($historyID,$args = '')
       }
     }
     
-    function get_amazons3_backup($args)
+	function get_amazons3_backup_bwd_comp($args)
     {
 		if ($this->iwp_mmb_function_exists('curl_init')) {
-			require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3/sdk.class.php');
+			require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon_s3_bwd_comp/sdk.class.php');
 			extract($args);
 			$temp = '';
 			try{
@@ -5010,7 +5060,6 @@ function ftp_backup($historyID,$args = '')
 		$downloadUrl = $file->getDownloadUrl();
 		
 		$temp = wp_tempnam('iwp_temp_backup.zip');
-		//$temp = WP_CONTENT_DIR .'/DE_clientPluginSIde.zip';
 		
 		try
 		{
@@ -5049,8 +5098,7 @@ function ftp_backup($historyID,$args = '')
 	
 	*/
 	
-	function google_drive_backup($historyID = 0, $args = '', $uploadid = null, $offset = 0)
-	{
+	function google_drive_backup($historyID = 0, $args = '', $uploadid = null, $offset = 0){
 		require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/Google/Client.php');
 		require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/Google/Http/MediaFileUpload.php');
 		require_once($GLOBALS['iwp_mmb_plugin_dir'].'/lib/Google/Service/Drive.php');
@@ -5072,8 +5120,7 @@ function ftp_backup($historyID,$args = '')
 		$resumeURI = false;
 		$current_file_num = 0;
 		
-		if($args == '')
-		{
+		if($args == ''){
 			//on the next call $args would be ''
 			//set $args, $uploadid, $offset  from the DB
 			$responseParams = $this -> getRequiredData($historyID,"responseParams");
@@ -5105,25 +5152,21 @@ function ftp_backup($historyID,$args = '')
 		$refreshToken = $accessToken['refresh_token'];
 		$backup_file = $args['backup_file'];
 		
-		if(!is_array($backup_file))
-		{
+		if(!is_array($backup_file)){
 			$temp_backup_file = $backup_file;
 			$backup_file = array();
 			$backup_file[] = $temp_backup_file;
 		}
 		
-		if(is_array($backup_file))
-		{
+		if(is_array($backup_file)){
 			$backup_files_count = count($backup_file);
 			$backup_file = $backup_file[$current_file_num];
 		}
 		
-		try
-		{
+		try{
 			$client->refreshToken($refreshToken);
 		}
-		catch(Exception $e)
-		{	
+		catch(Exception $e){
 			echo 'google Error ',  $e->getMessage(), "\n";
 			return array("error" => $e->getMessage(), "error_code" => "google_error_backup_refresh_token");
 		}
@@ -5135,17 +5178,15 @@ function ftp_backup($historyID,$args = '')
 		$service = new IWP_google_Service_Drive($client);
 		
 		//create iwp folder folder if it is not present
-		try 
-		{
+		try{
 			$parameters = array();
-				$parameters['q'] = "title = 'infinitewp' and trashed = false and 'root' in parents and 'me' in owners and mimeType= 'application/vnd.google-apps.folder'";
+			$parameters['q'] = "title = 'infinitewp' and trashed = false and 'root' in parents and 'me' in owners and mimeType= 'application/vnd.google-apps.folder'";
 			$files = $service->files->listFiles($parameters);
 			$list_result = array();
 			$list_result = array_merge($list_result, $files->getItems());
 			$list_result = (array)$list_result;
 			
-			if(empty($list_result))
-			{
+			if(empty($list_result)){
 				$file = new IWP_google_Service_Drive_DriveFile();
 				$file->setTitle('infinitewp');
 				$file->setMimeType('application/vnd.google-apps.folder');
@@ -5153,14 +5194,12 @@ function ftp_backup($historyID,$args = '')
 				$createdFolder = $service->files->insert($file, array(
 					'mimeType' => 'application/vnd.google-apps.folder',
 				));
-				if($createdFolder)
-				{
+				if($createdFolder){
 					$createdFolder = (array)$createdFolder;
 					$iwp_folder_id = $createdFolder['id'];
 				}
 			}
-			else
-			{
+			else{
 					foreach($list_result as $k => $v){
 						$iwp_folder_id = $v->id;
 					}
@@ -5171,18 +5210,16 @@ function ftp_backup($historyID,$args = '')
 		}
 		
 		//create sub folder by site name
-		if($create_sub_folder)
-		{
+		if($create_sub_folder){
 			$parameters = array();
-				$parameters['q'] = "title = '$sub_folder_name' and trashed = false and '$iwp_folder_id' in parents and 'me' in owners and mimeType = 'application/vnd.google-apps.folder'";
-				//$parameters['corpus'] = "DEFAULT";
+			$parameters['q'] = "title = '$sub_folder_name' and trashed = false and '$iwp_folder_id' in parents and 'me' in owners and mimeType = 'application/vnd.google-apps.folder'";
+			//$parameters['corpus'] = "DEFAULT";
 			$files = $service->files->listFiles($parameters);
 			$list_result = array();
 			$list_result = array_merge($list_result, $files->getItems());
 			$list_result = (array)$list_result;
 			
-			if(empty($list_result))
-			{
+			if(empty($list_result)){
 				$file = new IWP_google_Service_Drive_DriveFile();
 				$file->setTitle($sub_folder_name);
 				$file->setMimeType('application/vnd.google-apps.folder');
@@ -5201,11 +5238,10 @@ function ftp_backup($historyID,$args = '')
 					$sub_folder_id = $createdFolder['id'];
 				}
 			}
-			else
-			{
-					foreach($list_result as $k => $v){
-						$sub_folder_id = $v->id;
-					}
+			else{
+				foreach($list_result as $k => $v){
+					$sub_folder_id = $v->id;
+				}
 			}
 		}
 		
@@ -5216,21 +5252,17 @@ function ftp_backup($historyID,$args = '')
 		
 		// Set the Parent Folder on Google Drive
 		$parent = new IWP_google_Service_Drive_ParentReference();
-		if(empty($sub_folder_id))
-		{
+		if(empty($sub_folder_id)){
 			$parent->setId($iwp_folder_id);
 		}
-		else
-		{
+		else{
 			$parent->setId($sub_folder_id);
 		}
 		$file->setParents(array($parent));
 		
 		$gDriveID = '';
-		try
-		{
-			if(false)
-			{
+		try{
+			if(false){
 				//single upload
 				$data = file_get_contents($backup_file);
 				$createdFile = (array)$service->files->insert($file, array(
@@ -5242,8 +5274,7 @@ function ftp_backup($historyID,$args = '')
 			
 			//multipart upload
 			
-			if(true)
-			{
+			if(true){
 				// Call the API with the media upload, defer so it doesn't immediately return.
 				$client->setDefer(true);
 				$request = $service->files->insert($file);
@@ -5262,8 +5293,7 @@ function ftp_backup($historyID,$args = '')
 				  'backupParentHID' => $historyID,
 				);
 						
-				while (!$status && !feof($handle))
-				{
+				while (!$status && !feof($handle)){
 					iwp_mmb_auto_print('gdrive_chucked_upload');
 					$chunk = fread($handle, $upload_file_block_size);
 					$statusArray = $media->nextChunk($chunk, $resumeURI, $fileSizeUploaded);
@@ -5273,8 +5303,7 @@ function ftp_backup($historyID,$args = '')
 					$fileSizeUploaded = $statusArray['progress'];
 					
 					$googleTimeTaken = microtime(1) - $GLOBALS['IWP_MMB_PROFILING']['ACTION_START'];
-					if(($googleTimeTaken > 10)&&($status != true))
-					{
+					if(($googleTimeTaken > 10)&&($status != true)){
 						$chunkResult['resumeURI'] = $resumeURI;
 						$chunkResult['fileSizeUploaded'] = $fileSizeUploaded;
 						
@@ -5300,7 +5329,7 @@ function ftp_backup($historyID,$args = '')
 				}
 				
 				$result = false;
-				if($status != false) {
+				if($status != false){
 				  $result = $status;
 				}
 				
@@ -5312,8 +5341,7 @@ function ftp_backup($historyID,$args = '')
 				//$gDriveID = $createdFile['id'];	
 				$gDriveID = $completeBackupResult['id'];	
 			}
-		}catch (Exception $e) 
-		{
+		}catch (Exception $e){
 			echo "An error occurred: " . $e->getMessage();
 			return array("error" => "gDrive Error".$e->getMessage(), "error_code" => "google_error_multipart_upload");
 		}
@@ -5337,21 +5365,19 @@ function ftp_backup($historyID,$args = '')
 		//$task_result['gDrive'] = basename($backup_file);
 		$task_result['gDrive'][] = $gDriveID;
 		
-		if($current_file_num == $backup_files_count)
-		{
+		if($current_file_num == $backup_files_count){
 			$result_arr['nextFunc'] = 'google_drive_completed';
 			iwp_mmb_print_flush('Google Drive upload: End');
 			unset($task_result['task_results'][$historyID]['server']);
 		}
-		else
-		{
+		else{
 			$result_arr['status'] = "partiallyCompleted";
 			$result_arr['nextFunc'] = 'google_drive_backup';
+			$result_arr['response_data'] = false;
 			$resArray['status'] = 'partiallyCompleted';
 		}
 		
-		if($del_host_file)
-		{
+		if($del_host_file){
 			@unlink($backup_file);
 		}
 		
@@ -5602,7 +5628,14 @@ function ftp_backup($historyID,$args = '')
 				$amazons3_file       = $task_result['task_results'][$backup_data['historyID']]['amazons3'];
 				$args                = $thisRequestParams['account_info']['iwp_amazon_s3'];
 				$args['backup_file'] = $amazons3_file;
-				$this->remove_amazons3_backup($args);
+				if(is_new_s3_compatible()){
+					require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+					$new_s3_obj = new IWP_MMB_S3_MULTICALL();
+					$new_s3_obj->remove_amazons3_backup($args);
+				}
+				else{
+					$this->remove_amazons3_backup_bwd_comp($args);
+				}
 			}
 			
 			if (isset($task_result['task_results'][$backup_data['historyID']]['dropbox']) && isset($thisRequestParams['account_info']['iwp_dropbox'])) {
@@ -5765,7 +5798,14 @@ function ftp_backup($historyID,$args = '')
             $amazons3_file       = $backup['amazons3'];
             $args                = $args['iwp_amazon_s3'];
             $args['backup_file'] = $amazons3_file;
-            $this->remove_amazons3_backup($args);
+            if(is_new_s3_compatible()){
+				require_once $GLOBALS['iwp_mmb_plugin_dir'].'/lib/amazon/s3IWPBackup.php';
+				$new_s3_obj = new IWP_MMB_S3_MULTICALL();
+				$new_s3_obj->remove_amazons3_backup($args);
+			}
+			else{
+				$this->remove_amazons3_backup_bwd_comp($args);
+			}
         }
         
         if (isset($backup['dropbox'])) {
@@ -5795,7 +5835,13 @@ function ftp_backup($historyID,$args = '')
 		$old_wpdb = $wpdb;
     	//Reconnect to avoid timeout problem after ZIP files
       	if(class_exists('wpdb') && function_exists('wp_set_wpdb_vars')){
-      		@mysql_close($wpdb->dbh);
+      		if ($wpdb->use_mysqli) {
+				@mysqli_close($wpdb->dbh);
+			} else {
+				if (function_exists('mysql_close')){
+					@mysql_close($wpdb->dbh);
+				}
+			}
         	$wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
         	wp_set_wpdb_vars(); 
 			$wpdb->options = $old_wpdb->options;//fix for multi site full backup
@@ -5879,8 +5925,342 @@ function ftp_backup($historyID,$args = '')
 		else
 			return true;
 	}
+		
+		function prepareBackupFileDetails($args){
+			//Prepare .zip file name
+			extract($args['args']);   //{type, what, ..etc}
+			extract($args);           //{task_name, secure, mechanism}
+			
+			$hash        = md5(microtime(true).uniqid('',true).substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, rand(20,60)));
+			$label       = $type ? $type : 'manual';
+			$backup_file_name = $this->site_name . '_' . $label . '_' . $what . '_' . date('Y-m-d') . '_' . $hash . '.zip';
+			$backup_file = IWP_BACKUP_DIR . '/' . $this->site_name . '_' . $label . '_' . $what . '_' . date('Y-m-d') . '_' . $hash . '.zip';
+			$backup_url  = content_url() . '/infinitewp/backups/' . $this->site_name . '_' . $label . '_' . $what . '_' . date('Y-m-d') . '_' . $hash . '.zip';
+			$this -> backup_url = $backup_url;
+			
+			if(empty($account_info))
+			{
+				$account_info = array();
+			}
+			
+			return array(
+				'backup_file' => $backup_file,
+				'backup_url' => $backup_url,
+				'account_info' => $account_info,
+				'what' => $what
+			);
+		}
+	}
+	
+	if( !function_exists('initialize_manual_debug') ){
+		function initialize_manual_debug($conditions = ''){
+			global $debug_count, $every_count;
+			$debug_count = 0;
+			$every_count = 0;
+			
+			$this_memory_peak_in_mb = memory_get_peak_usage();
+			$this_memory_peak_in_mb = $this_memory_peak_in_mb / 1048576;
+			$this_memory_in_mb = memory_get_usage();
+			$this_memory_in_mb = $this_memory_in_mb / 1048576;
+			$this_time_taken = microtime(true) - $GLOBALS['IWP_MMB_PROFILING']['ACTION_START'];
+			
+			file_put_contents(WP_CONTENT_DIR . '/DE_clMemoryPeak.php',$debug_count . $printText . "  " . round($this_memory_peak_in_mb, 2) ."\n");
+			file_put_contents(WP_CONTENT_DIR . '/DE_clMemoryUsage.php',$debug_count . $printText . "  " . round($this_memory_in_mb, 2) ."\n");
+			file_put_contents(WP_CONTENT_DIR . '/DE_clTimeTaken.php',$debug_count . $printText . "  " . round($this_time_taken, 2) ."\n");
+}
+	}
+	
+	if( !function_exists('manual_debug') ){
+		function manual_debug($conditions = '', $printText = '', $forEvery = 0){
+			return true;
+			global $debug_count;
+			$debug_count++;
+			$printText = '-' . $printText; 
+			
+			global $every_count;
+			//$conditions = 'printOnly';
+			
+			if(empty($forEvery)){
+				print_memory_debug($debug_count, $conditions, $printText);
+			}
+			else{
+				$every_count++;
+				if($every_count % $forEvery == 0){
+					print_memory_debug($debug_count, $conditions, $printText);
+					return true;
+				}
+			}
+		}
+	}
+	
+	if( !function_exists('print_memory_debug') ){
+		function print_memory_debug($debug_count, $conditions = '', $printText = ''){
+			
+			$this_memory_peak_in_mb = memory_get_peak_usage();
+			$this_memory_peak_in_mb = $this_memory_peak_in_mb / 1048576;
+			$this_memory_in_mb = memory_get_usage();
+			$this_memory_in_mb = $this_memory_in_mb / 1048576;
+			$this_time_taken = microtime(true) - $GLOBALS['IWP_MMB_PROFILING']['ACTION_START'];
+			if($conditions == 'printOnly'){
+				if($this_memory_peak_in_mb >= 34){
+					file_put_contents(WP_CONTENT_DIR . '/DE_clMemoryPeak.php',$debug_count . $printText . "  " . round($this_memory_peak_in_mb, 2) ."\n",FILE_APPEND);
+					file_put_contents(WP_CONTENT_DIR . '/DE_clMemoryUsage.php',$debug_count . $printText . "  " . round($this_memory_in_mb, 2) ."\n",FILE_APPEND);
+					file_put_contents(WP_CONTENT_DIR . '/DE_clTimeTaken.php',$debug_count . $printText . "  " . round($this_time_taken, 2) ."\n",FILE_APPEND);
+				}
+			}
+			else{
+				file_put_contents(WP_CONTENT_DIR . '/DE_clMemoryPeak.php',$debug_count . $printText . "  " . round($this_memory_peak_in_mb, 2) ."\n",FILE_APPEND);
+				file_put_contents(WP_CONTENT_DIR . '/DE_clMemoryUsage.php',$debug_count . $printText . "  " . round($this_memory_in_mb, 2) ."\n",FILE_APPEND);
+				file_put_contents(WP_CONTENT_DIR . '/DE_clTimeTaken.php',$debug_count . $printText . "  " . round($this_time_taken, 2) ."\n",FILE_APPEND);
+			}
+		}
+	}
+	
+	if( !function_exists('print_debugg') ){
+		function print_debugg($printText = '', $printVal = null, $forEvery = 0, $conditions = ''){
+			static $print_count = 0;
+			$print_count++;
+			if($print_count > $forEvery){
+				file_put_contents(WP_CONTENT_DIR . '/DE_clientPluginSIde.php',"\n -----".$printText."------- ".var_export($printVal,true)."\n",FILE_APPEND);
+				$print_count = 0;
+			}
+		}
+	}
+	
+	if( !function_exists('refresh_iwp_files_db') ){
+		function refresh_iwp_files_db($this_file_id = 0, $field = 'thisFileDetails' ){
+			global $wpdb;
+			$this_table_name = $wpdb->base_prefix . 'iwp_file_list';			//in case, if we are changing table name.
+			$result = true;
+			
+			$IWP_FILE_LIST_TABLE_VERSION =	get_site_option('iwp_file_list_table_version');
+			
+			//write in db and refresh for_every_count,  all_files_detail;
+			if($wpdb->get_var("SHOW TABLES LIKE '$this_table_name'") == $this_table_name) {
+				$result = $wpdb->query('TRUNCATE TABLE ' . $this_table_name );
+				$error_msg = 'Unable to empty File list table : ' . $wpdb->last_error ;
+				if(version_compare($IWP_FILE_LIST_TABLE_VERSION, '1.0') == -1){
+					$result = iwp_create_file_list_table();
+					$error_msg = 'Unable to update File list table : ' . $wpdb->last_error ;
+				}
+			}
+			else{
+				$result = iwp_create_file_list_table();
+				$error_msg = 'Unable to create File list table : ' . $wpdb->last_error ;
+			}
+			
+			if($result === false){
+				return array( 'error' => $error_msg);
+			}
+			return true;
+		}
+	}
+	
+	if(!function_exists('iwp_create_file_list_table')){
+		function iwp_create_file_list_table(){
+			global $wpdb;
+			if(method_exists($wpdb, 'get_charset_collate')){
+				$charset_collate = $wpdb->get_charset_collate();
+			}
+			$table_created = false;
+			
+			$IWP_FILE_LIST_TABLE_VERSION =	get_site_option('iwp_file_list_table_version');
+			$table_name = $wpdb->base_prefix . "iwp_file_list";
+			
+			if (!empty($charset_collate)){
+				$cachecollation = $charset_collate;
+			}
+			else{
+				$cachecollation = ' DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci ';
+			}
+			
+			if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name){
+				$sql = "
+					CREATE TABLE IF NOT EXISTS $table_name (
+					  `ID` int(11) NOT NULL AUTO_INCREMENT,
+						`thisFileDetails` text,
+						`thisFileCount` int(11) DEFAULT NULL,
+						`thisFileHeader` text,
+						`thisFileName` varchar(255) DEFAULT NULL,
+						UNIQUE KEY `thisFileName` (`thisFileName`(191)),
+						PRIMARY KEY (`ID`)
+					)".$cachecollation." ;
+				";
+				require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+				dbDelta($sql);
+				
+				if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") == $table_name){
+					$table_created = true;
+					update_option( "iwp_file_list_table_version", '1.0');
+				}
+			}
+			else if(version_compare($IWP_FILE_LIST_TABLE_VERSION, '1.0') == -1){
+				$table_created = true;
+				update_option( "iwp_file_list_table_version", '1.0');
+			}
+			return $table_created;
+		}
+	}
+	
+	if( !function_exists('get_from_iwp_files_db') ){
+		function get_from_iwp_files_db($this_file_id = 0, $field = 'thisFileDetails' ){
+			global $wpdb;
+			$this_table_name = 'iwp_file_list';			//in case, if we are changing table name.
+			//$field = 'thisFileDetails';
+			
+			// $this_obj = new IWP_MMB_Backup_Multicall();
+			// $this_obj->wpdb_reconnect();
+			
+			$this_file_id = $this_file_id + 1;
+			//write in db and refresh for_every_count,  all_files_detail;
+			$all_files_detail = $wpdb->get_row("SELECT ".$field." FROM " . $wpdb->base_prefix. $this_table_name . " WHERE ID = " . $this_file_id );
+			
+			if(!empty($all_files_detail))
+			{
+				$all_files_detail = (array)$all_files_detail;
+				if(!empty($all_files_detail[$field])){
+					return unserialize($all_files_detail[$field]);
+				}
+				else{
+					return array( 'error' => 'emptyValues');
+				}
+			}
+			else{
+				return array( 'error' => $wpdb->last_error);
+			}
+		}
+	}
+	
+	if( !function_exists('get_iwp_files_db_count') ){
+		function get_iwp_files_db_count($what_type = 'files', $how_many = 'total'){
+			global $wpdb;
+			$this_table_name = 'iwp_file_list';
+			
+			if($what_type == 'files'){
+				$result = $wpdb->get_var( "SELECT COUNT(*) FROM " . $wpdb->base_prefix . $this_table_name);
+			}
+			else if($what_type == 'headers'){
+				$result = $wpdb->get_var( "SELECT COUNT(*) FROM " . $wpdb->base_prefix . $this_table_name . " WHERE thisFileHeader IS NOT NULL");
+			}
+			
+			if($result !== false)
+			{
+				return (int)$result;
+			}
+			else{
+				return array( 'error' => $wpdb->last_error);
+			}
+		}
+	}
+	
+	if( !function_exists('delete_in_iwp_files_db') ){
+		function delete_in_iwp_files_db($ID = 0){
+			global $wpdb;
+			$this_table_name = $wpdb->base_prefix . 'iwp_file_list';
+			$ID = $ID + 1;
+			$result = $wpdb->delete( $this_table_name, array( 'ID' => $ID ), array( '%d' ) );
+			
+			return $result;
+		}
+	}
+	
+	if( !function_exists('save_in_iwp_files_db') ){
+		function save_in_iwp_files_db($for_every = 0, $this_file_details = array(), $this_header_details = array(), $action = 'insert', $ID = 0){
+			//assuming insert only happens for file adding; update happens only for header adding.
+			static $for_every_count; $for_every_count++;
+			static $all_files_header_detail = array();
+			if(!empty($this_file_details)){
+				$all_files_header_detail[] = $this_file_details;
+			}
+			else{
+				$all_files_header_detail[] = $this_header_details;
+			}
+
+			global $wpdb;
+			$this_table_name = 'iwp_file_list';			//in case, if we are changing table name.
+			$this_insertID = 0;
+			$result = true;
+			
+			if($for_every_count >= $for_every){
+				//write in db and refresh for_every_count,  all_files_header_detail;
+				//$this_obj = new IWP_MMB_Backup_Multicall();
+				//$this_obj->wpdb_reconnect();
+				
+				foreach($all_files_header_detail as $k => $v){
+					if($action == 'insert'){
+						$is_already = $wpdb->get_row("SELECT * FROM " . $wpdb->base_prefix. $this_table_name . " WHERE thisFileName = '". $v['stored_filename'].$v['splitFilename']."'" );
+						if(empty($is_already)){
+							$result = $wpdb->insert($wpdb->base_prefix . $this_table_name, array('thisFileDetails' => serialize($v), 'thisFileCount' => $k, 'thisFileName' => $v['stored_filename'].$v['splitFilename']), array( '%s', '%d', '%s' ));
+						}
+					}
+					else if($action == 'update'){
+						$ID = $ID + 1;
+						$result = $wpdb->update($wpdb->base_prefix . $this_table_name, array('thisFileHeader' => serialize($v), ), array( 'ID' => $ID), array('%s'), array('%d'));
+					}
+					if($result)
+					{
+						if($action == 'insert'){
+							$this_insertID = $wpdb->insert_id;
+						}
+					}
+					else{
+						if($action == 'update'){
+							return array('error' => 1);
+						}
+					}
+				}
+				$for_every_count = 0;
+				$all_files_header_detail = array();
+				if($action == 'insert'){
+					$is_break = check_and_break_iwp();
+					if($is_break){
+						return array( 'break' => $this_insertID );
+					}
+				}
+			}
+			return false;
+		}
+	}
+	
+	if( !function_exists('check_and_break_iwp') ){
+		function check_and_break_iwp(){
+			if((microtime(true) - $GLOBALS['IWP_MMB_PROFILING']['ACTION_START']) > 22){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 }
 
+	if( !function_exists('check_and_break_iwp_test') ){
+		function check_and_break_iwp_test(){
+			static $this_count;
+			$this_count++;
+			if($this_count >= 20){
+				$this_count = 0;
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+	}
+	
+	if( !function_exists('debug_put') ){
+		function debug_put($values, $string){
+			file_put_contents(WP_CONTENT_DIR . '/DE_clientPluginSIde.php',"\n -----".$string."------- ".var_export($values,true)."\n",FILE_APPEND);
+		}
+	}
+	
+	if( !function_exists('is_new_s3_compatible') ){
+		function is_new_s3_compatible(){
+			if(phpversion() >= '5.3.3'){
+				return true;
+			}
+			return false;
+		}
+	}
 /*if( function_exists('add_filter') ){
 	add_filter( 'iwp_website_add', 'IWP_MMB_Backup::readd_tasks' );
 }*/

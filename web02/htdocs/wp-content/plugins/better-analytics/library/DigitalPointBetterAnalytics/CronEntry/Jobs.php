@@ -14,6 +14,8 @@ class DigitalPointBetterAnalytics_CronEntry_Jobs
 	{
 		DigitalPointBetterAnalytics_Model_Widget::getStatsWidgetData();
 
+		//TODO: do this based on a hash of site name instead of current_time() - API method stats are showing very few sites change default UTC time, so there's a flood of API calls at midnight UTC
+
 		if (get_transient('ba_exp_live') || date('G', current_time('timestamp')) == 0)
 		{
 			$betterAnalyticsOptions = get_option('better_analytics');

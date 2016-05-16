@@ -21,11 +21,13 @@ if (!$verified) {
     $verified = $key == md5($email_id . ';' . $user_id . ';' . $url . ';' . $anchor . $options['key']);
 }
 
-// Test emails
+// For feed by mail tests
 if ($verified && empty($email_id) && is_user_logged_in()) {
     header('Location: ' . $url);
     die();
 }
+
+$ip = preg_replace( '/[^0-9a-fA-F:., ]/', '', $_SERVER['REMOTE_ADDR'] );
 
 if ($verified) {
     $wpdb->insert(NEWSLETTER_STATS_TABLE, array(
@@ -33,9 +35,16 @@ if ($verified) {
         'user_id' => $user_id,
         'url' => $url,
         //'anchor' => $anchor,
-        'ip' => $_SERVER['REMOTE_ADDR']
+        'ip' => $ip
             )
     );
+    
+    $wpdb->query($wpdb->prepare("update " . NEWSLETTER_SENT_TABLE . " set open=2, ip=%s where email_id=%d and user_id=%d limit 1", $ip, $email_id, $user_id));
+
+    $user = Newsletter::instance()->get_user($user_id);
+    if ($user) {
+        setcookie('newsletter', $user->id . '-' . $user->token, time() + 60 * 60 * 24 * 365, '/');
+    }
     header('Location: ' . $url);
     die();
 } else {
