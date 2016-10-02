@@ -1,0 +1,79 @@
+# Translation of Development (trunk) in German
+# This file is distributed under the same license as the Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-07-10 22:29:52+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Development (trunk)\n"
+
+#: inc/statify_backend.class.php:75
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: inc/statify_dashboard.class.php:163
+msgid "Pageview"
+msgstr "Aufruf"
+
+#: inc/statify_dashboard.class.php:164
+msgid "Pageviews"
+msgstr "Aufrufe"
+
+#: views/widget_back.view.php:16
+msgid "days"
+msgstr "Tage"
+
+#: views/widget_back.view.php:20
+msgid "Period of data saving"
+msgstr "Zeitraum der Aufbewahrung"
+
+#: views/widget_back.view.php:31
+msgid "Number of entries in top lists"
+msgstr "Anzahl der Einträge in der Bestenliste"
+
+#: views/widget_back.view.php:36
+msgid "Entries in top lists only for today"
+msgstr "Einträge in der Bestenliste nur von heute"
+
+#: views/widget_back.view.php:41
+msgid "Page tracking via JavaScript"
+msgstr "Seitenzählung via JavaScript"
+
+#: views/widget_back.view.php:42
+msgid "recommended if caching is in use"
+msgstr "empfohlen bei aktivem Caching"
+
+#: views/widget_front.view.php:15
+msgid "No data available."
+msgstr "Keine Daten verfügbar."
+
+#: views/widget_front.view.php:33
+msgid "Top targets"
+msgstr "Beste Inhalte"
+
+#: views/widget_front.view.php:59
+msgid "Top referers"
+msgstr "Beste Quellen"
+
+#. Plugin Name of the plugin/theme
+msgid "Statify"
+msgstr "Statify"
+
+#. Plugin URI of the plugin/theme
+msgid "http://statify.de"
+msgstr "http://statify.de"
+
+#. Description of the plugin/theme
+msgid "Compact, easy-to-use and privacy-compliant stats plugin for WordPress."
+msgstr "Kompakte, anwendungsfreundliche und datenschutzkonforme Statistik für WordPress."
+
+#. Author of the plugin/theme
+msgid "Sergej M&uuml;ller"
+msgstr "Sergej Müller"
+
+#. Author URI of the plugin/theme
+msgid "https://sergejmueller.github.io"
+msgstr "https://sergejmueller.github.io"

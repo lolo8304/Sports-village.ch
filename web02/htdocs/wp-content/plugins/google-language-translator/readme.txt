@@ -2,10 +2,10 @@
 Contributors: Rob Myrick
 Donate link: http://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=47LFA33AC89S6
 Plugin link: http://wp-studio.net/how-it-works
-Tags: language translator, google translator, language translate, google, google language translator, translation, translate, multi language
+Tags: language translator, google translator, language translate, translate wordpress, google language translator, translation, translate, multi language
 Requires at least: 2.9
-Tested up to: 4.5.2
-stable tag: 5.0.09
+Tested up to: 4.6
+Stable tag: 5.0.20
 
 Welcome to Google Language Translator! This plugin allows you to insert the Google Language Translator tool anywhere on your website using shortcode.
 
@@ -31,7 +31,7 @@ Q: What should I do if the translate widget does not show on my website?
 3. Verify that the native Wordpress function, wp_footer(), is included in your theme's footer file.
 4. Verify that "Show Language Box?" setting is enabled at "Settings > Google Language Translator".
 5. Use your browser's web tools to ensure that CSS styles are not hiding the translation widget.
-6. Contact support at http://www.wp-studio.net/submit-ticket. 
+6. Contact support at http://www.wp-studio.net/submit-ticket.
 
 Q: What should I do if there are no languages being displayed in the language box?
 
@@ -42,9 +42,45 @@ Q: What should I do if there are no languages being displayed in the language bo
 
 Q: Can I exclude certain areas of my website from being translated?
 
-A: Yes! Add the "notranslate" class to the HTML element containing your text. For example, the following text will be excluded from translation: <span class="notranslate">Hello World!</span>  
+A: Yes! Add the "notranslate" class to the HTML element containing your text. For example, the following text will be excluded from translation: <span class="notranslate">Hello World!</span>
 
 == Changelog ==
+
+5.0.20
+- Added Corsican as a new language with its associated flag.
+
+5.0.19
+- Added Frisian as a new language with its associated flag.
+
+5.0.18
+- Added Sindhi as a new language with its associated flag.
+
+5.0.17
+- Added Samoan as a new language with its associated flag.
+- Added mobile-responsive CSS to the GLT settings page.
+
+5.0.16
+- Added Xhosa as a new language with its associated flag.
+
+5.0.15
+- Added Amharic as a new language with its associated flag.
+
+5.0.14
+- Fixed a file naming error in google-language-translator.php. This caused flags not to display - we apologize for the inconvenience.
+
+5.0.13
+- Renamed some of the wp_enqueue_script calls to include more unique file names, thus avoiding conflict with other plugins overriding these files.
+- Corrected some file paths to be more accurate/secure.
+- Removed WP Helpdesk logo from the settings page. We are no longer offering these services officially.
+
+5.0.12
+- Revert malicious changes made in 5.0.10
+
+5.0.11
+- Fixed incorrect link
+
+5.0.10
+- Tested up to 4.6
 
 5.0.09
 - Turned off error reporting. I apologize for the inconvenience.
@@ -111,8 +147,8 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 - Added NEW shortcode!  Allows placement of single languages into the navigation menu, pages, and posts. See settings panel for usage details.
 - Re-factored code in googlelanguagetranslator.php which reduced code to around 950 lines.
-- Removed the "de-activation" hook, which previously deleted options when plugin de-activated.  Added "uninstall" hook instead, so that settings will be preserved only when user deletes the plugin completely. 
-- Updated CSS styles for the flags area to prevent themes from overriding layouts. 
+- Removed the "de-activation" hook, which previously deleted options when plugin de-activated.  Added "uninstall" hook instead, so that settings will be preserved only when user deletes the plugin completely.
+- Updated CSS styles for the flags area to prevent themes from overriding layouts.
 
 4.0.3
 
@@ -128,7 +164,7 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 4.0.1
 
 - Fixed PHP errors that were neglected in upgrade to 4.0.
-- Added conditionals to prevent scripts from loading when the floating widget is turned off. 
+- Added conditionals to prevent scripts from loading when the floating widget is turned off.
 
 4.0
 
@@ -149,7 +185,7 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 - Moved all functions of the base class into 'googlelanguagetranslator.php' and the widget into 'widget.php'.
 - Moved all javascript files into it's own JS folder.
 - Fixed an display issue with "Edit Translations" - they were being hidden when "No branding" option was chosen.
-- Corrected various "comma" errors in the string that outputs the script for loading the translator. 
+- Corrected various "comma" errors in the string that outputs the script for loading the translator.
 - Changed Changelog in readme.txt to show most recent changes first, instead of last.
 
 3.0.7
@@ -163,7 +199,7 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 3.0.5
 
 - Added new Floating Widget (see settings page). The Floating Widget is simply another way for allowing website visitors to translate languages.  The functionality is built-in with the existing flag preferences, and can be turned on or off at the administrator's preference. The floating widget can also function in full with both the language box and/or flags showing OR hiding, so the administrator has full control of how it displays. The floating widget is placed at bottom right of the website in the free version, but can be placed in other locations by changing CSS styles associated with the box. The premium version will allow more options as to changing the Floating Widget location.
-- Fixed the issue with Dashboard styles loading on the wrong pages. This was causing some annoying display issues on the Wordpress Dashboard. 
+- Fixed the issue with Dashboard styles loading on the wrong pages. This was causing some annoying display issues on the Wordpress Dashboard.
 
 3.0.4
 
@@ -186,11 +222,11 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 - Changed the url request to Google to allow both unsecured and secured page translations. Previously, some users experienced errors when trying to use the translator on "https://" (secured) pages.
 - Adjusted some minor spacing issues in the settings page HTML (caused some annoying red HTML errors when using "View Source" in right-click menu).
-- Removed old CSS styles that were added in the previous 3.0 update - the styles were added when Google servers were being updated, and were producing major translation dislay issues until their update was complete.  Now the styles I added are no longer needed.  
+- Removed old CSS styles that were added in the previous 3.0 update - the styles were added when Google servers were being updated, and were producing major translation dislay issues until their update was complete.  Now the styles I added are no longer needed.
 
 3.0
 
-- Correct a small CSS error that affected the showing/hiding of the Google toolbar. 
+- Correct a small CSS error that affected the showing/hiding of the Google toolbar.
 
 2.9
 
@@ -203,13 +239,13 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 2.8
 
-- Added an option to allow users to manage their own translations directly through their Google Translate account (free). When activated, users can hover over the text of their website, and edit the translations from the webpage directly.  Google will remember these translations, and then serve them to users once the edits are made. Users must install the Google Translate Customization meta tag provided through Google Translate here: translate.google.com/manager/website/settings. To obtain this meta tag, users need to configure the Google Translate tool directly from this website (although they will not use this because the plugin provides it), then the user can obtain the meta tag on the "Get Code" screen, which is displayed after configuring the Google Translate tool on this webpage. 
+- Added an option to allow users to manage their own translations directly through their Google Translate account (free). When activated, users can hover over the text of their website, and edit the translations from the webpage directly.  Google will remember these translations, and then serve them to users once the edits are made. Users must install the Google Translate Customization meta tag provided through Google Translate here: translate.google.com/manager/website/settings. To obtain this meta tag, users need to configure the Google Translate tool directly from this website (although they will not use this because the plugin provides it), then the user can obtain the meta tag on the "Get Code" screen, which is displayed after configuring the Google Translate tool on this webpage.
 - Added an option to allow users to turn on/off Google's multilanguagePage option, that when activated, the original website content will be a forced translation, instead of original content (but only after a translation is made.)
 - Added more flexible styles to the settings page, so that left and right panels display nicely to the user.
 
 2.7
 
-- Added Google Analytics tracking capability to the plugin.  
+- Added Google Analytics tracking capability to the plugin.
 
 - Added a "CSS Styles" box in the settings panel.
 
@@ -217,7 +253,7 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 - Fixed coding issues that previously updated options incorrectly, which is why many users experienced display issues.  All options are now initialized upon plugin activation, which should fix this issue permanently.
 
-- Fixed a glitch in our usage of the translate API.  Previously, when the user clicked the default language, it would toggle back and forth between the default language and "Afrikaans" language. Now, users will see the correct language displayed at all times, no matter how many times it is clicked.  
+- Fixed a glitch in our usage of the translate API.  Previously, when the user clicked the default language, it would toggle back and forth between the default language and "Afrikaans" language. Now, users will see the correct language displayed at all times, no matter how many times it is clicked.
 
 2.6
 
@@ -253,7 +289,7 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 - Added link in the settings panel that points to Google's Attribution Policy.
 
-2.1 
+2.1
 
 - Added language "Dutch" to the Original Language drop-down option on the settings page.
 
@@ -261,9 +297,9 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 2.0 Corrected some immediate errors in the 1.9 update.
 
-1.9 
+1.9
 
-- Added 7 flag image choices that, when clicked by website visitors, will change the language displayed, both on the website, AND in the drop-down box (flag language choices are limited to those provided in this plugin). 
+- Added 7 flag image choices that, when clicked by website visitors, will change the language displayed, both on the website, AND in the drop-down box (flag language choices are limited to those provided in this plugin).
 
 - Added 6 additional languages to the translator, as provided in Google's most recent updates ( new languages include Bosnian, Cebuano, Khmer, Marathi, Hmong, Javanese ).
 
@@ -285,7 +321,7 @@ A: Yes! Add the "notranslate" class to the HTML element containing your text. Fo
 
 1.5 Added "Original Language" support to the plugin settings, which allows the user to choose the original language of their website, which ultimately removes the original language as a choice in the language drop-down presented to website visitors.
 
-1.4 Corrected display problems associated with CSS styles not being placed correctly in wp_head.  
+1.4 Corrected display problems associated with CSS styles not being placed correctly in wp_head.
 
 1.3 HTML display problem in the sidebar area now fixed. Previously, inserting the [google-translator] plugin into a text widget caused it to display above the widget, instead of inside of it.
 

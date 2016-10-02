@@ -250,3 +250,512 @@
 09-01-2016 13:49:54 - DEBUG - 42,2 MB - mail> To: juerg.hefti@bluewin.ch, 09-01-2016 13:50:15 - DEBUG - 42,2 MB - Replace start
 09-01-2016 13:50:15 - DEBUG - 42,2 MB - mail> To: barbara.jencik@gmx.ch, 09-01-2016 13:50:39 - DEBUG - 42,2 MB - Replace start
 09-01-2016 13:50:39 - DEBUG - 42,2 MB - mail> To: af.rohrbach@ggaweb.ch, 09-01-2016 13:55:05 - DEBUG - 30,1 MB - hook_newsletter> Start
+09-01-2016 21:12:26 - DEBUG - 30,1 MB - mail> To: rachelw@serpentine.org.uk, 09-01-2016 21:12:31 - DEBUG - 30,1 MB - Replace start
+10-01-2016 10:56:13 - DEBUG - 30,1 MB - mail> To: ricky.grau@gmail.com, 10-01-2016 10:56:16 - DEBUG - 30,1 MB - Replace start
+11-01-2016 05:57:15 - DEBUG - 30,1 MB - mail> To: dcadosch@lindt.com, 11-01-2016 05:57:20 - DEBUG - 30,1 MB - Replace start
+11-01-2016 12:19:02 - DEBUG - 30,1 MB - mail> To: kerstin.dudli@hotmail.com, 11-01-2016 12:19:02 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+12-01-2016 15:27:22 - DEBUG - 29,6 MB - mail> To: haefen@gmx.ch, 12-01-2016 15:27:23 - DEBUG - 29,3 MB - hook_newsletter> Start
+12-01-2016 15:28:23 - DEBUG - 29,6 MB - mail> To: othmar.wildhaber@bluewin.ch, 12-01-2016 15:28:23 - DEBUG - 29,3 MB - hook_newsletter> Start
+12-01-2016 15:31:24 - DEBUG - 29,6 MB - mail> To: r.ostheeren@me.com, 12-01-2016 15:31:28 - DEBUG - 30,1 MB - Replace start
+12-01-2016 15:34:22 - DEBUG - 29,6 MB - mail> To: lara.thamann@gmail.com, 12-01-2016 15:34:23 - DEBUG - 29,3 MB - hook_newsletter> Start
+12-01-2016 15:41:01 - DEBUG - 30,1 MB - mail> To: othmar.wildhaber@bluewin.ch, 12-01-2016 15:41:07 - DEBUG - 30,1 MB - Replace start
+12-01-2016 15:41:43 - DEBUG - 29,6 MB - mail> To: andreas.keiser@silco.mobi, 12-01-2016 15:41:46 - DEBUG - 30,1 MB - Replace start
+12-01-2016 15:44:16 - DEBUG - 29,6 MB - mail> To: kai.sikorski@prophysics.ch, 12-01-2016 15:44:16 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+12-01-2016 15:45:52 - DEBUG - 29,6 MB - mail> To: hoellerc@ethz.ch, 12-01-2016 15:45:55 - DEBUG - 30,1 MB - Replace start
+12-01-2016 15:46:21 - DEBUG - 30,1 MB - mail> To: hoellerc@ethz.ch, 12-01-2016 15:46:24 - DEBUG - 30,0 MB - Replace start
+12-01-2016 15:49:22 - DEBUG - 29,6 MB - mail> To: matthias.grotthaus@web.de, 12-01-2016 15:49:24 - DEBUG - 30,1 MB - Replace start
+12-01-2016 15:50:48 - DEBUG - 29,6 MB - mail> To: sandrostuder@swissonline.ch, 12-01-2016 15:50:48 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 53qo1s0061KuWt8033qoAp - Spam Detected (650)
+12-01-2016 16:59:11 - DEBUG - 30,1 MB - mail> To: kai.sikorski@prophysics.ch, 12-01-2016 16:59:16 - DEBUG - 30,1 MB - Replace start
+16-01-2016 09:20:48 - DEBUG - 29,6 MB - mail> To: werner.egli@uster.ch, 16-01-2016 09:20:48 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZLo1s0021KuWt803ZLo5N - Spam Detected (650)
+16-01-2016 09:22:11 - DEBUG - 29,6 MB - mail> To: heller.patric@gmail.com, 16-01-2016 09:22:11 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZNB1s0041KuWt803ZNBBa - Spam Detected (650)
+16-01-2016 09:24:32 - DEBUG - 29,6 MB - mail> To: madelaine.unw@gmx.ch, 16-01-2016 09:24:33 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZQY1s00F1KuWt803ZQZLF - Spam Detected (650)
+16-01-2016 09:30:10 - DEBUG - 29,5 MB - mail> To: matthias.willmann@gmx.net, 16-01-2016 09:30:10 - ERROR - 30,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZWA1s0051KuWt803ZWAt7 - Spam Detected (650)
+16-01-2016 09:32:59 - DEBUG - 29,6 MB - mail> To: darvaizozoka@gmail.com, 16-01-2016 09:32:59 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZYz1s00G1KuWt803ZYzQp - Spam Detected (650)
+16-01-2016 09:51:18 - DEBUG - 29,6 MB - mail> To: df@gmx.ch, 16-01-2016 09:51:19 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZrJ1s0121KuWt803ZrJ9b - Spam Detected (650)
+16-01-2016 09:53:07 - DEBUG - 29,6 MB - mail> To: aaardema@hotmail.com, 16-01-2016 09:53:07 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6Zt71s0091KuWt803Zt7NR - Spam Detected (650)
+16-01-2016 09:55:14 - DEBUG - 29,6 MB - mail> To: marek.nerko@gmail.com, 16-01-2016 09:55:14 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6ZvE1s00C1KuWt803ZvEWt - Spam Detected (650)
+16-01-2016 09:58:22 - DEBUG - 29,6 MB - mail> To: mrothbrunner@yahoo.com, 16-01-2016 09:58:22 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+16-01-2016 10:05:55 - DEBUG - 29,5 MB - mail> To: denisatildy@hotmail.com, 16-01-2016 10:05:55 - ERROR - 30,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6a5v1s0051KuWt803a5vHf - Spam Detected (650)
+16-01-2016 10:14:49 - DEBUG - 29,6 MB - mail> To: sim.ochsner@gmail.com, 16-01-2016 10:14:49 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6aEp1s00D1KuWt803aEpUs - Spam Detected (650)
+16-01-2016 10:16:01 - DEBUG - 29,6 MB - mail> To: esthermenzi@hotmail.com, 16-01-2016 10:16:01 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6aG11s00C1KuWt803aG1cn - Spam Detected (650)
+16-01-2016 10:18:02 - DEBUG - 29,6 MB - mail> To: stoppy@gmx.ch, 16-01-2016 10:18:02 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 6aJ21s0031KuWt803aJ2wP - Spam Detected (650)
+20-01-2016 15:36:11 - DEBUG - 29,6 MB - mail> To: fidelmagar2080@yahoo.com, 20-01-2016 15:36:12 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8FcC1s0021KuWt803FcCsz - Spam Detected (650)
+20-01-2016 15:37:27 - DEBUG - 29,6 MB - mail> To: chaiyasit63@hotmail.com, 20-01-2016 15:37:27 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8FdT1s0021KuWt803FdT0u - Spam Detected (650)
+20-01-2016 15:38:55 - DEBUG - 29,6 MB - mail> To: jason.huart@gmail.com, 20-01-2016 15:38:55 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8Fev1s0061KuWt803Fev9B - Spam Detected (650)
+20-01-2016 15:40:23 - DEBUG - 29,6 MB - mail> To: fredi.jenni@bluewin.ch, 20-01-2016 15:40:23 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8FgP1s0051KuWt803FgPHL - Spam Detected (650)
+20-01-2016 15:43:32 - DEBUG - 29,6 MB - mail> To: tobiasreichlin@gmx.net, 20-01-2016 15:43:32 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8FjY1s00D1KuWt803FjYoB - Spam Detected (650)
+20-01-2016 15:55:54 - DEBUG - 29,6 MB - mail> To: walter.strickler@bluewin.ch, 20-01-2016 15:55:54 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8Fvu1s00a1KuWt803Fvui4 - Spam Detected (650)
+20-01-2016 15:57:23 - DEBUG - 29,6 MB - mail> To: judelmann@gmx.ch, 20-01-2016 15:57:23 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8FxP1s00k1KuWt803FxPRF - Spam Detected (650)
+20-01-2016 15:58:49 - DEBUG - 29,6 MB - mail> To: chroth@me.com, 20-01-2016 15:58:49 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8Fyp1s00M1KuWt803Fyp9i - Spam Detected (650)
+20-01-2016 16:01:53 - DEBUG - 29,6 MB - mail> To: patrick@candrian.net, 20-01-2016 16:01:53 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8G1t1s00S1KuWt803G1tQ3 - Spam Detected (650)
+20-01-2016 16:03:52 - DEBUG - 29,6 MB - mail> To: info@ladiva-schuhe.ch, 20-01-2016 16:03:52 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8G3s1s0061KuWt803G3sS3 - Spam Detected (650)
+20-01-2016 16:06:04 - DEBUG - 29,5 MB - mail> To: gaby.roger@sunrise.ch, 20-01-2016 16:06:04 - ERROR - 30,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: 8G641s00C1KuWt803G64cu - Spam Detected (650)
+21-01-2016 17:16:46 - DEBUG - 29,6 MB - mail> To: francesco.alacqua@hotmail.com, 21-01-2016 17:16:50 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:18:15 - DEBUG - 29,6 MB - mail> To: angela.camara@rocketmail.com, 21-01-2016 17:18:16 - DEBUG - 29,3 MB - hook_newsletter> Start
+21-01-2016 17:19:15 - DEBUG - 29,6 MB - mail> To: michaeltambini@hotmail.com, 21-01-2016 17:19:20 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:20:21 - DEBUG - 29,6 MB - mail> To: tomas@schlesi.ch, 21-01-2016 17:20:25 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:21:23 - DEBUG - 29,6 MB - mail> To: a.spielmann@hispeed.ch, 21-01-2016 17:21:27 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:22:18 - DEBUG - 29,6 MB - mail> To: anho@hotmail.ch, 21-01-2016 17:22:22 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:23:41 - DEBUG - 29,6 MB - mail> To: mirjamengelbrekts@me.com, 21-01-2016 17:23:41 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+21-01-2016 17:25:01 - DEBUG - 29,6 MB - mail> To: petra.abegglen@bluewin.ch, 21-01-2016 17:25:05 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:25:57 - DEBUG - 29,6 MB - mail> To: danielwagner@ethz.ch, 21-01-2016 17:26:00 - DEBUG - 29,6 MB - Replace start
+21-01-2016 17:26:00 - DEBUG - 29,6 MB - mail> To: danielwagner@ethz.ch, 21-01-2016 17:26:03 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:26:55 - DEBUG - 29,6 MB - mail> To: ikenna_11@hotmail.com, 21-01-2016 17:26:58 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:27:40 - DEBUG - 29,6 MB - mail> To: bettina.villa@gmx.ch, 21-01-2016 17:27:43 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:28:31 - DEBUG - 29,6 MB - mail> To: davidhartenbach@hotmail.com, 21-01-2016 17:28:31 - DEBUG - 29,3 MB - hook_newsletter> Start
+21-01-2016 17:29:22 - DEBUG - 29,6 MB - mail> To: pfaisst@startmail.com, 21-01-2016 17:29:26 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:30:09 - DEBUG - 29,6 MB - mail> To: oliverbeck@hispeed.ch, 21-01-2016 17:30:12 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:30:57 - DEBUG - 29,6 MB - mail> To: toni.koller@bluewin.ch, 21-01-2016 17:30:58 - DEBUG - 30,2 MB - Replace start
+21-01-2016 17:31:43 - DEBUG - 29,6 MB - mail> To: toni.koller@bluewin.ch, 21-01-2016 17:31:45 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:32:32 - DEBUG - 29,6 MB - mail> To: huber_oliver@gmx.net, 21-01-2016 17:32:35 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:33:25 - DEBUG - 29,6 MB - mail> To: sandrarusch@yahoo.de, 21-01-2016 17:33:28 - DEBUG - 30,1 MB - Replace start
+21-01-2016 17:34:18 - DEBUG - 29,6 MB - mail> To: abonetti@gmx.ch, 21-01-2016 17:34:21 - DEBUG - 30,1 MB - Replace start
+21-01-2016 18:04:53 - DEBUG - 30,1 MB - mail> To: ikenna_11@hotmail.com, 21-01-2016 18:04:58 - DEBUG - 30,1 MB - Replace start
+21-01-2016 18:30:19 - DEBUG - 30,1 MB - mail> To: a.spielmann@hispeed.ch, 21-01-2016 18:30:23 - DEBUG - 30,1 MB - Replace start
+21-01-2016 20:28:11 - DEBUG - 30,1 MB - mail> To: abonetti@gmx.ch, 21-01-2016 20:28:16 - DEBUG - 30,1 MB - Replace start
+22-01-2016 06:43:05 - DEBUG - 30,1 MB - mail> To: tomas@schlesi.ch, 22-01-2016 06:43:10 - DEBUG - 30,1 MB - Replace start
+22-01-2016 07:00:36 - DEBUG - 30,1 MB - mail> To: sandrarusch@yahoo.de, 22-01-2016 07:00:39 - DEBUG - 30,1 MB - Replace start
+22-01-2016 13:19:07 - DEBUG - 30,1 MB - mail> To: pfaisst@startmail.com, 22-01-2016 13:19:11 - DEBUG - 30,1 MB - Replace start
+24-01-2016 17:57:37 - DEBUG - 30,1 MB - mail> To: haefen@gmx.ch, 24-01-2016 17:57:42 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:27:28 - DEBUG - 29,6 MB - mail> To: stephanprobst@gmx.de, 25-01-2016 18:27:32 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:28:35 - DEBUG - 29,6 MB - mail> To: adrianoalex2014@hotmail.com, 25-01-2016 18:28:35 - DEBUG - 29,3 MB - hook_newsletter> Start
+25-01-2016 18:29:40 - DEBUG - 29,6 MB - mail> To: theo_gr_ch@hitmail.com, 25-01-2016 18:29:44 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:30:41 - DEBUG - 29,6 MB - mail> To: info@efcon.ch, 25-01-2016 18:30:45 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:31:24 - DEBUG - 29,6 MB - mail> To: mail@rolfgisler.ch, 25-01-2016 18:31:28 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:32:16 - DEBUG - 29,6 MB - mail> To: s.t.waelchli@gmail.com, 25-01-2016 18:32:20 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:41:12 - DEBUG - 29,6 MB - mail> To: david.rindlisbacher@fgz.ch, 25-01-2016 18:41:16 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:41:34 - DEBUG - 30,1 MB - mail> To: mail@rolfgisler.ch, 25-01-2016 18:41:39 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:42:12 - DEBUG - 29,6 MB - mail> To: g.megliola@gmx.ch, 25-01-2016 18:42:16 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:44:37 - DEBUG - 29,6 MB - mail> To: sc.karrer@gmail.com, 25-01-2016 18:44:38 - DEBUG - 29,3 MB - hook_newsletter> Start
+25-01-2016 18:45:37 - DEBUG - 29,6 MB - mail> To: saschacu@gmail.com, 25-01-2016 18:45:40 - DEBUG - 30,1 MB - Replace start
+25-01-2016 18:58:34 - DEBUG - 30,1 MB - mail> To: adrianoalex2014@hotmail.com, 25-01-2016 18:58:38 - DEBUG - 30,1 MB - Replace start
+25-01-2016 22:00:01 - DEBUG - 30,1 MB - mail> To: s.t.waelchli@gmail.com, 25-01-2016 22:00:06 - DEBUG - 30,1 MB - Replace start
+26-01-2016 20:14:19 - DEBUG - 30,1 MB - mail> To: ullrich.preuss@sunrise.ch, 26-01-2016 20:14:19 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+26-01-2016 20:19:30 - DEBUG - 29,6 MB - mail> To: ullrich.preuss@gmail.comemail, 26-01-2016 20:19:30 - ERROR - 30,3 MB - mail> SMTP Error: The following recipients failed: ullrich.preuss@gmail.comemail: <ullrich.preuss@gmail.comemail> recipient rejected (510)
+26-01-2016 20:22:22 - DEBUG - 29,5 MB - mail> To: ullrich.preuss@gmail.com, 26-01-2016 20:22:26 - DEBUG - 30,1 MB - Replace start
+26-01-2016 20:24:06 - DEBUG - 29,6 MB - mail> To: ullrich.preuss@gmail.comemail, 26-01-2016 20:24:06 - ERROR - 30,3 MB - mail> SMTP Error: The following recipients failed: ullrich.preuss@gmail.comemail: <ullrich.preuss@gmail.comemail> recipient rejected (510)
+30-01-2016 08:30:41 - DEBUG - 29,6 MB - mail> To: s.viefhaus@bluewin.ch, 30-01-2016 08:30:41 - DEBUG - 32,7 MB - hook_newsletter> Start
+30-01-2016 08:33:08 - DEBUG - 29,6 MB - mail> To: suzana.barnwti@hotmail.com, 30-01-2016 08:33:12 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:34:46 - DEBUG - 29,6 MB - mail> To: moro05@gmx.ch, 30-01-2016 08:34:47 - DEBUG - 29,3 MB - hook_newsletter> Start
+30-01-2016 08:36:30 - DEBUG - 29,6 MB - mail> To: manuela.otto@hotmail.de, 30-01-2016 08:36:35 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:40:14 - DEBUG - 29,6 MB - mail> To: jdward2@hotmail.com, 30-01-2016 08:40:15 - DEBUG - 29,3 MB - hook_newsletter> Start
+30-01-2016 08:41:38 - DEBUG - 29,6 MB - mail> To: alessia.ramseier@mibas.ch, 30-01-2016 08:41:41 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:42:53 - DEBUG - 29,6 MB - mail> To: loveritz@gmx.ch, 30-01-2016 08:42:53 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+30-01-2016 08:45:06 - DEBUG - 29,6 MB - mail> To: loveritz@gmx.ch, 30-01-2016 08:45:09 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:46:07 - DEBUG - 29,6 MB - mail> To: svenja.kathriin@hotmail.com, 30-01-2016 08:46:08 - DEBUG - 29,6 MB - Replace start
+30-01-2016 08:46:08 - DEBUG - 29,6 MB - mail> To: svenja.kathriin@hotmail.com, 30-01-2016 08:46:10 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:46:47 - DEBUG - 29,6 MB - mail> To: taino.varik@gmail.com, 30-01-2016 08:46:51 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:47:45 - DEBUG - 29,6 MB - mail> To: j_hiltpold@hotmail.de, 30-01-2016 08:47:48 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:48:29 - DEBUG - 29,6 MB - mail> To: reto_kuhn@hotmail.com, 30-01-2016 08:48:29 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+30-01-2016 08:49:54 - DEBUG - 29,6 MB - mail> To: patrizia.vischer@gmail.com, 30-01-2016 08:49:57 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:51:01 - DEBUG - 29,6 MB - mail> To: s.c.w.ploeger@gmail.com, 30-01-2016 08:51:03 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:52:28 - DEBUG - 29,6 MB - mail> To: barbarahofmann@gmail.com, 30-01-2016 08:52:31 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:53:44 - DEBUG - 29,6 MB - mail> To: apanatchi@hotmail.com, 30-01-2016 08:53:47 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:54:49 - DEBUG - 29,6 MB - mail> To: alex@ynakmedia.ch, 30-01-2016 08:54:49 - ERROR - 30,3 MB - mail> SMTP Error: The following recipients failed: alex@ynakmedia.ch: <alex@ynakmedia.ch> recipient rejected (510)
+30-01-2016 08:55:38 - DEBUG - 29,6 MB - mail> To: arias7475@gmail.com, 30-01-2016 08:55:40 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:56:35 - DEBUG - 29,6 MB - mail> To: rolf.weber@aubag.ch, 30-01-2016 08:56:38 - DEBUG - 30,1 MB - Replace start
+30-01-2016 08:58:59 - DEBUG - 29,6 MB - mail> To: chantalflorence.meier@gmx.ch, 30-01-2016 08:59:00 - DEBUG - 29,3 MB - hook_newsletter> Start
+30-01-2016 09:00:11 - DEBUG - 29,6 MB - mail> To: raphaela.maroggi@hotmail.com, 30-01-2016 09:00:14 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:01:09 - DEBUG - 29,6 MB - mail> To: guglymugly@hotmail.com, 30-01-2016 09:01:12 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:02:07 - DEBUG - 29,5 MB - mail> To: dubachgertrud@gmail.com, 30-01-2016 09:02:10 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:03:11 - DEBUG - 29,6 MB - mail> To: ofee42@gmail.com, 30-01-2016 09:03:14 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:04:45 - DEBUG - 29,6 MB - mail> To: dirk.moellmeier@me.com, 30-01-2016 09:04:48 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:06:00 - DEBUG - 29,6 MB - mail> To: mathplam@gmail.com, 30-01-2016 09:06:03 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:06:51 - DEBUG - 29,6 MB - mail> To: judith.niklaus@gmx.ch, 30-01-2016 09:06:54 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:07:43 - DEBUG - 29,6 MB - mail> To: cazemp@bluewin.ch, 30-01-2016 09:07:47 - DEBUG - 30,1 MB - Replace start
+30-01-2016 09:09:00 - DEBUG - 29,6 MB - mail> To: lnovotny@ethz.ch, 30-01-2016 09:09:00 - DEBUG - 29,3 MB - hook_newsletter> Start
+30-01-2016 09:30:13 - DEBUG - 29,6 MB - mail> To: tcm-praxis.dong@gmx.ch, 30-01-2016 09:30:14 - DEBUG - 29,3 MB - hook_newsletter> Start
+31-01-2016 08:24:34 - DEBUG - 30,1 MB - mail> To: reto_kuhn@hotmail.com, 31-01-2016 08:24:40 - DEBUG - 30,1 MB - Replace start
+03-02-2016 14:30:47 - DEBUG - 29,6 MB - mail> To: mg.ruegg@hispeed.ch, 03-02-2016 14:30:47 - DEBUG - 29,3 MB - hook_newsletter> Start
+03-02-2016 14:33:06 - DEBUG - 29,6 MB - mail> To: edwin.nyfferler@bluewin.ch, 03-02-2016 14:33:06 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: DqZ61s0061KuWt803qZ6uJ - Spam Detected (650)
+03-02-2016 14:34:40 - DEBUG - 29,6 MB - mail> To: ladinchen@bluewin.ch, 03-02-2016 14:34:40 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Dqag1s0041KuWt803qag4u - Spam Detected (650)
+03-02-2016 14:35:53 - DEBUG - 29,6 MB - mail> To: sob@datacomm.ch, 03-02-2016 14:35:53 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Dqbt1s00F1KuWt803qbtCk - Spam Detected (650)
+03-02-2016 14:38:48 - DEBUG - 29,6 MB - mail> To: robin@elixir.ch, 03-02-2016 14:38:48 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Dqeo1s00G1KuWt803qeoSr - Spam Detected (650)
+03-02-2016 14:40:06 - DEBUG - 29,6 MB - mail> To: salvo.scarrozza@yahoo.it, 03-02-2016 14:40:07 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Dqg61s00W1KuWt803qg7aC - Spam Detected (650)
+03-02-2016 14:41:03 - DEBUG - 29,6 MB - mail> To: juli.brun@bluewin.ch, 03-02-2016 14:41:03 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Dqh31s00C1KuWt803qh3fh - Spam Detected (650)
+03-02-2016 14:43:05 - DEBUG - 29,6 MB - mail> To: erich@5xvogt.ch, 03-02-2016 14:43:05 - DEBUG - 29,3 MB - hook_newsletter> Start
+03-02-2016 14:44:50 - DEBUG - 29,6 MB - mail> To: trambold@gmx.ch, 03-02-2016 14:44:50 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Dqkq1s0041KuWt803qkq48 - Spam Detected (650)
+03-02-2016 14:46:10 - DEBUG - 29,6 MB - mail> To: bcsauder@bluewin.ch, 03-02-2016 14:46:10 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: DqmA1s00K1KuWt803qmABw - Spam Detected (650)
+04-02-2016 16:44:17 - DEBUG - 29,6 MB - mail> To: tomkitz@hotmail.com, 04-02-2016 16:44:17 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: EGkH1s00p1KuWt803GkHJk - Spam Detected (650)
+04-02-2016 16:45:13 - DEBUG - 29,6 MB - mail> To: lucapasquini@bluewin.ch, 04-02-2016 16:45:13 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: EGlD1s0071KuWt803GlDeg - Spam Detected (650)
+04-02-2016 16:46:04 - DEBUG - 29,6 MB - mail> To: timlaely@gmx.ch, 04-02-2016 16:46:04 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: EGm41s00N1KuWt803Gm4rD - Spam Detected (650)
+10-02-2016 11:26:15 - DEBUG - 29,6 MB - mail> To: r.eid@bluewin.ch, 10-02-2016 11:26:16 - DEBUG - 29,3 MB - hook_newsletter> Start
+10-02-2016 11:28:35 - DEBUG - 29,6 MB - mail> To: mela_kocher@yahoo.de, 10-02-2016 11:28:35 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: GbUb1s00Z1KuWt803bUbW9 - Spam Detected (650)
+10-02-2016 11:36:33 - DEBUG - 29,6 MB - mail> To: lukeammann@gamil.com, 10-02-2016 11:36:33 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: GbcZ1s00B1KuWt803bcZ07 - Spam Detected (650)
+10-02-2016 11:37:23 - DEBUG - 29,5 MB - mail> To: edin06@hotmail.com, 10-02-2016 11:37:23 - ERROR - 30,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: GbdP1s0081KuWt803bdP4o - Spam Detected (650)
+10-02-2016 11:38:47 - DEBUG - 29,6 MB - mail> To: podmela.k@seznau.02, 10-02-2016 11:38:47 - DEBUG - 29,3 MB - hook_newsletter> Start
+10-02-2016 11:39:42 - DEBUG - 29,6 MB - mail> To: isabelle.hamabe@gmail.com, 10-02-2016 11:39:42 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gbfi1s0041KuWt803bfiFX - Spam Detected (650)
+10-02-2016 11:40:42 - DEBUG - 29,6 MB - mail> To: gatzka.gahler@bluewin.ch, 10-02-2016 11:40:42 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gbgi1s00C1KuWt803bgiKz - Spam Detected (650)
+10-02-2016 11:41:31 - DEBUG - 29,6 MB - mail> To: danielascheibli@gmail.com, 10-02-2016 11:41:31 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: GbhX1s00C1KuWt803bhXPF - Spam Detected (650)
+10-02-2016 11:42:33 - DEBUG - 29,6 MB - mail> To: ivan.sinkarenko@gmail.com, 10-02-2016 11:42:33 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: GbiZ1s00D1KuWt803biZU5 - Spam Detected (650)
+10-02-2016 11:43:58 - DEBUG - 29,6 MB - mail> To: gernst@hispeed.ch, 10-02-2016 11:43:58 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gbjy1s00F1KuWt803bjyaS - Spam Detected (650)
+10-02-2016 11:44:55 - DEBUG - 29,6 MB - mail> To: tanja.rueegg@swissonline.ch, 10-02-2016 11:44:56 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gbkv1s00M1KuWt803bkwev - Spam Detected (650)
+10-02-2016 11:45:39 - DEBUG - 29,6 MB - mail> To: b.lichtler@gmx.ch, 10-02-2016 11:45:39 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gblf1s00C1KuWt803blfho - Spam Detected (650)
+10-02-2016 11:48:02 - DEBUG - 29,6 MB - mail> To: danielgf@bluewin.ch, 10-02-2016 11:48:02 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gbo21s0021KuWt803bo2r4 - Spam Detected (650)
+10-02-2016 11:48:44 - DEBUG - 29,6 MB - mail> To: stefanien@bluewin.ch, 10-02-2016 11:48:44 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Gbok1s0091KuWt803boktd - Spam Detected (650)
+11-02-2016 16:44:28 - DEBUG - 29,6 MB - mail> To: cindy.mayer@hotmail.com, 11-02-2016 16:44:29 - DEBUG - 29,3 MB - hook_newsletter> Start
+11-02-2016 16:46:02 - DEBUG - 29,6 MB - mail> To: pierluigi.moccaldi@gmx.ch, 11-02-2016 16:46:02 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H4m21s0081KuWt8034m2oh - Spam Detected (650)
+11-02-2016 17:30:15 - DEBUG - 29,6 MB - mail> To: mela_kocher@yahoo.de, 11-02-2016 17:30:15 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5WF1s0041KuWt8035WFDD - Spam Detected (650)
+11-02-2016 17:31:59 - DEBUG - 29,6 MB - mail> To: leuzinger@studioforma.ch, 11-02-2016 17:31:59 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5Xz1s00K1KuWt8035XzMz - Spam Detected (650)
+11-02-2016 17:36:42 - DEBUG - 29,6 MB - mail> To: jukka.jukela@eawag.ch, 11-02-2016 17:36:42 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5ci1s00C1KuWt8035cigG - Spam Detected (650)
+11-02-2016 17:38:05 - DEBUG - 29,6 MB - mail> To: claudia@danieleugster.ch, 11-02-2016 17:38:06 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5e51s00H1KuWt8035e5k4 - Spam Detected (650)
+11-02-2016 17:38:11 - DEBUG - 29,6 MB - mail> To: claudia@danieleugster.ch, 11-02-2016 17:38:11 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5eB1s0051KuWt8035eBkF - Spam Detected (650)
+11-02-2016 17:39:07 - DEBUG - 29,6 MB - mail> To: margrit.bassi@shinternet.ch, 11-02-2016 17:39:07 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5f71s00A1KuWt8035f7nE - Spam Detected (650)
+11-02-2016 17:41:14 - DEBUG - 29,6 MB - mail> To: chantal@minibueo.ch, 11-02-2016 17:41:14 - ERROR - 30,3 MB - mail> SMTP Error: The following recipients failed: chantal@minibueo.ch: <chantal@minibueo.ch> recipient rejected (510)
+11-02-2016 17:41:58 - DEBUG - 29,6 MB - mail> To: pj.zaugg@gmx.ch, 11-02-2016 17:41:58 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5hy1s00Q1KuWt8035hy0Q - Spam Detected (650)
+11-02-2016 17:42:41 - DEBUG - 29,6 MB - mail> To: felix.nef@mylogin.org, 11-02-2016 17:42:41 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: H5ih1s00B1KuWt8035ih8X - Spam Detected (650)
+13-02-2016 09:23:35 - DEBUG - 29,5 MB - mail> To: kangmelanie@hotmail.com, 13-02-2016 09:23:36 - DEBUG - 29,3 MB - hook_newsletter> Start
+13-02-2016 09:28:54 - DEBUG - 29,6 MB - mail> To: tanja.ike@gmail.com, 13-02-2016 09:28:57 - DEBUG - 30,1 MB - Replace start
+13-02-2016 09:30:06 - DEBUG - 29,6 MB - mail> To: l.salaris@hispeed.ch, 13-02-2016 09:30:09 - DEBUG - 30,1 MB - Replace start
+13-02-2016 09:31:42 - DEBUG - 29,6 MB - mail> To: nolvisda@gmail.com, 13-02-2016 09:33:07 - DEBUG - 30,2 MB - Replace start
+13-02-2016 09:37:23 - DEBUG - 29,6 MB - mail> To: betul_sacbuken@hotmail.ch, 13-02-2016 09:37:27 - DEBUG - 30,1 MB - Replace start
+13-02-2016 10:50:28 - DEBUG - 29,6 MB - mail> To: te.potiki@hotmail.com, 13-02-2016 10:50:32 - DEBUG - 30,1 MB - Replace start
+13-02-2016 10:52:02 - DEBUG - 29,6 MB - mail> To: daniela.thalmann@gmx.ch, 13-02-2016 10:52:06 - DEBUG - 30,1 MB - Replace start
+13-02-2016 10:53:35 - DEBUG - 29,6 MB - mail> To: dominik.ballat@5500.ch, 13-02-2016 10:53:39 - DEBUG - 30,1 MB - Replace start
+13-02-2016 10:55:56 - DEBUG - 29,6 MB - mail> To: micha.boller@gmail.com, 13-02-2016 10:56:02 - DEBUG - 30,1 MB - Replace start
+13-02-2016 10:58:13 - DEBUG - 29,6 MB - mail> To: nadjaliz@gmx.ch, 13-02-2016 10:58:14 - DEBUG - 29,3 MB - hook_newsletter> Start
+13-02-2016 11:01:49 - DEBUG - 29,6 MB - mail> To: pristic92@gmail.com, 13-02-2016 11:01:53 - DEBUG - 30,1 MB - Replace start
+13-02-2016 11:02:23 - DEBUG - 30,1 MB - mail> To: pristic92@gmail.com, 13-02-2016 11:02:32 - DEBUG - 30,1 MB - Replace start
+13-02-2016 11:03:06 - DEBUG - 29,6 MB - mail> To: felix.nef@mylogin.org, 13-02-2016 11:03:07 - DEBUG - 30,1 MB - Replace start
+13-02-2016 11:05:39 - DEBUG - 29,6 MB - mail> To: odurante@bluewin.ch, 13-02-2016 11:05:43 - DEBUG - 30,1 MB - Replace start
+13-02-2016 12:29:59 - DEBUG - 30,1 MB - mail> To: te.potiki@hotmail.com, 13-02-2016 12:30:03 - DEBUG - 30,1 MB - Replace start
+17-02-2016 17:06:47 - DEBUG - 30,1 MB - mail> To: huber_oliver@gmx.net, 17-02-2016 17:06:50 - DEBUG - 30,1 MB - Replace start
+18-02-2016 11:27:27 - DEBUG - 30,1 MB - mail> To: fatma.amour@ubs.com, 18-02-2016 11:27:31 - DEBUG - 30,1 MB - Replace start
+23-02-2016 11:22:22 - DEBUG - 29,6 MB - mail> To: teodora.djenadic@yahoo.com, 23-02-2016 11:22:23 - DEBUG - 29,3 MB - hook_newsletter> Start
+23-02-2016 11:24:35 - DEBUG - 29,6 MB - mail> To: kurutas_oder@yahoo.com, 23-02-2016 11:24:35 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnQb1s00M1KuWt803nQbCM - Spam Detected (650)
+23-02-2016 11:25:33 - DEBUG - 29,6 MB - mail> To: daniela.harlinghausen@web.de, 23-02-2016 11:25:33 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnRZ1s00J1KuWt803nRZEg - Spam Detected (650)
+23-02-2016 11:26:45 - DEBUG - 29,6 MB - mail> To: jdward1@hotmail.com, 23-02-2016 11:26:45 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnSl1s00M1KuWt803nSlHR - Spam Detected (650)
+23-02-2016 11:29:05 - DEBUG - 29,6 MB - mail> To: quentin.p@web.de, 23-02-2016 11:29:05 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnV51s0081KuWt803nV5NQ - Spam Detected (650)
+23-02-2016 11:30:30 - DEBUG - 29,6 MB - mail> To: mergim.fazlija@stud.phzh.ch, 23-02-2016 11:30:30 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnWW1s00C1KuWt803nWWSH - Spam Detected (650)
+23-02-2016 11:31:31 - DEBUG - 29,6 MB - mail> To: lara.snaidero@hotmail.com, 23-02-2016 11:31:31 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnXX1s00A1KuWt803nXXVv - Spam Detected (650)
+23-02-2016 11:35:49 - DEBUG - 29,6 MB - mail> To: magun@mptechnology.ch, 23-02-2016 11:35:49 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mnbp1s0041KuWt803nbpjv - Spam Detected (650)
+23-02-2016 11:36:55 - DEBUG - 29,6 MB - mail> To: andrea.weibel@gmx.net, 23-02-2016 11:36:55 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mncv1s0091KuWt803ncvmv - Spam Detected (650)
+23-02-2016 11:37:40 - DEBUG - 29,6 MB - mail> To: geert.houben@gmail.com, 23-02-2016 11:37:41 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mndg1s00M1KuWt803ndhpN - Spam Detected (650)
+23-02-2016 11:39:13 - DEBUG - 29,6 MB - mail> To: zuerigabber@gmail.com, 23-02-2016 11:39:13 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnfD1s00H1KuWt803nfDtl - Spam Detected (650)
+23-02-2016 11:40:18 - DEBUG - 29,6 MB - mail> To: gaetan.loretan@bluewin.ch, 23-02-2016 11:40:18 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MngJ1s0031KuWt803ngJwZ - Spam Detected (650)
+23-02-2016 11:41:24 - DEBUG - 29,6 MB - mail> To: lucius.galliker@bluewin.ch, 23-02-2016 11:41:24 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnhQ1s0071KuWt803nhQ03 - Spam Detected (650)
+23-02-2016 11:42:15 - DEBUG - 29,6 MB - mail> To: motte.pieters@gmail.com, 23-02-2016 11:42:15 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MniF1s00M1KuWt803niF5W - Spam Detected (650)
+23-02-2016 11:43:19 - DEBUG - 29,6 MB - mail> To: kressy@bluewin.ch, 23-02-2016 11:43:19 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnjK1s00H1KuWt803njKGQ - Spam Detected (650)
+23-02-2016 11:44:23 - DEBUG - 29,6 MB - mail> To: tobiasknoepfel@yahoo.com, 23-02-2016 11:44:23 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnkP1s00G1KuWt803nkPK7 - Spam Detected (650)
+23-02-2016 11:45:19 - DEBUG - 29,5 MB - mail> To: mollstefi@gmail.com, 23-02-2016 11:45:19 - ERROR - 30,2 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnlK1s00F1KuWt803nlKN1 - Spam Detected (650)
+23-02-2016 11:46:10 - DEBUG - 29,6 MB - mail> To: sabrina.itri@waltermeier.com, 23-02-2016 11:46:10 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnmA1s0051KuWt803nmARh - Spam Detected (650)
+23-02-2016 11:47:15 - DEBUG - 29,6 MB - mail> To: eugster@danieleugster.ch, 23-02-2016 11:47:15 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnnF1s00C1KuWt803nnFUj - Spam Detected (650)
+23-02-2016 11:48:14 - DEBUG - 29,6 MB - mail> To: angelo.selva@gmx.ch, 23-02-2016 11:48:14 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnoE1s00D1KuWt803noEXW - Spam Detected (650)
+23-02-2016 11:49:15 - DEBUG - 29,6 MB - mail> To: alexharb@web.de, 23-02-2016 11:49:15 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MnpF1s0091KuWt803npFZh - Spam Detected (650)
+23-02-2016 11:50:01 - DEBUG - 29,6 MB - mail> To: dwiesli@bluewin.ch, 23-02-2016 11:50:01 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mnq11s00D1KuWt803nq1bW - Spam Detected (650)
+23-02-2016 11:50:55 - DEBUG - 29,6 MB - mail> To: bed.friedli@gmx.ch, 23-02-2016 11:50:55 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mnqv1s0071KuWt803nqvdc - Spam Detected (650)
+23-02-2016 11:52:45 - DEBUG - 29,6 MB - mail> To: towhidtayeb10@gmail.com, 23-02-2016 11:52:45 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mnsl1s0031KuWt803nslsR - Spam Detected (650)
+23-02-2016 11:53:39 - DEBUG - 29,6 MB - mail> To: attinger.maja@gmail.com, 23-02-2016 11:53:39 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mntf1s00A1KuWt803ntfu5 - Spam Detected (650)
+23-02-2016 11:55:52 - DEBUG - 29,6 MB - mail> To: suzana.barnwti@hotmail.com, 23-02-2016 11:55:52 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mnvs1s00S1KuWt803nvs04 - Spam Detected (650)
+23-02-2016 12:00:08 - DEBUG - 29,6 MB - mail> To: fertig@fertig-keller.ch, 23-02-2016 12:00:09 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo081s00H1KuWt803o084j - Spam Detected (650)
+23-02-2016 12:01:54 - DEBUG - 29,6 MB - mail> To: seamsoneit@hotmail.de, 23-02-2016 12:01:54 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo1u1s0061KuWt803o1uJ7 - Spam Detected (650)
+23-02-2016 12:02:34 - DEBUG - 29,6 MB - mail> To: budismus@hotmail.com, 23-02-2016 12:02:34 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo2a1s00F1KuWt803o2aMZ - Spam Detected (650)
+23-02-2016 12:04:36 - DEBUG - 29,6 MB - mail> To: bettina.caviezel@hotmail.ch, 23-02-2016 12:04:37 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo4c1s00C1KuWt803o4ceA - Spam Detected (650)
+23-02-2016 12:05:16 - DEBUG - 29,6 MB - mail> To: rglauser@gmx.ch, 23-02-2016 12:05:16 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo5G1s00L1KuWt803o5Ggl - Spam Detected (650)
+23-02-2016 12:06:18 - DEBUG - 29,6 MB - mail> To: martin.seif@sbb.ch, 23-02-2016 12:06:18 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo6J1s0091KuWt803o6Jmc - Spam Detected (650)
+23-02-2016 12:07:44 - DEBUG - 29,6 MB - mail> To: mucawiyelaa@gmail.com, 23-02-2016 12:07:44 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo7k1s0051KuWt803o7kty - Spam Detected (650)
+23-02-2016 12:08:35 - DEBUG - 29,6 MB - mail> To: t.lucente@hotmail.com, 23-02-2016 12:08:35 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo8b1s00R1KuWt803o8bzN - Spam Detected (650)
+23-02-2016 12:09:28 - DEBUG - 29,6 MB - mail> To: pestermann@gmx.ch, 23-02-2016 12:09:28 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mo9U1s0081KuWt803o9U9E - Spam Detected (650)
+23-02-2016 12:10:59 - DEBUG - 29,6 MB - mail> To: frei.nusi@gmail.com, 23-02-2016 12:10:59 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoAz1s00C1KuWt803oAzGo - Spam Detected (650)
+23-02-2016 12:12:45 - DEBUG - 29,6 MB - mail> To: yannic_trueb@yahoo.de, 23-02-2016 12:12:45 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoCl1s00E1KuWt803oClWS - Spam Detected (650)
+23-02-2016 12:13:38 - DEBUG - 29,6 MB - mail> To: stela.rambold@gmail.com, 23-02-2016 12:13:38 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoDe1s0031KuWt803oDedS - Spam Detected (650)
+23-02-2016 12:15:08 - DEBUG - 29,6 MB - mail> To: sinduya9@hotmail.com, 23-02-2016 12:15:09 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoF91s0021KuWt803oF9sE - Spam Detected (650)
+23-02-2016 12:15:59 - DEBUG - 29,6 MB - mail> To: samarah.l@hotmail.com, 23-02-2016 12:15:59 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoFz1s00A1KuWt803oFzxx - Spam Detected (650)
+23-02-2016 12:17:15 - DEBUG - 29,6 MB - mail> To: daniellauber@hispeed.ch, 23-02-2016 12:17:15 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoHF1s0061KuWt803oHF5P - Spam Detected (650)
+23-02-2016 12:18:03 - DEBUG - 29,6 MB - mail> To: si.imbach@gmx.ch, 23-02-2016 12:18:03 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoJ31s0061KuWt803oJ39t - Spam Detected (650)
+23-02-2016 12:19:49 - DEBUG - 29,6 MB - mail> To: m.rutishauser@bluewin.ch, 23-02-2016 12:19:49 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoKp1s00J1KuWt803oKpTj - Spam Detected (650)
+23-02-2016 12:20:41 - DEBUG - 29,6 MB - mail> To: azra.hamiti@outlook.de, 23-02-2016 12:20:41 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MoLh1s0031KuWt803oLhYJ - Spam Detected (650)
+23-02-2016 14:12:09 - DEBUG - 29,6 MB - mail> To: n.lloyd@gdk-gestaltungsschule.ch, 23-02-2016 14:12:09 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MqC91s00F1KuWt803qC9T7 - Spam Detected (650)
+23-02-2016 14:12:59 - DEBUG - 29,6 MB - mail> To: sami@terra-typica.ch, 23-02-2016 14:12:59 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MqCz1s0031KuWt803qCzXy - Spam Detected (650)
+23-02-2016 14:42:34 - DEBUG - 29,6 MB - mail> To: domiwalter@hotmail.com, 23-02-2016 14:42:34 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: Mqia1s0061KuWt803qia0N - Spam Detected (650)
+23-02-2016 17:17:19 - DEBUG - 29,6 MB - mail> To: habte.haben@yahoo.com, 23-02-2016 17:17:19 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: MtHK1s0021KuWt803tHKdU - Spam Detected (650)
+23-02-2016 18:59:08 - DEBUG - 29,6 MB - mail> To: s.kraeuchi@gmx.ch, 23-02-2016 18:59:09 - DEBUG - 29,3 MB - hook_newsletter> Start
+24-02-2016 17:22:57 - DEBUG - 29,6 MB - mail> To: c_caro@hispeed.ch, 24-02-2016 17:22:58 - DEBUG - 29,3 MB - hook_newsletter> Start
+24-02-2016 17:25:53 - DEBUG - 29,6 MB - mail> To: jan.hofmann@noloops.ch, 24-02-2016 17:25:56 - DEBUG - 30,1 MB - Replace start
+24-02-2016 22:51:20 - DEBUG - 30,1 MB - mail> To: jan.hofmann@noloops.ch, 24-02-2016 22:51:20 - DEBUG - 29,3 MB - hook_newsletter> Emails found in sending status: 0
+25-02-2016 11:24:55 - DEBUG - 29,6 MB - mail> To: ue_ue@gmx.net, 25-02-2016 11:24:56 - DEBUG - 29,3 MB - hook_newsletter> Start
+25-02-2016 11:26:04 - DEBUG - 29,6 MB - mail> To: tobiassperl@web.de, 25-02-2016 11:26:07 - DEBUG - 30,1 MB - Replace start
+25-02-2016 13:32:46 - DEBUG - 30,1 MB - mail> To: tobiassperl@web.de, 25-02-2016 13:32:51 - DEBUG - 30,1 MB - Replace start
+25-02-2016 13:34:26 - DEBUG - 29,5 MB - mail> To: tobiassperl@web.de, 25-02-2016 13:34:29 - DEBUG - 30,1 MB - Replace start
+25-02-2016 16:03:23 - DEBUG - 29,6 MB - mail> To: reyrassat@bluewin.ch, 25-02-2016 16:03:25 - DEBUG - 29,3 MB - hook_newsletter> Start
+25-02-2016 16:04:24 - DEBUG - 29,6 MB - mail> To: j.ruegg@bluewin.ch, 25-02-2016 16:04:27 - DEBUG - 30,1 MB - Replace start
+25-02-2016 16:46:48 - DEBUG - 29,6 MB - mail> To: danielwalter@hispeed.ch, 25-02-2016 16:46:49 - DEBUG - 29,3 MB - hook_newsletter> Start
+25-02-2016 17:57:11 - DEBUG - 29,6 MB - mail> To: christian.schlumpf@hispeed.ch, 25-02-2016 17:57:11 - DEBUG - 29,3 MB - hook_newsletter> Start
+26-02-2016 14:04:43 - DEBUG - 29,6 MB - mail> To: thomas.ebi83@gmail.com, 26-02-2016 14:04:47 - DEBUG - 30,1 MB - Replace start
+26-02-2016 14:11:23 - DEBUG - 29,6 MB - mail> To: brodski@gmail.com, 26-02-2016 14:11:23 - DEBUG - 29,3 MB - hook_newsletter> Start
+26-02-2016 14:12:15 - DEBUG - 29,6 MB - mail> To: mcglynn@swissonline.ch, 26-02-2016 14:12:19 - DEBUG - 30,1 MB - Replace start
+26-02-2016 14:13:20 - DEBUG - 29,6 MB - mail> To: enricogrob@gmx.net, 26-02-2016 14:13:20 - DEBUG - 29,3 MB - hook_newsletter> Start
+26-02-2016 14:14:39 - DEBUG - 29,6 MB - mail> To: davidgadient@rmb.ch, 26-02-2016 14:14:43 - DEBUG - 30,1 MB - Replace start
+27-02-2016 09:59:41 - DEBUG - 29,6 MB - mail> To: jenni.ferreiro@outlook.com, 27-02-2016 09:59:42 - DEBUG - 29,3 MB - hook_newsletter> Start
+27-02-2016 10:01:05 - DEBUG - 29,6 MB - mail> To: mfilevych@gmail.com, 27-02-2016 10:01:08 - DEBUG - 30,1 MB - Replace start
+27-02-2016 10:06:33 - DEBUG - 29,6 MB - mail> To: manuel@mambits.ch, 27-02-2016 10:06:34 - DEBUG - 29,3 MB - hook_newsletter> Start
+27-02-2016 10:08:01 - DEBUG - 29,5 MB - mail> To: anitaorme@yahoo.com.au, 27-02-2016 10:08:01 - DEBUG - 29,3 MB - hook_newsletter> Start
+27-02-2016 10:12:01 - DEBUG - 29,6 MB - mail> To: heikegrein@bluewin.ch, 27-02-2016 10:12:05 - DEBUG - 30,1 MB - Replace start
+27-02-2016 10:14:32 - DEBUG - 29,5 MB - mail> To: faegnaescht@gmail.com, 27-02-2016 10:14:33 - DEBUG - 29,3 MB - hook_newsletter> Start
+27-02-2016 18:22:36 - DEBUG - 29,6 MB - mail> To: awalser+village@gmail.com, 27-02-2016 18:22:40 - DEBUG - 30,1 MB - Replace start
+27-02-2016 19:00:48 - DEBUG - 30,1 MB - mail> To: awalser+village@gmail.com, 27-02-2016 19:00:52 - DEBUG - 30,1 MB - Replace start
+29-02-2016 12:04:55 - DEBUG - 30,1 MB - mail> To: manuel@mambits.ch, 29-02-2016 12:04:59 - DEBUG - 30,1 MB - Replace start
+29-02-2016 12:11:52 - DEBUG - 29,6 MB - mail> To: sabrina.itri02@gmail.com, 29-02-2016 12:11:52 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: QCBs1s00C1KuWt803CBsx3 - Spam Detected (650)
+01-03-2016 21:36:00 - DEBUG - 30,1 MB - mail> To: christian.schlumpf@hispeed.ch, 01-03-2016 21:36:04 - DEBUG - 30,1 MB - Replace start
+02-03-2016 10:24:03 - DEBUG - 29,6 MB - mail> To: albrechtpeter@bluewin.chemail, 02-03-2016 10:24:04 - ERROR - 30,3 MB - mail> SMTP Error: The following recipients failed: albrechtpeter@bluewin.chemail: <albrechtpeter@bluewin.chemail> recipient rejected (510)
+03-03-2016 15:09:31 - DEBUG - 29,6 MB - mail> To: mbernhauser@bluewin.ch, 03-03-2016 15:09:34 - DEBUG - 30,0 MB - Replace start
+03-03-2016 15:10:21 - DEBUG - 29,6 MB - mail> To: carolinbenz@gmx.ch, 03-03-2016 15:10:24 - DEBUG - 30,0 MB - Replace start
+03-03-2016 15:11:21 - DEBUG - 29,6 MB - mail> To: mail@kasparthalmann.ch, 03-03-2016 15:11:37 - ERROR - 30,3 MB - mail> SMTP Error: The following recipients failed: mail@kasparthalmann.ch: ... temporary failure
+03-03-2016 15:12:24 - DEBUG - 29,6 MB - mail> To: goldfisch10@bluewin.ch, 03-03-2016 15:12:27 - DEBUG - 30,0 MB - Replace start
+03-03-2016 15:13:58 - DEBUG - 29,6 MB - mail> To: kuendig-bertoli@sunrise.ch, 03-03-2016 15:13:59 - DEBUG - 29,3 MB - hook_newsletter> Start
+03-03-2016 15:14:45 - DEBUG - 29,6 MB - mail> To: na_lus@yahoo.com, 03-03-2016 15:14:49 - DEBUG - 30,0 MB - Replace start
+03-03-2016 15:16:11 - DEBUG - 29,6 MB - mail> To: rolyvon@bluewin.ch, 03-03-2016 15:16:15 - DEBUG - 30,0 MB - Replace start
+03-03-2016 15:24:45 - DEBUG - 30,1 MB - mail> To: na_lus@yahoo.com, 03-03-2016 15:24:49 - DEBUG - 30,0 MB - Replace start
+06-03-2016 15:07:37 - DEBUG - 39,2 MB - mail> To: lolo8304@gmail.com, 06-03-2016 15:07:37 - DEBUG - 39,9 MB - Replace start
+06-03-2016 15:07:38 - DEBUG - 39,9 MB - mail> To: doris2502@hotmail.com, 06-03-2016 15:07:38 - DEBUG - 39,9 MB - Replace start
+06-03-2016 15:07:38 - DEBUG - 39,9 MB - mail> To: esko.pfister@sports-village.ch, 06-03-2016 15:07:56 - DEBUG - 29,3 MB - hook_newsletter> Start
+06-03-2016 15:26:56 - DEBUG - 39,2 MB - mail> To: lolo8304@gmail.com, 06-03-2016 15:26:57 - DEBUG - 39,9 MB - Replace start
+06-03-2016 15:26:57 - DEBUG - 39,9 MB - mail> To: doris2502@hotmail.com, 06-03-2016 15:26:57 - DEBUG - 39,9 MB - Replace start
+06-03-2016 15:26:57 - DEBUG - 39,9 MB - mail> To: esko.pfister@sports-village.ch, 06-03-2016 15:28:00 - DEBUG - 29,3 MB - hook_newsletter> Start
+06-03-2016 15:28:51 - DEBUG - 39,2 MB - mail> To: lolo8304@gmail.com, 06-03-2016 15:28:51 - DEBUG - 39,9 MB - Replace start
+06-03-2016 15:28:51 - DEBUG - 39,9 MB - mail> To: doris2502@hotmail.com, 06-03-2016 15:28:51 - DEBUG - 39,9 MB - Replace start
+06-03-2016 15:28:51 - DEBUG - 39,9 MB - mail> To: esko.pfister@sports-village.ch, 06-03-2016 15:33:14 - DEBUG - 29,3 MB - hook_newsletter> Start
+06-03-2016 15:33:15 - DEBUG - 29,4 MB - mail> To: lorenz.haenggi@bluewin.ch, 06-03-2016 15:33:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:15 - DEBUG - 30,1 MB - mail> To: doris2502@hotmail.com, 06-03-2016 15:33:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:15 - DEBUG - 30,1 MB - mail> To: annemariduus@yahoo.dk, 06-03-2016 15:33:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:15 - DEBUG - 30,1 MB - mail> To: m.dreher@sunrise.ch, 06-03-2016 15:33:16 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:16 - DEBUG - 30,1 MB - mail> To: lukeamman@gmail.com, 06-03-2016 15:33:16 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:16 - DEBUG - 30,1 MB - mail> To: andrea.weibel@gmx.ch, 06-03-2016 15:33:16 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:16 - DEBUG - 30,1 MB - mail> To: stefan.r.bachmann@gmail.com, 06-03-2016 15:33:16 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:33:16 - DEBUG - 30,1 MB - mail> To: bae.familie@gmail.com, 06-03-2016 15:33:16 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 15:38:52 - DEBUG - 29,4 MB - mail> To: susanne.bandli@sunrise.ch, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:52 - DEBUG - 30,1 MB - mail> To: anne-sophie.benoist@hotmail.com, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:52 - DEBUG - 30,1 MB - mail> To: ddbenz@bluewin.ch, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:52 - DEBUG - 30,1 MB - mail> To: kontakt@judithberger.ch, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:52 - DEBUG - 30,1 MB - mail> To: berger@fabedu.ch, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:52 - DEBUG - 30,1 MB - mail> To: breye2u@yahoo.com, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:52 - DEBUG - 30,1 MB - mail> To: christian.brasey@ggaweb.ch, 06-03-2016 15:38:52 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:38:53 - DEBUG - 30,1 MB - mail> To: milena.brennwald@gmail.com, 06-03-2016 15:38:53 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 15:42:59 - DEBUG - 29,4 MB - mail> To: broski@gmail.com, 06-03-2016 15:42:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:42:59 - DEBUG - 30,1 MB - mail> To: hans.peter.bruegger@gmail.com, 06-03-2016 15:42:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:42:59 - DEBUG - 30,1 MB - mail> To: martbuec12@gmail.com, 06-03-2016 15:42:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:42:59 - DEBUG - 30,1 MB - mail> To: martin.buechler@rothpletz.ch, 06-03-2016 15:42:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:42:59 - DEBUG - 30,1 MB - mail> To: judithbuehlmann@gmail.com, 06-03-2016 15:42:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:42:59 - DEBUG - 30,1 MB - mail> To: alexandra@buelow.ch, 06-03-2016 15:43:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:43:00 - DEBUG - 30,1 MB - mail> To: burbo.corinne@gmail.com, 06-03-2016 15:43:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:43:00 - DEBUG - 30,1 MB - mail> To: r.burren@gmail.com, 06-03-2016 15:43:00 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 15:56:47 - DEBUG - 29,4 MB - mail> To: elena.cantore@hotmail.com, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: cattaneo.halter@bluewin.ch, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: d.daester@gmail.com, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: deflo214@bluewin.ch, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: anitaorme@yahoo.com.au, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: elisabeth@dubach.ch, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: dubachgertrud@gmail.com, 06-03-2016 15:56:48 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:56:48 - DEBUG - 30,1 MB - mail> To: th.dubach@gmail.com, 06-03-2016 15:56:48 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 15:58:15 - DEBUG - 29,4 MB - mail> To: etienne.doehler@gmail.com, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: lduennhaupt@gmail.com, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: dupontala75@gmail.com, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: ben.duetschler@gmx.ch, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: rua.eggimann@gmail.com, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: ei.ma@bluewin.ch, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: christa@falkensammer.ch, 06-03-2016 15:58:15 - DEBUG - 30,1 MB - Replace start
+06-03-2016 15:58:15 - DEBUG - 30,1 MB - mail> To: giovi.falsia@bluewin.ch, 06-03-2016 15:58:15 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:04:17 - DEBUG - 29,4 MB - mail> To: chfeurer@gmx.ch, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:17 - DEBUG - 30,1 MB - mail> To: feuz.eleonore@gmail.com, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:17 - DEBUG - 30,1 MB - mail> To: noahfiedler@hotmail.com, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:17 - DEBUG - 30,1 MB - mail> To: vesnafilic@msn.com, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:17 - DEBUG - 30,1 MB - mail> To: benjaminf72@gmail.com, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:17 - DEBUG - 30,1 MB - mail> To: gg@email.ch, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:17 - DEBUG - 30,1 MB - mail> To: germann@hispeed.ch, 06-03-2016 16:04:17 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:04:18 - DEBUG - 30,1 MB - mail> To: ager@bluewin.ch, 06-03-2016 16:04:18 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:14:22 - DEBUG - 29,4 MB - mail> To: danielgl@bluewin.ch, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: lgood@ggaweb.ch, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: seligo13@msn.com, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: eva.grob@gmx.net, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: g.lurz@gmx.ch, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: peer.grossmann@gmail.com, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: a.gudzinski@gmail.com, 06-03-2016 16:14:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:14:24 - DEBUG - 30,1 MB - mail> To: kirsten.gut@gmail.com, 06-03-2016 16:14:24 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:19:39 - DEBUG - 29,4 MB - mail> To: haaberich@sunrise.ch, 06-03-2016 16:19:39 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:39 - DEBUG - 30,1 MB - mail> To: alex@xhalemedia.ch, 06-03-2016 16:19:39 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:39 - DEBUG - 30,1 MB - mail> To: dorothea.handschin@ksuster.ch, 06-03-2016 16:19:39 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:39 - DEBUG - 30,1 MB - mail> To: lulupearl@hotmail.com, 06-03-2016 16:19:39 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:40 - DEBUG - 30,1 MB - mail> To: haeseli@ggaweb.ch, 06-03-2016 16:19:40 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:40 - DEBUG - 30,1 MB - mail> To: theo.handschin@zh.ref.ch, 06-03-2016 16:19:40 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:40 - DEBUG - 30,1 MB - mail> To: ruschs@hotmail.com, 06-03-2016 16:19:40 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:19:40 - DEBUG - 30,1 MB - mail> To: hofer.silvia@hotmail.com, 06-03-2016 16:19:40 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:25:06 - DEBUG - 29,4 MB - mail> To: stefan.hoehl@bluewin.ch, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: lilli.ruby.holst@gmail.com, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: mailtomel@gmail.com, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: sabifly@bluewin.ch, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: itri@bluewin.ch, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: famjacob@bluewin.ch, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: keusenmedina@hotmail.com, 06-03-2016 16:25:06 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:25:06 - DEBUG - 30,1 MB - mail> To: info@inmarketing.ch, 06-03-2016 16:25:07 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:29:10 - DEBUG - 32,7 MB - mail> To: mjungi65@gmail.com, 06-03-2016 16:29:10 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: kangmelanie@hotmail.com, 06-03-2016 16:29:11 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: esther.kappler@gmail.com, 06-03-2016 16:29:11 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: oliver.k@hispeed.ch, 06-03-2016 16:29:11 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: zekiriya.kazazi@hotmail.com, 06-03-2016 16:29:11 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: jacqueline.keller@glattnet.ch, 06-03-2016 16:29:11 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: michael.klibbe@ubs.com, 06-03-2016 16:29:11 - DEBUG - 33,5 MB - Replace start
+06-03-2016 16:29:11 - DEBUG - 33,5 MB - mail> To: othmar.koch@bluewin.ch, 06-03-2016 16:29:11 - DEBUG - 33,4 MB - hook_newsletter> End
+06-03-2016 16:35:35 - DEBUG - 29,4 MB - mail> To: fam.koeng@gmail.com, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: kruse.isabella@gmail.com, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: bleri_1994@sunrise.ch, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: nadjakunz@hotmail.com, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: kurutas_onder@yahoo.com, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: allenberg@bluewin.ch, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: l.lafranchi@gmail.com, 06-03-2016 16:35:35 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:35:35 - DEBUG - 30,1 MB - mail> To: sven_landert@hotmail.com, 06-03-2016 16:35:35 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:39:46 - DEBUG - 29,4 MB - mail> To: roslyn@hispeed.ch, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: meistermacher@bluewin.ch, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: kevin-reix@hotmail.com, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: val@loopperu.com, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: info@beauty-signs.ch, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: liechtitour@yahoo.com, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: v.lamia@ggaweb.ch, 06-03-2016 16:39:46 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:39:46 - DEBUG - 30,1 MB - mail> To: sam.luder@bluewin.ch, 06-03-2016 16:39:46 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:43:34 - DEBUG - 29,4 MB - mail> To: myriam.lutz@swissonline.ch, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: wezage@yahoo.co.uk, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: mattle.daniel@hensel.ch, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: martin-me@hotmail.com, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: claudine.menzi@gmail.com, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: b.modolo@bluewin.ch, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: mollstefi@gmail.com, 06-03-2016 16:43:34 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:43:34 - DEBUG - 30,1 MB - mail> To: saphia.mugrabi@gmail.com, 06-03-2016 16:43:34 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:51:02 - DEBUG - 29,4 MB - mail> To: gaby.roger@sunrise.ch, 06-03-2016 16:51:02 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: denisatildy@hotmail.com, 06-03-2016 16:51:03 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: christopher.nguyen@gmx.ch, 06-03-2016 16:51:03 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: nina@hrnuss.ch, 06-03-2016 16:51:03 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: m.nydegger@ftsystems.ch, 06-03-2016 16:51:03 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: pejic.mladen1@gmail.com, 06-03-2016 16:51:03 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: perilli77@gmail.com, 06-03-2016 16:51:03 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:51:03 - DEBUG - 30,1 MB - mail> To: danielpfeuti@ggaweb.ch, 06-03-2016 16:51:03 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 16:55:22 - DEBUG - 29,4 MB - mail> To: compita@gmx.ch, 06-03-2016 16:55:22 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:22 - DEBUG - 30,1 MB - mail> To: oliver.port@gmx.ch, 06-03-2016 16:55:22 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:22 - DEBUG - 30,1 MB - mail> To: familie.prata@bluewin.ch, 06-03-2016 16:55:22 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:22 - DEBUG - 30,1 MB - mail> To: martina.pursova@gmail.com, 06-03-2016 16:55:22 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:22 - DEBUG - 30,1 MB - mail> To: mirko@bigway.ch, 06-03-2016 16:55:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:23 - DEBUG - 30,1 MB - mail> To: david.rindisbacher@fgz.ch, 06-03-2016 16:55:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:23 - DEBUG - 30,1 MB - mail> To: marcorohrer@gmx.ch, 06-03-2016 16:55:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 16:55:23 - DEBUG - 30,1 MB - mail> To: info@rohweder.ch, 06-03-2016 16:55:23 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:00:24 - DEBUG - 29,4 MB - mail> To: romoser56@bluewin.ch, 06-03-2016 17:00:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:24 - DEBUG - 30,1 MB - mail> To: patrick.ruoss@hotmail.com, 06-03-2016 17:00:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:24 - DEBUG - 30,1 MB - mail> To: l.salis@hotmail.com, 06-03-2016 17:00:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:24 - DEBUG - 30,1 MB - mail> To: mtscheidegger@gmail.com, 06-03-2016 17:00:24 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:25 - DEBUG - 30,1 MB - mail> To: benno.scherrer@bzu.ch, 06-03-2016 17:00:25 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:25 - DEBUG - 30,1 MB - mail> To: wschmidh@ggaweb.ch, 06-03-2016 17:00:25 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:25 - DEBUG - 30,1 MB - mail> To: hanspeter.schneibel@gmail.com, 06-03-2016 17:00:25 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:00:25 - DEBUG - 30,1 MB - mail> To: pia.schneider@gmail.com, 06-03-2016 17:00:25 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:07:19 - DEBUG - 29,4 MB - mail> To: bea_cd@bluewin.ch, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: mail@martin-schumacher.ch, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: luchi1970@gmail.com, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: monika.raggl@gmail.com, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: f.g.staub@bluewein.ch, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: esther.hasler@gmx.net, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: martin.studer@hotmail.ch, 06-03-2016 17:07:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:07:19 - DEBUG - 30,1 MB - mail> To: edin06@hotmail.com, 06-03-2016 17:07:19 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:09:41 - DEBUG - 29,4 MB - mail> To: faegnaescht@gmail.com, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: michael.treloar@elaflex.com, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: erika.tschannen@gmx.ch, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: turke@dataway.ch, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: vella@ggaweb.ch, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: kimberly.maureen@sunrise.ch, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: carmenwalder@yahoo.de, 06-03-2016 17:09:41 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:09:41 - DEBUG - 30,1 MB - mail> To: raphael.walthert@gmx.ch, 06-03-2016 17:09:42 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:13:18 - DEBUG - 29,4 MB - mail> To: pw@futurelite.ch, 06-03-2016 17:13:18 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:18 - DEBUG - 30,1 MB - mail> To: rogweb@bluewin.ch, 06-03-2016 17:13:18 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:18 - DEBUG - 30,1 MB - mail> To: majapatt@ggaweb.ch, 06-03-2016 17:13:18 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:18 - DEBUG - 30,1 MB - mail> To: matthias.willmann@gmx.net, 06-03-2016 17:13:18 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:18 - DEBUG - 30,1 MB - mail> To: w.rahel@sunrise.ch, 06-03-2016 17:13:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:19 - DEBUG - 30,1 MB - mail> To: noe@qtopia.ch, 06-03-2016 17:13:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:19 - DEBUG - 30,1 MB - mail> To: focusdays2015@gmail.com, 06-03-2016 17:13:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:13:19 - DEBUG - 30,1 MB - mail> To: skriegner@yahoo.com, 06-03-2016 17:13:19 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:20:59 - DEBUG - 29,4 MB - mail> To: khww78@gmail.com, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: esko.pfister@sports-village.ch, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: sylle.strub@gmail.com, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: cmannhart@hotmail.com, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: miguel@active.ch, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: y.ryser21@gmail.com, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: christoph.strebel@gmail.com, 06-03-2016 17:20:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:20:59 - DEBUG - 30,1 MB - mail> To: hugo9@gmx.ch, 06-03-2016 17:20:59 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:22:56 - DEBUG - 29,4 MB - mail> To: rene.guentert@bluewin.ch, 06-03-2016 17:22:56 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:56 - DEBUG - 30,1 MB - mail> To: christoph.krinninger@me.com, 06-03-2016 17:22:56 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:56 - DEBUG - 30,1 MB - mail> To: margritpignat@gmail.com, 06-03-2016 17:22:56 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:56 - DEBUG - 30,1 MB - mail> To: markus.schoeni@hispeed.ch, 06-03-2016 17:22:56 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:56 - DEBUG - 30,1 MB - mail> To: alexandervchan@gmail.com, 06-03-2016 17:22:56 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:57 - DEBUG - 30,1 MB - mail> To: hanspeter.luethi@gmx.net, 06-03-2016 17:22:57 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:57 - DEBUG - 30,1 MB - mail> To: joeggi_thalmann@hotmail.com, 06-03-2016 17:22:57 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:22:57 - DEBUG - 30,1 MB - mail> To: telemarker69@gmail.com, 06-03-2016 17:22:57 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:27:56 - DEBUG - 32,7 MB - mail> To: ziz_92@hotmail.com, 06-03-2016 17:27:56 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:56 - DEBUG - 33,5 MB - mail> To: juerg@rothmayr.ch, 06-03-2016 17:27:56 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:56 - DEBUG - 33,5 MB - mail> To: manuel.steiner@bzu.ch, 06-03-2016 17:27:56 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:56 - DEBUG - 33,5 MB - mail> To: fatma.amour@ubs.com, 06-03-2016 17:27:56 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:56 - DEBUG - 33,5 MB - mail> To: nils.conradi@tr.com, 06-03-2016 17:27:56 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:57 - DEBUG - 33,5 MB - mail> To: alexander.ischi@bluewin.ch, 06-03-2016 17:27:57 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:57 - DEBUG - 33,5 MB - mail> To: sl.keller@gmx.ch, 06-03-2016 17:27:57 - DEBUG - 33,5 MB - Replace start
+06-03-2016 17:27:57 - DEBUG - 33,5 MB - mail> To: brigitte_thalmann@hotmail.com, 06-03-2016 17:27:57 - DEBUG - 33,4 MB - hook_newsletter> End
+06-03-2016 17:33:09 - DEBUG - 29,4 MB - mail> To: marius.a@gmx.ch, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: hvollenweider@bluewin.ch, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: die.kellers@bluewin.ch, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: beat.bosshart@gmail.com, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: sylvain.fricker@bluewin.ch, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: ruedi.kubli@gmx.ch, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: info@filacro.ch, 06-03-2016 17:33:10 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:33:10 - DEBUG - 30,1 MB - mail> To: heidi.megliola@gmx.ch, 06-03-2016 17:33:10 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:38:19 - DEBUG - 29,4 MB - mail> To: lolo8304@gmail.com, 06-03-2016 17:38:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:19 - DEBUG - 30,1 MB - mail> To: sarahwieland@hotmail.com, 06-03-2016 17:38:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:19 - DEBUG - 30,1 MB - mail> To: anita@5xvogt.ch, 06-03-2016 17:38:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:19 - DEBUG - 30,1 MB - mail> To: sandra.hollenstein@windowslive.com, 06-03-2016 17:38:19 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:20 - DEBUG - 30,1 MB - mail> To: af.rohrbach@ggaweb.ch, 06-03-2016 17:38:20 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:20 - DEBUG - 30,1 MB - mail> To: ricky.grau@gmail.com, 06-03-2016 17:38:20 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:20 - DEBUG - 30,1 MB - mail> To: erthsan@gmail.com, 06-03-2016 17:38:20 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:38:20 - DEBUG - 30,1 MB - mail> To: friespeter1@gmail.com, 06-03-2016 17:38:20 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:43:30 - DEBUG - 29,4 MB - mail> To: farah.aeschlimann@gmx.ch, 06-03-2016 17:43:30 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:30 - DEBUG - 30,1 MB - mail> To: kerstin.dudli@hotmail.com, 06-03-2016 17:43:30 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:30 - DEBUG - 30,1 MB - mail> To: re@relations-zh.ch, 06-03-2016 17:43:30 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:30 - DEBUG - 30,1 MB - mail> To: fischermaja@bluewin.ch, 06-03-2016 17:43:30 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:30 - DEBUG - 30,1 MB - mail> To: dcadosch@lindt.com, 06-03-2016 17:43:31 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:31 - DEBUG - 30,1 MB - mail> To: rachelw@serpentine.org.uk, 06-03-2016 17:43:31 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:31 - DEBUG - 30,1 MB - mail> To: haefen@gmx.ch, 06-03-2016 17:43:31 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:43:31 - DEBUG - 30,1 MB - mail> To: othmar.wildhaber@bluewin.ch, 06-03-2016 17:43:31 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:48:59 - DEBUG - 29,4 MB - mail> To: kai.sikorski@prophysics.ch, 06-03-2016 17:48:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:48:59 - DEBUG - 30,1 MB - mail> To: hoellerc@ethz.ch, 06-03-2016 17:48:59 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:48:59 - DEBUG - 30,1 MB - mail> To: tomas@schlesi.ch, 06-03-2016 17:49:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:49:00 - DEBUG - 30,1 MB - mail> To: a.spielmann@hispeed.ch, 06-03-2016 17:49:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:49:00 - DEBUG - 30,1 MB - mail> To: ikenna_11@hotmail.com, 06-03-2016 17:49:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:49:00 - DEBUG - 30,1 MB - mail> To: pfaisst@startmail.com, 06-03-2016 17:49:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:49:00 - DEBUG - 30,1 MB - mail> To: huber_oliver@gmx.net, 06-03-2016 17:49:00 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:49:00 - DEBUG - 30,1 MB - mail> To: sandrarusch@yahoo.de, 06-03-2016 17:49:00 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:57:44 - DEBUG - 29,4 MB - mail> To: abonetti@gmx.ch, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:44 - DEBUG - 30,1 MB - mail> To: adrianoalex2014@hotmail.com, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:44 - DEBUG - 30,1 MB - mail> To: mail@rolfgisler.ch, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:44 - DEBUG - 30,1 MB - mail> To: s.t.waelchli@gmail.com, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:44 - DEBUG - 30,1 MB - mail> To: reto_kuhn@hotmail.com, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:44 - DEBUG - 30,1 MB - mail> To: te.potiki@hotmail.com, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:44 - DEBUG - 30,1 MB - mail> To: pristic92@gmail.com, 06-03-2016 17:57:44 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:57:45 - DEBUG - 30,1 MB - mail> To: jan.hofmann@noloops.ch, 06-03-2016 17:57:45 - DEBUG - 30,0 MB - hook_newsletter> End
+06-03-2016 17:59:23 - DEBUG - 29,4 MB - mail> To: tobiassperl@web.de, 06-03-2016 17:59:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:59:23 - DEBUG - 30,1 MB - mail> To: christian.schlumpf@hispeed.ch, 06-03-2016 17:59:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:59:23 - DEBUG - 30,1 MB - mail> To: manuel@mambits.ch, 06-03-2016 17:59:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:59:23 - DEBUG - 30,1 MB - mail> To: awalser+village@gmail.com, 06-03-2016 17:59:23 - DEBUG - 30,1 MB - Replace start
+06-03-2016 17:59:23 - DEBUG - 30,1 MB - mail> To: na_lus@yahoo.com, 06-03-2016 17:59:23 - DEBUG - 30,0 MB - hook_newsletter> End
+07-03-2016 19:35:41 - DEBUG - 29,5 MB - mail> To: cony_s@gmx.net, 07-03-2016 19:35:42 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: T7bi1s0041KuWt8037bi8T - Spam Detected (650)
+09-03-2016 13:20:47 - DEBUG - 29,6 MB - mail> To: enes.abdulai@gmx.ch, 09-03-2016 13:20:48 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: TpLo1s0051KuWt803pLoA0 - Spam Detected (650)
+09-03-2016 13:21:54 - DEBUG - 29,6 MB - mail> To: stipu@bluewin.ch, 09-03-2016 13:21:54 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: TpMu1s00F1KuWt803pMuGs - Spam Detected (650)
+09-03-2016 13:22:56 - DEBUG - 29,6 MB - mail> To: mabrauchli@gmail.com, 09-03-2016 13:22:56 - DEBUG - 29,3 MB - hook_newsletter> Start
+09-03-2016 13:23:51 - DEBUG - 29,6 MB - mail> To: rahelpfeuti@ggaweb.ch, 09-03-2016 13:23:51 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: TpPr1s00B1KuWt803pPrSx - Spam Detected (650)
+09-03-2016 13:24:41 - DEBUG - 29,5 MB - mail> To: lea.weiss@ksuster.ch, 09-03-2016 13:24:41 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: TpQh1s00D1KuWt803pQhWZ - Spam Detected (650)
+09-03-2016 13:27:31 - DEBUG - 29,6 MB - mail> To: pj.zaugg@gmx.ch, 09-03-2016 13:27:31 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: TpTX1s0091KuWt803pTXig - Spam Detected (650)
+10-03-2016 12:39:51 - DEBUG - 29,6 MB - mail> To: marco@cazzato.ch, 10-03-2016 12:39:51 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: UCfr1s0051KuWt803Cfrw5 - Spam Detected (650)
+10-03-2016 12:41:32 - DEBUG - 29,6 MB - mail> To: antonette3653@gmail.com, 10-03-2016 12:41:32 - ERROR - 30,3 MB - mail> SMTP Error: data not accepted.SMTP server error: DATA END command failed Detail: UChY1s00E1KuWt803ChY4g - Spam Detected (650)
+10-03-2016 17:23:05 - DEBUG - 30,1 MB - mail> To: mcglynn@swissonline.ch, 10-03-2016 17:23:09 - DEBUG - 30,0 MB - Replace start
+30-05-2016 14:39:45 - DEBUG - 32,1 MB - mail> To: petra.abegglen@bluewin.ch, 30-05-2016 14:39:45 - ERROR - 32,1 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:36:19 - DEBUG - 40,8 MB - mail> To: lolo8304@gmail.com, 05-08-2016 09:36:19 - ERROR - 41,5 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:36:19 - DEBUG - 41,5 MB - mail> To: doris2502@hotmail.com, 05-08-2016 09:36:20 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:36:20 - DEBUG - 41,5 MB - mail> To: esko.pfister@sports-village.ch, 05-08-2016 09:36:20 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:37:17 - DEBUG - 31,7 MB - mail> To: davide.gisondi@sunrise.ch, 05-08-2016 09:37:17 - ERROR - 32,4 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:39:55 - DEBUG - 40,8 MB - mail> To: lolo8304@gmail.com, 05-08-2016 09:39:55 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:39:55 - DEBUG - 41,5 MB - mail> To: doris2502@hotmail.com, 05-08-2016 09:39:55 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:39:55 - DEBUG - 41,5 MB - mail> To: esko.pfister@sports-village.ch, 05-08-2016 09:39:55 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:39:55 - DEBUG - 41,5 MB - mail> To: davide.gisondi@sunrise.ch, 05-08-2016 09:39:55 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:43:49 - DEBUG - 40,8 MB - mail> To: lolo8304@gmail.com, 05-08-2016 09:43:50 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:43:50 - DEBUG - 41,5 MB - mail> To: doris2502@hotmail.com, 05-08-2016 09:43:50 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:43:50 - DEBUG - 41,5 MB - mail> To: esko.pfister@sports-village.ch, 05-08-2016 09:43:50 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+05-08-2016 09:43:50 - DEBUG - 41,5 MB - mail> To: davide.gisondi@sunrise.ch, 05-08-2016 09:43:51 - ERROR - 41,6 MB - mail> SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting

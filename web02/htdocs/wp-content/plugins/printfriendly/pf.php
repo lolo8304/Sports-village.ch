@@ -5,11 +5,17 @@ Plugin Name: Print Friendly and PDF
 Plugin URI: http://www.printfriendly.com
 Description: PrintFriendly & PDF button for your website. Optimizes your pages and brand for print, pdf, and email.
 Name and URL are included to ensure repeat visitors and new visitors when printed versions are shared.
-Version: 3.4.5
+Version: 3.5.3
 Author: Print Friendly
 Author URI: http://www.PrintFriendly.com
 
 Changelog :
+3.5.3 - Fix security issues
+3.5.2 - Fix code to support PHP 5.2
+3.5.0 - WooCommerce product page improvements. Better support for product images, price, and description.
+3.4.8 - Fix button images style
+3.4.7 - Fix button style to remove underline
+3.4.6 - Always removed PrintFriendly button underline regardless plugin CSS for button styles option
 3.4.4 - Removed page content selection option - Wordpress Standard/Strict
 3.4.2 - Fixed the issue occured due to new changes made in the page content selection options
 3.4.1 - Improved page content selection options
@@ -116,6 +122,13 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
     var $settings_page = '';
 
     /**
+     * Helps don't print related products for WooCommerce
+     *
+     * @since 3.5
+     */
+    var $wc_should_print = true;
+
+    /**
      * Constructor
      *
      * @since 3.0
@@ -151,6 +164,15 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
     
       add_action('the_content', array(&$this, 'add_pf_content_class_around_content_hook'));
 
+      // WooCommerce hooks
+      add_filter('woocommerce_get_price_html', array(&$this, 'woocommerce_get_price_html'), 10, 2);
+
+      add_filter('woocommerce_single_product_image_html', array(&$this, 'woocommerce_single_product_image_html'));
+      add_filter('woocommerce_single_product_image_thumbnail_html', array(&$this, 'woocommerce_single_product_image_thumbnail_html'));
+
+      add_filter('woocommerce_up_sells_columns', array(&$this, 'woocommerce_up_sells_columns'));
+
+      // Admin hooks
       if ( is_admin() ) {
         // Hook into init for registration of the option and the language files
         add_action( 'admin_init', array( &$this, 'init' ) );
@@ -167,7 +189,79 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
         // Register a link to the settings page on the plugins overview page
         add_filter( 'plugin_action_links', array( &$this, 'filter_plugin_actions' ), 10, 2 );
     }
+  }
+
+  /**
+   * Do not print related products
+   *
+   * @since 3.5
+   */
+  function woocommerce_up_sells_columns( $columns ) {
+    $this->wc_should_print = false;
+    return $columns;
+  }
+
+  /**
+   * Add pf-content class to WooCommerce Product Price
+   *
+   * @since 3.5
+   */
+  function woocommerce_get_price_html( $price ) {
+    return $this->add_class($price, 'pf-content');
+  }
+
+  /**
+   * Add pf-content class to WooCommerce main Product Image
+   *
+   * @since 3.5
+   */
+  function woocommerce_single_product_image_html( $image ) {
+    return $this->add_class($image, 'pf-content');
+  }
+
+  /**
+   * Add pf-content class to WooCommerce Product Images from gallery
+   *
+   * @since 3.5
+   */
+  function woocommerce_single_product_image_thumbnail_html( $image ) {
+    return $this->add_class($image, 'pf-content pf-gallery-img', 'img');
+  }
+
+  /**
+   * Adds class to elements by tagname
+   *
+   * @since 3.5
+   */
+  function add_class( $html, $class_name, $tagName = NULL ) {
+    if(!$this->wc_should_print || $html == "")
+      return $html;
+
+    $dom = new DOMDocument;
+    $dom->loadHTML($html);
+
+    // Use body tag if nothing passed to $tagName parameter
+    if (is_null($tagName)) {
+      $elements = $dom->getElementsByTagName('body')->item(0)->childNodes;
+    } else {
+      $elements = $dom->getElementsByTagName($tagName);
     }
+
+    // return original html if we can't parse it with DOMDocument
+    if ($elements->length == 0) {
+      return $html;
+    }
+
+    // Find all ElementNodes and add class
+    foreach($elements as $element) {
+      if ($element->nodeType != XML_ELEMENT_NODE)
+        continue;
+
+      $element->setAttribute('class', $element->getAttribute('class') . ' ' . $class_name);
+    }
+
+    return $dom->saveHTML();
+  }
 
   /**
   * Adds wraps content in pf-content class to help Printfriendly algo determine the content
@@ -213,34 +307,37 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
      *
      * @since 3.0
      */
-    function front_head() {
+    function front_head() { ?>
+    <style type="text/css" media="screen">
+          div.printfriendly a, div.printfriendly a:link, div.printfriendly a:hover, div.printfriendly a:visited {
+            text-decoration: none;
+            border: none;
+          }
+    </style>
+   <?php
 
       if ( isset( $this->options['enable_css'] ) && $this->options['enable_css'] != 'on' )
         return;
-
-
 ?>
         <style type="text/css" media="screen">
           div.printfriendly {
             margin: <?php echo $this->options['margin_top'].'px '.$this->options['margin_right'].'px '.$this->options['margin_bottom'].'px '.$this->options['margin_left'].'px'; ?>;
           }
           div.printfriendly a, div.printfriendly a:link, div.printfriendly a:visited {
-            text-decoration: none;
             font-size: <?php echo $this->options['text_size']; ?>px;
             color: <?php echo $this->options['text_color']; ?>;
             vertical-align: bottom;
-            border: none;
           }
-
+          .printfriendly a {
+            box-shadow:none;
+          }
           .printfriendly a:hover {
             cursor: pointer;
           }
-
           .printfriendly a img  {
             border: none;
             padding:0;
             margin-right: 6px;
-            display:inline-block;
             box-shadow: none;
             -webkit-box-shadow: none;
             -moz-box-shadow: none;
@@ -289,12 +386,10 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
         }
 
         // Currently we use v3 for both: normal and password protected sites
-
-
 ?>
       <script type="text/javascript">
 
-          var pfHeaderImgUrl = '<?php echo esc_js(esc_url_raw($image_url)); ?>';
+          var pfHeaderImgUrl = '<?php echo esc_js(esc_url($image_url)); ?>';
           var pfHeaderTagline = '<?php echo esc_js($tagline); ?>';
           var pfdisableClickToDel = '<?php echo esc_js($this->options['click_to_delete']); ?>';
           var pfHideImages = '<?php echo esc_js($this->options['hide-images']); ?>';
@@ -302,7 +397,7 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
           var pfDisableEmail = '<?php echo esc_js($this->options['email']); ?>';
           var pfDisablePDF = '<?php echo esc_js($this->options['pdf']); ?>';
           var pfDisablePrint = '<?php echo esc_js($this->options['print']); ?>';
-          var pfCustomCSS = '<?php echo esc_js($this->options['custom_css_url']); ?>';
+          var pfCustomCSS = '<?php echo esc_js(esc_url($this->options['custom_css_url'])); ?>';
       (function() {
             var e = document.createElement('script'); e.type="text/javascript";
         if('https:' == document.location.protocol) {
@@ -465,6 +560,9 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
      * @return array $valid_input with validated options.
      */
     function options_validate( $input ) {
+      // Prevent CSRF attack
+      check_admin_referer( 'pf-options', 'pf-nonce' );
+
       $valid_input = $input;
 
     /* Section 1 options */
@@ -920,7 +1018,7 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
       if( !$name )
         $name = $this->options['button_type'];
     $button_css  = $this->generic_button_css();
-      $text = $this->options['custom_text'];
+      $text = esc_html($this->options['custom_text']);
       $img_path = 'http://cdn.printfriendly.com/';
       if($this->options['website_protocol'] == 'https')
         $img_path = 'https://pf-cdn.printfriendly.com/images/';
@@ -930,25 +1028,27 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
         if( '' == trim($this->options['custom_image']) )
           $return = '';
         else
-          $return = '<img src="'.$this->options['custom_image'].'" alt="Print Friendly" />';
+          $return = '<img src="'.esc_url($this->options['custom_image']).'" alt="Print Friendly" />';
 
-        $return .= $this->options['custom_text'];
+        $return .= $text;
 
         return $return;
         break;
+
       case "text-only":
         return '<span class="printfriendly-text2">'.$text.'</span>';
         break;
 
       case "pf-icon-both.gif":
-        return '<span class="printfriendly-text2 printandpdf"><img style="border:none;margin-right:6px;" src="'.$img_path.'pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="'.$button_css.'margin:0 6px" src="'.$img_path.'pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</span>';
+        return '<span class="printfriendly-text2 printandpdf"><img style="border:none;margin-right:6px;display:inline-block" src="'.$img_path.'pf-print-icon.gif" width="16" height="15" alt="Print Friendly Version of this page" />Print <img style="'.$button_css.'margin:0 6px;display:inline-block" src="'.$img_path.'pf-pdf-icon.gif" width="12" height="12" alt="Get a PDF version of this webpage" />PDF</span>';
         break;
 
       case "pf-icon-small.gif":
-        return '<img style="'.$button_css.'margin-right:4px;" src="'.$img_path.'pf-icon-small.gif" alt="PrintFriendly and PDF" width="18" height="18"><span class="printfriendly-text2">'.$text.'</span>';
+        return '<img style="'.$button_css.'margin-right:4px;display:inline-block" src="'.$img_path.'pf-icon-small.gif" alt="PrintFriendly and PDF" width="18" height="18"><span class="printfriendly-text2">'.$text.'</span>';
         break;
+
       case "pf-icon.gif":
-        return '<img style="'.$button_css.'margin-right:6px;" src="'.$img_path.'pf-icon.gif" width="23" height="25" alt="PrintFriendly and PDF"><span class="printfriendly-text2">'.$text.'</span>';
+        return '<img style="'.$button_css.'margin-right:6px;display:inline-block" src="'.$img_path.'pf-icon.gif" width="23" height="25" alt="PrintFriendly and PDF"><span class="printfriendly-text2">'.$text.'</span>';
         break;
 
       default:
@@ -976,9 +1076,9 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
       if( '' == trim($this->options['custom_image']) )
         $button_preview = '<span id="pf-custom-button-preview"></span>';
       else
-        $button_preview = '<span id="pf-custom-button-preview"><img src="'.$this->options['custom_image'].'" alt="Print Friendly" /></span>';
+        $button_preview = '<span id="pf-custom-button-preview"><img src="'.esc_url($this->options['custom_image']).'" alt="Print Friendly" /></span>';
 
-      $button_preview .= '<span class="printfriendly-text2">'.$this->options['custom_text'].'</span>';
+      $button_preview .= '<span class="printfriendly-text2">'.esc_html($this->options['custom_text']).'</span>';
 
       echo $button_preview;
     }
@@ -1142,6 +1242,7 @@ if ( ! class_exists( 'PrintFriendly_WordPress' ) ) {
         <h2><?php _e( 'Print Friendly & PDF Settings', $this->hook ); ?></h2>
 
         <form action="options.php" method="post">
+          <?php wp_nonce_field( 'pf-options', 'pf-nonce' ); ?>
           <?php settings_fields( $this->option_name ); ?>
 
           <h3><?php _e( "Pick Your Button Style", $this->hook ); ?></h3>

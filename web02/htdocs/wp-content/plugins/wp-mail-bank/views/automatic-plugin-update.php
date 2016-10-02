@@ -1,4 +1,5 @@
-<?php 
+<?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 if (!is_user_logged_in())
 {
 	return;
@@ -58,15 +59,16 @@ else
 			</div>
 		</form>
 		<script type="text/javascript">
-		
-			function mail_bank_autoupdate(control)
+			if(typeof(mail_bank_autoupdate) != "function")
 			{
-				var mail_bank_updates = jQuery(control).val();
-				jQuery.post(ajaxurl, "mail_bank_updates="+mail_bank_updates+"&param=mail_bank_plugin_updates&action=add_mail_library&_wpnonce=<?php echo $plugin_update_nonce ;?>", function(data)
+				function mail_bank_autoupdate(control)
 				{
-				});
+					var mail_bank_updates = jQuery(control).val();
+					jQuery.post(ajaxurl, "mail_bank_updates="+mail_bank_updates+"&param=mail_bank_plugin_updates&action=add_mail_library&_wpnonce=<?php echo $plugin_update_nonce ;?>", function(data)
+					{
+					});
+				}
 			}
-			
 		</script>
 	<?php
 	}

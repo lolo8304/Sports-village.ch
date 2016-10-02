@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 //--------------------------------------------------------------------------------------------------------------//
 // CODE FOR CREATING MENUS
 //---------------------------------------------------------------------------------------------------------------//
@@ -44,11 +45,11 @@ else
 			add_submenu_page("smtp_mail", "System Status", __("System Status", mail_bank), "read", "mail_system_status", "mail_system_status" );
 		break;
 	}
-	
+
 	//--------------------------------------------------------------------------------------------------------------//
 	// CODE FOR CREATING PAGES
 	//---------------------------------------------------------------------------------------------------------------//
-	
+
 	if(!function_exists( "smtp_mail" ))
 	{
 		function smtp_mail()
@@ -64,8 +65,14 @@ else
 				$current_user->role = array_keys($current_user->$role);
 				$role = $current_user->role[0];
 			}
-			include_once MAIL_BK_PLUGIN_DIR ."/views/mail_header.php";
-			include_once MAIL_BK_PLUGIN_DIR ."/views/mail_settings.php";
+			if(file_exists(MAIL_BK_PLUGIN_DIR ."/views/mail_header.php"))
+			{
+				include_once MAIL_BK_PLUGIN_DIR ."/views/mail_header.php";
+			}
+			if(file_exists(MAIL_BK_PLUGIN_DIR ."/views/mail_settings.php"))
+			{
+				include_once MAIL_BK_PLUGIN_DIR ."/views/mail_settings.php";
+			}
 		}
 	}
 	if(!function_exists( "mail_system_status" ))
@@ -83,8 +90,14 @@ else
 				$current_user->role = array_keys($current_user->$role);
 				$role = $current_user->role[0];
 			}
-			include_once MAIL_BK_PLUGIN_DIR ."/views/mail_header.php";
-			include_once MAIL_BK_PLUGIN_DIR . "/views/wp_system_status.php";
+			if(file_exists(MAIL_BK_PLUGIN_DIR ."/views/mail_header.php"))
+			{
+				include_once MAIL_BK_PLUGIN_DIR ."/views/mail_header.php";
+			}
+			if(file_exists(MAIL_BK_PLUGIN_DIR . "/views/wp_system_status.php"))
+			{
+				include_once MAIL_BK_PLUGIN_DIR . "/views/wp_system_status.php";
+			}
 		}
 	}
 	if(!function_exists( "send_test_email" ))
@@ -102,8 +115,14 @@ else
 				$current_user->role = array_keys($current_user->$role);
 				$role = $current_user->role[0];
 			}
-			include_once MAIL_BK_PLUGIN_DIR ."/views/mail_header.php";
-			include_once MAIL_BK_PLUGIN_DIR . "/views/test_email.php";
+			if(file_exists(MAIL_BK_PLUGIN_DIR ."/views/mail_header.php"))
+			{
+				include_once MAIL_BK_PLUGIN_DIR ."/views/mail_header.php";
+			}
+			if(file_exists(MAIL_BK_PLUGIN_DIR . "/views/test_email.php"))
+			{
+				include_once MAIL_BK_PLUGIN_DIR . "/views/test_email.php";
+			}
 		}
 	}
 	if(!function_exists( "recommended_plugins" ))
@@ -181,7 +200,7 @@ else
 			}
 		}
 	}
-	
+
 	if(!function_exists( "mail_feature_requests" ))
 	{
 		function mail_feature_requests()

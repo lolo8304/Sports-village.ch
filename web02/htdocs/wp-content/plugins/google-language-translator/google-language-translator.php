@@ -2,7 +2,7 @@
 /*
 Plugin Name: Google Language Translator
 Plugin URI: http://www.studio88design.com/plugins/google-language-translator
-Version: 5.0.09
+Version: 5.0.20
 Description: The MOST SIMPLE Google Translator plugin.  This plugin adds Google Translator to your website by using a single shortcode, [google-translator]. Settings include: layout style, hide/show specific languages, hide/show Google toolbar, and hide/show Google branding. Add the shortcode to pages, posts, and widgets.
 Author: Rob Myrick
 Author URI: http://www.wp-studio.net/
@@ -15,10 +15,11 @@ Author URI: http://www.wp-studio.net/
 include( plugin_dir_path( __FILE__ ) . 'widget.php');
 
 class google_language_translator {
-  
+
   public $languages_array = array (
     'af' => 'Afrikaans',
     'sq' => 'Albanian',
+    'am' => 'Amharic',
     'ar' => 'Arabic',
     'hy' => 'Armenian',
     'az' => 'Azerbaijani',
@@ -32,6 +33,7 @@ class google_language_translator {
     'ny' => 'Chichewa',
     'zh-CN' => 'Chinese',
     'zh-TW' => 'Chinese(Traditional)',
+    'co' => 'Corsican',
     'hr' => 'Croatian',
     'cs' => 'Czech',
     'da' => 'Danish',
@@ -42,6 +44,7 @@ class google_language_translator {
     'tl' => 'Filipino',
     'fi' => 'Finnish',
     'fr' => 'French',
+    'fy' => 'Frisian',
     'gl' => 'Galician',
     'ka' => 'Georgian',
     'de' => 'German',
@@ -87,9 +90,12 @@ class google_language_translator {
     'ru' => 'Russian',
     'sr' => 'Serbian',
     'st' => 'Sesotho',
+    'sd' => 'Sindhi',
     'si' => 'Sinhala',
     'sk' => 'Slovak',
     'sl' => 'Slovenian',
+    'sm' => 'Samoan',
+    'gd' => 'Scots Gaelic',
     'so' => 'Somali',
     'es' => 'Spanish',
     'su' => 'Sundanese',
@@ -105,16 +111,17 @@ class google_language_translator {
     'uz' => 'Uzbek',
     'vi' => 'Vietnamese',
     'cy' => 'Welsh',
+    'xh' => 'Xhosa',
     'yi' => 'Yiddish',
     'yo' => 'Yoruba',
     'zu' => 'Zulu'
   );
-  
+
   public function __construct() {
     register_activation_hook( __FILE__, array( &$this, 'glt_activate' ));
     register_uninstall_hook( __FILE__, 'glt_deactivate' );
-    add_action( 'admin_menu', array( &$this, 'add_my_admin_menus')); 
-    add_action('admin_init',array(&$this, 'initialize_settings')); 
+    add_action( 'admin_menu', array( &$this, 'add_my_admin_menus'));
+    add_action('admin_init',array(&$this, 'initialize_settings'));
     add_action('wp_head',array(&$this, 'load_css'));
     add_action('wp_footer',array(&$this, 'footer_script'));
     add_shortcode( 'google-translator',array(&$this, 'google_translator_shortcode'));
@@ -122,25 +129,25 @@ class google_language_translator {
     add_filter('widget_text','do_shortcode');
     add_filter('walker_nav_menu_start_el', array(&$this,'menu_shortcodes') , 10 , 2);
     add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array(&$this, 'glt_settings_link') );
-  
+
     if (!is_admin()) {
       add_action('init',array(&$this, 'flags'));
     }
   }
-  
+
   public function glt_activate() {
-    add_option('googlelanguagetranslator_active', 1);   
+    add_option('googlelanguagetranslator_active', 1);
     add_option('googlelanguagetranslator_language','en');
     add_option('googlelanguagetranslator_language_option','all');
     add_option('googlelanguagetranslator_flags','show_flags');
     add_option('language_display_settings',array ('en' => 1));
-    add_option('flag_display_settings',array ('flag-en' => 1)); 
-    add_option('googlelanguagetranslator_translatebox','yes'); 
-    add_option('googlelanguagetranslator_display','Vertical'); 
-    add_option('googlelanguagetranslator_toolbar','Yes'); 
-    add_option('googlelanguagetranslator_showbranding','Yes'); 
-    add_option('googlelanguagetranslator_flags_alignment','flags_left');   
-    add_option('googlelanguagetranslator_analytics', 0);  
+    add_option('flag_display_settings',array ('flag-en' => 1));
+    add_option('googlelanguagetranslator_translatebox','yes');
+    add_option('googlelanguagetranslator_display','Vertical');
+    add_option('googlelanguagetranslator_toolbar','Yes');
+    add_option('googlelanguagetranslator_showbranding','Yes');
+    add_option('googlelanguagetranslator_flags_alignment','flags_left');
+    add_option('googlelanguagetranslator_analytics', 0);
     add_option('googlelanguagetranslator_analytics_id','');
     add_option('googlelanguagetranslator_css','');
     add_option('googlelanguagetranslator_multilanguage',0);
@@ -151,21 +158,21 @@ class google_language_translator {
     add_option('googlelanguagetranslator_spanish_flag_choice','');
     add_option('googlelanguagetranslator_portuguese_flag_choice','');
     delete_option('googlelanguagetranslator_manage_translations',0);
-  } 
-  
+  }
+
   public function glt_deactivate() {
-    delete_option('googlelanguagetranslator_active', 1);   
+    delete_option('googlelanguagetranslator_active', 1);
     delete_option('googlelanguagetranslator_language','en');
     delete_option('googlelanguagetranslator_language_option','all');
     delete_option('googlelanguagetranslator_flags','show_flags');
     delete_option('language_display_settings',array ('en' => 1));
-    delete_option('flag_display_settings',array ('flag-en' => 1)); 
-    delete_option('googlelanguagetranslator_translatebox','yes'); 
-    delete_option('googlelanguagetranslator_display','Vertical'); 
-    delete_option('googlelanguagetranslator_toolbar','Yes'); 
-    delete_option('googlelanguagetranslator_showbranding','Yes'); 
-    delete_option('googlelanguagetranslator_flags_alignment','flags_left');   
-    delete_option('googlelanguagetranslator_analytics',1);  
+    delete_option('flag_display_settings',array ('flag-en' => 1));
+    delete_option('googlelanguagetranslator_translatebox','yes');
+    delete_option('googlelanguagetranslator_display','Vertical');
+    delete_option('googlelanguagetranslator_toolbar','Yes');
+    delete_option('googlelanguagetranslator_showbranding','Yes');
+    delete_option('googlelanguagetranslator_flags_alignment','flags_left');
+    delete_option('googlelanguagetranslator_analytics',1);
     delete_option('googlelanguagetranslator_analytics_id','');
     delete_option('googlelanguagetranslator_css','');
     delete_option('googlelanguagetranslator_multilanguage',0);
@@ -176,14 +183,14 @@ class google_language_translator {
     delete_option('googlelanguagetranslator_spanish_flag_choice','');
     delete_option('googlelanguagetranslator_portuguese_flag_choice','');
   }
-  
+
   public function glt_settings_link ( $links ) {
     $settings_link = array(
       '<a href="' . admin_url( 'options-general.php?page=google_language_translator' ) . '">Settings</a>',
     );
    return array_merge( $links, $settings_link );
   }
-  
+
   public function add_my_admin_menus(){
     $p = add_options_page('Google Language Translator', 'Google Language Translator', 'manage_options', 'google_language_translator', array(&$this, 'page_layout_cb'));
 
@@ -198,43 +205,42 @@ class google_language_translator {
   public function enqueue_admin_js(){
     wp_enqueue_script( 'my-admin-script', plugins_url('js/admin.js',__FILE__), array('jquery'));
     wp_enqueue_script( 'my-flag-script', plugins_url('js/flags.js',__FILE__), array('jquery'));
-		
+
     if (get_option ('googlelanguagetranslator_floating_widget') == 'yes') {
-      wp_enqueue_script( 'my-toolbar-script', plugins_url('js/toolbar.js',__FILE__), array('jquery'));
-      wp_enqueue_script( 'my-load-toolbar-script', plugins_url('js/load-toolbar.js',__FILE__), array('jquery'));
-      wp_register_style( 'toolbar.css', plugins_url('css/toolbar.css', __FILE__) );
-      wp_enqueue_style( 'toolbar.css' );
+      wp_enqueue_script( 'glt-toolbar', plugins_url('js/toolbar.js',__FILE__), array('jquery'));
+      wp_enqueue_script( 'glt-load-toolbar', plugins_url('js/load-toolbar.js',__FILE__), array('jquery'));
+      wp_register_style( 'glt-toolbar-styles', plugins_url('css/toolbar.css', __FILE__) );
+      wp_enqueue_style( 'glt-toolbar-styles' );
     }
-		
+
     wp_enqueue_script( 'jquery-ui-core');
     wp_enqueue_script( 'jquery-ui-sortable');
     wp_enqueue_script( 'load_sortable_flags', plugins_url('js/load-sortable-flags.js',__FILE__), array('jquery'));
     wp_register_style( 'jquery-ui.css', plugins_url('css/jquery-ui.css',__FILE__) );
     wp_register_style( 'style.css', plugins_url('css/style.css', __FILE__) );
     wp_enqueue_style( 'style.css' );
-    //wp_enqueue_style( 'jquery-ui.css' );
   }
-  
+
   public function flags() {
-    wp_enqueue_script( 'flags', plugins_url('js/flags.js',__FILE__), array('jquery'));
-	 
+    wp_enqueue_script( 'glt-flags', plugins_url('js/flags.js',__FILE__), array('jquery'));
+
     if (get_option ('googlelanguagetranslator_floating_widget') == 'yes') {
-      wp_enqueue_script( 'my-toolbar-script', plugins_url('js/toolbar.js',__FILE__), array('jquery'));
-      wp_enqueue_script( 'my-load-toolbar-script', plugins_url('js/load-toolbar.js',__FILE__), array('jquery'));
-      wp_register_style( 'toolbar.css', plugins_url('css/toolbar.css', __FILE__) );
-      wp_enqueue_style( 'toolbar.css' );
+      wp_enqueue_script( 'glt-toolbar', plugins_url('js/toolbar.js',__FILE__), array('jquery'));
+      wp_enqueue_script( 'glt-load-toolbar', plugins_url('js/load-toolbar.js',__FILE__), array('jquery'));
+      wp_register_style( 'glt-toolbar-styles', plugins_url('css/toolbar.css', __FILE__) );
+      wp_enqueue_style( 'glt-toolbar-styles' );
     }
-	 
-    wp_register_style( 'style.css', plugins_url('css/style.css', __FILE__) );
-    wp_enqueue_style( 'style.css' );	
+
+    wp_register_style( 'google-language-translator', plugins_url('css/style.css', __FILE__) );
+    wp_enqueue_style( 'google-language-translator' );
   }
-  
+
   public function load_css() {
     include( plugin_dir_path( __FILE__ ) . '/css/style.php');
   }
 
   public function google_translator_shortcode() {
-	
+
     if (get_option('googlelanguagetranslator_display')=='Vertical' || get_option('googlelanguagetranslator_display')=='SIMPLE'){
         return $this->googlelanguagetranslator_vertical();
     }
@@ -244,24 +250,24 @@ class google_language_translator {
   }
 
   public function googlelanguagetranslator_included_languages() {
-    if ( get_option('googlelanguagetranslator_language_option')=='specific') { 
+    if ( get_option('googlelanguagetranslator_language_option')=='specific') {
 	  $get_language_choices = get_option ('language_display_settings');
-	  
+
 	  foreach ($get_language_choices as $key=>$value) {
 	    if($value == 1) {
 		  $items[] = $key;
 	    }
 	  }
-	  
+
 	  $comma_separated = implode(",",array_values($items));
-	  
+
 	  if ( get_option('googlelanguagetranslator_display') == 'Vertical') {
 	     $lang = ", includedLanguages:'".$comma_separated."'";
 	       return $lang;
 	  } elseif ( get_option('googlelanguagetranslator_display') == 'Horizontal') {
 	     $lang = ", includedLanguages:'".$comma_separated."'";
 	       return $lang;
-      } 
+      }
     }
   }
 
@@ -276,15 +282,15 @@ class google_language_translator {
     }
   }
 
-  public function menu_shortcodes( $item_output,$item ) { 
+  public function menu_shortcodes( $item_output,$item ) {
     if ( !empty($item->description)) {
       $output = do_shortcode($item->description);
-  
+
       if ( $output != $item->description )
-        $item_output = $output;     
+        $item_output = $output;
       }
     return $item_output;
-  } 
+  }
 
   public function google_translator_menu_language($atts, $content = '') {
     extract(shortcode_atts(array(
@@ -292,7 +298,7 @@ class google_language_translator {
       "label" => 'Spanish'
     ), $atts));
 
-    $default_language = get_option('googlelanguagetranslator_language'); 
+    $default_language = get_option('googlelanguagetranslator_language');
     $english_flag_choice = get_option('googlelanguagetranslator_english_flag_choice');
     $language_code = array_search($language,$this->languages_array);
     $language_name = $language;
@@ -306,7 +312,7 @@ class google_language_translator {
   }
 
   public function footer_script() {
-    global $shortcode_started;	
+    global $shortcode_started;
     $default_language = get_option('googlelanguagetranslator_language');
     $language_choices = $this->googlelanguagetranslator_included_languages();
     $new_languages_array_string = get_option('googlelanguagetranslator_flags_order');
@@ -328,7 +334,7 @@ class google_language_translator {
     <?php
 
     if( $is_active == 1) {
-	    
+
       foreach ($get_flag_choices as $flag_choice_key) {}
 
       if ($floating_widget=='yes' && $get_language_option != 'specific') {
@@ -336,16 +342,16 @@ class google_language_translator {
         $str.='<div id="glt-toolbar"></div>';
       } //endif $floating_widget
 
-      if ($shortcode_started != 'true') {  
+      if ($shortcode_started != 'true') {
         $str.='<div id="flags" style="display:none">';
-	$str.='<ul id="sortable" class="ui-sortable">';	  
-	  
+	$str.='<ul id="sortable" class="ui-sortable">';
+
 	if ((empty($new_languages_array_string)) || ($new_languages_array_count != $get_flag_choices_count)) {
           foreach ($this->languages_array as $key=>$value) {
             $language_code = $key;
             $language_name = $value;
             $language_name_flag = $language_name;
-	            
+
             if ($flag_choice_key == '1') {
               if ( isset ( $get_flag_choices['flag-'.$language_code.''] ) ) {
 	        if ( $language_name == 'English' && $english_flag_choice == 'canadian_flag') {
@@ -372,7 +378,7 @@ class google_language_translator {
 	      $language_name = $value;
 	      $language_code = array_search ($language_name,$this->languages_array);
 	      $language_name_flag = $language_name;
-			     
+
               if ($flag_choice_key == '1') {
 		if (in_array($language_name,$this->languages_array)) {
                   if ( isset ( $get_flag_choices['flag-'.$language_code.''] ) ) {
@@ -415,17 +421,17 @@ class google_language_translator {
           $str.="<script type='text/javascript' src='//translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit'></script>";
         echo $str;
 
-	} elseif ($is_multilanguage == 0) {		  
+	} elseif ($is_multilanguage == 0) {
 		  $str.="<div id='glt-footer'></div><script type='text/javascript'>function GoogleLanguageTranslatorInit() { new google.translate.TranslateElement({pageLanguage: '".$default_language."'".$language_choices . ($layout=='Horizontal' ? $horizontal_layout : ($layout=='SIMPLE' ? $simple_layout : '')) . $auto_display . $this->analytics()."}, 'google_language_translator');}</script>";
 		  $str.="<script type='text/javascript' src='//translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit'></script>";
 	    echo $str;
-	} 
+	}
   }
-  
+
   public function googlelanguagetranslator_vertical() {
-	
+
 	global $shortcode_started;
-	
+
 	$shortcode_started = 'true';
 	$get_flag_choices = get_option ('flag_display_settings');
 	$new_languages_array_string = get_option('googlelanguagetranslator_flags_order');
@@ -446,12 +452,12 @@ class google_language_translator {
 	$str = '';
 
 	if( $is_active == 1){
-	  
+
 	  foreach ($get_flag_choices as $flag_choice_key) {}
-	  
+
 	    $str.='<div id="flags" class="size'.$flag_width.'">';
 	    $str.='<ul id="sortable" class="ui-sortable" style="float:left">';
-	  
+
 	    if ((empty($new_languages_array_string)) || ($new_languages_array_count != $get_flag_choices_count)) {
 	      foreach ($this->languages_array as $key=>$value) {
 		$language_code = $key;
@@ -470,7 +476,7 @@ class google_language_translator {
                     if ( $language_name == 'Portuguese' && $portuguese_flag_choice == 'brazilian_flag') {
 	              $language_name_flag = 'brazil';
 	            }
-                    if ( isset ( $get_flag_choices['flag-'.$language_code.''] ) ) {				  
+                    if ( isset ( $get_flag_choices['flag-'.$language_code.''] ) ) {
 	              $str.="<li id='".$language_name."'><a title='".$language_name."' class='notranslate flag ".$language_code." ".$language_name_flag."'></a></li>";
 		    }
 	          } //$key
@@ -504,10 +510,10 @@ class google_language_translator {
       $str.='</ul>';
       $str.='</div>';
       $str.='<div id="google_language_translator"></div>';
-        return $str;		
+        return $str;
       } //End is_active
   } // End glt_vertical
-  
+
   public function googlelanguagetranslator_horizontal(){
     $shortcode_started = true;
     $get_flag_choices = get_option ('flag_display_settings');
@@ -518,7 +524,7 @@ class google_language_translator {
     $get_flag_choices_count = count($get_flag_choices);
     $get_language_choices = get_option ('language_display_settings');
     $flag_width = get_option('googlelanguagetranslator_flag_size');
-    $default_language_code = get_option('googlelanguagetranslator_language');	
+    $default_language_code = get_option('googlelanguagetranslator_language');
     $english_flag_choice = get_option('googlelanguagetranslator_english_flag_choice');
     $spanish_flag_choice = get_option('googlelanguagetranslator_spanish_flag_choice');
     $portuguese_flag_choice = get_option('googlelanguagetranslator_portuguese_flag_choice');
@@ -527,18 +533,18 @@ class google_language_translator {
     $language_choices = $this->googlelanguagetranslator_included_languages();
     $floating_widget = get_option ('googlelanguagetranslator_floating_widget');
     $str = '';
-  
+
     if( $is_active == 1) {
       foreach ($get_flag_choices as $flag_choice_key) {}
         $str.='<div id="flags" class="size'.$flag_width.'">';
 	$str.='<ul id="sortable" class="ui-sortable" style="float:left">';
-	  
+
 	if ((empty($new_languages_array_string)) || ($new_languages_array_count != $get_flag_choices_count)) {
 	  foreach ($this->languages_array as $key=>$value) {
             $language_code = $key;
 	    $language_name = $value;
             $language_name_flag = $language_name;
-			  
+
 	    if ($flag_choice_key == '1') {
               if ( $language_name == 'English' && $english_flag_choice == 'canadian_flag') {
 	        $language_name_flag = 'canada';
@@ -552,7 +558,7 @@ class google_language_translator {
               if ( $language_name == 'Portuguese' && $portuguese_flag_choice == 'brazilian_flag') {
 	        $language_name_flag = 'brazil';
 	      }
-              if ( isset ( $get_flag_choices['flag-'.$language_code.''] ) ) {				  
+              if ( isset ( $get_flag_choices['flag-'.$language_code.''] ) ) {
 		$str.="<li id='".$language_name."'><a title='".$language_name."' class='notranslate flag ".$language_code." ".$language_name_flag."'></a></li>";
 	      } //endif
             } //$key
@@ -586,43 +592,43 @@ class google_language_translator {
       $str.='</ul>';
       $str.='</div>';
       $str.='<div id="google_language_translator"></div>';
-        return $str;	
+        return $str;
     }
   } // End glt_horizontal
- 
-  public function initialize_settings() {    
-    add_settings_section('glt_settings','Settings','','google_language_translator'); 
-  
+
+  public function initialize_settings() {
+    add_settings_section('glt_settings','Settings','','google_language_translator');
+
     $settings_name_array = array (
 'googlelanguagetranslator_active','googlelanguagetranslator_language','googlelanguagetranslator_language_option','language_display_settings','googlelanguagetranslator_flags','flag_display_settings','googlelanguagetranslator_translatebox','googlelanguagetranslator_display','googlelanguagetranslator_toolbar','googlelanguagetranslator_showbranding','googlelanguagetranslator_flags_alignment','googlelanguagetranslator_analytics','googlelanguagetranslator_analytics_id','googlelanguagetranslator_css','googlelanguagetranslator_multilanguage','googlelanguagetranslator_floating_widget','googlelanguagetranslator_flag_size','googlelanguagetranslator_flags_order','googlelanguagetranslator_english_flag_choice','googlelanguagetranslator_spanish_flag_choice','googlelanguagetranslator_portuguese_flag_choice'
     );
-	
+
     $settings_callback_array = array (  'googlelanguagetranslator_active_cb','googlelanguagetranslator_language_cb','googlelanguagetranslator_language_option_cb','language_display_settings_cb','googlelanguagetranslator_flags_cb','flag_display_settings_cb','googlelanguagetranslator_translatebox_cb','googlelanguagetranslator_display_cb','googlelanguagetranslator_toolbar_cb','googlelanguagetranslator_showbranding_cb','googlelanguagetranslator_flags_alignment_cb','googlelanguagetranslator_analytics_cb','googlelanguagetranslator_analytics_id_cb','googlelanguagetranslator_css_cb','googlelanguagetranslator_multilanguage_cb','googlelanguagetranslator_floating_widget_cb','googlelanguagetranslator_flag_size_cb','googlelanguagetranslator_flags_order_cb','googlelanguagetranslator_english_flag_choice_cb','googlelanguagetranslator_spanish_flag_choice_cb','googlelanguagetranslator_portuguese_flag_choice_cb'
     );
-	
+
     foreach ($settings_name_array as $setting) {
       add_settings_field( $setting,'',$setting.'_cb','google_language_translator','glt_settings');
-      register_setting( 'google_language_translator',$setting); 
+      register_setting( 'google_language_translator',$setting);
     }
   }
-  
-  public function googlelanguagetranslator_active_cb() {  
+
+  public function googlelanguagetranslator_active_cb() {
     $option_name = 'googlelanguagetranslator_active' ;
     $new_value = 1;
       if ( get_option( $option_name ) === false ) {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.'');
-	  		
+
 	  $html = '<input type="checkbox" name="googlelanguagetranslator_active" id="googlelanguagetranslator_active" value="1" '.checked(1,$options,false).'/> &nbsp; Check this box to activate';
 	  echo $html;
 	}
-  
+
   public function googlelanguagetranslator_language_cb() {
-	  
+
 	$option_name = 'googlelanguagetranslator_language';
     $new_value = 'en';
 
@@ -630,25 +636,25 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
       <select name="googlelanguagetranslator_language" id="googlelanguagetranslator_language">
 
 	  <?php
-	
+
         foreach ($this->languages_array as $key => $value) {
 		  $language_code = $key;
 		  $language_name = $value; ?>
 		    <option value="<?php echo $language_code; ?>" <?php if($options==''.$language_code.''){echo "selected";}?>><?php echo $language_name; ?></option>
 	      <?php } ?>
       </select>
-    <?php     
-    } 
-  
+    <?php
+    }
+
     public function googlelanguagetranslator_language_option_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_language_option' ;
     $new_value = 'all';
 
@@ -656,55 +662,55 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
     <input type="radio" name="googlelanguagetranslator_language_option" id="googlelanguagetranslator_language_option" value="all" <?php if($options=='all'){echo "checked";}?>/> All Languages<br/>
 	<input type="radio" name="googlelanguagetranslator_language_option" id="googlelanguagetranslator_language_option" value="specific" <?php if($options=='specific'){echo "checked";}?>/> Specific Languages
-    <?php 
+    <?php
 	}
-  
+
     public function language_display_settings_cb() {
 	  $default_language_code = get_option('googlelanguagetranslator_language');
 	  $option_name = 'language_display_settings';
       $new_value = array(''.$default_language_code.'' => 1);
-	  
+
 	  if ( get_option( $option_name ) == false ) {
         // The option does not exist, so we update it.
         update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $get_language_choices = get_option (''.$option_name.'');
-	  
+
 	  foreach ($this->languages_array as $key => $value) {
 		$language_code = $key;
 		$language_name = $value;
 		$language_code_array[] = $key;
-		
+
 		if (!isset($get_language_choices[''.$language_code.''])) {
 		  $get_language_choices[''.$language_code.''] = 0;
 		}
-		
+
 		$items[] = $get_language_choices[''.$language_code.''];
 		$language_codes = $language_code_array;
-		$item_count = count($items); 
+		$item_count = count($items);
 
-		if ($item_count == 1 || $item_count == 24 || $item_count == 47 || $item_count == 70) { ?>
+		if ($item_count == 1 || $item_count == 26 || $item_count == 51 || $item_count == 76) { ?>
           <div class="languages" style="width:25%; float:left">
 	    <?php } ?>
 		  <div><input type="checkbox" name="language_display_settings[<?php echo $language_code; ?>]" value="1"<?php checked( 1,$get_language_choices[''.$language_code.'']); ?>/><?php echo $language_name; ?></div>
-        <?php 
-		if ($item_count == 23 || $item_count == 46 || $item_count == 69 || $item_count == 91) { ?>
+        <?php
+		if ($item_count == 25 || $item_count == 50 || $item_count == 75 || $item_count == 97) { ?>
           </div>
-        <?php } 
+        <?php }
 	  } ?>
      <div class="clear"></div>
     <?php
 	}
-  
-    public function googlelanguagetranslator_flags_cb() { 
-	
+
+    public function googlelanguagetranslator_flags_cb() {
+
 	  $option_name = 'googlelanguagetranslator_flags' ;
       $new_value = 'show_flags';
 
@@ -712,55 +718,55 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
       <input type="radio" name="googlelanguagetranslator_flags" id="googlelanguagetranslator_flags" value="show_flags" <?php if($options=='show_flags'){echo "checked";}?>/> Yes, show flag images<br/>
 	  <input type="radio" name="googlelanguagetranslator_flags" id="googlelanguagetranslator_flags" value="hide_flags" <?php if($options=='hide_flags'){echo "checked";}?>/> No, hide flag images
-    <?php 
-	}  
+    <?php
+	}
 
     public function flag_display_settings_cb() {
 	  $default_language_code = get_option('googlelanguagetranslator_language');
 	  $option_name = 'flag_display_settings';
       $new_value = array('flag-'.$default_language_code.'' => 1);
-	  
+
 	  if ( get_option( $option_name ) == false ) {
         // The option does not exist, so we update it.
         update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $get_flag_choices = get_option (''.$option_name.'');
-	  
+
 	  foreach ($this->languages_array as $key => $value) {
 		$language_code = $key;
 		$language_name = $value;
 		$language_code_array[] = $key;
-		
+
 		if (!isset($get_flag_choices['flag-'.$language_code.''])) {
 		  $get_flag_choices['flag-'.$language_code.''] = 0;
 		}
-		
+
 		$items[] = $get_flag_choices['flag-'.$language_code.''];
 		$language_codes = $language_code_array;
-		$item_count = count($items); 
+		$item_count = count($items);
 
-		if ($item_count == 1 || $item_count == 24 || $item_count == 47 || $item_count == 70) { ?>
+		if ($item_count == 1 || $item_count == 26 || $item_count == 51 || $item_count == 76) { ?>
           <div class="flagdisplay" style="width:25%; float:left">
 	    <?php } ?>
 		  <div><input type="checkbox" name="flag_display_settings[flag-<?php echo $language_code; ?>]" value="1"<?php checked( 1,$get_flag_choices['flag-'.$language_code.'']); ?>/><?php echo $language_name; ?></div>
-        <?php 
-		if ($item_count == 23 || $item_count == 46 || $item_count == 69 || $item_count == 91) { ?>
+        <?php
+		if ($item_count == 25 || $item_count == 50 || $item_count == 75 || $item_count == 97) { ?>
           </div>
-        <?php } 
+        <?php }
 	  } ?>
      <div class="clear"></div>
     <?php
 	}
-  
+
     public function googlelanguagetranslator_floating_widget_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_floating_widget' ;
     $new_value = 'yes';
 
@@ -768,8 +774,8 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
           <select name="googlelanguagetranslator_floating_widget" id="googlelanguagetranslator_floating_widget" style="width:170px">
@@ -777,9 +783,9 @@ class google_language_translator {
 			  <option value="no" <?php if($options=='no'){echo "selected";}?>>No, hide widget</option>
 		  </select>
   <?php }
-  
+
   public function googlelanguagetranslator_translatebox_cb() {
-	
+
     $option_name = 'googlelanguagetranslator_translatebox' ;
     $new_value = 'yes';
 
@@ -787,8 +793,8 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
           <select name="googlelanguagetranslator_translatebox" id="googlelanguagetranslator_translatebox" style="width:190px">
@@ -796,9 +802,9 @@ class google_language_translator {
 			  <option value="no" <?php if($options=='no'){echo "selected";}?>>No, hide language box</option>
 		  </select>
   <?php }
-  
+
   public function googlelanguagetranslator_display_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_display' ;
     $new_value = 'Vertical';
 
@@ -806,19 +812,19 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
           <select name="googlelanguagetranslator_display" id="googlelanguagetranslator_display" style="width:170px;">
              <option value="Vertical" <?php if(get_option('googlelanguagetranslator_display')=='Vertical'){echo "selected";}?>>Vertical</option>
              <option value="Horizontal" <?php if(get_option('googlelanguagetranslator_display')=='Horizontal'){echo "selected";}?>>Horizontal</option>
 			 <option value="SIMPLE" <?php if (get_option('googlelanguagetranslator_display')=='SIMPLE'){echo "selected";}?>>Popup Style</option>
-          </select>  
+          </select>
   <?php }
-  
+
   public function googlelanguagetranslator_toolbar_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_toolbar' ;
     $new_value = 'Yes';
 
@@ -826,8 +832,8 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
           <select name="googlelanguagetranslator_toolbar" id="googlelanguagetranslator_toolbar" style="width:170px;">
@@ -835,9 +841,9 @@ class google_language_translator {
              <option value="No" <?php if(get_option('googlelanguagetranslator_toolbar')=='No'){echo "selected";}?>>No</option>
           </select>
   <?php }
-  
+
   public function googlelanguagetranslator_showbranding_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_showbranding' ;
     $new_value = 'Yes';
 
@@ -845,18 +851,18 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
           <select name="googlelanguagetranslator_showbranding" id="googlelanguagetranslator_showbranding" style="width:170px;">
              <option value="Yes" <?php if(get_option('googlelanguagetranslator_showbranding')=='Yes'){echo "selected";}?>>Yes</option>
              <option value="No" <?php if(get_option('googlelanguagetranslator_showbranding')=='No'){echo "selected";}?>>No</option>
-          </select> 
+          </select>
   <?php }
-  
+
   public function googlelanguagetranslator_flags_alignment_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_flags_alignment' ;
     $new_value = 'flags_left';
 
@@ -864,16 +870,16 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, 'flags_left' );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
       <input type="radio" name="googlelanguagetranslator_flags_alignment" id="flags_left" value="flags_left" <?php if($options=='flags_left'){echo "checked";}?>/> Align Left<br/>
       <input type="radio" name="googlelanguagetranslator_flags_alignment" id="flags_right" value="flags_right" <?php if($options=='flags_right'){echo "checked";}?>/> Align Right
   <?php }
-  
+
   public function googlelanguagetranslator_analytics_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_analytics' ;
     $new_value = 0;
 
@@ -881,16 +887,16 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.'');
 
     $html = '<input type="checkbox" name="googlelanguagetranslator_analytics" id="googlelanguagetranslator_analytics" value="1" '.checked(1,$options,false).'/> &nbsp; Activate Google Analytics tracking?';
     echo $html;
   }
-  
+
   public function googlelanguagetranslator_analytics_id_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_analytics_id' ;
     $new_value = '';
 
@@ -898,16 +904,16 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.'');
 
     $html = '<input type="text" name="googlelanguagetranslator_analytics_id" id="googlelanguagetranslator_analytics_id" value="'.$options.'" />';
     echo $html;
   }
-  
+
   public function googlelanguagetranslator_flag_size_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_flag_size' ;
     $new_value = '18';
 
@@ -915,8 +921,8 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.''); ?>
 
           <select name="googlelanguagetranslator_flag_size" id="googlelanguagetranslator_flag_size" style="width:110px;">
@@ -925,19 +931,19 @@ class google_language_translator {
              <option value="20" <?php if($options=='20'){echo "selected";}?>>20px</option>
 			 <option value="22" <?php if($options=='22'){echo "selected";}?>>22px</option>
              <option value="24" <?php if($options=='24'){echo "selected";}?>>24px</option>
-          </select> 
+          </select>
   <?php }
-  
+
   public function googlelanguagetranslator_flags_order_cb() {
 	$option_name = 'googlelanguagetranslator_flags_order';
 	$new_value = '';
-	
+
 	if ( get_option ( $option_name ) === false ) {
-	  
+
 	  // The option does not exist, so we update it.
 	  update_option( $option_name, $new_value );
 	}
-	
+
 	$options = get_option ( ''.$option_name.'' ); ?>
 
     <input type="hidden" id="order" name="googlelanguagetranslator_flags_order" value="<?php print_r(get_option('googlelanguagetranslator_flags_order')); ?>" />
@@ -947,13 +953,13 @@ class google_language_translator {
   public function googlelanguagetranslator_english_flag_choice_cb() {
 	$option_name = 'googlelanguagetranslator_english_flag_choice';
 	$new_value = 'us_flag';
-	
+
 	if ( get_option ( $option_name ) === false ) {
-	  
+
 	  // The option does not exist, so we update it.
 	  update_option( $option_name, $new_value );
 	}
-	
+
 	$options = get_option ( ''.$option_name.'' ); ?>
 
     <select name="googlelanguagetranslator_english_flag_choice" id="googlelanguagetranslator_english_flag_choice">
@@ -967,13 +973,13 @@ class google_language_translator {
   public function googlelanguagetranslator_spanish_flag_choice_cb() {
 	$option_name = 'googlelanguagetranslator_spanish_flag_choice';
 	$new_value = 'spanish_flag';
-	
+
 	if ( get_option ( $option_name ) === false ) {
-	  
+
 	  // The option does not exist, so we update it.
 	  update_option( $option_name, $new_value );
 	}
-	
+
 	$options = get_option ( ''.$option_name.'' ); ?>
 
     <select name="googlelanguagetranslator_spanish_flag_choice" id="googlelanguagetranslator_spanish_flag_choice">
@@ -986,13 +992,13 @@ class google_language_translator {
   public function googlelanguagetranslator_portuguese_flag_choice_cb() {
 	$option_name = 'googlelanguagetranslator_portuguese_flag_choice';
 	$new_value = 'portuguese_flag';
-	
+
 	if ( get_option ( $option_name ) === false ) {
-	  
+
 	  // The option does not exist, so we update it.
 	  update_option( $option_name, $new_value );
 	}
-	
+
 	$options = get_option ( ''.$option_name.'' ); ?>
 
     <select name="googlelanguagetranslator_portuguese_flag_choice" id="googlelanguagetranslator_spanish_flag_choice">
@@ -1001,9 +1007,9 @@ class google_language_translator {
     </select>
    <?php
   }
-  
+
   public function googlelanguagetranslator_css_cb() {
-	 
+
     $option_name = 'googlelanguagetranslator_css' ;
     $new_value = '';
 
@@ -1011,16 +1017,16 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
+	  }
+
 	  $options = get_option (''.$option_name.'');
-    
+
 	  $html = '<textarea style="width:100%; height:200px" name="googlelanguagetranslator_css" id="googlelanguagetranslator_css">'.$options.'</textarea>';
     echo $html;
   }
-  
+
   public function googlelanguagetranslator_multilanguage_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_multilanguage' ;
     $new_value = 0;
 
@@ -1028,32 +1034,32 @@ class google_language_translator {
 
       // The option does not exist, so we update it.
       update_option( $option_name, $new_value );
-	  } 
-	  
-	  $options = get_option (''.$option_name.''); 
+	  }
+
+	  $options = get_option (''.$option_name.'');
 
       $html = '<input type="checkbox" name="googlelanguagetranslator_multilanguage" id="googlelanguagetranslator_multilanguage" value="1" '.checked(1,$options,false).'/> &nbsp; Turn on multilanguage mode?';
-      echo $html; 
+      echo $html;
   }
-  
+
   public function googlelanguagetranslator_exclude_translation_cb() {
-	
+
 	$option_name = 'googlelanguagetranslator_exclude_translation';
 	$new_value = '';
-	
+
 	if (get_option($option_name) === false ) {
 	  // The option does not exist, so we update it.
 	  update_option( $option_name, $new_value );
 	}
-	
+
 	$options = get_option (''.$option_name.'');
-	
+
 	$html = '<input type="text" name="'.$option_name.'" id="'.$option_name.'" value="'.$options.'" />';
-	
+
 	echo $html;
   }
-   
-  public function page_layout_cb() { 
+
+  public function page_layout_cb() {
     include( plugin_dir_path( __FILE__ ) . '/css/style.php'); ?>
         <?php add_thickbox(); ?>
         <div class="wrap">
@@ -1063,97 +1069,97 @@ class google_language_translator {
 	          <div class="metabox-holder has-right-sidebar" style="float:left; width:65%">
                 <div class="postbox" style="width: 100%">
                   <h3 class="notranslate">Settings</h3>
-                  
+
 			      <?php settings_fields('google_language_translator'); ?>
                     <table style="border-collapse:separate" width="100%" border="0" cellspacing="8" cellpadding="0" class="form-table">
                       <tr>
 						<td style="width:60%" class="notranslate">Plugin Status:</td>
 				        <td class="notranslate"><?php $this->googlelanguagetranslator_active_cb(); ?></td>
                       </tr>
-					  
+
 					  <tr class="notranslate">
 				        <td>Choose the original language of your website</td>
 						<td><?php $this->googlelanguagetranslator_language_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 						<td>What translation languages will display in the language box?<br/>("All Languages" option <strong><u>must</u></strong> be chosen to show flags.)</td>
 						<td><?php $this->googlelanguagetranslator_language_option_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate languages">
 						<td colspan="2"><?php $this->language_display_settings_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
-				        <td class="choose_flags_intro">Show flag images?<br/>(Display up to 91 flags above the translator)</td>
+				        <td class="choose_flags_intro">Show flag images?<br/>(Display up to 97 flags above the translator)</td>
 						<td class="choose_flags_intro"><?php $this->googlelanguagetranslator_flags_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate choose_flags">
 				        <td class="choose_flags">Choose the flags you want to display:</td>
 				        <td></td>
 			          </tr>
-					  
+
 					  <tr class="notranslate">
 						<td colspan="2" class="choose_flags"><?php $this->flag_display_settings_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 						<td>Show floating translation widget?<br/>
 						  <span>("All Languages" option <strong><u>must</u></strong> be chosen to show widget.)</span>
 						</td>
 						<td><?php $this->googlelanguagetranslator_floating_widget_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 				        <td>Show translate box?</td>
 						<td><?php $this->googlelanguagetranslator_translatebox_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 						<td>Layout option: <span style="color:red; font-weight:bold">NEW!</span> (Popup layout just added!)</td>
 						<td><?php $this->googlelanguagetranslator_display_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
                         <td>Show Google Toolbar?</td>
 						<td><?php $this->googlelanguagetranslator_toolbar_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 				        <td>Show Google Branding? &nbsp;<a href="https://developers.google.com/translate/v2/attribution" target="_blank">Learn more</a></td>
 						<td><?php $this->googlelanguagetranslator_showbranding_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="alignment notranslate">
 				        <td class="flagdisplay">Align the translator left or right?</td>
 						<td class="flagdisplay"><?php $this->googlelanguagetranslator_flags_alignment_cb(); ?></td>
 					  </tr>
-					  
-					 
+
+
 
                       <tr class="multilanguage notranslate">
 						<td>Multilanguage Page option? &nbsp;<a href="#TB_inline?width=200&height=150&inlineId=multilanguage-page-description" title="What is the Multi-Language Page Option?" class="thickbox">Learn more</a><div id="multilanguage-page-description" style="display:none"><p>If you activate this setting, Google will translate all text into a single language when requested by your user, even if text is written in multiple languages. In most cases, this setting is not recommended, although for certain websites it might be necessary.</p></div></td>
 						<td><?php $this->googlelanguagetranslator_multilanguage_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 						<td>Google Analytics:</td>
 						<td><?php $this->googlelanguagetranslator_analytics_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="analytics notranslate">
 						<td>Google Analytics ID (Ex. 'UA-11117410-2')</td>
 						<td><?php $this->googlelanguagetranslator_analytics_id_cb(); ?></td>
 					  </tr>
-					  
+
 					  <tr class="notranslate">
 						<td>Full widget usage in pages/posts/sidebar:</td>
 						<td><code>[google-translator]</code></td>
                                           </tr>
 				  </table>
-					  
+
 				  <table style="border-collapse:separate" width="100%" border="0" cellspacing="8" cellpadding="0" class="form-table">
 					  <tr class="notranslate">
 						<td style="width:40%">Full widget usage in header/footer or page template:</td>
@@ -1162,7 +1168,7 @@ class google_language_translator {
 
                       <tr class="notranslate">
 						<td>Single language usage in<br/>nav menu/pages/posts</td>
-						<td><code>[glt language="Spanish" label="Español"]</code></td>
+						<td><code>[glt language="Spanish" label="Espa&ntilde;ol"]</code></td>
                       </tr>
 
                       <tr class="notranslate">
@@ -1178,29 +1184,29 @@ class google_language_translator {
 								<li>Enter a navigation label of your choice. This label does not appear on your website - it is meant only to help you identify the menu item.</li>
 								<li>Place the following shortcode into the "description" field, and modify it to display the language and navigation label of your choice:</li>
 						      </ol>
-							<p><code>[glt language="Spanish" label="Español"]</code></p>
+							<p><code>[glt language="Spanish" label="Espa&ntilde;ol"]</code></p>
                           </div>
 						</td>
                       </tr>
-					  
+
 					  <tr class="notranslate">
 						<td>
 						  <?php
-	                                            if (isset($_POST['submit'])) { 
-	                                              if (empty($_POST['submit']) && !check_admin_referer( 'glt-save-settings', 'glt-save-settings-nonce' )) {                  
-	                                                wp_die(); 
+	                                            if (isset($_POST['submit'])) {
+	                                              if (empty($_POST['submit']) && !check_admin_referer( 'glt-save-settings', 'glt-save-settings-nonce' )) {
+	                                                wp_die();
 	                                              } else {  }
-	                                            } 						 
+	                                            }
 	                                            wp_nonce_field('glt-save-settings, glt-save-settings-nonce', false);
-                                                    submit_button(); 
+                                                    submit_button();
 						  ?>
 						</td>
 						<td></td>
 					  </tr>
-			      </table>	  
+			      </table>
 		    </div> <!-- .postbox -->
 		  </div> <!-- .metbox-holder -->
-		  
+
 		  <div class="metabox-holder" style="float:right; clear:right; width:33%">
 		    <div class="postbox">
 		      <h3 class="notranslate">Preview</h3>
@@ -1208,17 +1214,17 @@ class google_language_translator {
 		          <tr>
 					<td style="box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; padding:15px 15px; margin:0px"><span class="notranslate"> Drag &amp; drop flags to change their position.<br/><br/>(Note: flag order resets when flags are added/removed)</span><br/><br/><?php echo do_shortcode('[google-translator]'); ?><p class="hello"><span class="notranslate">Translated text:</span> &nbsp; <span>Hello</span></p></td>
 				  </tr>
-				  
+
 				  <tr>
 					<td></td>
 				  </tr>
-	
-	
+
+
 		        </table>
 		    </div> <!-- .postbox -->
 	      </div> <!-- .metabox-holder -->
-				
-<div id="glt_advanced_settings" class="metabox-holder notranslate" style="float: right; width: 33%;">
+
+<div id="glt_advanced_settings" class="metabox-holder box-right notranslate" style="float: right; width: 33%; clear:right">
   <div class="postbox">
     <h3>Advanced Settings</h3>
     <div class="inside">
@@ -1232,7 +1238,7 @@ class google_language_translator {
 	  <td class="advanced">Flag for English:</td>
 	  <td class="advanced"><?php $this->googlelanguagetranslator_english_flag_choice_cb(); ?></td>
         </tr>
-        
+
         <tr class="notranslate">
 	  <td class="advanced">Flag for Spanish:</td>
 	  <td class="advanced"><?php $this->googlelanguagetranslator_spanish_flag_choice_cb(); ?></td>
@@ -1246,9 +1252,9 @@ class google_language_translator {
     </div> <!-- .inside -->
   </div> <!-- .postbox -->
 </div> <!-- #glt_advanced_settings -->
-		  
-				
-	   <div class="metabox-holder notranslate" style="float: right; width: 33%;">
+
+
+	   <div class="metabox-holder box-right notranslate" style="float: right; width: 33%;">
           <div class="postbox">
             <h3>Add CSS Styles</h3>
 			<div class="inside">
@@ -1259,15 +1265,15 @@ class google_language_translator {
 	   </div>
 	  <?php $this->googlelanguagetranslator_flags_order_cb(); ?>
 	</form>
-		  
-		<div class="metabox-holder notranslate" style="float: right; width: 33%;">
+
+		<div class="metabox-holder box-right notranslate" style="float: right; width: 33%;">
           <div class="postbox">
-            <h3>GLT Premium 5.0.22 is Here! $30</h3>
-			<div class="inside"><a class="wp-studio-logo" href="http://www.wp-studio.net/" target="_blank"><img style="background:#444; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; width:177px;" src="<?php echo plugins_url('google-language-translator/images/logo.png'); ?>"></a><br />
+            <h3>GLT Premium 5.0.24 is Here! $30</h3>
+			<div class="inside"><a class="wp-studio-logo" href="http://www.wp-studio.net/" target="_blank"><img style="background:#444; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; width:177px;" src="<?php echo plugins_url( 'images/logo.png' , __FILE__ ); ?>"></a><br />
               <ul id="features" style="margin-left:15px">
 				<li style="list-style:square outside"><span style="color:red; font-weight:bold">New!</span> Edit translations! (Pages/Posts ONLY)</li>
                 <li style="list-style:square outside">6 Floating Widget positions</li>
-                <li style="list-style:square outside">91 Languages with flags</li>
+                <li style="list-style:square outside">97 Languages with flags</li>
                 <li style="list-style:square outside">Exclude specific areas from translation</li>
 		<li style="list-style:square outside">jQuery-powered language switcher<br/>(No Adobe Flash required)</li>
 		<li style="list-style:square outside">Add single languages to your menus/pages/posts</li>
@@ -1279,13 +1285,11 @@ class google_language_translator {
 	        <li style="list-style:square outside">Full access to our support forum</li>
 	        <li style="list-style:square outside">FREE access to all future updates</li>
 	      </ul>
-              <h4>Do you have a WordPress issue that needs a fix? Fix any single issue for only $30</h4>
-              <a class="wp-helpdesk-logo" title="WP Helpdesk" href="http://wp-helpdesk.com/" target="_blank"><img style="border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px;" src="http://wp-helpdesk.com/wp-content/uploads/2015/11/wp-helpdesk-dark.jpg" alt="WP Helpdesk Logo" /></a>
            </div>
         </div>
-      </div>	  
-		  
-	    <div class="metabox-holder notranslate" style="float: right; width: 33%;">
+      </div>
+
+	    <div class="metabox-holder box-right notranslate" style="float: right; width: 33%;">
           <div class="postbox">
             <h3>Please Consider A Donation</h3>
               <div class="inside">If you like this plugin and find it useful, help keep this plugin actively developed by clicking the donate button <br /><br />
@@ -1304,9 +1308,9 @@ class google_language_translator {
                <br />
              </div>
           </div>
-	   </div>	  
+	   </div>
 </div> <!-- .wrap -->
-<?php 
+<?php
   }
 }
 $google_language_translator = new google_language_translator();

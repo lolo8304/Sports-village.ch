@@ -8,17 +8,25 @@
     text-transform: uppercase;
     padding: 0px 15px;
     display: inline-block;
-    
+    vertical-align: middle; 
 }
 
 
+
+
 /* Statistics General Infobox */
+
+.tnp-statistics-general-icon {
+    display: inline-block;
+    background-color: #2980B9;
+    padding: 20px 18px 14px 18px;
+}
 
 .tnp-statistics-general-box {
     background-color: #2980B9;
     display: inline-block;
     padding: 10px;
-    margin: 10px 0px 10px 25px;
+    margin: 10px 0px 10px 0px;
 }
 
 #tnp-heading .tnp-statistics-general-box p {
@@ -42,7 +50,7 @@
     background-color: #3a5168;
 }
 
-.tnp-statistics-info-box .button-secondary {
+.tnp-statistics-info-box .button, .tnp-statistics-info-box .button-secondary {
     vertical-align: middle;
 }
 
@@ -65,15 +73,14 @@
 }
 
 .tnp-widget .tnp-data .tnp-data-title{
-    font-size: 13px;
+    font-size: 9px;
     font-weight: 700;
-    margin-bottom: 10px;
     text-transform: uppercase;
     font-family: "Source Sans Pro";
 }
 
 .tnp-widget .tnp-data .tnp-data-value{
-    font-size: 19px;
+    font-size: 15px;
     color: #415b76;
 }
 

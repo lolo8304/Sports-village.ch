@@ -18,7 +18,7 @@ class NewsletterLock extends NewsletterModule {
     }
 
     function __construct() {
-        parent::__construct('lock', '1.0.2');
+        parent::__construct('lock', '1.0.3');
         add_action('init', array($this, 'hook_init'), 90);
     }
 
@@ -98,6 +98,11 @@ class NewsletterLock extends NewsletterModule {
         if (empty($this->options['ids'])) {
             return $content;
         }
+        
+        if (current_user_can('manage_options')) {
+            return $content;
+        }
+        
         $ids = explode(',', str_replace(' ', '', $this->options['ids']));
 
         if (has_tag($ids) || in_category($ids) || in_array($post->post_name, $ids)) {
@@ -123,6 +128,10 @@ class NewsletterLock extends NewsletterModule {
         $cache_stop = true;
 
         $this->found = true;
+        
+        if (current_user_can('publish_posts')) {
+            return do_shortcode($content);
+        }
 
         $user = $this->check_user();
         if ($user != null && $user->status == 'C') {

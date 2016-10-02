@@ -8,6 +8,11 @@ if ($controls->is_action('convert')) {
     $controls->messages = 'Converted!';
 }
 
+if ($controls->is_action('unconvert')) {
+    $wpdb->query("update wp_newsletter_emails set type='email' where type='message'");
+    $controls->messages = 'Unconverted!';
+}
+
 if ($controls->is_action('send')) {
     $newsletter->hook_newsletter();
     $controls->messages .= __('Delivery engine triggered.', 'newsletter');
@@ -23,6 +28,10 @@ if ($controls->is_action('copy')) {
     $email['type'] = 'message';
     $email['editor'] = $original->editor;
     $email['track'] = $original->track;
+    if(isset($original->options)) {
+        $original_options = unserialize($original->options);
+        $email['options'] = serialize(array('composer' => $original_options['composer']));
+    }
 
     Newsletter::instance()->save_email($email);
     $controls->messages .= __('Message duplicated.', 'newsletter');
@@ -70,8 +79,9 @@ $emails = Newsletter::instance()->get_emails('message');
 
             <p>
                 <a href="<?php echo $module->get_admin_page_url('theme'); ?>" class="button"><?php _e('New newsletter', 'newsletter') ?></a>
-                <?php $controls->button_confirm('delete_selected', __('Delete selected newsletters', 'newsletter'), __('Proceed?', 'newsletter')) ?>
-                <?php $controls->button('send', __('Trigger the delivery engine', 'newsletter'))  ?>
+                <?php $controls->button_confirm('delete_selected', __('Delete selected newsletters', 'newsletter'), __('Proceed?', 'newsletter'));
+                ?>
+                <?php $controls->button('send', __('Trigger the delivery engine', 'newsletter')); ?>
             </p>
             <table class="widefat">
                 <thead>
@@ -91,24 +101,43 @@ $emails = Newsletter::instance()->get_emails('message');
                 </thead>
 
                 <tbody>
-                    <?php foreach ($emails as $email) { ?>
+                    <?php foreach ($emails as &$email) {
+                        $email_options = unserialize($email->options);
+                        ?>
                         <tr>
                             <td><input type="checkbox" name="ids[]" value="<?php echo $email->id; ?>"/></td>
                             <td><?php echo $email->id; ?></td>
-                            <td><?php echo esc_html($email->subject); ?></td>
+                            <td><?php
+                                if ($email->subject)
+                                    echo htmlspecialchars($email->subject);
+                                else
+                                    echo "Newsletter #" . $email->id;
+                                ?></td>
 
-                            <td><?php echo $module->get_email_status_label($email) ?></td>
-                            <td><?php echo $module->get_email_progress_label($email) ?></td>
+                            <td>
+                                <?php
+                                if ($email->status == 'sending') {
+                                    if ($email->send_on > time()) {
+                                        _e('Scheduled', 'newsletter');
+                                    } else {
+                                        _e('Sending', 'newsletter');
+                                    }
+                                } else {
+                                    echo $email->status;
+                                }
+                                ?>
+                            </td>
+                            <td><?php if ($email->status == 'sent' || $email->status == 'sending') echo $email->sent . ' ' . __('of', 'newsletter') . ' ' . $email->total; ?></td>
                             <td><?php if ($email->status == 'sent' || $email->status == 'sending') echo $module->format_date($email->send_on); ?></td>
-                            <td><?php echo $email->track == 1 ? __('Yes', 'newsletter') : __('No', 'newsletter'); ?></td>
-                            <td><a class="button" href="<?php echo $module->get_admin_page_url('edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i> <?php _e('Edit', 'newsletter') ?></a></td>
+                            <td><?php echo $email->track == 1 ? __('Yes', 'newsletter') : __('Yes', 'newsletter'); ?></td>
+                            <td><a class="button" href="<?php echo $module->get_admin_page_url(is_array($email_options) && array_key_exists('composer', $email_options) && $email_options['composer'] ? 'composer' : 'edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i> <?php _e('Edit', 'newsletter') ?></a></td>
                             <td>
                                 <a class="button" href="<?php echo NewsletterStatistics::instance()->get_statistics_url($email->id); ?>"><i class="fa fa-bar-chart"></i> <?php _e('Statistics', 'newsletter') ?></a>
                             </td>
                             <td><?php $controls->button_copy($email->id); ?></td>
                             <td><?php $controls->button_delete($email->id); ?></td>
                         </tr>
-                    <?php } ?>
+<?php } ?>
                 </tbody>
                 <tfoot>
                     <tr>
@@ -121,6 +150,6 @@ $emails = Newsletter::instance()->get_emails('message');
         </form>
     </div>
 
-    <?php include NEWSLETTER_DIR . '/tnp-footer.php'; ?>
+<?php include NEWSLETTER_DIR . '/tnp-footer.php'; ?>
 
 </div>

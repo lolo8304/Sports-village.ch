@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($role)
 {
 	case "administrator":
@@ -27,12 +28,12 @@ else
 		<a class="nav-tab" id="other_services" href="admin.php?page=other_services"><?php _e("Our Other Services", mail_bank);?></a>
 	</h2>
 	<?php
-	if($_REQUEST["page"] != "mail_feature_requests")
+	if(isset($_GET["page"]) ? esc_attr($_GET["page"]) : "" != "mail_feature_requests")
 	{
 		?>
 		<div class="custom-message green" style="display: block;margin-top:30px;max-width:965px;">
 			<div style="padding: 4px 0;">
-				<p style="font:12px/1.0em Arial !important;font-weight:bold;">If you don't find any features you were looking for in this Plugin, 
+				<p style="font:12px/1.0em Arial !important;font-weight:bold;">If you don't find any features you were looking for in this Plugin,
 					please write us <a target="_self" href="admin.php?page=mail_feature_requests">here</a> and we shall try to implement this for you as soon as possible! We are looking forward for your valuable <a target="_self" href="admin.php?page=mail_feature_requests">Feedback</a></p>
 			</div>
 		</div>
@@ -40,13 +41,13 @@ else
 	}
 	?>
 	<script>
-	
+
 	jQuery(document).ready(function()
 	{
-		jQuery(".nav-tab-wrapper > a#<?php echo $_REQUEST["page"];?>").addClass("nav-tab-active");
+		jQuery(".nav-tab-wrapper > a#<?php echo isset($_GET["page"]) ? esc_attr($_GET["page"]) : "";?>").addClass("nav-tab-active");
 	});
-	
+
 	</script>
-<?php 
+<?php
 }
 ?>

@@ -35,12 +35,26 @@ class NewsletterStatisticsHelper {
         global $wpdb;
         return $wpdb->get_results($wpdb->prepare("select min(unix_timestamp(created)) as created from " . NEWSLETTER_STATS_TABLE . " where email_id=%d group by user_id order by created", $email_id));
     }
+    
+    function get_click_events($email_id) {
+        global $wpdb;
+        return $wpdb->get_results($wpdb->prepare("SELECT COUNT(1) AS events_count, "
+                . "DATE(created) AS event_day, url FROM " . NEWSLETTER_STATS_TABLE . " "
+                . "WHERE email_id=%d AND url > '' GROUP BY event_day ORDER BY event_day", $email_id));
+    }
+    
+    function get_open_events($email_id) {
+        global $wpdb;
+        return $wpdb->get_results($wpdb->prepare("SELECT COUNT(1) AS events_count, "
+                . "DATE(created) AS event_day, url FROM " . NEWSLETTER_STATS_TABLE . " "
+                . "WHERE email_id=%d GROUP BY event_day ORDER BY event_day", $email_id));
+    }
 
     function aggregate_events_by_day($events, $start_time=0) {
         if ($start_time == 0) {
             $start_time = $events[0]->created;
         }
-        $list = array_fill(0, 30, 0);
+        $list = array_fill(0, 10, 0);
         foreach ($events as &$event) {
             $delta = max(0, $event->created-$start_time);
             $i = floor($delta / (3600*24));

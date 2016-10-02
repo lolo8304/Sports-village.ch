@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 if(!function_exists("create_table_mail_detail"))
 {
 	function create_table_mail_detail()

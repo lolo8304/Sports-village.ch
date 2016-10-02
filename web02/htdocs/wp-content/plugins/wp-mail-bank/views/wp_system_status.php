@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($role)
 {
 	case "administrator":
@@ -86,7 +87,7 @@ else
 											<label class="layout-control-label">MySQL Version :</label>
 											<div class="layout-controls wp_layout_control_mail_bank">
 												<span>
-												<?php 
+												<?php
 													global $wpdb;
 													echo $wpdb->db_version();
 												?>
@@ -109,7 +110,7 @@ else
 											<label class="layout-control-label">PHP Post Max Size :</label>
 											<div class="layout-controls wp_layout_control_mail_bank">
 												<span>
-												<?php 
+												<?php
 													echo ini_get("post_max_size");
 												?>
 												</span>
@@ -381,7 +382,7 @@ else
 									<div class="widget-layout-body">
 										<div class="layout-control-group">
 											<label class="layout-control-label">Theme Name :</label>
-						
+
 											<div class="layout-controls wp_layout_control_mail_bank">
 												<span><?php echo $active_theme->Name; ?></span>
 											</div>
@@ -404,7 +405,7 @@ else
 										</div>
 									</div>
 								</div>
-								<?php 
+								<?php
 								}
 								?>
 							</div>
@@ -430,7 +431,7 @@ else
 			}
 			return o;
 		};
-	
+
 		jQuery("a.system-report").click(function () {
 			var report = "";
 			jQuery(".layout-span6 .widget-layout").each(function () {
@@ -468,11 +469,11 @@ else
 			jQuery(this).fadeOut();
 			jQuery("a.system-report").fadeIn();
 		})
-		jQuery(document).ready(function() 
+		jQuery(document).ready(function()
 		{
 			jQuery("#wp_system_status").addClass("nav-tab-active");
 		});
 	</script>
-<?php 
+<?php
 }
 ?>

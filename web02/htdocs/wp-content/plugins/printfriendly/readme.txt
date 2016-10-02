@@ -2,8 +2,8 @@
 Contributors: printfriendly,joostdevalk, jrf
 Tags: print, pdf, printer, printing, printable, widget, plugin
 Requires at least: 2.8
-Tested up to: 4.3.1
-Stable tag: 3.4.5
+Tested up to: 4.6
+Stable tag: 3.5.3
 
 
 The #1 Print and PDF button for your WordPress site. Printer Friendly pages without coding, css, or print.css. Fast, easy, and professional.
@@ -139,6 +139,27 @@ If you have any other issues with the plugin or the PrintFriendly widget, please
 3. Localization example: Spanish
 
 == Changelog ==
+
+= 3.5.3 =
+* Fix security issues
+
+= 3.5.2 =
+* Fix code to support PHP 5.2
+
+= 3.5.0 =
+* WooCommerce product page improvements. Better support for product images, price, and description.
+
+= 3.4.9 =
+* Fix minor security issue
+
+= 3.4.8 =
+* Fix button images style
+
+= 3.4.7 =
+* Fix button style to remove underline
+
+= 3.4.6 =
+* Always removed PrintFriendly button underline regardless plugin CSS for button styles option
 
 = 3.4.4 =
 * Removed page content selection option - Wordpress Standard/Strict

@@ -76,6 +76,8 @@ class NewsletterEmails extends NewsletterModule {
         $this->add_admin_page('new', 'Email New');
         $this->add_admin_page('edit', 'Email Edit');
         $this->add_admin_page('theme', 'Email Themes');
+        $this->add_admin_page('composer', 'The Composer');
+        $this->add_admin_page('cpreview', 'The Composer Preview');
     }
 
     /**

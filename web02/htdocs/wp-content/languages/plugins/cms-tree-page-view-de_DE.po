@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-03-24 21:19:22+0000\n"
+"PO-Revision-Date: 2016-06-08 20:58:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.1.0-alpha\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
 "Project-Id-Version: Stable (latest release)\n"
 
 #: functions.php:1086
@@ -132,11 +132,11 @@ msgstr "Neue Seite"
 
 #: functions.php:1861
 msgid "Thanks for using my plugin"
-msgstr "Danke, dass Du dieses Plugin verwendest"
+msgstr "Danke, dass Sie dieses Plugin verwenden"
 
 #: functions.php:1863
 msgid "Hi there! I just wanna says thanks for using my plugin. I hope you like it as much as I do."
-msgstr "Hallo auch! Ich möchte nur Danke sagen für die Verwendung meines Plugins. Ich hoffe, Du magst es genauso wie ich."
+msgstr "Hallo auch! I möchte nur Danke sagen für die Verwendung meines Plugins. Ich hoffe Sie mögen es genauso wie ich."
 
 #: functions.php:1864
 msgid "/Pär Thernström - plugin creator"
@@ -148,19 +148,19 @@ msgstr "Mir gefällt dieses Plugin<br>Wie kann ich helfen?"
 
 #: functions.php:1867
 msgid "There are serveral ways for you to show your appreciation:"
-msgstr "Es gibt verschiedene Wege, mir Deine Anerkennung zu zeigen:"
+msgstr "Es gibt verschiedene Wege, mir Ihre Anerkennung zu zeigen:"
 
 #: functions.php:1869
 msgid "<a href=\"%1$s\">Give it a nice review</a> over at the WordPress Plugin Directory"
-msgstr "<a href=\"%1$s\">Schreibe eine positive Bewertung</a> im Plugin-Verzeichnis von WordPress"
+msgstr "<a href=\"%1$s\">Schreiben Sie eine positive Bewertung</a> im Plugin-Verzeichnis von WordPress"
 
 #: functions.php:1870
 msgid "<a href=\"%1$s\">Give a donation</a> – any amount will make me happy"
-msgstr "<a href=\"%1$s\">Spende</a> – jeder Betrag macht mich glücklich"
+msgstr "<a href=\"%1$s\">Spenden Sie</a> – jeder Betrag macht mich glücklich"
 
 #: functions.php:1871
 msgid "<a href=\"%1$s\">Post a nice tweet</a> or make a nice blog post about the plugin"
-msgstr "<a href=\"%1$s\">Schreibe einen netten Tweet</a> oder einen netten Blog-Beitrag über das Plugin"
+msgstr "<a href=\"%1$s\">Schreiben Sie einen netten Tweet</a> oder einen netten Blog-Beitrag über das Plugin"
 
 #: functions.php:1874
 msgid "Support"
@@ -180,7 +180,7 @@ msgstr "http://eskapism.se/code-playground/cms-tree-page-view/"
 
 #. Description of the plugin/theme
 msgid "Adds a CMS-like tree view of all your pages, like the view often found in a page-focused CMS. Use the tree view to edit, view, add pages and search pages (very useful if you have many pages). And with drag and drop you can rearrange the order of your pages. Page management won't get any easier than this!"
-msgstr "Ermöglicht eine Baumansicht für alle Seiten, wie man es oft in seitenorientieren CMS findet. Benutze den Seitenbaum zum Anzeigen, Bearbeiten, Hinzufügen und Suchen von Seiten (sehr hilfreich bei komplexen Seitenstrukturen). Die Seiten können per Drag & Drop neu geordnet werden. Seitenmanagement kann nicht einfacher sein!  "
+msgstr "Ermöglicht eine Baumansicht für alle Seiten wie man es oft in seitenorientieren CMS findet. Benutze den Seitenbaum zum Anzeigen, Bearbeiten, Hinzufügen und Suchen von Seiten (sehr hilfreich bei komplexen Seitenstrukturen). Die Seiten können per Drag & Drop neu geordnet werden. Seitenmanagement kann nicht einfacher sein!  "
 
 #. Author of the plugin/theme
 msgid "Pär Thernström"
@@ -284,7 +284,7 @@ msgstr "Seite wird hinzugefügt..."
 
 #: functions.php:397
 msgid "Adding ..."
-msgstr "Hinzufügen..."
+msgstr "Seite wird hinzugefügt…"
 
 #: functions.php:398 functions.php:1200
 msgid "No posts found."
@@ -327,7 +327,7 @@ msgstr "Einstellungen"
 
 #: functions.php:728
 msgid "Select where to show a tree for pages and custom post types"
-msgstr "Auswählen, wo eine Baumansicht für Seiten und Artikel angezeigt werden soll"
+msgstr "Auswählen wo eine Baumansicht für Seiten und Artikel angezeigt werden soll:"
 
 #: functions.php:777
 msgid "On dashboard"
@@ -371,8 +371,8 @@ msgstr "Suche leeren"
 
 #: functions.php:1084
 msgid "Search"
-msgstr "Suche"
+msgstr "Suchen"
 
 #: functions.php:1085
 msgid "Searching..."
-msgstr "Suchen..."
+msgstr "Wird gesucht..."

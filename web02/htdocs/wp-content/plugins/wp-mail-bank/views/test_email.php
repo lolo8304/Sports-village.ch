@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($role)
 {
 	case "administrator":
@@ -53,9 +54,9 @@ else
 														This is a Test Email from WP Mail Bank.
 														Thanks for using it!
 														Best Regards
-														<strong>WP Mail Bank</strong>"; 
-												wp_editor( $distribution, $name ="uxEmailTemplate" ,array("media_buttons" => false, 
-												"textarea_rows" => 8, "tabindex" => 4,"tinymce" =>false ));  
+														<strong>WP Mail Bank</strong>";
+												wp_editor( $distribution, $name ="uxEmailTemplate" ,array("media_buttons" => false,
+												"textarea_rows" => 8, "tabindex" => 4,"tinymce" =>false ));
 											?>
 											<p class="wpib-desc-italic"><?php _e("You can specify the message of the email you want to send for testing.", mail_bank); ?></p>
 										</div>
@@ -67,7 +68,7 @@ else
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
@@ -113,16 +114,16 @@ jQuery(document).ready(function()
 	jQuery("label ").css("margin-left","6px");
 });
 jQuery("#ux_frm_test_email").validate
-({	
+({
 	rules:
-	{	
+	{
 		ux_email_to:
-		{ 
+		{
 			required: true,
 			email: true
 		},
 		ux_email_subject:
-		{ 
+		{
 			required: true
 		}
 	},
@@ -133,7 +134,7 @@ jQuery("#ux_frm_test_email").validate
 		error.insertAfter(ctrl);
 		jQuery(".error_field").css("float","left");
 		jQuery(".error_field").css("position","static");
-		
+
 	},
 	submitHandler: function(form)
 	{
@@ -158,22 +159,31 @@ jQuery("#ux_frm_test_email").validate
 				jQuery("#console_log_div").css("display","block");
 				jQuery("#result_div").css("display","none");
 				jQuery("#ux_console_log").html(data);
-			}			
+			}
 		});
 	}
 });jQuery("#return_path").css("display","block");
-function console_log()
+if(typeof(console_log) != "function")
 {
-	jQuery("#ux_test_mail").css("display","none");
-	jQuery("#ux_mail_console").css("display","block");
+	function console_log()
+	{
+		jQuery("#ux_test_mail").css("display","none");
+		jQuery("#ux_mail_console").css("display","block");
+	}
 }
-function back_settings()
+if(typeof(back_settings) != "function")
 {
-	window.location.href = "admin.php?page=smtp_mail";
+	function back_settings()
+	{
+		window.location.href = "admin.php?page=smtp_mail";
+	}
 }
-function send_test_email()
+if(typeof(send_test_email) != "function")
 {
-	jQuery("#ux_test_mail").css("display","block");
-	jQuery("#ux_mail_console").css("display","none");
+	function send_test_email()
+	{
+		jQuery("#ux_test_mail").css("display","block");
+		jQuery("#ux_mail_console").css("display","none");
+	}
 }
 </script>

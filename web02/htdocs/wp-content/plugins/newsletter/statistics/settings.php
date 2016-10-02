@@ -7,6 +7,8 @@ if (!$controls->is_action()) {
     $controls->data = $module->options;
 }
 
+do_action('newsletter_statistics_settings_init', $controls);
+
 if ($controls->is_action('save')) {
     $module->save_options($controls->data);
     $controls->add_message_saved();

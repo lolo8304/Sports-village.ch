@@ -4,8 +4,8 @@
   Plugin Name: Newsletter
   Plugin URI: http://www.thenewsletterplugin.com/plugins/newsletter
   Description: Newsletter is a cool plugin to create your own subscriber list, to send newsletters, to build your business. <strong>Before update give a look to <a href="http://www.thenewsletterplugin.com/category/release">this page</a> to know what's changed.</strong>
-  Version: 4.2.2
-  Author: Stefano Lissa, The Newsletter Team
+  Version: 4.5.6
+  Author: Stefano Lissa & The Newsletter Team
   Author URI: http://www.thenewsletterplugin.com
   Disclaimer: Use at your own risk. No warranty expressed or implied is provided.
   Text Domain: newsletter
@@ -14,7 +14,7 @@
  */
 
 // Used as dummy parameter on css and js links
-define('NEWSLETTER_VERSION', '4.2.2');
+define('NEWSLETTER_VERSION', '4.5.6');
 
 global $wpdb, $newsletter;
 
@@ -161,7 +161,6 @@ class Newsletter extends NewsletterModule {
             return;
         }
 
-
         // TODO: Meditation on how to use those ones...
         register_activation_hook(__FILE__, array($this, 'hook_activate'));
         //register_deactivation_hook(__FILE__, array(&$this, 'hook_deactivate'));
@@ -173,13 +172,24 @@ class Newsletter extends NewsletterModule {
         add_filter('the_content', array($this, 'hook_the_content'), 99);
 
         if (is_admin()) {
+            if ($this->is_admin_page()) {
+                add_action('in_admin_header', array($this, 'hook_in_admin_header'), 999);
+            }
             add_action('admin_head', array($this, 'hook_admin_head'));
 
             // Protection against strange schedule removal on some installations
             if (!wp_next_scheduled('newsletter') && !defined('WP_INSTALLING')) {
                 wp_schedule_event(time() + 30, 'newsletter', 'newsletter');
             }
+
+            add_action('wp_ajax_tnpc_render', 'tnpc_render_callback');
+            add_action('wp_ajax_tnpc_preview', 'tnpc_preview_callback');
+            add_action('wp_ajax_tnpc_css', 'tnpc_css_callback');
         }
+    }
+
+    function hook_in_admin_header() {
+        remove_all_filters('admin_notices');
     }
 
     function hook_activate() {
@@ -334,7 +344,7 @@ class Newsletter extends NewsletterModule {
 
     function admin_menu() {
         // This adds the main menu page
-        add_menu_page('Newsletter', 'Newsletter', ($this->options['editor'] == 1) ? 'manage_categories' : 'manage_options', 'newsletter_main_index', '', plugins_url('newsletter') . '/images/menu-icon.png', 30);
+        add_menu_page('Newsletter', 'Newsletter', ($this->options['editor'] == 1) ? 'manage_categories' : 'manage_options', 'newsletter_main_index', '', plugins_url('newsletter') . '/images/menu-icon.png', '30.333');
 
         $this->add_menu_page('index', 'Dashboard');
         $this->add_menu_page('main', 'Settings and More');
@@ -680,6 +690,7 @@ class Newsletter extends NewsletterModule {
         }
 
         if ($this->mail_method != null) {
+            $this->logger->debug('mail> alternative mail method found');
             return call_user_func($this->mail_method, $to, $subject, $message, $headers);
         }
 
@@ -691,8 +702,6 @@ class Newsletter extends NewsletterModule {
             // If still null, we need to use wp_mail()...
 
             $headers = array();
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-Type: text/html;charset=UTF-8';
             $headers[] = 'From: ' . $this->options['sender_name'] . ' <' . $this->options['sender_email'] . '>';
 
             if (!empty($this->options['return_path'])) {
@@ -713,7 +722,7 @@ class Newsletter extends NewsletterModule {
                     $body = $message['html'];
                 } else if (!empty($message['text'])) {
                     $headers[] = 'Content-Type: text/plain;charset=UTF-8';
-                    $this->mailer->IsHTML(false);
+                    //$this->mailer->IsHTML(false);
                     $body = $message['text'];
                 }
             }
@@ -1067,6 +1076,11 @@ class Newsletter extends NewsletterModule {
             $nk = $user->id . '-' . $user->token;
 
             $options_subscription = NewsletterSubscription::instance()->options;
+            
+            if ($email) {
+                $text = str_replace('{email_id}', $email->id, $text);
+                $text = str_replace('{email_subject}', $email->subject, $text);
+            }
 
             $home_url = home_url('/');
             //$text = $this->replace_url($text, 'SUBSCRIPTION_CONFIRM_URL', self::add_qs(plugins_url('do.php', __FILE__), 'a=c' . $id_token));
@@ -1195,8 +1209,8 @@ class Newsletter extends NewsletterModule {
         return $user;
     }
 
-    function save_email($email) {
-        return $this->store->save(NEWSLETTER_EMAILS_TABLE, $email);
+    function save_email($email, $return_format = OBJECT) {
+        return $this->store->save(NEWSLETTER_EMAILS_TABLE, $email, $return_format);
     }
 
     function delete_email($id) {
@@ -1349,18 +1363,21 @@ class Newsletter extends NewsletterModule {
             load_plugin_textdomain('newsletter', false, plugin_basename(dirname(__FILE__)) . '/languages');
         }
     }
-    
+
     var $panels = array();
+
     function add_panel($key, $panel) {
-        if (!isset($this->panels[$key])) $this->panels[$key] = array();
-        if (!isset($panel['id'])) $panel['id'] = sanitize_key($panel['label']);
+        if (!isset($this->panels[$key]))
+            $this->panels[$key] = array();
+        if (!isset($panel['id']))
+            $panel['id'] = sanitize_key($panel['label']);
         $this->panels[$key][] = $panel;
     }
-    
+
     function has_license() {
         return !empty($this->options['contract_key']);
     }
-    
+
 }
 
 $newsletter = Newsletter::instance();
@@ -1450,4 +1467,30 @@ register_activation_hook(__FILE__, 'newsletter_deactivate');
 
 function newsletter_deactivate() {
     
+}
+
+function tnpc_render_callback() {
+    $block_options = get_option('newsletter_main');
+    include NEWSLETTER_DIR . '/emails/tnp-composer/blocks/' . sanitize_file_name($_POST['b']) . '.block';
+    wp_die(); // this is required to terminate immediately and return a proper response
+}
+
+function tnpc_preview_callback() {
+
+    $id = (int) ($_POST['id'] ? $_POST['id'] : $_GET['id']);
+    $email = Newsletter::instance()->get_email($id, ARRAY_A);
+
+    if (empty($email)) {
+        echo 'Wrong email identifier';
+        return;
+    }
+
+    echo $email['message'];
+
+    wp_die(); // this is required to terminate immediately and return a proper response
+}
+
+function tnpc_css_callback() {
+    include NEWSLETTER_DIR . '/emails/tnp-composer/css/newsletter.css';
+    wp_die(); // this is required to terminate immediately and return a proper response
 }

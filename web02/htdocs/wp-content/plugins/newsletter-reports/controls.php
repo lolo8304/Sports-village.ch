@@ -46,12 +46,12 @@ class NewsletterControls {
      */
     function show() {
         if (!empty($this->errors)) {
-            echo '<div class="error">';
+            echo '<div class="tnp-error">';
             echo $this->errors;
             echo '</div>';
         }
         if (!empty($this->messages)) {
-            echo '<div class="updated"><p>';
+            echo '<div class="tnp-message"><p>';
             echo $this->messages;
             echo '</p></div>';
         }

@@ -2,6 +2,37 @@
 
 == Changelog ==
 
+= 4.0.4 =
+
+* Changed the export function to avoi conflict with security plugins
+
+= 4.0.3 =
+
+* Stats panel optimization on data processing
+
+= 4.0.2 =
+
+* Fixed a PHP 5.3 syntax incompatibility
+
+= 4.0.1 =
+
+* Widely improved the country resolution
+* Little fixes
+
+= 4.0.0 =
+
+* Completely redesigned with improved readability
+* Introduced the retargeting panel
+* Better charts
+* List of subscribers per sent newsletter
+* Better export data
+* Retargeting per followed link
+* Retargeting per "no action"
+
+= 2.2.5 =
+
+* Added support for Newsletter 4 menu
+
 = 2.2.4 =
 
 * Support for the new "newsletters tab" on user profile

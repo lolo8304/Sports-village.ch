@@ -34,9 +34,9 @@ foreach ($types as $type) {
 
 
 if (empty($controls->data['type'])) {
-    $emails = $wpdb->get_results("select send_on, id, subject, total, status, type, track, sent, subject from " . NEWSLETTER_EMAILS_TABLE . " where status='sent' order by send_on desc limit 30");
+    $emails = $wpdb->get_results("select send_on, id, subject, total, status, type, track, sent, subject from " . NEWSLETTER_EMAILS_TABLE . " where status='sent' order by send_on desc limit 20");
 } else {
-    $emails = $wpdb->get_results($wpdb->prepare("select send_on, id, subject, total, type from " . NEWSLETTER_EMAILS_TABLE . " where status='sent' and type=%s order by send_on desc limit 30", $controls->data['type']));
+    $emails = $wpdb->get_results($wpdb->prepare("select send_on, id, subject, total, type from " . NEWSLETTER_EMAILS_TABLE . " where status='sent' and type=%s order by send_on desc limit 20", $controls->data['type']));
 }
 $overview_labels = array();
 $overview_titles = array();
@@ -97,7 +97,6 @@ function percentValue($value, $total) {
 <script type="text/javascript" src="<?php echo plugins_url('newsletter') ?>/js/jquery.vmap.world.js"></script>
 <link href="<?php echo plugins_url('newsletter') ?>/css/jqvmap.css" media="screen" rel="stylesheet" type="text/css"/>
 
-
 <div class="wrap" id="tnp-wrap">
     <?php include NEWSLETTER_DIR . '/tnp-header.php' ?>
     <div id="tnp-heading">
@@ -106,9 +105,6 @@ function percentValue($value, $total) {
         <h2><?php _e('Global Newsletter Statistics', 'newsletter') ?></h2>
             
     </div>
-        
-
-    
 
     <div id="tnp-body">
         <form method="post" action="">
@@ -135,7 +131,7 @@ function percentValue($value, $total) {
                 <div class="row">
                     <div class="col-md-6">
                         <div class="tnp-widget">
-                            <h3>Overview</h3>
+                            <h3>Overview (Last 20 Newsletters)</h3>
                             <div class="inside">
                                 
                                 <p class="tnp-events-legend">Subscribers interactions distribution over time,<br>starting from the sending day.</p>

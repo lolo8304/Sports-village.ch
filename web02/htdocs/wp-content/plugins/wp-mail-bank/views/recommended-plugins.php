@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($role)
 {
 	case "administrator":
@@ -46,20 +47,20 @@ else
 					'number' => 0,
 			);
 			$r = wp_parse_args( $args, $defaults );
-	
+
 			// Non-english decimal places when the $rating is coming from a string
 			$rating = str_replace( ',', '.', $r['rating'] );
-	
+
 			// Convert Percentage to star rating, 0..5 in .5 increments
 			if ( 'percent' == $r['type'] ) {
 				$rating = round( $rating / 10, 0 ) / 2;
 			}
-	
+
 			// Calculate the number of each type of star needed
 			$full_stars = floor( $rating );
 			$half_stars = ceil( $rating - $full_stars );
 			$empty_stars = 5 - $full_stars - $half_stars;
-	
+
 			if ( $r['number'] ) {
 				/* translators: 1: The rating, 2: The number of ratings */
 				$format = _n( '%1$s rating based on %2$s rating', '%1$s rating based on %2$s ratings', $r['number'] );
@@ -68,7 +69,7 @@ else
 				/* translators: 1: The rating */
 				$title = sprintf( __( '%s rating' ), number_format_i18n( $rating, 1 ) );
 			}
-	
+
 			echo '<div class="star-rating" title="' . esc_attr( $title ) . '">';
 			echo '<span class="screen-reader-text">' . $title . '</span>';
 			echo str_repeat( '<div class="star star-full"></div>', $full_stars );
@@ -89,8 +90,8 @@ else
 						<div class="layout-span12">
 							<div class="wp-list-table plugin-install">
 								<div id="the-list">
-									<?php 
-									foreach ((array) $item as $plugin) 
+									<?php
+									foreach ((array) $item as $plugin)
 									{
 										if (is_object( $plugin))
 										{
@@ -99,16 +100,16 @@ else
 										if (!empty($plugin["icons"]["svg"]))
 										{
 											$plugin_icon_url = $plugin["icons"]["svg"];
-										} 
-										elseif (!empty( $plugin["icons"]["2x"])) 
+										}
+										elseif (!empty( $plugin["icons"]["2x"]))
 										{
 											$plugin_icon_url = $plugin["icons"]["2x"];
-										} 
+										}
 										elseif (!empty( $plugin["icons"]["1x"]))
 										{
 											$plugin_icon_url = $plugin["icons"]["1x"];
-										} 
-										else 
+										}
+										else
 										{
 											$plugin_icon_url = $plugin["icons"]["default"];
 										}
@@ -126,7 +127,7 @@ else
 										$name = strip_tags( $title . " " . $version );
 										$details_link   = self_admin_url( "plugin-install.php?tab=plugin-information&amp;plugin=" . $plugin["slug"] .
 										"&amp;TB_iframe=true&amp;width=600&amp;height=550" );
-										
+
 										/* translators: 1: Plugin name and version. */
 										$action_links[] = '<a href="' . esc_url( $details_link ) . '" class="thickbox" aria-label="' . esc_attr( sprintf("More information about %s", $name ) ) . '" data-title="' . esc_attr( $name ) . '">' . __( 'More Details' ) . '</a>';
 										$action_links = array();
@@ -186,7 +187,7 @@ else
 																{
 																	echo implode("</li><li>", $action_links);
 																}
-																	
+
 																switch($plugin["slug"])
 																{
 																	case "gallery-bank" :
@@ -217,7 +218,7 @@ else
 																			<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-captcha-bank/" target="_blank" >
 																				<?php _e("Visit Website", tech_bank); ?>
 																			</a>
-																		<?php 
+																		<?php
 																	break;
 																	case "wp-clean-up-optimizer" :
 																		?>
@@ -227,7 +228,7 @@ else
 																			<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-clean-up-optimizer/" target="_blank" >
 																				<?php _e("Visit Website", tech_bank); ?>
 																			</a>
-																		<?php 
+																		<?php
 																	break;
 																	case "google-maps-bank" :
 																		?>
@@ -237,7 +238,7 @@ else
 																			<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-google-maps-bank/" target="_blank" >
 																				<?php _e("Visit Website", tech_bank); ?>
 																			</a>
-																		<?php 
+																		<?php
 																	break;
 																}
 															?>
@@ -265,11 +266,11 @@ else
 													if ( !empty($plugin["tested"]) && version_compare(substr($GLOBALS["wp_version"], 0, strlen($plugin["tested"])), $plugin["tested"], ">"))
 													{
 														echo '<span class="compatibility-untested">' . __( "<strong>Untested</strong> with your version of WordPress" ) . '</span>';
-													} 
-													elseif (!empty($plugin["requires"]) && version_compare(substr($GLOBALS["wp_version"], 0, strlen($plugin["requires"])), $plugin["requires"], "<")) 
+													}
+													elseif (!empty($plugin["requires"]) && version_compare(substr($GLOBALS["wp_version"], 0, strlen($plugin["requires"])), $plugin["requires"], "<"))
 													{
 														echo '<span class="compatibility-incompatible">' . __("Incompatible with your version of WordPress") . '</span>';
-													} 
+													}
 													else
 													{
 														echo '<span class="compatibility-compatible">' . __("Compatible with your version of WordPress") . '</span>';
@@ -281,7 +282,7 @@ else
 									<?php
 									}
 									?>
-								</div>	
+								</div>
 							</div>
 						</div>
 					</div>
@@ -289,6 +290,6 @@ else
 			</div>
 		</div>
 	</div>
-<?php 
+<?php
 }
 ?>

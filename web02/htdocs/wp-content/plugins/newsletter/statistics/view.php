@@ -174,7 +174,7 @@ function percentValue($value, $total) {
                         <h3>World Map</h3>
                         <div class="inside">
                             <a href="http://www.thenewsletterplugin.com/premium?utm_source=plugin&utm_medium=link&utm_content=worldmap&utm_campaign=newsletter-reports" target="_blank">
-                                <img src="<?php echo plugins_url('newsletter') ?>/statistics/images/map.gif">
+                                <img style="width: 100%" src="<?php echo plugins_url('newsletter') ?>/statistics/images/map.gif">
                             </a>
                         </div>
                     </div>

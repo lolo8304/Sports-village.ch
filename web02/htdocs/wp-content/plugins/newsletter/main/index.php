@@ -245,7 +245,8 @@ $labels = array_reverse($labels);
                             </h3>
                             <div class="inside">
                                 <table width="100%">
-                                    <?php foreach ($emails as &$email) { ?>
+                                    <?php foreach ($emails as &$email) {
+                                        $email_options = unserialize($email->options); ?>
                                         <tr>
                                             <td><?php
                                                 if ($email->subject)
@@ -274,7 +275,7 @@ $labels = array_reverse($labels);
                                                     } else {
                                                         ?>
                                                         <div id="canvas-nl-<?php echo $email->id ?>" style="width:100px; height:5px; background-color: lightcoral;">
-                                                            <div class="canvas-inner" style="background-color: green; width: <?php echo intval($email->sent / $email->total * 100) ?>%; height: 100%;">&nbsp;</div>
+                                                            <div class="canvas-inner" style="background-color: green; width: <?php echo $email->total > 0 ? intval($email->sent / $email->total * 100) : 0 ?>%; height: 100%;">&nbsp;</div>
                                                         </div>
                                                     <?php
                                                     }
@@ -282,7 +283,7 @@ $labels = array_reverse($labels);
                                                 ?>
                                             </td>
                                             <td style="white-space:nowrap">
-                                                <a class="button" title="<?php _e('Edit', 'newsletter') ?>" href="<?php echo $emails_module->get_admin_page_url('edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i></a>
+                                                <a class="button" title="<?php _e('Edit', 'newsletter') ?>" href="<?php echo $emails_module->get_admin_page_url(is_array($email_options) && array_key_exists('composer', $email_options) && $email_options['composer'] ? 'composer' : 'edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i></a>
                                                 <a class="button" title="<?php _e('Statistics', 'newsletter') ?>" href="<?php echo NewsletterStatistics::instance()->get_statistics_url($email->id); ?>"><i class="fa fa-bar-chart"></i></a>
                                             </td>
                                         </tr>

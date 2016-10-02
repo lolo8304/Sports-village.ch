@@ -19,7 +19,7 @@ $email = $module->get_email($email_id);
         <p><a href="admin.php?page=newsletter_statistics_view&id=<?php echo $email->id ?>" class="button">Back to the dashboard</a></p>
 
         <a href="http://www.thenewsletterplugin.com/premium?utm_source=plugin&utm_medium=link&utm_content=retarget&utm_campaign=newsletter-reports" target="_blank">
-            <img src="<?php echo plugins_url('newsletter') ?>/statistics/images/retarget.png">
+            <img style="width: 100%" src="<?php echo plugins_url('newsletter') ?>/statistics/images/retarget.png">
         </a>
 
     </div>

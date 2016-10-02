@@ -35,9 +35,10 @@ class NewsletterControls {
             return true;
         die('Invalid call');
     }
-    
+
     function get_value($name) {
-        if (!isset($this->data[$name])) return null;
+        if (!isset($this->data[$name]))
+            return null;
         return $this->data[$name];
     }
 
@@ -45,6 +46,11 @@ class NewsletterControls {
      * Show the errors and messages.
      */
     function show() {
+        static $shown = false;
+
+        if ($shown)
+            return;
+        $shown = true;
         if (!empty($this->errors)) {
             echo '<div class="error">';
             echo $this->errors;
@@ -55,6 +61,31 @@ class NewsletterControls {
             echo $this->messages;
             echo '</p></div>';
         }
+    }
+
+    /**
+     * Creates a set of checkboxes named $name_[preference number] (so they are
+     * distinct fields).
+     * Empty preferences are skipped.
+     */
+    function preferences($name = 'preferences') {
+        $options_profile = get_option('newsletter_profile');
+        echo '<div class="newsletter-preferences-group">';
+
+        for ($i = 1; $i <= NEWSLETTER_LIST_MAX; $i++) {
+            if (empty($options_profile['list_' . $i]))
+                continue;
+            echo '<div class="newsletter-preferences-item">';
+            $this->checkbox($name . '_' . $i, esc_html($options_profile['list_' . $i]));
+            echo '</div>';
+        }
+        echo '<div style="clear: both"></div>';
+        echo '</div>';
+        echo '<div class="hints" style="margin-top: 10px">';
+        echo '<small>User\'s preferences can be activated from the "Subscription Form" panel.<br>'
+        . 'They can be used to simulate lists or create private groups. The number is the "preference number".<br>';
+        echo '<a href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-preferences" target="_blank">Read more about preferences</a>.</small>';
+        echo '</div>';
     }
 
     function yesno($name) {
@@ -103,14 +134,13 @@ class NewsletterControls {
         echo '</select>';
     }
 
-
     function value($name) {
         echo htmlspecialchars($this->data[$name]);
     }
 
     function value_date($name, $show_remaining) {
         $time = $this->get_value($name);
-        
+
         echo gmdate(get_option('date_format') . ' ' . get_option('time_format'), $time + get_option('gmt_offset') * 3600);
         $delta = $time - time();
         if ($show_remaining && $delta > 0) {
@@ -182,13 +212,11 @@ class NewsletterControls {
         }
     }
 
-
     function textarea($name, $width = '100%', $height = '50') {
         echo '<textarea class="dynamic" name="options[' . $name . ']" wrap="off" style="width:' . $width . ';height:' . $height . '">';
         echo htmlspecialchars($this->data[$name]);
         echo '</textarea>';
     }
-
 
     function checkbox($name, $label = '') {
         if ($label != '')
@@ -217,7 +245,7 @@ class NewsletterControls {
         wp_nonce_field('save');
     }
 
-     static function print_date($time = null, $now = false, $left = false) {
+    static function print_date($time = null, $now = false, $left = false) {
         if (is_null($time)) {
             $time = time();
         }

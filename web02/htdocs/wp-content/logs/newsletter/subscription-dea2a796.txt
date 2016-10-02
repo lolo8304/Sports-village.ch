@@ -3594,3 +3594,24 @@
 16-05-2016 21:09:50 - INFO  - 22.7 MB - upgrade_query> Executing update wp_options set autoload='no' where option_name='newsletter_subscription_profile' limit 1
 16-05-2016 21:09:50 - INFO  - 22.6 MB - upgrade_query> Executing update wp_options set autoload='no' where option_name='newsletter_subscription_lists' limit 1
 16-05-2016 21:09:50 - INFO  - 22.6 MB - upgrade_query> Executing update wp_options set autoload='no' where option_name='newsletter_subscription_template' limit 1
+05-08-2016 09:37:17 - INFO  - 31,5 MB - New email address
+05-08-2016 09:37:17 - DEBUG - 31,6 MB - Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+)
+
+30-09-2016 15:24:27 - INFO  - 32,5 MB - Subscription of an address with status S
+30-09-2016 15:24:27 - INFO  - 32,5 MB - Email address subscribed but not confirmed
+30-09-2016 15:24:27 - DEBUG - 32,5 MB - Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 5
+    [3] => 6
+)
+

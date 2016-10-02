@@ -1,4 +1,5 @@
 <?php
+if(!defined("ABSPATH")) exit; //exit if accessed directly
 switch($role)
 {
 	case "administrator":
@@ -35,7 +36,7 @@ else
 					</div>
 					<div class="widget-layout-body">
 						<a class="btn btn-inverse" href="admin.php?page=smtp_mail"><?php _e("Back to Settings", mail_bank); ?></a>
-						<div class="separator-doubled" style="margin-top:20px;"></div> 
+						<div class="separator-doubled" style="margin-top:20px;"></div>
 						<div class="fluid-layout">
 							<div class="layout-span12 responsive">
 								<div class="widget-layout">
@@ -76,14 +77,14 @@ else
 		</div>
 	</form>
 	<script type="text/javascript">
-		
-		var url = "http://tech-banker.com/wp-admin/admin-ajax.php";
+
+		var url = "http://tech-banker.com/feedbacks.php";
 		var suggestion_array = [];
 		jQuery("#frm_feedback").validate
 		({
 			rules:
 			{
-				ux_name : 
+				ux_name :
 				{
 					required: true
 				},

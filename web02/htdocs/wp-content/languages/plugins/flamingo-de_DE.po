@@ -2,147 +2,173 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-12-16 08:24:15+0000\n"
+"PO-Revision-Date: 2016-09-13 11:10:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
 "Project-Id-Version: Stable (latest release)\n"
 
-#: admin/admin.php:9 admin/admin.php:15 admin/admin.php:277
+#: admin/admin.php:566
+msgid "Meta"
+msgstr "Meta"
+
+#: admin/admin.php:13 admin/admin.php:20 admin/admin.php:282
 msgid "Flamingo Address Book"
 msgstr "Flamingo Adressbuch"
 
-#. #-#-#-#-#  tmp-flamingo.pot (Flamingo 1.3)  #-#-#-#-#
+#. #-#-#-#-#  tmp-flamingo.pot (Flamingo 1.4)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: admin/admin.php:10
+#: admin/admin.php:14
 msgid "Flamingo"
 msgstr "Flamingo"
 
-#: admin/admin.php:16
+#: admin/admin.php:21
 msgid "Address Book"
 msgstr "Adressbuch"
 
-#: admin/admin.php:23 includes/class-inbound-message.php:26
+#: admin/admin.php:28 includes/class-inbound-message.php:26
 msgid "Flamingo Inbound Messages"
 msgstr "Flamingo Eingehende Nachrichten"
 
-#: admin/admin.php:24 admin/admin.php:593
+#: admin/admin.php:29 admin/admin.php:601
 msgid "Inbound Messages"
 msgstr "Eingehende Nachrichten"
 
-#: admin/admin.php:71
+#: admin/admin.php:76
 msgid "Contact updated."
 msgstr "Kontakt aktualisiert."
 
-#: admin/admin.php:73
+#: admin/admin.php:78
 msgid "Contact deleted."
 msgstr "Kontakt gelöscht."
 
-#: admin/admin.php:77
+#: admin/admin.php:80
+msgid "Messages trashed."
+msgstr "Nachrichten in den Papierkorb verschoben."
+
+#: admin/admin.php:82
 msgid "Messages restored."
 msgstr "Nachrichten wiederhergestellt."
 
-#: admin/admin.php:79
+#: admin/admin.php:84
 msgid "Messages deleted."
 msgstr "Nachrichten gelöscht."
 
-#: admin/admin.php:81
+#: admin/admin.php:86
 msgid "Messages got marked as spam."
 msgstr "Nachrichten wurden als Spam markiert."
 
-#: admin/admin.php:83
+#: admin/admin.php:88
 msgid "Messages got marked as not spam."
 msgstr "Nachrichten wurden als \"Kein Spam\" markiert."
 
-#: admin/admin.php:112 admin/admin.php:650
+#: admin/admin.php:90
+msgid "Messages updated."
+msgstr "Nachrichten wurden aktualisiert."
+
+#: admin/admin.php:117 admin/admin.php:658
 msgid "You are not allowed to edit this item."
 msgstr "Sie dürfen dieses Element nicht editieren."
 
-#: admin/admin.php:151 admin/admin.php:400
+#: admin/admin.php:156 admin/admin.php:405
 msgid "You are not allowed to delete this item."
 msgstr "Sie dürfen dieses Element nicht löschen."
 
-#: admin/admin.php:154 admin/admin.php:403
+#: admin/admin.php:159 admin/admin.php:408
 msgid "Error in deleting."
 msgstr "Fehler während des Löschens."
 
-#: admin/admin.php:179 admin/includes/class-contacts-list-table.php:11
+#: admin/admin.php:184 admin/includes/class-contacts-list-table.php:11
 msgid "Email"
 msgstr "Email"
 
-#: admin/admin.php:179 admin/includes/meta-boxes.php:142
+#: admin/admin.php:184 admin/includes/meta-boxes.php:142
 msgid "Full name"
 msgstr "Voller Name"
 
-#: admin/admin.php:180 admin/includes/meta-boxes.php:147
+#: admin/admin.php:185 admin/includes/meta-boxes.php:147
 msgid "First name"
 msgstr "Vorname"
 
-#: admin/admin.php:180 admin/includes/meta-boxes.php:152
+#: admin/admin.php:185 admin/includes/meta-boxes.php:152
 msgid "Last name"
 msgstr "Nachname"
 
-#: admin/admin.php:236 admin/admin.php:555 admin/includes/meta-boxes.php:184
+#: admin/admin.php:241 admin/admin.php:560 admin/includes/meta-boxes.php:201
 msgid "Save"
 msgstr "Speichern"
 
-#: admin/admin.php:239 admin/includes/class-contacts-list-table.php:13
+#: admin/admin.php:244 admin/includes/class-contacts-list-table.php:13
 msgid "Tags"
 msgstr "Tags"
 
-#: admin/admin.php:242 admin/includes/class-contacts-list-table.php:12
+#: admin/admin.php:247 admin/includes/class-contacts-list-table.php:12
 msgid "Name"
 msgstr "Name"
 
-#: admin/admin.php:255
+#: admin/admin.php:260
 msgid "Contacts"
 msgstr "Kontakte"
 
-#: admin/admin.php:281 admin/admin.php:597 admin/admin.php:709
+#: admin/admin.php:286 admin/admin.php:605 admin/admin.php:717
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "Suchergebnisse für  &#8220;%s&#8221;"
 
-#: admin/admin.php:290
+#: admin/admin.php:295
 msgid "Search Contacts"
 msgstr "Suche Kontakte"
 
-#: admin/admin.php:331
+#: admin/admin.php:336
 msgid "You are not allowed to move this item to the Trash."
 msgstr "Sie dürfen dieses Element nicht in den Müll verschieben."
 
-#: admin/admin.php:334
+#: admin/admin.php:339
 msgid "Error in moving to Trash."
 msgstr "Fehler während des Verschiebens in den Müll."
 
-#: admin/admin.php:361
+#: admin/admin.php:366
 msgid "You are not allowed to restore this item from the Trash."
 msgstr "Sie dürfen dieses Element aus dem Müll nicht wiederherstellen."
 
-#: admin/admin.php:364
+#: admin/admin.php:369
 msgid "Error in restoring from Trash."
 msgstr "Fehler während des wiederherstellens aus dem Müll."
 
-#: admin/admin.php:430
+#: admin/admin.php:435
 msgid "You are not allowed to spam this item."
 msgstr "Sie dürfen dieses Element nicht als Spam markieren."
 
-#: admin/admin.php:458
+#: admin/admin.php:463
 msgid "You are not allowed to unspam this item."
 msgstr "Sie dürfen dieses Element nicht als \"Kein Spam\" markieren."
 
-#: admin/admin.php:558
+#: admin/admin.php:531 admin/edit-inbound-form.php:42
+#: admin/includes/class-inbound-messages-list-table.php:17
+#: admin/includes/class-outbound-messages-list-table.php:15
+msgid "Date"
+msgstr "Datum"
+
+#: admin/admin.php:563
 msgid "Fields"
 msgstr "Felder"
 
-#: admin/admin.php:571 admin/admin.php:683
+#: admin/admin.php:579 admin/admin.php:691
 msgid "Messages"
 msgstr "Nachrichten"
 
-#: admin/admin.php:608 admin/admin.php:720
+#: admin/admin.php:616 admin/admin.php:728
 msgid "Search Messages"
 msgstr "Suche Nachrichten"
+
+#: admin/admin.php:678
+msgid "Send"
+msgstr "Senden"
+
+#: admin/admin.php:713
+msgid "Outbound Messages"
+msgstr "Ausgehende Nachrichten"
 
 #: admin/edit-contact-form.php:17
 msgid "Edit Contact"
@@ -156,12 +182,6 @@ msgstr "Geben Sie hier die EMail-Adresse ein"
 msgid "Inbound Message"
 msgstr "Eingehende Nachricht"
 
-#: admin/admin.php:526 admin/edit-inbound-form.php:42
-#: admin/includes/class-inbound-messages-list-table.php:17
-#: admin/includes/class-outbound-messages-list-table.php:15
-msgid "Date"
-msgstr "Datum"
-
 #: admin/edit-inbound-form.php:47 admin/edit-outbound-form.php:61
 #: admin/includes/class-inbound-messages-list-table.php:14
 #: admin/includes/class-outbound-messages-list-table.php:13
@@ -173,6 +193,22 @@ msgstr "Betreff"
 #: admin/includes/class-outbound-messages-list-table.php:14
 msgid "From"
 msgstr "Von"
+
+#: admin/edit-outbound-form.php:19
+msgid "Compose a Message"
+msgstr "Neue Nachricht"
+
+#: admin/edit-outbound-form.php:21
+msgid "Outbound Message"
+msgstr "Ausgehende Nachricht"
+
+#: admin/edit-outbound-form.php:48
+msgid "To"
+msgstr "Empfänger"
+
+#: admin/edit-outbound-form.php:66
+msgid "Body"
+msgstr "Nachricht"
 
 #: admin/includes/class-contacts-list-table.php:14
 msgid "History"
@@ -226,6 +262,11 @@ msgstr "Benutzer"
 msgid "Comment (%d)"
 msgstr "Kommentar (%d)"
 
+#: admin/includes/class-contacts-list-table.php:220
+msgctxt "contact history"
+msgid "%s (%d)"
+msgstr "%s (%d)"
+
 #: admin/includes/class-contacts-list-table.php:239
 #: admin/includes/class-inbound-messages-list-table.php:332
 #: admin/includes/class-outbound-messages-list-table.php:214
@@ -250,6 +291,29 @@ msgstr "d.m.Y"
 msgid "Channel"
 msgstr "Kanal"
 
+#: admin/includes/class-inbound-messages-list-table.php:104
+#: admin/includes/class-outbound-messages-list-table.php:92
+msgctxt "posts"
+msgid "Inbox <span class=\"count\">(%s)</span>"
+msgid_plural "Inbox <span class=\"count\">(%s)</span>"
+msgstr[0] "Eingang <span class=\"count\">(%s)</span>"
+msgstr[1] "Eingang <span class=\"count\">(%s)</span>"
+
+#: admin/includes/class-inbound-messages-list-table.php:120
+msgctxt "posts"
+msgid "Spam <span class=\"count\">(%s)</span>"
+msgid_plural "Spam <span class=\"count\">(%s)</span>"
+msgstr[0] "Spam <span class=\"count\">(%s)</span>"
+msgstr[1] "Spam <span class=\"count\">(%s)</span>"
+
+#: admin/includes/class-inbound-messages-list-table.php:138
+#: admin/includes/class-outbound-messages-list-table.php:110
+msgctxt "posts"
+msgid "Trash <span class=\"count\">(%s)</span>"
+msgid_plural "Trash <span class=\"count\">(%s)</span>"
+msgstr[0] "Papierkorb <span class=\"count\">(%s)</span>"
+msgstr[1] "Papierkorb <span class=\"count\">(%s)</span>"
+
 #: admin/includes/class-inbound-messages-list-table.php:168
 #: admin/includes/class-outbound-messages-list-table.php:140
 msgid "Restore"
@@ -257,15 +321,24 @@ msgstr "Wiederherstellen"
 
 #: admin/includes/class-inbound-messages-list-table.php:172
 #: admin/includes/class-outbound-messages-list-table.php:144
-#: admin/includes/meta-boxes.php:108 admin/includes/meta-boxes.php:209
+#: admin/includes/meta-boxes.php:108 admin/includes/meta-boxes.php:226
 msgid "Delete Permanently"
 msgstr "Endgültig löschen"
 
 #: admin/includes/class-inbound-messages-list-table.php:174
 #: admin/includes/class-outbound-messages-list-table.php:146
-#: admin/includes/meta-boxes.php:110 admin/includes/meta-boxes.php:211
+#: admin/includes/meta-boxes.php:110 admin/includes/meta-boxes.php:228
 msgid "Move to Trash"
 msgstr "In den Müll verschieben"
+
+#: admin/includes/class-inbound-messages-list-table.php:178
+#: admin/includes/class-inbound-messages-list-table.php:269
+msgid "Not Spam"
+msgstr "Kein Spam"
+
+#: admin/includes/class-inbound-messages-list-table.php:180
+msgid "Mark as Spam"
+msgstr "Als Spam markieren"
 
 #: admin/includes/class-inbound-messages-list-table.php:212
 msgid "View all channels"
@@ -275,11 +348,6 @@ msgstr "Zeige alle Kanäle"
 #: admin/includes/class-outbound-messages-list-table.php:164
 msgid "Empty Trash"
 msgstr "Müll leeren"
-
-#: admin/includes/class-inbound-messages-list-table.php:178
-#: admin/includes/class-inbound-messages-list-table.php:269
-msgid "Not Spam"
-msgstr "Kein Spam"
 
 #: admin/includes/class-inbound-messages-list-table.php:275
 #: includes/class-inbound-message.php:32
@@ -318,6 +386,14 @@ msgstr "Nachricht aktualisieren"
 msgid "Add Message"
 msgstr "Nachricht hinzufügen"
 
+#: admin/includes/meta-boxes.php:206
+msgid "Save Draft"
+msgstr "Entwurf speichern"
+
+#: admin/includes/meta-boxes.php:240
+msgid "Send Message"
+msgstr "Nachricht senden"
+
 #: includes/class-contact.php:20
 msgid "Flamingo Contacts"
 msgstr "Flamingo Kontakte"
@@ -346,82 +422,10 @@ msgstr "Flamingo Eingehende Nachricht - Kanäle"
 msgid "Flamingo Inbound Message Channel"
 msgstr "Flamingo Eingehende Nachricht - Kanal"
 
-#: includes/class-inbound-message.php:168
+#: includes/class-inbound-message.php:170
 #: includes/class-outbound-message.php:92
 msgid "(No Title)"
 msgstr "(Ohne Titel)"
-
-#: admin/admin.php:75
-msgid "Messages trashed."
-msgstr "Nachrichten in den Papierkorb verschoben."
-
-#: admin/admin.php:85
-msgid "Messages updated."
-msgstr "Nachrichten wurden aktualisiert."
-
-#: admin/includes/meta-boxes.php:223
-msgid "Send Message"
-msgstr "Nachricht senden"
-
-#: admin/includes/meta-boxes.php:189
-msgid "Save Draft"
-msgstr "Entwurf speichern"
-
-#: admin/includes/class-inbound-messages-list-table.php:180
-msgid "Mark as Spam"
-msgstr "Als Spam markieren"
-
-#: admin/includes/class-inbound-messages-list-table.php:138
-#: admin/includes/class-outbound-messages-list-table.php:110
-msgctxt "posts"
-msgid "Trash <span class=\"count\">(%s)</span>"
-msgid_plural "Trash <span class=\"count\">(%s)</span>"
-msgstr[0] "Papierkorb <span class=\"count\">(%s)</span>"
-msgstr[1] "Papierkorb <span class=\"count\">(%s)</span>"
-
-#: admin/includes/class-inbound-messages-list-table.php:120
-msgctxt "posts"
-msgid "Spam <span class=\"count\">(%s)</span>"
-msgid_plural "Spam <span class=\"count\">(%s)</span>"
-msgstr[0] "Spam <span class=\"count\">(%s)</span>"
-msgstr[1] "Spam <span class=\"count\">(%s)</span>"
-
-#: admin/includes/class-inbound-messages-list-table.php:104
-#: admin/includes/class-outbound-messages-list-table.php:92
-msgctxt "posts"
-msgid "Inbox <span class=\"count\">(%s)</span>"
-msgid_plural "Inbox <span class=\"count\">(%s)</span>"
-msgstr[0] "Eingang <span class=\"count\">(%s)</span>"
-msgstr[1] "Eingang <span class=\"count\">(%s)</span>"
-
-#: admin/edit-outbound-form.php:66
-msgid "Body"
-msgstr "Nachricht"
-
-#: admin/edit-outbound-form.php:48
-msgid "To"
-msgstr "Empfänger"
-
-#: admin/admin.php:670
-msgid "Send"
-msgstr "Senden"
-
-#: admin/edit-outbound-form.php:19
-msgid "Compose a Message"
-msgstr "Neue Nachricht"
-
-#: admin/admin.php:705
-msgid "Outbound Messages"
-msgstr "Ausgehende Nachrichten"
-
-#: admin/edit-outbound-form.php:21
-msgid "Outbound Message"
-msgstr "Ausgehende Nachricht"
-
-#: admin/includes/class-contacts-list-table.php:220
-msgctxt "contact history"
-msgid "%s (%d)"
-msgstr "%s (%d)"
 
 #: includes/class-outbound-message.php:20
 msgid "Flamingo Outbound Messages"
@@ -430,10 +434,6 @@ msgstr "Flamingo Ausgehende Nachrichten"
 #: includes/class-outbound-message.php:21
 msgid "Flamingo Outbound Message"
 msgstr "Flamingo Ausgehende Nachricht"
-
-#. Plugin URI of the plugin/theme
-msgid "http://flamingo-eggs.com/"
-msgstr "http://flamingo-eggs.com/"
 
 #. Description of the plugin/theme
 msgid "Flamingo manages your contact list on WordPress."

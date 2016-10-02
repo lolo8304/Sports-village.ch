@@ -1,9 +1,9 @@
 ﻿=== WP Mail Bank - Best PHPMailer & SMTP Mailer ===
 Contributors: contact-banker, Gallery-Bank
-Tags: admin, ajax, email, gmail, mail, mail smtp, mailer, outgoing mail, phpmailer, plugin, Post, posts, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail, wp mail, mailer
+Tags: email, gmail, mail, mail smtp, mailer, outgoing mail, phpmailer, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail, wp mail, mailer, mail bank
 Requires at least: 2.7
-Tested up to: 4.5
-Stable tag: 1.41
+Tested up to: 4.6
+Stable tag: 1.47
 
 WP Mail Bank reconfigures the PHP Mailer and make it more enhanced with advanced SMTP settings options.
 
@@ -15,7 +15,7 @@ This plugin reconfigures the wp_mail() function nd make it more enhanced to use 
 
 The Plugin has options to choose between your custom smtp server or the inbuilt phpmailer.
 
-###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com). 
+###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).
 
 ###Key Features :
 
@@ -25,7 +25,7 @@ The Plugin has options to choose between your custom smtp server or the inbuilt 
 * Specify Return Path of your Email or Keep it same as your email address.
 * Specify Word Wrap at which the string will be wrapped in email per line.
 * Specify SMTP Host to be used for sending your emails.
-* Specify SMTP Port to be used for sending your emails. 
+* Specify SMTP Port to be used for sending your emails.
 * Specify an SMTP username and password.
 * Specify Encryption type.
 * Specify to use Authentication or disable Authentication.
@@ -37,14 +37,14 @@ With this utility you can always check weither you have configured your SMTP Mai
 
 > #### ** Default SMTP Ports & Settings **
 > * SMTP Server  - Non-Encrypted - Port 25 ( or 587 )
-> * SMTP Server  - Secure (TLS) - Port 587 
-> * SMTP Server  - Secure (SSL) - Port 465 
+> * SMTP Server  - Secure (TLS) - Port 587
+> * SMTP Server  - Secure (SSL) - Port 465
 
 Note :These SMTP Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Googlemail - Gmail SMTP Ports & Settings **
-> * SMTP Server - Host : smtp.gmail.com - Secure (SSL) - Port 465 
-> * SMTP Server - Host : smtp.gmail.com - Secure (TLS) - Port 587 
+> * SMTP Server - Host : smtp.gmail.com - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.gmail.com - Secure (TLS) - Port 587
 
 Note :These SMTP Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
@@ -191,24 +191,24 @@ Note :These SMTP Ports & Settings may be different depending upon your Host Prov
 
 == Installation ==
 
-### Minimum requirements.  
-*   Wordpress 2.7+  
-*   PHP 5.x  
-*   MySQL 5.x  
+### Minimum requirements.
+*   Wordpress 2.7+
+*   PHP 5.x
+*   MySQL 5.x
 
-### Performing a new installation  
+### Performing a new installation
 
-After downloading the ZIP file,  
+After downloading the ZIP file,
 
-1. Log in to the administrator panel.  
-2. Go to Plugins Add > New > Upload.  
-3. Click “Choose file” (“Browse”) and select the downloaded zip file.  
+1. Log in to the administrator panel.
+2. Go to Plugins Add > New > Upload.
+3. Click “Choose file” (“Browse”) and select the downloaded zip file.
 
-*For Mac Users*  
-*Go to your Downloads folder and locate the folder with the plugin. Right-click on the folder and select Compress. Now you have a newly created .zip file which can be installed as described here.*  
+*For Mac Users*
+*Go to your Downloads folder and locate the folder with the plugin. Right-click on the folder and select Compress. Now you have a newly created .zip file which can be installed as described here.*
 
-1. Click “Install Now” button.  
-2. Click “Activate Plugin” button for activating the plugin.  
+1. Click “Install Now” button.
+2. Click “Activate Plugin” button for activating the plugin.
 
 If any problem occurs, please contact us at [support@tech-banker.com](mailto:support@tech-banker.com).
 
@@ -221,6 +221,36 @@ If any problem occurs, please contact us at [support@tech-banker.com](mailto:sup
 4. Debugging Output Console Log
 
 == Changelog ==
+
+= 1.47 =
+
+* Security Patch Fixed
+* Few Urgent Bugs Fixed
+
+= 1.46 =
+
+* Compatibility with 4.6
+* Security Issue Fixed
+* Few Urgent Bugs Fixed
+
+= 1.45 =
+
+* Security Issue Fixed
+* Few Urgent Bugs Fixed
+
+= 1.44 =
+
+* Compatibility with 4.5.3
+* Few Urgent Bugs Fixed
+
+= 1.43 =
+
+* From Name Special Characters Bug Fixed
+
+= 1.42 =
+
+* Added New Checkbox to confirm whether to Override "From Name" Property while sending Mails.
+* Added New Checkbox to confirm whether to Override "From Email" Property while sending Mails.
 
 = 1.41 =
 
@@ -375,7 +405,7 @@ If any problem occurs, please contact us at [support@tech-banker.com](mailto:sup
 
 = 1.4 =
 
-* Added Update Message for New Version 
+* Added Update Message for New Version
 
 = 1.3 =
 
